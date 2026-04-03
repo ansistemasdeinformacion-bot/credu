@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado - CREDU</title>
+</head>
+<body>
+
+    <h1>🎓 Bienvenido/a</h1>
+
+    <h2>{{ nombre }}</h2>
+
+    <!-- 🔥 USUARIO -->
+    <p><strong>Usuario:</strong> {{ usuario }}</p>
+
+    {% if personalizada %}
+
+        <p><strong>Contraseña:</strong> contraseña personalizada</p>
+
+        <p style="color: orange;">
+            ⚠ Tu contraseña fue personalizada por ti mismo
+        </p>
+
+        <p>
+            En caso de que no recuerdes tu contraseña, debes dirigirte a la oficina de Tecnologías
+            o escribir al correo:
+            <strong>an.sistemasdeinformacion@uniagustiniana.edu.co</strong>
+        </p>
+
+    {% else %}
+
+        <p><strong>Contraseña:</strong> {{ contraseña }}</p>
+
+    {% endif %}
+
+    <p>
+        Estas credenciales aplican para:
+        <br><strong>SIGA - KAWAK - SIPA HCM</strong>
+    </p>
+
+    <a href="/">Volver</a>
+
+</body>
+</html>
