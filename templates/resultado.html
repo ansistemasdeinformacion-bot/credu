@@ -3,42 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <title>Resultado - CREDU</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0a2a66, #1a4fb3);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+
+        .card {
+            background: white;
+            color: #333;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+            width: 350px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0a2a66;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .alerta {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #0a2a66;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #163d8c;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
 </head>
 <body>
 
-    <h1>🎓 Bienvenido/a</h1>
+    <div class="container">
 
-    <h2>{{ nombre }}</h2>
+        <h1>🎓 Bienvenido/a</h1>
 
-    <!-- 🔥 USUARIO -->
-    <p><strong>Usuario:</strong> {{ usuario }}</p>
+        <div class="card">
 
-    {% if personalizada %}
+            <h2>{{ nombre }}</h2>
 
-        <p><strong>Contraseña:</strong> contraseña personalizada</p>
+            <p><strong>Usuario:</strong> {{ usuario }}</p>
 
-        <p style="color: orange;">
-            ⚠ Tu contraseña fue personalizada por ti mismo
-        </p>
+            {% if personalizada %}
 
-        <p>
-            En caso de que no recuerdes tu contraseña, debes dirigirte a la oficina de Tecnologías
-            o escribir al correo:
-            <strong>an.sistemasdeinformacion@uniagustiniana.edu.co</strong>
-        </p>
+                <p><strong>Contraseña:</strong> contraseña personalizada</p>
 
-    {% else %}
+                <p class="alerta">
+                    ⚠ Tu contraseña fue personalizada por ti mismo
+                </p>
 
-        <p><strong>Contraseña:</strong> {{ contraseña }}</p>
+                <p>
+                    En caso de que no recuerdes tu contraseña, debes dirigirte a la oficina de Tecnologías
+                    o escribir al correo:
+                    <strong>an.sistemasdeinformacion@uniagustiniana.edu.co</strong>
+                </p>
 
-    {% endif %}
+            {% else %}
 
-    <p>
-        Estas credenciales aplican para:
-        <br><strong>SIGA - KAWAK - SIPA HCM</strong>
-    </p>
+                <p><strong>Contraseña:</strong> {{ contraseña }}</p>
 
-    <a href="/">Volver</a>
+            {% endif %}
+
+            <p>
+                Estas credenciales aplican para:
+                <br><strong>SIGA - KAWAK - SIPA HCM</strong>
+            </p>
+
+            <form action="/">
+                <button class="btn">Volver</button>
+            </form>
+
+        </div>
+
+        <div class="footer">
+            Uniagustiniana es creer en ti
+        </div>
+
+    </div>
 
 </body>
 </html>
