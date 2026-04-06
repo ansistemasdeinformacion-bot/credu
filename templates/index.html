@@ -14,7 +14,6 @@ body {
     height: 100vh;
 }
 
-/* CONTENEDOR */
 .chat-container {
     width: 380px;
     background: white;
@@ -23,7 +22,6 @@ body {
     overflow: hidden;
 }
 
-/* HEADER */
 .chat-header {
     background: #0b3c6f;
     color: white;
@@ -32,17 +30,14 @@ body {
     font-weight: bold;
 }
 
-/* BODY */
 .chat-body {
     padding: 15px;
     height: 350px;
     overflow-y: auto;
 }
 
-/* MENSAJES */
 .bot-message {
     display: flex;
-    align-items: flex-start;
     margin-bottom: 15px;
 }
 
@@ -60,7 +55,6 @@ body {
     max-width: 75%;
 }
 
-/* INPUT */
 .chat-footer {
     display: flex;
     padding: 10px;
@@ -74,7 +68,6 @@ input {
     border: 1px solid #ccc;
 }
 
-/* BOTÓN */
 .send-btn {
     background: #d4af37;
     border: none;
@@ -82,12 +75,8 @@ input {
     padding: 10px 14px;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 16px;
 }
 
-.send-btn:hover {
-    background: #b8962e;
-}
 </style>
 </head>
 
@@ -146,6 +135,7 @@ function enviarCedula() {
     })
     .then(res => res.json())
     .then(data => {
+        console.log(data);
 
         if (data.success) {
             chat.innerHTML += `
@@ -155,7 +145,7 @@ function enviarCedula() {
                     👋 Hola <b>${data.nombre}</b><br><br>
                     📧 Tus credenciales serán enviadas a tu correo institucional:<br>
                     <b>${data.correo}</b><br><br>
-                    🔐 Estas credenciales aplican para:<br>
+                    🔐 Aplican para:<br>
                     SIGA - KAWAK - SIPA HCM
                 </div>
             </div>
