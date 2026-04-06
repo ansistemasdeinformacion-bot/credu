@@ -1,120 +1,180 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>CREDU Chat</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f2f2f2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<meta charset="UTF-8">
+<title>CREDU Chat</title>
 
-```
-    .chat-container {
-        width: 350px;
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        overflow: hidden;
-    }
+<style>
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg, #0b3c6f, #1e5fa3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-    .chat-header {
-        background: #003366;
-        color: white;
-        padding: 15px;
-        text-align: center;
-    }
+/* CONTENEDOR */
+.chat-container {
+    width: 380px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
 
-    .chat-body {
-        padding: 15px;
-        height: 300px;
-        overflow-y: auto;
-    }
+/* HEADER */
+.chat-header {
+    background: #0b3c6f;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
 
-    .bot-message {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-    }
+/* BODY */
+.chat-body {
+    padding: 15px;
+    height: 350px;
+    overflow-y: auto;
+}
 
-    .bot-message img {
-        width: 40px;
-        margin-right: 10px;
-    }
+/* MENSAJES */
+.bot-message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
 
-    .message {
-        background: #e6e6e6;
-        padding: 10px;
-        border-radius: 10px;
-    }
+.bot-message img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
 
-    .chat-footer {
-        padding: 10px;
-        text-align: center;
-    }
+.message {
+    background: #f1f1f1;
+    padding: 12px;
+    border-radius: 12px;
+    max-width: 75%;
+}
 
-    button {
-        background: #003366;
-        color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 10px;
-        cursor: pointer;
-    }
+/* INPUT */
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
 
-    button:hover {
-        background: #0055aa;
-    }
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* BOTÓN */
+.send-btn {
+    background: #d4af37;
+    border: none;
+    margin-left: 5px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.send-btn:hover {
+    background: #b8962e;
+}
 </style>
-```
-
 </head>
+
 <body>
 
 <div class="chat-container">
 
-```
 <div class="chat-header">
-    🎓 CREDU Asistente
+🎓 CREDU Asistente
 </div>
 
 <div class="chat-body" id="chat">
 
-    <div class="bot-message">
-        <img src="{{ url_for('static', filename='avatar.png') }}">
-        <div class="message">
-            Hola 👋, soy <b>CREDU</b><br>
-            ¿Necesitas consultar tus credenciales institucionales?
-        </div>
-    </div>
+<div class="bot-message">
+<img src="{{ url_for('static', filename='avatar.png') }}">
+<div class="message">
+Hola 👋, soy <b>CREDU</b><br>
+Ingresa tu cédula para ayudarte con tus credenciales
+</div>
+</div>
 
 </div>
 
 <div class="chat-footer">
-    <button onclick="responder()">Sí, necesito mis credenciales</button>
+<input type="text" id="cedula" placeholder="Escribe tu cédula">
+<button class="send-btn" onclick="enviarCedula()">➤</button>
 </div>
-```
 
 </div>
 
 <script>
-function responder() {
-    const chat = document.getElementById("chat");
+function enviarCedula() {
+    let cedula = document.getElementById("cedula").value;
+    let chat = document.getElementById("chat");
 
+    if (cedula === "") {
+        alert("Ingresa tu cédula");
+        return;
+    }
+
+    // Mensaje usuario
     chat.innerHTML += `
-    <div class="bot-message">
-        <img src="/static/avatar.png">
-        <div class="message">
-            Perfecto 👍<br>
-            Ingresa tu número de documento en el sistema principal para enviarte las credenciales a tu correo institucional 📧
+    <div style="text-align:right; margin-bottom:10px;">
+        <div style="display:inline-block; background:#0b3c6f; color:white; padding:10px; border-radius:10px;">
+            ${cedula}
         </div>
     </div>
     `;
+
+    fetch("/consultar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ cedula: cedula })
+    })
+    .then(res => res.json())
+    .then(data => {
+
+        if (data.success) {
+            chat.innerHTML += `
+            <div class="bot-message">
+                <img src="/static/avatar.png">
+                <div class="message">
+                    👋 Hola <b>${data.nombre}</b><br><br>
+                    📧 Tus credenciales serán enviadas a tu correo institucional:<br>
+                    <b>${data.correo}</b><br><br>
+                    🔐 Estas credenciales aplican para:<br>
+                    SIGA - KAWAK - SIPA HCM
+                </div>
+            </div>
+            `;
+        } else {
+            chat.innerHTML += `
+            <div class="bot-message">
+                <img src="/static/avatar.png">
+                <div class="message">
+                    ❌ No encontramos esa cédula
+                </div>
+            </div>
+            `;
+        }
+
+        chat.scrollTop = chat.scrollHeight;
+    });
+
+    document.getElementById("cedula").value = "";
 }
 </script>
 
