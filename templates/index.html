@@ -6,12 +6,13 @@
 
 <style>
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #0b3c6f, #1e5fa3);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
 .chat-container {
@@ -28,12 +29,14 @@ body {
     padding: 15px;
     text-align: center;
     font-weight: bold;
+    font-size: 18px;
 }
 
 .chat-body {
     padding: 15px;
-    height: 350px;
+    height: 400px;
     overflow-y: auto;
+    background: #f5f7fb;
 }
 
 .bot-message {
@@ -42,41 +45,73 @@ body {
 }
 
 .bot-message img {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     margin-right: 10px;
     border-radius: 50%;
 }
 
 .message {
-    background: #f1f1f1;
+    background: white;
     padding: 12px;
-    border-radius: 12px;
+    border-radius: 15px;
     max-width: 75%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.user-message {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.user-bubble {
+    display: inline-block;
+    background: #0b3c6f;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 80%;
 }
 
 .chat-footer {
     display: flex;
-    padding: 10px;
-    border-top: 1px solid #ddd;
+    padding: 12px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
 }
 
 input {
     flex: 1;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 12px;
+    border-radius: 25px;
     border: 1px solid #ccc;
+    font-size: 14px;
 }
 
 .send-btn {
     background: #d4af37;
     border: none;
-    margin-left: 5px;
-    padding: 10px 14px;
-    border-radius: 10px;
+    margin-left: 8px;
+    padding: 12px 18px;
+    border-radius: 25px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0b3c6f;
 }
 
+.send-btn:hover {
+    background: #b8962e;
+}
+
+.footer-text {
+    text-align: center;
+    padding: 10px;
+    font-size: 11px;
+    color: #888;
+    background: white;
+    border-top: 1px solid #eee;
+}
 </style>
 </head>
 
@@ -85,68 +120,85 @@ input {
 <div class="chat-container">
 
 <div class="chat-header">
-🎓 CREDU Asistente
+🎓 CREDU - Asistente Virtual
 </div>
 
 <div class="chat-body" id="chat">
 
 <div class="bot-message">
-<img src="{{ url_for('static', filename='avatar.png') }}">
+<img src="/static/avatar.png">
 <div class="message">
-Hola 👋, soy <b>CREDU</b><br>
-Ingresa tu cédula para ayudarte con tus credenciales
+👋 Hola, soy <b>CREDU</b><br>
+Ingresa tu número de cédula y te ayudaré con tus credenciales.
 </div>
 </div>
 
 </div>
 
 <div class="chat-footer">
-<input type="text" id="cedula" placeholder="Escribe tu cédula">
-<button class="send-btn" onclick="enviarCedula()">➤</button>
+<input type="text" id="cedula" placeholder="Escribe tu cédula aquí" autocomplete="off">
+<button class="send-btn" onclick="enviarCedula()">➤ Enviar</button>
+</div>
+
+<div class="footer-text">
+Uniagustiniana es creer en ti
 </div>
 
 </div>
 
 <script>
 function enviarCedula() {
-    let cedula = document.getElementById("cedula").value;
+    let cedula = document.getElementById("cedula").value.trim();
     let chat = document.getElementById("chat");
 
     if (cedula === "") {
-        alert("Ingresa tu cédula");
+        alert("Por favor ingresa tu cédula");
         return;
     }
 
-    // Mensaje usuario
+    // Mostrar mensaje del usuario
     chat.innerHTML += `
-    <div style="text-align:right; margin-bottom:10px;">
-        <div style="display:inline-block; background:#0b3c6f; color:white; padding:10px; border-radius:10px;">
+    <div class="user-message">
+        <div class="user-bubble">
             ${cedula}
         </div>
     </div>
     `;
 
+    // Limpiar input
+    document.getElementById("cedula").value = "";
+
+    // Mostrar "cargando..."
+    chat.innerHTML += `
+    <div class="bot-message" id="loading">
+        <img src="/static/avatar.png">
+        <div class="message">
+            ⏳ Verificando...
+        </div>
+    </div>
+    `;
+    chat.scrollTop = chat.scrollHeight;
+
+    // Consultar al backend
     fetch("/consultar", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ cedula: cedula })
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data);
+        document.getElementById("loading")?.remove();
 
         if (data.success) {
             chat.innerHTML += `
             <div class="bot-message">
                 <img src="/static/avatar.png">
                 <div class="message">
-                    👋 Hola <b>${data.nombre}</b><br><br>
-                    📧 Tus credenciales serán enviadas a tu correo institucional:<br>
-                    <b>${data.correo}</b><br><br>
-                    🔐 Aplican para:<br>
-                    SIGA - KAWAK - SIPA HCM
+                    <b>👋 ¡Hola ${data.nombre}!</b><br><br>
+                    ✅ Tus credenciales han sido enviadas a tu correo institucional:<br>
+                    <b>📧 ${data.correo}</b><br><br>
+                    🔐 Estas credenciales aplican para:<br>
+                    <b>SIGA - KAWAK - SIPA HCM</b>
                 </div>
             </div>
             `;
@@ -155,16 +207,26 @@ function enviarCedula() {
             <div class="bot-message">
                 <img src="/static/avatar.png">
                 <div class="message">
-                    ❌ No encontramos esa cédula
+                    ❌ No encontramos ninguna cuenta con la cédula <b>${cedula}</b><br><br>
+                    Contacta a: <b>an.sistemasdeinformacion@uniagustiniana.edu.co</b>
                 </div>
             </div>
             `;
         }
-
+        chat.scrollTop = chat.scrollHeight;
+    })
+    .catch(error => {
+        document.getElementById("loading")?.remove();
+        chat.innerHTML += `
+        <div class="bot-message">
+            <img src="/static/avatar.png">
+            <div class="message">
+                ⚠️ Error de conexión. Intenta nuevamente.
+            </div>
+        </div>
+        `;
         chat.scrollTop = chat.scrollHeight;
     });
-
-    document.getElementById("cedula").value = "";
 }
 </script>
 
