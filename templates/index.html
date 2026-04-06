@@ -1,116 +1,122 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>CREDU</title>
 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CREDU Chat</title>
     <style>
         body {
             font-family: Arial;
-            background: linear-gradient(135deg, #1F2A5A, #2E3E8C);
-            color: white;
-            text-align: center;
-            padding-top: 60px;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        .icono {
-            font-size: 50px;
-            animation: flotar 2s ease-in-out infinite;
-            margin-bottom: 10px;
-        }
+```
+    .chat-container {
+        width: 350px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        overflow: hidden;
+    }
 
-        @keyframes flotar {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
-        }
+    .chat-header {
+        background: #003366;
+        color: white;
+        padding: 15px;
+        text-align: center;
+    }
 
-        .logo {
-            font-size: 40px;
-            font-weight: bold;
-            color: #D4A437;
-            letter-spacing: 2px;
-        }
+    .chat-body {
+        padding: 15px;
+        height: 300px;
+        overflow-y: auto;
+    }
 
-        .subtitulo {
-            font-size: 14px;
-            margin-bottom: 30px;
-            color: #ddd;
-        }
+    .bot-message {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
 
-        .container {
-            background: white;
-            color: #333;
-            width: 350px;
-            margin: auto;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
-            animation: aparecer 0.8s ease;
-        }
+    .bot-message img {
+        width: 40px;
+        margin-right: 10px;
+    }
 
-        @keyframes aparecer {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .message {
+        background: #e6e6e6;
+        padding: 10px;
+        border-radius: 10px;
+    }
 
-        input {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
+    .chat-footer {
+        padding: 10px;
+        text-align: center;
+    }
 
-        button {
-            background-color: #D4A437;
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            cursor: pointer;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+    button {
+        background: #003366;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
 
-        button:hover {
-            background-color: #b8932f;
-        }
+    button:hover {
+        background: #0055aa;
+    }
+</style>
+```
 
-        .footer {
-            margin-top: 40px;
-            font-size: 22px;
-            font-weight: bold;
-            color: #FFD700;
-        }
-    </style>
 </head>
-
 <body>
 
-    <div class="icono">🎓</div>
-    <div class="logo">CREDU</div>
-    <div class="subtitulo">Sistema de Credenciales Uniagustiniana</div>
+<div class="chat-container">
 
-    <div class="container">
+```
+<div class="chat-header">
+    🎓 CREDU Asistente
+</div>
 
-        <h3>Consultar mis credenciales</h3>
+<div class="chat-body" id="chat">
 
-        <form action="/consultar" method="POST">
-            <input type="text" name="cedula" placeholder="Ingrese su cédula" required>
-            <button type="submit">Consultar</button>
-        </form>
-
+    <div class="bot-message">
+        <img src="{{ url_for('static', filename='avatar.png') }}">
+        <div class="message">
+            Hola 👋, soy <b>CREDU</b><br>
+            ¿Necesitas consultar tus credenciales institucionales?
+        </div>
     </div>
 
-    <div class="footer">
-        Uniagustiniana es creer en ti
+</div>
+
+<div class="chat-footer">
+    <button onclick="responder()">Sí, necesito mis credenciales</button>
+</div>
+```
+
+</div>
+
+<script>
+function responder() {
+    const chat = document.getElementById("chat");
+
+    chat.innerHTML += `
+    <div class="bot-message">
+        <img src="/static/avatar.png">
+        <div class="message">
+            Perfecto 👍<br>
+            Ingresa tu número de documento en el sistema principal para enviarte las credenciales a tu correo institucional 📧
+        </div>
     </div>
+    `;
+}
+</script>
 
 </body>
 </html>
