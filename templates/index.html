@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>CREDU - Asistente</title>
-
 <style>
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
@@ -15,7 +14,6 @@ body {
     margin: 0;
     padding: 10px;
 }
-
 .chat-container {
     width: 100%;
     max-width: 450px;
@@ -24,7 +22,6 @@ body {
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     overflow: hidden;
 }
-
 .chat-header {
     background: #0b3c6f;
     color: white;
@@ -33,7 +30,6 @@ body {
     font-weight: bold;
     font-size: 18px;
 }
-
 .chat-body {
     padding: 15px;
     height: 450px;
@@ -43,20 +39,17 @@ body {
     flex-direction: column;
     gap: 12px;
 }
-
 .bot-message {
     display: flex;
     gap: 10px;
     align-items: flex-start;
 }
-
 .bot-message img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
     object-fit: cover;
 }
-
 .message {
     background: white;
     padding: 12px 15px;
@@ -66,11 +59,9 @@ body {
     word-wrap: break-word;
     line-height: 1.4;
 }
-
 .user-message {
     text-align: right;
 }
-
 .user-bubble {
     display: inline-block;
     background: #0b3c6f;
@@ -80,7 +71,6 @@ body {
     max-width: 80%;
     word-wrap: break-word;
 }
-
 .alerta-personalizada {
     background: #fff3cd;
     border-left: 4px solid #ffc107;
@@ -90,7 +80,6 @@ body {
     font-size: 13px;
     color: #856404;
 }
-
 .chat-footer {
     display: flex;
     padding: 12px;
@@ -98,7 +87,6 @@ body {
     border-top: 1px solid #e0e0e0;
     gap: 8px;
 }
-
 input {
     flex: 1;
     padding: 12px;
@@ -106,7 +94,6 @@ input {
     border: 1px solid #ccc;
     font-size: 14px;
 }
-
 .send-btn {
     background: #d4af37;
     border: none;
@@ -117,11 +104,9 @@ input {
     color: #0b3c6f;
     font-size: 14px;
 }
-
 .send-btn:hover {
     background: #b8962e;
 }
-
 .footer-text {
     text-align: center;
     padding: 10px;
@@ -132,17 +117,10 @@ input {
 }
 </style>
 </head>
-
 <body>
-
 <div class="chat-container">
-
-<div class="chat-header">
-🎓 CREDU - Asistente Virtual
-</div>
-
+<div class="chat-header">🎓 CREDU - Asistente Virtual</div>
 <div class="chat-body" id="chat">
-
 <div class="bot-message">
 <img src="/static/avatar.png">
 <div class="message">
@@ -151,127 +129,48 @@ Te ayudo a obtener tus credenciales institucionales.<br><br>
 📌 Por favor, ingresa tu número de cédula.
 </div>
 </div>
-
 </div>
-
 <div class="chat-footer">
 <input type="text" id="cedula" placeholder="Ej: 12345678" autocomplete="off">
 <button class="send-btn" onclick="enviarCedula()">➤ Enviar</button>
 </div>
-
-<div class="footer-text">
-Uniagustiniana es creer en ti
+<div class="footer-text">Uniagustiniana es creer en ti</div>
 </div>
-
-</div>
-
 <script>
 function enviarCedula() {
     let cedula = document.getElementById("cedula").value.trim();
     let chat = document.getElementById("chat");
-
-    if (cedula === "") {
-        alert("Por favor ingresa tu cédula");
-        return;
-    }
-
-    // Mensaje del usuario
-    chat.innerHTML += `
-    <div class="user-message">
-        <div class="user-bubble">
-            ${cedula}
-        </div>
-    </div>
-    `;
-
+    if (cedula === "") { alert("Por favor ingresa tu cédula"); return; }
+    chat.innerHTML += `<div class="user-message"><div class="user-bubble">${cedula}</div></div>`;
     document.getElementById("cedula").value = "";
-
-    // Indicador de carga
-    chat.innerHTML += `
-    <div class="bot-message" id="loading">
-        <img src="/static/avatar.png">
-        <div class="message">
-            ⏳ Verificando...
-        </div>
-    </div>
-    `;
+    chat.innerHTML += `<div class="bot-message" id="loading"><img src="/static/avatar.png"><div class="message">⏳ Verificando...</div></div>`;
     chat.scrollTop = chat.scrollHeight;
-
-    // Enviar petición al backend
     fetch("/consultar", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ cedula: cedula })
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Error HTTP: " + response.status);
-        }
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
         document.getElementById("loading")?.remove();
-
         if (data.success) {
             let mensajeAdicional = "";
             let estadoEnvio = data.enviado ? "✅ Correo enviado correctamente" : "⚠️ No se pudo enviar el correo. Contacta a Tecnologías.";
-            
             if (data.personalizada) {
-                mensajeAdicional = `
-                <div class="alerta-personalizada">
-                    ⚠️ <strong>Tu contraseña fue personalizada por ti mismo</strong><br><br>
-                    En caso de que no la recuerdes, debes acercarte a la oficina de Tecnologías<br>
-                    o escribir al correo:<br>
-                    <strong>an.sistemasdeinformacion@uniagustiniana.edu.co</strong>
-                </div>
-                `;
+                mensajeAdicional = `<div class="alerta-personalizada">⚠️ <strong>Tu contraseña fue personalizada por ti mismo</strong><br><br>En caso de que no la recuerdes, debes acercarte a la oficina de Tecnologías<br>o escribir al correo:<br><strong>an.sistemasdeinformacion@uniagustiniana.edu.co</strong></div>`;
             }
-
-            chat.innerHTML += `
-            <div class="bot-message">
-                <img src="/static/avatar.png">
-                <div class="message">
-                    <b>✅ ¡Hola ${data.nombre}!</b><br><br>
-                    📧 ${estadoEnvio}<br>
-                    📬 Revisa tu correo: <strong>${data.correo}</strong><br><br>
-                    <strong>🔐 Estas credenciales aplican para:</strong><br>
-                    <b>SIGA - KAWAK - SIPA HCM</b>
-                    ${mensajeAdicional}
-                </div>
-            </div>
-            `;
+            chat.innerHTML += `<div class="bot-message"><img src="/static/avatar.png"><div class="message"><b>✅ ¡Hola ${data.nombre}!</b><br><br>📧 ${estadoEnvio}<br>📬 Revisa tu correo: <strong>${data.correo}</strong><br><br><strong>🔐 Estas credenciales aplican para:</strong><br><b>SIGA - KAWAK - SIPA HCM</b>${mensajeAdicional}</div></div>`;
         } else {
-            chat.innerHTML += `
-            <div class="bot-message">
-                <img src="/static/avatar.png">
-                <div class="message">
-                    ❌ No encontramos ninguna cuenta con la cédula <b>${cedula}</b><br><br>
-                    Contacta a: <b>an.sistemasdeinformacion@uniagustiniana.edu.co</b>
-                </div>
-            </div>
-            `;
+            chat.innerHTML += `<div class="bot-message"><img src="/static/avatar.png"><div class="message">❌ No encontramos ninguna cuenta con la cédula <b>${cedula}</b><br><br>Contacta a: <b>an.sistemasdeinformacion@uniagustiniana.edu.co</b></div></div>`;
         }
         chat.scrollTop = chat.scrollHeight;
     })
     .catch(error => {
         document.getElementById("loading")?.remove();
-        console.error("Error detallado:", error);
-        chat.innerHTML += `
-        <div class="bot-message">
-            <img src="/static/avatar.png">
-            <div class="message">
-                ⚠️ Error de conexión. Intenta nuevamente.<br><br>
-                <strong>Detalle técnico:</strong> ${error.message}<br><br>
-                Si el problema persiste, contacta a: <strong>an.sistemasdeinformacion@uniagustiniana.edu.co</strong>
-            </div>
-        </div>
-        `;
+        chat.innerHTML += `<div class="bot-message"><img src="/static/avatar.png"><div class="message">⚠️ Error de conexión. Intenta nuevamente.</div></div>`;
         chat.scrollTop = chat.scrollHeight;
     });
 }
 </script>
-
 </body>
 </html>

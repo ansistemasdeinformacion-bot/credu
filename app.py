@@ -4,23 +4,25 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import time
 
 app = Flask(__name__)
 app.secret_key = "clave_secreta_credu_2026"
 
 # =====================================================
-# CONFIGURACIÓN DE CORREO - YA CONTRASEÑA LISTA
+# CONFIGURACIÓN DE CORREO - CORREGIDA (SSL)
 # =====================================================
 EMAIL_SENDER = "an.sistemasdeinformacion@uniagustiniana.edu.co"
 EMAIL_PASSWORD = "hvnp lihx okqa bzyj"
-SMTP_SERVER = "smtp.gmail.com"
-SMTP_PORT = 587
+EMAIL_SERVER = "smtp.gmail.com"
+EMAIL_PORT = 465  # Puerto SSL (no 587)
 # =====================================================
 
 # Cargar Excel
 df = pd.read_excel("docentes.xlsx")
 
 def enviar_correo_credenciales(destinatario, nombre, cedula, contraseña, personalizada):
+    """Envía correo con credenciales usando SSL"""
     try:
         asunto = "🔐 Tus credenciales institucionales - CREDU"
         
@@ -77,8 +79,8 @@ def enviar_correo_credenciales(destinatario, nombre, cedula, contraseña, person
         msg['To'] = destinatario
         msg.attach(MIMEText(cuerpo_html, 'html'))
         
-        server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
-        server.starttls()
+        # Usar SSL (puerto 465) en lugar de TLS
+        server = smtplib.SMTP_SSL(EMAIL_SERVER, EMAIL_PORT, timeout=30)
         server.login(EMAIL_SENDER, EMAIL_PASSWORD)
         server.send_message(msg)
         server.quit()
@@ -157,7 +159,7 @@ def consultar():
         })
         
     except Exception as e:
-        print("ERROR:", e)
+        print(f"ERROR en consulta: {e}")
         return jsonify({"success": False})
 
 if __name__ == "__main__":

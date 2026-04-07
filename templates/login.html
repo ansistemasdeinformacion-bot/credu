@@ -5,7 +5,7 @@
 <title>CREDU - Acceso</title>
 <style>
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     background: linear-gradient(135deg, #0b3c6f, #1e5fa3);
     display: flex;
     justify-content: center;
@@ -19,6 +19,10 @@ body {
     border-radius: 20px;
     text-align: center;
     width: 350px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+.login-container h1 {
+    color: #0b3c6f;
 }
 input {
     width: 90%;
@@ -26,6 +30,7 @@ input {
     margin: 10px 0;
     border-radius: 25px;
     border: 1px solid #ccc;
+    font-size: 14px;
 }
 button {
     background: #d4af37;
@@ -35,6 +40,10 @@ button {
     cursor: pointer;
     font-weight: bold;
     color: #0b3c6f;
+    font-size: 16px;
+}
+button:hover {
+    background: #b8962e;
 }
 .error {
     color: red;
