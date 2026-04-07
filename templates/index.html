@@ -91,15 +91,6 @@ body {
     color: #856404;
 }
 
-.correo-destacado {
-    background: #e8f0fe;
-    padding: 8px 12px;
-    border-radius: 12px;
-    display: inline-block;
-    margin: 8px 0;
-    word-break: break-all;
-}
-
 .chat-footer {
     display: flex;
     padding: 12px;
@@ -206,17 +197,27 @@ function enviarCedula() {
     `;
     chat.scrollTop = chat.scrollHeight;
 
+    // Enviar petición al backend
     fetch("/consultar", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify({ cedula: cedula })
     })
-    .then(res => res.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Error HTTP: " + response.status);
+        }
+        return response.json();
+    })
     .then(data => {
         document.getElementById("loading")?.remove();
 
         if (data.success) {
             let mensajeAdicional = "";
+            let estadoEnvio = data.enviado ? "✅ Correo enviado correctamente" : "⚠️ No se pudo enviar el correo. Contacta a Tecnologías.";
+            
             if (data.personalizada) {
                 mensajeAdicional = `
                 <div class="alerta-personalizada">
@@ -233,8 +234,8 @@ function enviarCedula() {
                 <img src="/static/avatar.png">
                 <div class="message">
                     <b>✅ ¡Hola ${data.nombre}!</b><br><br>
-                    📧 Tus credenciales han sido enviadas a tu correo institucional:<br>
-                    <div class="correo-destacado">${data.correo}</div><br>
+                    📧 ${estadoEnvio}<br>
+                    📬 Revisa tu correo: <strong>${data.correo}</strong><br><br>
                     <strong>🔐 Estas credenciales aplican para:</strong><br>
                     <b>SIGA - KAWAK - SIPA HCM</b>
                     ${mensajeAdicional}
@@ -256,11 +257,14 @@ function enviarCedula() {
     })
     .catch(error => {
         document.getElementById("loading")?.remove();
+        console.error("Error detallado:", error);
         chat.innerHTML += `
         <div class="bot-message">
             <img src="/static/avatar.png">
             <div class="message">
-                ⚠️ Error de conexión. Intenta nuevamente.
+                ⚠️ Error de conexión. Intenta nuevamente.<br><br>
+                <strong>Detalle técnico:</strong> ${error.message}<br><br>
+                Si el problema persiste, contacta a: <strong>an.sistemasdeinformacion@uniagustiniana.edu.co</strong>
             </div>
         </div>
         `;
