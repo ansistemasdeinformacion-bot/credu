@@ -18,7 +18,7 @@ body {
 
 .chat-container {
     width: 100%;
-    max-width: 420px;
+    max-width: 450px;
     background: white;
     border-radius: 20px;
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
@@ -61,7 +61,7 @@ body {
     background: white;
     padding: 12px 15px;
     border-radius: 18px;
-    max-width: 75%;
+    max-width: 85%;
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
     word-wrap: break-word;
     line-height: 1.4;
@@ -81,13 +81,14 @@ body {
     word-wrap: break-word;
 }
 
-.correo {
-    word-break: break-all;
-    background: #f0f0f0;
-    padding: 4px 8px;
-    border-radius: 12px;
-    display: inline-block;
+.alerta-personalizada {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 10px;
+    margin-top: 12px;
+    border-radius: 8px;
     font-size: 13px;
+    color: #856404;
 }
 
 .chat-footer {
@@ -206,15 +207,29 @@ function enviarCedula() {
         document.getElementById("loading")?.remove();
 
         if (data.success) {
+            let mensajeAlerta = "";
+            if (data.personalizada) {
+                mensajeAlerta = `
+                <div class="alerta-personalizada">
+                    ⚠️ <strong>Tu contraseña fue personalizada por ti mismo</strong><br><br>
+                    En caso de que no la recuerdes, debes acercarte a la oficina de Tecnologías<br>
+                    o escribir al correo:<br>
+                    <strong>an.sistemasdeinformacion@uniagustiniana.edu.co</strong>
+                </div>
+                `;
+            }
+
             chat.innerHTML += `
             <div class="bot-message">
                 <img src="/static/avatar.png">
                 <div class="message">
                     <b>✅ ¡Hola ${data.nombre}!</b><br><br>
                     📧 Tus credenciales han sido enviadas a tu correo institucional:<br>
-                    <span class="correo">${data.correo}</span><br><br>
-                    🔐 Estas credenciales aplican para:<br>
+                    <b>${data.correo}</b><br><br>
+                    🔐 <strong>Contraseña:</strong> ${data.contraseña}<br><br>
+                    <strong>🔐 Estas credenciales aplican para:</strong><br>
                     <b>SIGA - KAWAK - SIPA HCM</b>
+                    ${mensajeAlerta}
                 </div>
             </div>
             `;
