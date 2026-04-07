@@ -3,101 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <title>CREDU - Acceso</title>
-
 <style>
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #0b3c6f, #1e5fa3);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    padding: 10px;
 }
-
 .login-container {
-    width: 100%;
-    max-width: 400px;
     background: white;
+    padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-    overflow: hidden;
     text-align: center;
-    padding: 30px;
+    width: 350px;
 }
-
-.login-container img {
-    width: 80px;
-    margin-bottom: 20px;
-}
-
-.login-container h1 {
-    color: #0b3c6f;
-    margin-bottom: 10px;
-}
-
-.login-container p {
-    color: #666;
-    margin-bottom: 25px;
-}
-
 input {
     width: 90%;
     padding: 12px;
     margin: 10px 0;
-    border-radius: 30px;
+    border-radius: 25px;
     border: 1px solid #ccc;
-    font-size: 14px;
 }
-
 button {
     background: #d4af37;
     border: none;
     padding: 12px 25px;
-    border-radius: 30px;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
     color: #0b3c6f;
-    font-size: 16px;
-    margin-top: 15px;
 }
-
-button:hover {
-    background: #b8962e;
-}
-
 .error {
     color: red;
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-.footer-text {
-    margin-top: 20px;
-    font-size: 11px;
-    color: #888;
+    margin-top: 10px;
 }
 </style>
 </head>
-
 <body>
-
 <div class="login-container">
-    <img src="/static/avatar.png" alt="CREDU">
     <h1>🎓 CREDU</h1>
     <p>Sistema de Credenciales Uniagustiniana</p>
-
     <form action="/login" method="POST">
-        <input type="email" name="correo" placeholder="correo@uniagustiniana.edu.co" required autocomplete="off">
+        <input type="email" name="correo" placeholder="correo@uniagustiniana.edu.co" required>
         <button type="submit">Ingresar</button>
     </form>
-
-    <div class="footer-text">
-        Solo docentes con correo institucional<br>
-        Uniagustiniana es creer en ti
-    </div>
+    <div class="error">{{ error }}</div>
 </div>
-
 </body>
 </html>
