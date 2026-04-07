@@ -2,64 +2,165 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>CREDU - Acceso</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CREDU - Acceso Institucional</title>
 <style>
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #0b3c6f, #1e5fa3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-.login-container {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    width: 350px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-}
-.login-container h1 {
-    color: #0b3c6f;
-}
-input {
-    width: 90%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-}
-button {
-    background: #d4af37;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #0b3c6f;
-    font-size: 16px;
-}
-button:hover {
-    background: #b8962e;
-}
-.error {
-    color: red;
-    margin-top: 10px;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+        background: linear-gradient(145deg, #0a2a66 0%, #1a4fb3 50%, #0d3a8a 100%);
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    body::before {
+        content: "🎓";
+        font-size: 280px;
+        position: absolute;
+        bottom: -50px;
+        right: -60px;
+        opacity: 0.04;
+        pointer-events: none;
+    }
+
+    .login-container {
+        background: rgba(255, 255, 255, 0.98);
+        padding: 40px 32px;
+        border-radius: 48px;
+        text-align: center;
+        width: 100%;
+        max-width: 420px;
+        box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(2px);
+        animation: fadeInUp 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        transition: transform 0.3s ease;
+    }
+
+    .login-container:hover {
+        transform: translateY(-5px);
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .avatar {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        border: 3px solid #d4af37;
+        transition: transform 0.3s ease;
+    }
+
+    .avatar:hover {
+        transform: scale(1.05);
+    }
+
+    .login-container h1 {
+        color: #0b3c6f;
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+        letter-spacing: 2px;
+    }
+
+    .login-container p {
+        color: #64748b;
+        margin-bottom: 28px;
+        font-size: 0.9rem;
+    }
+
+    input {
+        width: 100%;
+        padding: 14px 18px;
+        margin: 10px 0;
+        border-radius: 50px;
+        border: 1.5px solid #e2e8f0;
+        font-size: 14px;
+        font-family: inherit;
+        transition: all 0.3s ease;
+        background: #f8fafc;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #d4af37;
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        background: white;
+    }
+
+    button {
+        background: linear-gradient(135deg, #d4af37, #b8962e);
+        border: none;
+        padding: 14px 28px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: bold;
+        color: #0b3c6f;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 16px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(135deg, #e5c245, #c9a52e);
+    }
+
+    .error {
+        color: #dc2626;
+        margin-top: 16px;
+        font-size: 13px;
+        background: #fef2f2;
+        padding: 10px;
+        border-radius: 30px;
+    }
+
+    .footer-text {
+        margin-top: 24px;
+        font-size: 11px;
+        color: #94a3b8;
+        border-top: 1px solid #f0f2f5;
+        padding-top: 20px;
+    }
 </style>
 </head>
 <body>
 <div class="login-container">
+    <img src="/static/avatar.png" class="avatar" alt="CREDU">
     <h1>🎓 CREDU</h1>
-    <p>Sistema de Credenciales Uniagustiniana</p>
+    <p>Sistema de Credenciales Institucionales</p>
     <form action="/login" method="POST">
-        <input type="email" name="correo" placeholder="correo@uniagustiniana.edu.co" required>
-        <button type="submit">Ingresar</button>
+        <input type="email" name="correo" placeholder="📧 correo@uniagustiniana.edu.co" required autocomplete="off">
+        <button type="submit">🔐 Ingresar</button>
     </form>
     <div class="error">{{ error }}</div>
+    <div class="footer-text">
+        🌟 Solo docentes con correo institucional 🌟<br>
+        Uniagustiniana es creer en ti
+    </div>
 </div>
 </body>
 </html>
