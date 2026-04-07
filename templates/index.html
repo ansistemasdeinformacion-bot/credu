@@ -327,7 +327,7 @@
 <script>
 let nombreCompleto = "";
 let primerNombre = "";
-let genero = "docente"; // por defecto
+let genero = "docente";
 
 function obtenerPrimerNombre(nombreCompleto) {
     let partes = nombreCompleto.trim().split(" ");
@@ -336,8 +336,29 @@ function obtenerPrimerNombre(nombreCompleto) {
 
 function detectarGenero(nombreCompleto) {
     let nombre = obtenerPrimerNombre(nombreCompleto).toLowerCase();
-    // Lista de nombres femeninos comunes (puedes ampliarla)
-    let femeninos = ["maria", "ana", "luz", "kelly", "andrea", "carolina", "lina", "paula", "diana", "claudia", "sandra", "patricia", "lorena", "martha", "gloria", "yolanda", "liliana", "angela", "monica", "johanna", "natalia", "viviana", "laura", "catalina", "daniela", "alejandra", "tatiana", "veronica", "beatriz", "eliana", "yuly", "leidy", "lizeth", "karen", "juliana", "estefania", "yessica", "dayana", "melissa", "valentina", "sofia", "camila", "valeria", "mariana", "isabella", "luciana", "fernanda", "julieta", "ximena", "adriana"];
+    // Lista ampliada de nombres femeninos
+    let femeninos = [
+        "maria", "ana", "luz", "kelly", "andrea", "carolina", "lina", "paula",
+        "diana", "claudia", "sandra", "patricia", "lorena", "martha", "gloria",
+        "yolanda", "liliana", "angela", "monica", "johanna", "natalia", "viviana",
+        "laura", "catalina", "daniela", "alejandra", "tatiana", "veronica",
+        "beatriz", "eliana", "yuly", "leidy", "lizeth", "karen", "juliana",
+        "estefania", "yessica", "dayana", "melissa", "valentina", "sofia",
+        "camila", "valeria", "mariana", "isabella", "luciana", "fernanda",
+        "julieta", "ximena", "adriana", "amanda", "zulma", "leonor", "mirta",
+        "enith", "gladys", "yuby", "yuli", "yohanna", "isabel", "briggitte",
+        "maribel", "yolima", "monica", "barbara", "esperanza", "solangel",
+        "sonia", "luz marina", "adriana", "lina marcela", "kelly luz",
+        "angela maria", "maria angelica", "luz maria", "ana maria",
+        "luz estella", "maria del pilar", "nury", "nidia", "ruby", "luz dary",
+        "clara", "luz dined", "luz helena", "luz marina", "luz mary",
+        "luz adriana", "luz amparo", "luz angela", "luz carime",
+        "luz elena", "luz eliana", "luz emilia", "luz enith", "luz esneda",
+        "luz esther", "luz fabiola", "luz fernanda", "luz helena", "luz janeth",
+        "luz karime", "luz mery", "luz mila", "luz milena", "luz nereida",
+        "luz patricia", "luz rocio", "luz sandra", "luz stella", "luz yaneth",
+        "luz yolanda", "luz zaida"
+    ];
     return femeninos.includes(nombre) ? "estimada docente" : "estimado docente";
 }
 
@@ -361,7 +382,6 @@ function mostrarPreguntaFinal() {
 }
 
 function respuestaSi() {
-    // Cerrar sesión y redirigir al login para nueva consulta
     fetch("/logout", { method: "GET" })
     .then(() => {
         window.location.href = "/login";
@@ -385,7 +405,6 @@ function respuestaNo() {
     `;
     chat.scrollTop = chat.scrollHeight;
     
-    // Deshabilitar input y botón después de despedida
     document.getElementById("cedula").disabled = true;
     document.querySelector(".send-btn").disabled = true;
 }
@@ -450,7 +469,7 @@ function enviarCedula() {
             <div class="bot-message">
                 <img src="/static/avatar.png" class="bot-avatar" alt="CREDU">
                 <div class="message">
-                    <b>✨ ${genero === "estimada docente" ? "¡Hola estimada docente" : "¡Hola estimado docente"} ${primerNombre}!</b><br><br>
+                    <b>✨ ¡Hola ${genero} ${primerNombre}!</b><br><br>
                     📧 <strong>${estadoEnvio}</strong><br>
                     📬 Se envió el usuario y la contraseña para las plataformas:<br>
                     <span style="background:#e8f0fe; padding:4px 12px; border-radius:20px; display:inline-block;">SIGA · KAWAK · SIPA HCM</span><br>
