@@ -4,25 +4,23 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import time
 
 app = Flask(__name__)
 app.secret_key = "clave_secreta_credu_2026"
 
 # =====================================================
-# CONFIGURACIÓN DE CORREO - CORREGIDA (SSL)
+# CONFIGURACIÓN DE CORREO - YA CORREGIDA
 # =====================================================
 EMAIL_SENDER = "an.sistemasdeinformacion@uniagustiniana.edu.co"
-EMAIL_PASSWORD = "hvnp lihx okqa bzyj"
+EMAIL_PASSWORD = "hvnp lihx okqa bzyj"  # Contraseña de aplicación
 EMAIL_SERVER = "smtp.gmail.com"
-EMAIL_PORT = 465  # Puerto SSL (no 587)
 # =====================================================
 
 # Cargar Excel
 df = pd.read_excel("docentes.xlsx")
 
 def enviar_correo_credenciales(destinatario, nombre, cedula, contraseña, personalizada):
-    """Envía correo con credenciales usando SSL"""
+    """Envía correo con credenciales usando TLS"""
     try:
         asunto = "🔐 Tus credenciales institucionales - CREDU"
         
@@ -79,9 +77,14 @@ def enviar_correo_credenciales(destinatario, nombre, cedula, contraseña, person
         msg['To'] = destinatario
         msg.attach(MIMEText(cuerpo_html, 'html'))
         
-        # Usar SSL (puerto 465) en lugar de TLS
-        server = smtplib.SMTP_SSL(EMAIL_SERVER, EMAIL_PORT, timeout=30)
-        server.login(EMAIL_SENDER, EMAIL_PASSWORD)
+        # Conectar a Gmail con TLS
+        server = smtplib.SMTP(EMAIL_SERVER, 587)
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
+        # Quitar espacios de la contraseña de aplicación
+        password_clean = EMAIL_PASSWORD.replace(" ", "")
+        server.login(EMAIL_SENDER, password_clean)
         server.send_message(msg)
         server.quit()
         
@@ -93,6 +96,7 @@ def enviar_correo_credenciales(destinatario, nombre, cedula, contraseña, person
         return False
 
 def es_personalizada(contraseña):
+    """Detecta si la contraseña es personalizada"""
     if pd.isna(contraseña):
         return False
     texto = str(contraseña).lower().strip()
@@ -100,18 +104,22 @@ def es_personalizada(contraseña):
 
 @app.route("/")
 def index():
+    """Página principal (chat) - requiere login"""
     if 'correo' not in session:
         return redirect(url_for('login_page'))
     return render_template("index.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login_page():
+    """Pantalla de login con correo institucional"""
     if request.method == "POST":
         correo = request.form.get("correo", "").strip().lower()
         
+        # Validar dominio institucional
         if not correo.endswith("@uniagustiniana.edu.co"):
             return render_template("login.html", error="❌ Debes usar tu correo institucional (@uniagustiniana.edu.co)")
         
+        # Verificar si el correo existe en el Excel
         existe = df[df["CORREO INSTITUCIONAL"].astype(str).str.lower().str.strip() == correo]
         
         if existe.empty:
@@ -124,11 +132,13 @@ def login_page():
 
 @app.route("/logout")
 def logout():
+    """Cerrar sesión"""
     session.clear()
     return redirect(url_for('login_page'))
 
 @app.route("/consultar", methods=["POST"])
 def consultar():
+    """Consulta credenciales del docente"""
     if 'correo' not in session:
         return jsonify({"success": False, "error": "No autorizado"})
     
@@ -136,6 +146,7 @@ def consultar():
         data = request.get_json()
         cedula = str(data.get("cedula")).strip()
         
+        # Buscar por cédula
         resultado = df[df["CEDULA"].astype(str).str.strip() == cedula]
         
         if resultado.empty:
@@ -148,6 +159,7 @@ def consultar():
         contraseña = fila.get("CONTRASEÑA", "")
         personalizada = es_personalizada(contraseña)
         
+        # Enviar correo real
         enviado = enviar_correo_credenciales(correo_destino, nombre, cedula, str(contraseña), personalizada)
         
         return jsonify({
