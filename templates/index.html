@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>CREDU · Asistente Virtual</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 <style>
     * {
         margin: 0;
@@ -15,7 +15,7 @@
     body {
         font-family: 'Inter', sans-serif;
         min-height: 100vh;
-        background: linear-gradient(135deg, #0a1f3e 0%, #0e2d5a 40%, #0a1f3e 100%);
+        background: radial-gradient(circle at 20% 30%, #0a1f3e, #020c1a);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -24,89 +24,84 @@
         overflow: hidden;
     }
 
-    /* Fondo con birretes */
+    .particle {
+        position: absolute;
+        background: rgba(212, 175, 55, 0.3);
+        border-radius: 50%;
+        pointer-events: none;
+        filter: blur(2px);
+        animation: float 8s infinite ease-in-out;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; }
+        50% { transform: translateY(-30px) translateX(20px); opacity: 0.6; }
+    }
+
     body::before {
         content: "🎓";
-        font-size: 350px;
+        font-size: 400px;
         position: absolute;
-        bottom: -100px;
-        left: -80px;
-        opacity: 0.04;
+        bottom: -120px;
+        left: -100px;
+        opacity: 0.03;
         pointer-events: none;
-        transform: rotate(-15deg);
+        filter: blur(3px);
     }
 
     body::after {
         content: "🎓";
-        font-size: 200px;
+        font-size: 250px;
         position: absolute;
-        top: 20px;
-        right: -60px;
-        opacity: 0.04;
+        top: -50px;
+        right: -80px;
+        opacity: 0.03;
         pointer-events: none;
-        transform: rotate(25deg);
+        filter: blur(3px);
     }
-
-    .mortar-1, .mortar-2 {
-        position: absolute;
-        font-size: 70px;
-        opacity: 0.04;
-        pointer-events: none;
-    }
-    .mortar-1 { bottom: 10%; right: 5%; transform: rotate(-5deg); }
-    .mortar-2 { top: 15%; left: 8%; transform: rotate(10deg); }
 
     .chat-container {
         position: relative;
-        z-index: 2;
+        z-index: 10;
         width: 100%;
-        max-width: 520px;
-        background: rgba(255, 255, 255, 0.97);
+        max-width: 540px;
+        background: rgba(10, 31, 62, 0.45);
         backdrop-filter: blur(12px);
-        border-radius: 40px;
-        box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.2);
+        border-radius: 48px;
+        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.2), 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(212, 175, 55, 0.1);
         overflow: hidden;
-        animation: slideUp 0.5s ease;
-        transition: transform 0.3s ease;
+        animation: fadeInScale 0.8s ease;
+        transition: all 0.4s ease;
         border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
     .chat-container:hover {
-        transform: translateY(-4px);
+        transform: translateY(-6px);
+        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.5), 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 175, 55, 0.2);
     }
 
-    @keyframes slideUp {
+    @keyframes fadeInScale {
         from {
             opacity: 0;
-            transform: translateY(40px);
+            transform: scale(0.96) translateY(30px);
         }
         to {
             opacity: 1;
-            transform: translateY(0);
+            transform: scale(1) translateY(0);
         }
     }
 
     .chat-header {
-        background: linear-gradient(135deg, #0a2a66, #0d3a8a);
+        background: linear-gradient(135deg, rgba(10, 42, 102, 0.9), rgba(13, 58, 138, 0.9));
         padding: 24px;
         text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .chat-header::before {
-        content: "🎓";
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        font-size: 80px;
-        opacity: 0.06;
-        pointer-events: none;
+        backdrop-filter: blur(4px);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     }
 
     .chat-header h1 {
-        font-size: 1.6rem;
-        font-weight: 700;
+        font-size: 1.7rem;
+        font-weight: 800;
         letter-spacing: -0.5px;
         display: flex;
         align-items: center;
@@ -117,8 +112,9 @@
 
     .chat-header p {
         font-size: 0.7rem;
-        opacity: 0.8;
+        opacity: 0.7;
         margin-top: 6px;
+        letter-spacing: 0.5px;
     }
 
     .chat-body {
@@ -128,7 +124,7 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
-        background: #f7f9fc;
+        background: rgba(0, 0, 0, 0.2);
         scroll-behavior: smooth;
     }
 
@@ -137,7 +133,7 @@
     }
 
     .chat-body::-webkit-scrollbar-track {
-        background: #e2e8f0;
+        background: rgba(255, 255, 255, 0.05);
         border-radius: 10px;
     }
 
@@ -169,26 +165,27 @@
         height: 44px;
         border-radius: 50%;
         object-fit: cover;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border: 2px solid #d4af37;
+        box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.5);
         transition: all 0.3s ease;
     }
 
     .bot-avatar:hover {
-        transform: scale(1.05) rotate(3deg);
-        box-shadow: 0 6px 14px rgba(212, 175, 55, 0.3);
+        transform: scale(1.05);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.8);
     }
 
     .message {
-        background: white;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(4px);
         padding: 14px 18px;
         border-radius: 20px;
         border-top-left-radius: 6px;
         max-width: 78%;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         font-size: 0.85rem;
         line-height: 1.5;
-        color: #1e293b;
+        color: white;
+        border: 1px solid rgba(212, 175, 55, 0.2);
     }
 
     .user-message {
@@ -209,15 +206,15 @@
 
     .user-bubble {
         display: inline-block;
-        background: linear-gradient(135deg, #0a2a66, #0d3a8a);
-        color: white;
+        background: linear-gradient(135deg, #d4af37, #b8962e);
+        color: #0a1f3e;
         padding: 12px 20px;
         border-radius: 24px;
         border-top-right-radius: 6px;
         max-width: 78%;
         font-size: 0.85rem;
-        font-weight: 500;
-        box-shadow: 0 4px 12px rgba(10, 42, 102, 0.2);
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
     }
 
     .button-group {
@@ -238,41 +235,42 @@
     }
 
     .btn-si {
-        background: linear-gradient(135deg, #0a2a66, #0d3a8a);
-        color: white;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(135deg, #d4af37, #b8962e);
+        color: #0a1f3e;
     }
 
     .btn-si:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(10, 42, 102, 0.3);
+        box-shadow: 0 6px 14px rgba(212, 175, 55, 0.4);
     }
 
     .btn-no {
-        background: #e2e8f0;
-        color: #1e293b;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
     .btn-no:hover {
+        background: rgba(255, 255, 255, 0.2);
         transform: translateY(-2px);
-        background: #cbd5e1;
     }
 
     .alerta-personalizada {
-        background: linear-gradient(135deg, #fef3c7, #fde68a);
-        border-left: 4px solid #f59e0b;
+        background: rgba(254, 243, 199, 0.1);
+        border-left: 3px solid #f59e0b;
         padding: 12px;
         margin-top: 12px;
         border-radius: 14px;
         font-size: 0.75rem;
-        color: #92400e;
+        color: #fde68a;
+        backdrop-filter: blur(4px);
     }
 
     .chat-footer {
         display: flex;
         padding: 20px 24px;
-        background: white;
-        border-top: 1px solid #eef2f6;
+        background: rgba(0, 0, 0, 0.3);
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
         gap: 12px;
     }
 
@@ -280,18 +278,23 @@
         flex: 1;
         padding: 14px 18px;
         border-radius: 60px;
-        border: 2px solid #e2e8f0;
+        border: 1px solid rgba(212, 175, 55, 0.3);
         font-size: 0.85rem;
         font-family: 'Inter', sans-serif;
         transition: all 0.3s ease;
-        background: #f8fafc;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+    }
+
+    .chat-footer input::placeholder {
+        color: rgba(255, 255, 255, 0.4);
     }
 
     .chat-footer input:focus {
         outline: none;
         border-color: #d4af37;
-        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
-        background: white;
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        background: rgba(255, 255, 255, 0.1);
     }
 
     .send-btn {
@@ -300,8 +303,8 @@
         padding: 12px 24px;
         border-radius: 60px;
         cursor: pointer;
-        font-weight: 600;
-        color: #0a2a66;
+        font-weight: 700;
+        color: #0a1f3e;
         transition: all 0.3s ease;
         display: flex;
         align-items: center;
@@ -310,19 +313,19 @@
 
     .send-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(212, 175, 55, 0.3);
+        box-shadow: 0 6px 14px rgba(212, 175, 55, 0.4);
     }
 
     .footer-text {
         text-align: center;
         padding: 16px;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         font-weight: 600;
         color: #d4af37;
-        background: white;
-        border-top: 1px solid #eef2f6;
-        letter-spacing: 0.5px;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        background: rgba(0, 0, 0, 0.3);
+        border-top: 1px solid rgba(212, 175, 55, 0.2);
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
 
     .loading-dots {
@@ -348,19 +351,17 @@
     }
 
     @media (max-width: 480px) {
-        .chat-container { border-radius: 28px; }
+        .chat-container { border-radius: 32px; }
         .chat-header h1 { font-size: 1.3rem; }
         .message, .user-bubble { max-width: 88%; font-size: 0.8rem; }
         .bot-avatar { width: 38px; height: 38px; }
         .chat-footer { padding: 16px; }
         .send-btn { padding: 10px 18px; font-size: 0.8rem; }
-        .footer-text { font-size: 0.7rem; }
+        .footer-text { font-size: 0.65rem; }
     }
 </style>
 </head>
 <body>
-<div class="mortar-1">🎓</div>
-<div class="mortar-2">🎓</div>
 
 <div class="chat-container">
 
@@ -388,7 +389,7 @@
 </div>
 
 <div class="footer-text">
-    🌟 Uniagustiniana es creer en ti 🌟
+    ⚡ Uniagustiniana es creer en ti ⚡
 </div>
 
 </div>
@@ -457,7 +458,7 @@ function respuestaNo() {
         <div class="message">
             👋 <strong>Fue un gusto ayudarte, ${despedida} ${primerNombre}.</strong><br><br>
             📌 Si necesitas algo más, puedes volver a ingresar cuando lo requieras.<br><br>
-            🌟 <em>Uniagustiniana es creer en ti</em>
+            ⚡ <em>Uniagustiniana es creer en ti</em>
         </div>
     </div>
     `;
@@ -530,7 +531,7 @@ function enviarCedula() {
                     <b>✨ ¡Hola ${genero} ${primerNombre}!</b><br><br>
                     📧 <strong>${estadoEnvio}</strong><br>
                     📬 Se envió el usuario y la contraseña para las plataformas:<br>
-                    <span style="background:#e8f0fe; padding:4px 12px; border-radius:20px; display:inline-block; font-size:0.75rem;">SIGA · KAWAK · SIPA HCM</span><br>
+                    <span style="background:rgba(212,175,55,0.2); padding:4px 12px; border-radius:20px; display:inline-block; font-size:0.75rem;">SIGA · KAWAK · SIPA HCM</span><br>
                     a tu correo institucional:<br>
                     <strong>${data.correo}</strong><br><br>
                     📌 Revisa tu bandeja de <strong>recibidos</strong>, o en <strong>spam</strong> o <strong>correo no deseado</strong>.<br>
@@ -570,5 +571,19 @@ function enviarCedula() {
 }
 </script>
 
+<script>
+    // Crear partículas animadas
+    for (let i = 0; i < 40; i++) {
+        let particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.width = Math.random() * 4 + 2 + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 8 + 's';
+        particle.style.animationDuration = 6 + Math.random() * 6 + 's';
+        document.body.appendChild(particle);
+    }
+</script>
 </body>
 </html>
