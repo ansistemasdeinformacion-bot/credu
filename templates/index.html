@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#0a1f3e">
 <title>CREDU · Asistente Virtual</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 <style>
@@ -10,6 +11,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -21,29 +23,16 @@
         justify-content: center;
         padding: 20px;
         position: relative;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
-    .particle {
-        position: absolute;
-        background: rgba(212, 175, 55, 0.3);
-        border-radius: 50%;
-        pointer-events: none;
-        filter: blur(2px);
-        animation: float 8s infinite ease-in-out;
-    }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; }
-        50% { transform: translateY(-30px) translateX(20px); opacity: 0.6; }
-    }
-
+    /* Birretes decorativos */
     body::before {
         content: "🎓";
-        font-size: 400px;
+        font-size: 350px;
         position: absolute;
-        bottom: -120px;
-        left: -100px;
+        bottom: -100px;
+        left: -80px;
         opacity: 0.03;
         pointer-events: none;
         filter: blur(3px);
@@ -51,39 +40,55 @@
 
     body::after {
         content: "🎓";
-        font-size: 250px;
+        font-size: 220px;
         position: absolute;
-        top: -50px;
-        right: -80px;
+        top: -40px;
+        right: -60px;
         opacity: 0.03;
         pointer-events: none;
         filter: blur(3px);
+    }
+
+    /* Partículas solo en desktop */
+    @media (min-width: 768px) {
+        .particle {
+            position: absolute;
+            background: rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(2px);
+            animation: float 8s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; }
+            50% { transform: translateY(-30px) translateX(20px); opacity: 0.6; }
+        }
     }
 
     .chat-container {
         position: relative;
         z-index: 10;
         width: 100%;
-        max-width: 540px;
-        background: rgba(10, 31, 62, 0.45);
+        max-width: 520px;
+        background: rgba(10, 31, 62, 0.55);
         backdrop-filter: blur(12px);
-        border-radius: 48px;
-        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.2), 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(212, 175, 55, 0.1);
+        border-radius: 40px;
+        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.25), 0 30px 50px rgba(0, 0, 0, 0.4);
         overflow: hidden;
-        animation: fadeInScale 0.8s ease;
-        transition: all 0.4s ease;
+        animation: fadeInScale 0.7s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
     .chat-container:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.5), 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(212, 175, 55, 0.2);
+        transform: translateY(-5px);
+        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4), 0 35px 55px rgba(0, 0, 0, 0.45);
     }
 
     @keyframes fadeInScale {
         from {
             opacity: 0;
-            transform: scale(0.96) translateY(30px);
+            transform: scale(0.95) translateY(30px);
         }
         to {
             opacity: 1;
@@ -92,17 +97,15 @@
     }
 
     .chat-header {
-        background: linear-gradient(135deg, rgba(10, 42, 102, 0.9), rgba(13, 58, 138, 0.9));
-        padding: 24px;
+        background: linear-gradient(135deg, rgba(10, 42, 102, 0.95), rgba(13, 58, 138, 0.95));
+        padding: 22px 20px;
         text-align: center;
-        backdrop-filter: blur(4px);
         border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     }
 
     .chat-header h1 {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         font-weight: 800;
-        letter-spacing: -0.5px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -113,23 +116,24 @@
     .chat-header p {
         font-size: 0.7rem;
         opacity: 0.7;
-        margin-top: 6px;
+        margin-top: 5px;
         letter-spacing: 0.5px;
     }
 
     .chat-body {
-        padding: 24px;
-        height: 480px;
+        padding: 20px;
+        height: 470px;
         overflow-y: auto;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 14px;
         background: rgba(0, 0, 0, 0.2);
         scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
     }
 
     .chat-body::-webkit-scrollbar {
-        width: 5px;
+        width: 4px;
     }
 
     .chat-body::-webkit-scrollbar-track {
@@ -152,7 +156,7 @@
     @keyframes fadeInLeft {
         from {
             opacity: 0;
-            transform: translateX(-20px);
+            transform: translateX(-15px);
         }
         to {
             opacity: 1;
@@ -161,31 +165,32 @@
     }
 
     .bot-avatar {
-        width: 44px;
-        height: 44px;
+        width: 42px;
+        height: 42px;
         border-radius: 50%;
         object-fit: cover;
         box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.5);
+        flex-shrink: 0;
         transition: all 0.3s ease;
     }
 
     .bot-avatar:hover {
         transform: scale(1.05);
-        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.8);
     }
 
     .message {
         background: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(4px);
-        padding: 14px 18px;
+        padding: 12px 16px;
         border-radius: 20px;
-        border-top-left-radius: 6px;
-        max-width: 78%;
+        border-top-left-radius: 5px;
+        max-width: 82%;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         font-size: 0.85rem;
-        line-height: 1.5;
+        line-height: 1.45;
         color: white;
         border: 1px solid rgba(212, 175, 55, 0.2);
+        word-break: break-word;
     }
 
     .user-message {
@@ -196,7 +201,7 @@
     @keyframes fadeInRight {
         from {
             opacity: 0;
-            transform: translateX(20px);
+            transform: translateX(15px);
         }
         to {
             opacity: 1;
@@ -208,30 +213,32 @@
         display: inline-block;
         background: linear-gradient(135deg, #d4af37, #b8962e);
         color: #0a1f3e;
-        padding: 12px 20px;
-        border-radius: 24px;
-        border-top-right-radius: 6px;
-        max-width: 78%;
+        padding: 10px 18px;
+        border-radius: 22px;
+        border-top-right-radius: 5px;
+        max-width: 82%;
         font-size: 0.85rem;
         font-weight: 600;
-        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+        word-break: break-word;
     }
 
     .button-group {
         display: flex;
         gap: 12px;
-        margin-top: 16px;
+        margin-top: 15px;
         flex-wrap: wrap;
     }
 
     .btn-si, .btn-no {
-        padding: 10px 24px;
+        padding: 10px 22px;
         border-radius: 40px;
         border: none;
         cursor: pointer;
         font-weight: 600;
-        font-size: 0.8rem;
-        transition: all 0.3s ease;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+        min-width: 85px;
     }
 
     .btn-si {
@@ -239,9 +246,8 @@
         color: #0a1f3e;
     }
 
-    .btn-si:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(212, 175, 55, 0.4);
+    .btn-si:active {
+        transform: scale(0.96);
     }
 
     .btn-no {
@@ -250,33 +256,32 @@
         border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
-    .btn-no:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-2px);
+    .btn-no:active {
+        transform: scale(0.96);
     }
 
     .alerta-personalizada {
         background: rgba(254, 243, 199, 0.1);
         border-left: 3px solid #f59e0b;
-        padding: 12px;
+        padding: 10px 12px;
         margin-top: 12px;
-        border-radius: 14px;
-        font-size: 0.75rem;
+        border-radius: 12px;
+        font-size: 0.7rem;
         color: #fde68a;
         backdrop-filter: blur(4px);
     }
 
     .chat-footer {
         display: flex;
-        padding: 20px 24px;
+        padding: 16px 20px;
         background: rgba(0, 0, 0, 0.3);
         border-top: 1px solid rgba(212, 175, 55, 0.2);
-        gap: 12px;
+        gap: 10px;
     }
 
     .chat-footer input {
         flex: 1;
-        padding: 14px 18px;
+        padding: 13px 18px;
         border-radius: 60px;
         border: 1px solid rgba(212, 175, 55, 0.3);
         font-size: 0.85rem;
@@ -305,27 +310,27 @@
         cursor: pointer;
         font-weight: 700;
         color: #0a1f3e;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
         display: flex;
         align-items: center;
         gap: 6px;
+        font-size: 0.85rem;
+        white-space: nowrap;
     }
 
-    .send-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 14px rgba(212, 175, 55, 0.4);
+    .send-btn:active {
+        transform: scale(0.96);
     }
 
     .footer-text {
         text-align: center;
-        padding: 16px;
-        font-size: 0.8rem;
+        padding: 14px;
+        font-size: 0.75rem;
         font-weight: 600;
         color: #d4af37;
         background: rgba(0, 0, 0, 0.3);
         border-top: 1px solid rgba(212, 175, 55, 0.2);
-        letter-spacing: 1px;
-        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 
     .loading-dots {
@@ -350,14 +355,80 @@
         40% { transform: scale(1); opacity: 1; }
     }
 
-    @media (max-width: 480px) {
-        .chat-container { border-radius: 32px; }
-        .chat-header h1 { font-size: 1.3rem; }
-        .message, .user-bubble { max-width: 88%; font-size: 0.8rem; }
-        .bot-avatar { width: 38px; height: 38px; }
-        .chat-footer { padding: 16px; }
-        .send-btn { padding: 10px 18px; font-size: 0.8rem; }
-        .footer-text { font-size: 0.65rem; }
+    /* ===== RESPONSIVE CELULAR ===== */
+    @media (max-width: 550px) {
+        body {
+            padding: 12px;
+        }
+        .chat-container {
+            border-radius: 32px;
+        }
+        .chat-header {
+            padding: 16px;
+        }
+        .chat-header h1 {
+            font-size: 1.3rem;
+        }
+        .chat-header p {
+            font-size: 0.6rem;
+        }
+        .chat-body {
+            padding: 14px;
+            height: 450px;
+            gap: 12px;
+        }
+        .bot-avatar {
+            width: 36px;
+            height: 36px;
+        }
+        .message {
+            padding: 10px 14px;
+            font-size: 0.75rem;
+            max-width: 85%;
+        }
+        .user-bubble {
+            padding: 8px 16px;
+            font-size: 0.75rem;
+            max-width: 85%;
+        }
+        .btn-si, .btn-no {
+            padding: 8px 16px;
+            font-size: 0.75rem;
+            min-width: 70px;
+        }
+        .chat-footer {
+            padding: 12px 16px;
+        }
+        .chat-footer input {
+            padding: 11px 14px;
+            font-size: 0.8rem;
+        }
+        .send-btn {
+            padding: 11px 18px;
+            font-size: 0.75rem;
+        }
+        .footer-text {
+            font-size: 0.6rem;
+            padding: 10px;
+        }
+        .alerta-personalizada {
+            font-size: 0.65rem;
+            padding: 8px 10px;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .btn-si, .btn-no {
+            padding: 7px 12px;
+            font-size: 0.7rem;
+            min-width: 60px;
+        }
+        .send-btn {
+            padding: 10px 14px;
+        }
+        .message, .user-bubble {
+            max-width: 90%;
+        }
     }
 </style>
 </head>
@@ -384,7 +455,7 @@
 </div>
 
 <div class="chat-footer">
-    <input type="text" id="cedula" placeholder="🔢 Ej: 12345678" autocomplete="off">
+    <input type="text" id="cedula" placeholder="🔢 Ej: 12345678" autocomplete="off" enterkeyhint="send">
     <button class="send-btn" onclick="enviarCedula()">📤 Enviar</button>
 </div>
 
@@ -416,7 +487,7 @@ function detectarGenero(nombreCompleto) {
         "camila", "valeria", "mariana", "isabella", "luciana", "fernanda",
         "julieta", "ximena", "adriana", "amanda", "zulma", "leonor", "mirta",
         "enith", "gladys", "yuby", "yuli", "yohanna", "isabel", "briggitte",
-        "maribel", "yolima", "barbara", "esperanza", "solangel", "sonia"
+        "maribel", "yolima", "barbara", "esperanza", "solangel", "sonia", "hilda"
     ];
     return femeninos.includes(nombre) ? "estimada docente" : "estimado docente";
 }
@@ -531,7 +602,7 @@ function enviarCedula() {
                     <b>✨ ¡Hola ${genero} ${primerNombre}!</b><br><br>
                     📧 <strong>${estadoEnvio}</strong><br>
                     📬 Se envió el usuario y la contraseña para las plataformas:<br>
-                    <span style="background:rgba(212,175,55,0.2); padding:4px 12px; border-radius:20px; display:inline-block; font-size:0.75rem;">SIGA · KAWAK · SIPA HCM</span><br>
+                    <span style="background:rgba(212,175,55,0.2); padding:4px 12px; border-radius:20px; display:inline-block; font-size:0.7rem;">SIGA · KAWAK · SIPA HCM</span><br>
                     a tu correo institucional:<br>
                     <strong>${data.correo}</strong><br><br>
                     📌 Revisa tu bandeja de <strong>recibidos</strong>, o en <strong>spam</strong> o <strong>correo no deseado</strong>.<br>
@@ -569,11 +640,10 @@ function enviarCedula() {
         chat.scrollTop = chat.scrollHeight;
     });
 }
-</script>
 
-<script>
-    // Crear partículas animadas
-    for (let i = 0; i < 40; i++) {
+// Crear partículas solo en desktop (para rendimiento en móvil)
+if (window.innerWidth > 768) {
+    for (let i = 0; i < 30; i++) {
         let particle = document.createElement('div');
         particle.classList.add('particle');
         particle.style.width = Math.random() * 4 + 2 + 'px';
@@ -584,6 +654,7 @@ function enviarCedula() {
         particle.style.animationDuration = 6 + Math.random() * 6 + 's';
         document.body.appendChild(particle);
     }
+}
 </script>
 </body>
 </html>
