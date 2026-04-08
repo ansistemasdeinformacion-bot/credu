@@ -17,59 +17,75 @@
     body {
         font-family: 'Inter', sans-serif;
         min-height: 100vh;
-        background: radial-gradient(circle at 20% 30%, #0a1f3e, #020c1a);
+        background: radial-gradient(circle at 10% 20%, #0a2a66, #020c1a, #010408);
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 20px;
         position: relative;
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
-    /* Birretes decorativos */
-    body::before {
-        content: "🎓";
-        font-size: 350px;
+    /* Birretes dorados flotantes (más visibles) */
+    .floating-mortar {
         position: absolute;
-        bottom: -100px;
-        left: -80px;
-        opacity: 0.03;
+        font-size: 120px;
+        opacity: 0.12;
         pointer-events: none;
-        filter: blur(3px);
-        transform: rotate(-10deg);
+        animation: floatMortar 12s infinite ease-in-out;
+        color: #d4af37;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
     }
 
-    body::after {
-        content: "🎓";
-        font-size: 220px;
+    @keyframes floatMortar {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-25px) rotate(5deg); }
+    }
+
+    .mortar-1 { top: 5%; left: -30px; font-size: 180px; animation-delay: 0s; }
+    .mortar-2 { bottom: 0%; right: -30px; font-size: 200px; animation-delay: 2s; }
+    .mortar-3 { top: 40%; right: 10%; font-size: 100px; animation-delay: 5s; }
+    .mortar-4 { bottom: 20%; left: 10%; font-size: 90px; animation-delay: 8s; }
+    .mortar-5 { top: 60%; left: -20px; font-size: 130px; animation-delay: 3s; }
+
+    /* Partículas doradas */
+    .particle-gold {
         position: absolute;
-        top: -40px;
-        right: -60px;
-        opacity: 0.03;
+        width: 3px;
+        height: 3px;
+        background: #d4af37;
+        border-radius: 50%;
+        opacity: 0.4;
         pointer-events: none;
-        filter: blur(3px);
-        transform: rotate(15deg);
+        animation: particleFloat 8s infinite linear;
+    }
+
+    @keyframes particleFloat {
+        0% { transform: translateY(0) translateX(0); opacity: 0; }
+        20% { opacity: 0.6; }
+        80% { opacity: 0.6; }
+        100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
     }
 
     .login-card {
         position: relative;
-        z-index: 10;
+        z-index: 20;
         width: 100%;
         max-width: 450px;
         background: rgba(10, 31, 62, 0.55);
-        backdrop-filter: blur(12px);
+        backdrop-filter: blur(15px);
         border-radius: 48px;
         padding: 45px 35px;
-        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.25), 0 30px 50px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.35), 0 30px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.1);
         text-align: center;
         animation: fadeInScale 0.7s ease;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid rgba(212, 175, 55, 0.3);
+        border: 1px solid rgba(212, 175, 55, 0.4);
     }
 
     .login-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4), 0 35px 55px rgba(0, 0, 0, 0.45);
+        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.5), 0 35px 55px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 175, 55, 0.2);
     }
 
     @keyframes fadeInScale {
@@ -88,20 +104,20 @@
         height: 100px;
         border-radius: 50%;
         object-fit: cover;
-        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.4), 0 15px 35px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5), 0 15px 35px rgba(0, 0, 0, 0.3);
         margin-bottom: 20px;
         transition: all 0.3s ease;
     }
 
     .avatar:hover {
         transform: scale(1.03);
-        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.6), 0 20px 40px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.7), 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
     h1 {
         font-size: 2.5rem;
         font-weight: 800;
-        background: linear-gradient(135deg, #ffffff, #d4af37, #b8962e);
+        background: linear-gradient(135deg, #ffffff, #d4af37, #e8c84a);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
@@ -114,7 +130,7 @@
     }
 
     .subtitle {
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.8);
         font-size: 0.85rem;
         margin-bottom: 32px;
         font-weight: 400;
@@ -146,30 +162,30 @@
         top: 50%;
         transform: translateY(-50%);
         font-size: 1.1rem;
-        opacity: 0.7;
+        opacity: 0.8;
     }
 
     input {
         width: 100%;
         padding: 14px 16px 14px 48px;
-        border: 1px solid rgba(212, 175, 55, 0.3);
+        border: 1px solid rgba(212, 175, 55, 0.35);
         border-radius: 60px;
         font-size: 0.9rem;
         font-family: 'Inter', sans-serif;
         transition: all 0.3s ease;
-        background: rgba(255, 255, 255, 0.06);
+        background: rgba(255, 255, 255, 0.08);
         color: white;
     }
 
     input::placeholder {
-        color: rgba(255, 255, 255, 0.4);
+        color: rgba(255, 255, 255, 0.45);
     }
 
     input:focus {
         outline: none;
         border-color: #d4af37;
-        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
-        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+        background: rgba(255, 255, 255, 0.12);
     }
 
     button {
@@ -192,7 +208,7 @@
 
     button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
     }
 
     button:active {
@@ -213,16 +229,16 @@
     .footer-text {
         margin-top: 32px;
         padding-top: 20px;
-        border-top: 1px solid rgba(212, 175, 55, 0.2);
+        border-top: 1px solid rgba(212, 175, 55, 0.25);
         font-size: 0.8rem;
-        font-weight: 600;
+        font-weight: 700;
         color: #d4af37;
         letter-spacing: 1px;
         text-transform: uppercase;
-        text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        text-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
     }
 
-    /* ===== RESPONSIVE CELULAR ===== */
+    /* Responsive */
     @media (max-width: 550px) {
         body {
             padding: 16px;
@@ -242,44 +258,25 @@
             font-size: 0.7rem;
             margin-bottom: 24px;
         }
-        .input-group label {
-            font-size: 0.65rem;
+        .floating-mortar {
+            font-size: 80px;
         }
-        input {
-            padding: 12px 14px 12px 44px;
-            font-size: 0.85rem;
-        }
-        button {
-            padding: 12px;
-            font-size: 0.9rem;
-        }
+        .mortar-1 { font-size: 120px; }
+        .mortar-2 { font-size: 140px; }
         .footer-text {
             font-size: 0.65rem;
-            margin-top: 24px;
-            padding-top: 16px;
-        }
-        .error {
-            font-size: 0.7rem;
-            padding: 10px 14px;
-        }
-    }
-
-    @media (max-width: 400px) {
-        .login-card {
-            padding: 28px 20px;
-            border-radius: 32px;
-        }
-        h1 {
-            font-size: 1.8rem;
-        }
-        .avatar {
-            width: 70px;
-            height: 70px;
         }
     }
 </style>
 </head>
 <body>
+
+<!-- Birretes flotantes dorados -->
+<div class="floating-mortar mortar-1">🎓</div>
+<div class="floating-mortar mortar-2">🎓</div>
+<div class="floating-mortar mortar-3">🎓</div>
+<div class="floating-mortar mortar-4">🎓</div>
+<div class="floating-mortar mortar-5">🎓</div>
 
 <div class="login-card">
     <img src="/static/avatar.png" class="avatar" alt="CREDU">
@@ -305,5 +302,20 @@
         ⚡ Uniagustiniana es creer en ti ⚡
     </div>
 </div>
+
+<script>
+    // Crear partículas doradas flotantes
+    for (let i = 0; i < 60; i++) {
+        let particle = document.createElement('div');
+        particle.classList.add('particle-gold');
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.width = Math.random() * 4 + 1 + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.animationDelay = Math.random() * 8 + 's';
+        particle.style.animationDuration = 6 + Math.random() * 6 + 's';
+        document.body.appendChild(particle);
+    }
+</script>
 </body>
 </html>
