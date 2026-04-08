@@ -70,16 +70,29 @@ def consultar():
     try:
         data = request.get_json()
         cedula = str(data.get("cedula")).strip()
+        correo_sesion = session['correo']
         
+        # Buscar por cédula
         resultado = df[df["CEDULA"].astype(str).str.strip() == cedula]
         
         if resultado.empty:
-            return jsonify({"success": False})
+            return jsonify({"success": False, "error": "Cédula no encontrada"})
         
         fila = resultado.iloc[0]
         
+        # Obtener el correo registrado para esta cédula
+        correo_registrado = str(fila.get("CORREO INSTITUCIONAL", "")).strip().lower()
+        
+        # 🔐 VALIDACIÓN CLAVE: el correo de sesión debe coincidir con el correo de la cédula
+        if correo_sesion != correo_registrado:
+            return jsonify({
+                "success": False, 
+                "error": "No autorizado",
+                "mensaje": f"❌ La cédula {cedula} no corresponde a tu cuenta. Solo puedes consultar tus propias credenciales."
+            })
+        
         nombre = str(fila.get("NOMBRE COMPLETO", "Usuario"))
-        correo_destino = str(fila.get("CORREO INSTITUCIONAL", "No registrado"))
+        correo_destino = correo_registrado
         contraseña = fila.get("CONTRASEÑA", "")
         personalizada = es_personalizada(contraseña)
         
@@ -99,7 +112,7 @@ def consultar():
         
     except Exception as e:
         print(f"ERROR en consulta: {e}")
-        return jsonify({"success": False})
+        return jsonify({"success": False, "error": "Error interno"})
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
