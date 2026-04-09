@@ -26,15 +26,38 @@
         overflow: hidden;
     }
 
-    /* Birretes dorados flotantes (más visibles) */
+    /* Mascota de fondo */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/static/mascota.png');
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: 280px;
+        opacity: 0.15;
+        pointer-events: none;
+        z-index: 0;
+        animation: floatMascota 6s ease-in-out infinite;
+    }
+
+    @keyframes floatMascota {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+    }
+
+    /* Birretes dorados flotantes */
     .floating-mortar {
         position: absolute;
         font-size: 120px;
-        opacity: 0.12;
+        opacity: 0.06;
         pointer-events: none;
         animation: floatMortar 12s infinite ease-in-out;
         color: #d4af37;
-        text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        z-index: 0;
     }
 
     @keyframes floatMortar {
@@ -46,46 +69,25 @@
     .mortar-2 { bottom: 0%; right: -30px; font-size: 200px; animation-delay: 2s; }
     .mortar-3 { top: 40%; right: 10%; font-size: 100px; animation-delay: 5s; }
     .mortar-4 { bottom: 20%; left: 10%; font-size: 90px; animation-delay: 8s; }
-    .mortar-5 { top: 60%; left: -20px; font-size: 130px; animation-delay: 3s; }
-
-    /* Partículas doradas */
-    .particle-gold {
-        position: absolute;
-        width: 3px;
-        height: 3px;
-        background: #d4af37;
-        border-radius: 50%;
-        opacity: 0.4;
-        pointer-events: none;
-        animation: particleFloat 8s infinite linear;
-    }
-
-    @keyframes particleFloat {
-        0% { transform: translateY(0) translateX(0); opacity: 0; }
-        20% { opacity: 0.6; }
-        80% { opacity: 0.6; }
-        100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
-    }
 
     .login-card {
         position: relative;
-        z-index: 20;
+        z-index: 10;
         width: 100%;
         max-width: 450px;
         background: rgba(10, 31, 62, 0.55);
         backdrop-filter: blur(15px);
         border-radius: 48px;
         padding: 45px 35px;
-        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.35), 0 30px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.1);
+        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.35), 0 30px 50px rgba(0, 0, 0, 0.5);
         text-align: center;
         animation: fadeInScale 0.7s ease;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.3s ease;
         border: 1px solid rgba(212, 175, 55, 0.4);
     }
 
     .login-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.5), 0 35px 55px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 175, 55, 0.2);
     }
 
     @keyframes fadeInScale {
@@ -111,7 +113,7 @@
 
     .avatar:hover {
         transform: scale(1.03);
-        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.7), 0 20px 40px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.7);
     }
 
     h1 {
@@ -211,10 +213,6 @@
         box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
     }
 
-    button:active {
-        transform: translateY(0px);
-    }
-
     .error {
         background: rgba(220, 38, 38, 0.15);
         color: #f87171;
@@ -223,7 +221,6 @@
         font-size: 0.75rem;
         margin-top: 16px;
         border-left: 2px solid #f87171;
-        backdrop-filter: blur(4px);
     }
 
     .footer-text {
@@ -235,13 +232,11 @@
         color: #d4af37;
         letter-spacing: 1px;
         text-transform: uppercase;
-        text-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
     }
 
-    /* Responsive */
     @media (max-width: 550px) {
-        body {
-            padding: 16px;
+        body::before {
+            background-size: 180px;
         }
         .login-card {
             padding: 32px 24px;
@@ -254,29 +249,18 @@
         h1 {
             font-size: 2rem;
         }
-        .subtitle {
-            font-size: 0.7rem;
-            margin-bottom: 24px;
-        }
         .floating-mortar {
             font-size: 80px;
-        }
-        .mortar-1 { font-size: 120px; }
-        .mortar-2 { font-size: 140px; }
-        .footer-text {
-            font-size: 0.65rem;
         }
     }
 </style>
 </head>
 <body>
 
-<!-- Birretes flotantes dorados -->
 <div class="floating-mortar mortar-1">🎓</div>
 <div class="floating-mortar mortar-2">🎓</div>
 <div class="floating-mortar mortar-3">🎓</div>
 <div class="floating-mortar mortar-4">🎓</div>
-<div class="floating-mortar mortar-5">🎓</div>
 
 <div class="login-card">
     <img src="/static/avatar.png" class="avatar" alt="CREDU">
@@ -303,19 +287,5 @@
     </div>
 </div>
 
-<script>
-    // Crear partículas doradas flotantes
-    for (let i = 0; i < 60; i++) {
-        let particle = document.createElement('div');
-        particle.classList.add('particle-gold');
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.width = Math.random() * 4 + 1 + 'px';
-        particle.style.height = particle.style.width;
-        particle.style.animationDelay = Math.random() * 8 + 's';
-        particle.style.animationDuration = 6 + Math.random() * 6 + 's';
-        document.body.appendChild(particle);
-    }
-</script>
 </body>
 </html>
