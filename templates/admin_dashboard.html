@@ -17,11 +17,30 @@
         background: radial-gradient(circle at 10% 20%, #0a2a66, #020c1a, #010408);
         min-height: 100vh;
         padding: 20px;
+        position: relative;
+    }
+
+    /* Mascota en el fondo */
+    body::before {
+        content: "";
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 120px;
+        height: 120px;
+        background-image: url('/static/mascota.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.15;
+        pointer-events: none;
+        z-index: 0;
     }
 
     .container {
         max-width: 1400px;
         margin: 0 auto;
+        position: relative;
+        z-index: 1;
     }
 
     .header {
@@ -44,6 +63,14 @@
         display: flex;
         align-items: center;
         gap: 8px;
+    }
+
+    .logo-mascota {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #d4af37;
     }
 
     .logout-btn {
@@ -208,6 +235,11 @@
         display: none;
     }
 
+    .resaltado {
+        background: rgba(212, 175, 55, 0.15);
+        border-left: 3px solid #d4af37;
+    }
+
     @media (max-width: 768px) {
         .calendario-grid {
             gap: 5px;
@@ -222,13 +254,24 @@
             font-size: 0.7rem;
             padding: 8px;
         }
+        body::before {
+            width: 80px;
+            height: 80px;
+        }
+        .logo-mascota {
+            width: 35px;
+            height: 35px;
+        }
     }
 </style>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <h1>📊 CREDU · Panel de Administración</h1>
+        <h1>
+            <img src="/static/mascota.png" class="logo-mascota" alt="CREDU">
+            📊 CREDU · Panel de Administración
+        </h1>
         <a href="/admin/logout" class="logout-btn">🚪 Cerrar sesión</a>
     </div>
 
@@ -241,9 +284,9 @@
             <option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option>
         </select>
         <select id="año">
-            <option value="2024">2024</option>
-            <option value="2025">2025</option>
-            <option value="2026" selected>2026</option>
+            {% for año in años_disponibles %}
+            <option value="{{ año }}" {% if año == año_actual %}selected{% endif %}>{{ año }}</option>
+            {% endfor %}
         </select>
         <button class="btn-primary" onclick="cambiarMes()">Consultar</button>
         <button class="btn-primary" onclick="exportar()">📎 Exportar todo</button>
@@ -371,9 +414,31 @@ function buscarPorCedula() {
         const tablaDiv = document.getElementById('busqueda_tabla');
         
         if (data.success && data.resultados.length > 0) {
-            let tabla = '<table><thead><tr><th>Fecha</th><th>Correo</th><th>Cédula</th><th>Nombre</th></tr></thead><tbody>';
+            let tabla = `<table class="tabla-detallada">
+                            <thead>
+                                <tr>
+                                    <th>Fecha y Hora</th>
+                                    <th>Día</th>
+                                    <th>Mes</th>
+                                    <th>Año</th>
+                                    <th>Hora</th>
+                                    <th>Correo</th>
+                                    <th>Nombre</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
             data.resultados.forEach(r => {
-                tabla += `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`;
+                const fechaObj = new Date(r.fecha_completa);
+                const horaFormateada = r.hora + ":00";
+                tabla += `<tr>
+                            <td>${r.fecha_completa}</td>
+                            <td>${r.dia}</td>
+                            <td>${meses[r.mes-1]}</td>
+                            <td>${r.año}</td>
+                            <td>${horaFormateada}</td>
+                            <td>${r.correo}</td>
+                            <td>${r.nombre}</td>
+                         </tr>`;
             });
             tabla += '</tbody></table>';
             tablaDiv.innerHTML = tabla;

@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, sessio
 import pandas as pd
 import os
 from datetime import datetime
-from database import init_db, obtener_resumen_mensual, buscar_por_cedula, exportar_todas_consultas
+from database import init_db, obtener_resumen_mensual, buscar_por_cedula_detallado, exportar_todas_consultas, obtener_años_disponibles
 
 admin_bp = Blueprint('admin', __name__, url_prefix='/admin')
 
@@ -39,6 +39,7 @@ def dashboard():
     
     año_actual = datetime.now().year
     mes_actual = datetime.now().month
+    años_disponibles = obtener_años_disponibles()
     
     # Obtener resumen del mes actual
     consultas_por_dia, docentes_mes = obtener_resumen_mensual(año_actual, mes_actual)
@@ -47,7 +48,8 @@ def dashboard():
                          año_actual=año_actual,
                          mes_actual=mes_actual,
                          consultas_por_dia=consultas_por_dia,
-                         docentes_mes=docentes_mes)
+                         docentes_mes=docentes_mes,
+                         años_disponibles=años_disponibles)
 
 @admin_bp.route('/cambiar_mes', methods=['POST'])
 def cambiar_mes():
@@ -77,11 +79,11 @@ def buscar():
     if not cedula:
         return jsonify({"success": False, "error": "Ingrese una cédula"})
     
-    resultados = buscar_por_cedula(cedula)
+    resultados = buscar_por_cedula_detallado(cedula)
     
     return jsonify({
         "success": True,
-        "resultados": [[r[0], r[1], r[2], r[3]] for r in resultados]
+        "resultados": resultados
     })
 
 @admin_bp.route('/exportar')
