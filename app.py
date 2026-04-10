@@ -7,6 +7,14 @@ from datetime import datetime
 app = Flask(__name__)
 app.secret_key = "clave_secreta_credu_2026"
 
+# =====================================================
+# CONFIGURACIÓN DE CORREO (COMENTADA POR AHORA)
+# =====================================================
+# EMAIL_SENDER = "an.sistemasdeinformacion@uniagustiniana.edu.co"
+# EMAIL_PASSWORD = "hvnp lihx okqa bzyj"
+# EMAIL_SERVER = "smtp.gmail.com"
+# =====================================================
+
 # Cargar Excel
 df = pd.read_excel("docentes.xlsx")
 
@@ -113,6 +121,10 @@ def consultar():
     except Exception as e:
         print(f"ERROR en consulta: {e}")
         return jsonify({"success": False, "error": "Error interno"})
+
+# Importar y registrar el panel de administración
+from admin import admin_bp
+app.register_blueprint(admin_bp)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
