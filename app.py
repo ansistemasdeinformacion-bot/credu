@@ -3,9 +3,13 @@ import pandas as pd
 import os
 import csv
 from datetime import datetime
+from database import init_db, registrar_consulta_db
 
 app = Flask(__name__)
 app.secret_key = "clave_secreta_credu_2026"
+
+# Inicializar base de datos
+init_db()
 
 # =====================================================
 # CONFIGURACIÓN DE CORREO (COMENTADA POR AHORA)
@@ -19,21 +23,8 @@ app.secret_key = "clave_secreta_credu_2026"
 df = pd.read_excel("docentes.xlsx")
 
 def registrar_consulta(correo, cedula, nombre):
-    """Registra cada consulta en un archivo CSV para estadísticas"""
-    try:
-        archivo = "consultas.csv"
-        existe = os.path.isfile(archivo)
-        
-        with open(archivo, mode='a', newline='', encoding='utf-8') as file:
-            writer = csv.writer(file)
-            if not existe:
-                writer.writerow(["FECHA", "CORREO", "CEDULA", "NOMBRE"])
-            writer.writerow([datetime.now().strftime("%Y-%m-%d %H:%M:%S"), correo, cedula, nombre])
-        print(f"✅ Consulta registrada: {correo}")
-        return True
-    except Exception as e:
-        print(f"❌ Error registrando consulta: {e}")
-        return False
+    """Registra cada consulta en la base de datos"""
+    return registrar_consulta_db(correo, cedula, nombre)
 
 def es_personalizada(contraseña):
     if pd.isna(contraseña):
