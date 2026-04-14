@@ -1,5 +1,6 @@
 import sqlite3
 from datetime import datetime
+import pytz
 import pandas as pd
 
 DB_NAME = "consultas.db"
@@ -16,7 +17,8 @@ def init_db():
             nombre TEXT NOT NULL,
             mes INTEGER,
             año INTEGER,
-            dia INTEGER
+            dia INTEGER,
+            hora INTEGER
         )
     ''')
     conn.commit()
@@ -25,16 +27,17 @@ def init_db():
 
 def registrar_consulta_db(correo, cedula, nombre):
     try:
-        ahora = datetime.now()
+        bogota_tz = pytz.timezone('America/Bogota')
+        ahora = datetime.now(bogota_tz)
         conn = sqlite3.connect(DB_NAME)
         cursor = conn.cursor()
         cursor.execute('''
-            INSERT INTO consultas (fecha, correo, cedula, nombre, mes, año, dia)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-        ''', (ahora.strftime("%Y-%m-%d %H:%M:%S"), correo, cedula, nombre, ahora.month, ahora.year, ahora.day))
+            INSERT INTO consultas (fecha, correo, cedula, nombre, mes, año, dia, hora)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (ahora.strftime("%Y-%m-%d %H:%M:%S"), correo, cedula, nombre, ahora.month, ahora.year, ahora.day, ahora.hour))
         conn.commit()
         conn.close()
-        print(f"✅ Consulta registrada: {correo}")
+        print(f"✅ Consulta registrada: {correo} - {ahora.strftime('%d/%m/%Y %I:%M:%S %p')}")
         return True
     except Exception as e:
         print(f"❌ Error registrando consulta: {e}")
@@ -53,7 +56,7 @@ def obtener_resumen_mensual(año, mes):
 def buscar_por_cedula(cedula):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
-    cursor.execute('SELECT fecha, correo, cedula, nombre, dia, mes, año FROM consultas WHERE cedula = ? ORDER BY fecha DESC', (cedula,))
+    cursor.execute('SELECT fecha, correo, cedula, nombre, dia, mes, año, hora FROM consultas WHERE cedula = ? ORDER BY fecha DESC', (cedula,))
     resultados = cursor.fetchall()
     conn.close()
     return resultados
@@ -64,7 +67,7 @@ def obtener_años_disponibles():
     cursor.execute('SELECT DISTINCT año FROM consultas ORDER BY año DESC')
     años = [row[0] for row in cursor.fetchall()]
     conn.close()
-    año_actual = datetime.now().year
+    año_actual = datetime.now(pytz.timezone('America/Bogota')).year
     años_set = set(años)
     for año in range(2026, año_actual + 2):
         if año not in años_set:
@@ -73,6 +76,9 @@ def obtener_años_disponibles():
 
 def exportar_todas_consultas():
     conn = sqlite3.connect(DB_NAME)
-    df = pd.read_sql_query("SELECT id, fecha, correo, cedula, nombre, mes, año, dia FROM consultas ORDER BY fecha DESC", conn)
+    df = pd.read_sql_query("SELECT id, fecha, correo, cedula, nombre, mes, año, dia, hora FROM consultas ORDER BY fecha DESC", conn)
     conn.close()
+    # Formatear fecha para exportación
+    if not df.empty:
+        df['fecha_formateada'] = pd.to_datetime(df['fecha']).dt.strftime('%d/%m/%Y %I:%M:%S %p')
     return df

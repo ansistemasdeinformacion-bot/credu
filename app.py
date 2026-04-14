@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import csv
 from datetime import datetime
+import pytz
 from database import init_db, registrar_consulta_db
 
 app = Flask(__name__)
