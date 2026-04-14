@@ -11,7 +11,6 @@ ADMIN_USER = "admin"
 ADMIN_PASSWORD = "credu2026"
 
 def formatear_fecha_colombia(fecha_str):
-    """Convierte fecha YYYY-MM-DD HH:MM:SS a DD/MM/YYYY HH:MM:SS"""
     try:
         dt = datetime.strptime(fecha_str, "%Y-%m-%d %H:%M:%S")
         bogota_tz = pytz.timezone('America/Bogota')
@@ -52,7 +51,10 @@ def dashboard():
     
     consultas_por_dia, docentes_mes = obtener_resumen_mensual(año_actual, mes_actual)
     
-    # Obtener consultas recientes con formato colombiano
+    # Convertir a diccionario para fácil acceso en la plantilla
+    consultas_dict = {dia: total for dia, total in consultas_por_dia}
+    
+    # Obtener consultas recientes
     conn = sqlite3.connect('consultas.db')
     cursor = conn.cursor()
     cursor.execute('''
@@ -76,7 +78,7 @@ def dashboard():
     return render_template('admin_dashboard.html',
                          año_actual=año_actual,
                          mes_actual=mes_actual,
-                         consultas_por_dia=consultas_por_dia,
+                         consultas_por_dia=consultas_dict,
                          docentes_mes=docentes_mes,
                          años_disponibles=años_disponibles,
                          consultas_recientes=consultas_lista)
@@ -94,7 +96,7 @@ def cambiar_mes():
     
     return jsonify({
         "success": True,
-        "consultas_por_dia": consultas_por_dia,
+        "consultas_por_dia": [[d[0], d[1]] for d in consultas_por_dia],
         "docentes_mes": [[d[0], d[1], d[2], d[3]] for d in docentes_mes]
     })
 

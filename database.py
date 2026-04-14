@@ -78,7 +78,6 @@ def exportar_todas_consultas():
     conn = sqlite3.connect(DB_NAME)
     df = pd.read_sql_query("SELECT id, fecha, correo, cedula, nombre, mes, año, dia, hora FROM consultas ORDER BY fecha DESC", conn)
     conn.close()
-    # Formatear fecha para exportación
     if not df.empty:
         df['fecha_formateada'] = pd.to_datetime(df['fecha']).dt.strftime('%d/%m/%Y %I:%M:%S %p')
     return df

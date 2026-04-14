@@ -187,8 +187,9 @@
     }
 
     .dia-consultas {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         color: #d4af37;
+        font-weight: bold;
         margin-top: 5px;
     }
 
@@ -304,7 +305,7 @@
         </div>
     </div>
 
-    <!-- Tabla de registros de ingreso (reemplaza la gestión de docentes) -->
+    <!-- Tabla de registros de ingreso -->
     <div class="tabla-container">
         <h2>📋 Últimos registros de ingreso (últimas 50 consultas)</h2>
         <div style="overflow-x: auto;">
@@ -361,18 +362,6 @@ function cambiarMes() {
                 consultasData[item[0]] = item[1];
             });
             
-            const tbody = document.getElementById('docentes_tabla');
-            if (tbody) {
-                tbody.innerHTML = '';
-                if (data.docentes_mes.length > 0) {
-                    data.docentes_mes.forEach(d => {
-                        tbody.innerHTML += `<tr><td>${d[0]}</td><td>${d[1]}</td><td>${d[2]}</td><td>${d[3]}</td></tr>`;
-                    });
-                } else {
-                    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center">No hay consultas registradas este mes</td></tr>';
-                }
-            }
-            
             generarCalendario(parseInt(mes), parseInt(año));
         }
     });
@@ -381,7 +370,8 @@ function cambiarMes() {
 function generarCalendario(mes, año) {
     const primerDia = new Date(año, mes-1, 1);
     const ultimoDia = new Date(año, mes, 0);
-    const diaInicio = primerDia.getDay() || 7;
+    let diaInicio = primerDia.getDay();
+    diaInicio = diaInicio === 0 ? 7 : diaInicio;
     
     let html = '<div class="dia-header">Lun</div><div class="dia-header">Mar</div><div class="dia-header">Mié</div>';
     html += '<div class="dia-header">Jue</div><div class="dia-header">Vie</div><div class="dia-header">Sáb</div><div class="dia-header">Dom</div>';
@@ -394,7 +384,7 @@ function generarCalendario(mes, año) {
         const consultas = consultasData[d] || 0;
         html += `<div class="dia">
                     <div class="dia-numero">${d}</div>
-                    <div class="dia-consultas">${consultas} consultas</div>
+                    <div class="dia-consultas">${consultas} ${consultas === 1 ? 'consulta' : 'consultas'}</div>
                 </div>`;
     }
     
@@ -434,16 +424,16 @@ function buscarPorCedula() {
                             <tbody>`;
             data.resultados.forEach(r => {
                 tabla += `<tr>
-                             <td>${r[0]}</td>
-                             <td>${r[1]}</td>
-                             <td>${r[2]}</td>
-                             <td>${r[3]}</td>
-                             <td>${r[4]}</td>
-                             <td>${r[5]}</td>
-                             <td>${r[6]}</td>
+                              <td>${r.fecha}</td>
+                              <td>${r.correo}</td>
+                              <td>${r.cedula}</td>
+                              <td>${r.nombre}</td>
+                              <td>${r.dia}</td>
+                              <td>${r.mes}</td>
+                              <td>${r.año}</td>
                           </tr>`;
             });
-            tabla += '</tbody></table>';
+            tabla += '</tbody>}</table>';
             tablaDiv.innerHTML = tabla;
             div.style.display = 'block';
         } else {
@@ -464,6 +454,9 @@ function exportar() {
         });
 }
 
+// Inicializar calendario con datos del servidor
+const consultasIniciales = {{ consultas_por_dia | tojson }};
+consultasData = consultasIniciales;
 generarCalendario({{ mes_actual }}, {{ año_actual }});
 </script>
 </body>
