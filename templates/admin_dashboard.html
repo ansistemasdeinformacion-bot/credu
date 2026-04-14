@@ -14,11 +14,92 @@
 
     body {
         font-family: 'Inter', sans-serif;
-        background: radial-gradient(circle at 10% 20%, #0a2a66, #020c1a, #010408);
         min-height: 100vh;
         padding: 20px;
         position: relative;
+        transition: background 0.5s ease;
     }
+
+    /* Fondo base que cambiará según el mes */
+    body {
+        background: radial-gradient(circle at 10% 20%, #0a2a66, #020c1a, #010408);
+    }
+
+    /* ============================================ */
+    /* TEMÁTICAS MENSUALES PROFESIONALES */
+    /* ============================================ */
+
+    /* Enero - Año Nuevo (Dorado y azul profundo) */
+    body.tema-enero { background: radial-gradient(circle at 10% 20%, #0a2a66, #020c1a, #010408); }
+    body.tema-enero .calendario { border: 2px solid #d4af37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+    body.tema-enero .dia-header { color: #d4af37; }
+    body.tema-enero .dia:hover { background: rgba(212, 175, 55, 0.15); }
+
+    /* Febrero - San Valentín (Rojo y rosa elegante) */
+    body.tema-febrero { background: radial-gradient(circle at 10% 20%, #4a0e2e, #2d0a1a, #1a050e); }
+    body.tema-febrero .calendario { border: 2px solid #e75480; box-shadow: 0 0 20px rgba(231, 84, 128, 0.2); }
+    body.tema-febrero .dia-header { color: #e75480; }
+    body.tema-febrero .dia:hover { background: rgba(231, 84, 128, 0.15); }
+
+    /* Marzo - Primavera (Verde esmeralda) */
+    body.tema-marzo { background: radial-gradient(circle at 10% 20%, #1a4a3a, #0d2a1a, #051a0a); }
+    body.tema-marzo .calendario { border: 2px solid #2ecc71; box-shadow: 0 0 20px rgba(46, 204, 113, 0.2); }
+    body.tema-marzo .dia-header { color: #2ecc71; }
+    body.tema-marzo .dia:hover { background: rgba(46, 204, 113, 0.15); }
+
+    /* Abril - Pascua (Pastel y suave) */
+    body.tema-abril { background: radial-gradient(circle at 10% 20%, #5d4e6b, #3d2e4b, #2d1e3b); }
+    body.tema-abril .calendario { border: 2px solid #f5a623; box-shadow: 0 0 20px rgba(245, 166, 35, 0.2); }
+    body.tema-abril .dia-header { color: #f5a623; }
+    body.tema-abril .dia:hover { background: rgba(245, 166, 35, 0.15); }
+
+    /* Mayo - Flores (Rosado coral) */
+    body.tema-mayo { background: radial-gradient(circle at 10% 20%, #6b4c5a, #4b2c3a, #3b1c2a); }
+    body.tema-mayo .calendario { border: 2px solid #ff6b6b; box-shadow: 0 0 20px rgba(255, 107, 107, 0.2); }
+    body.tema-mayo .dia-header { color: #ff6b6b; }
+    body.tema-mayo .dia:hover { background: rgba(255, 107, 107, 0.15); }
+
+    /* Junio - Verano (Amarillo dorado) */
+    body.tema-junio { background: radial-gradient(circle at 10% 20%, #5a4a2a, #3a2a1a, #2a1a0a); }
+    body.tema-junio .calendario { border: 2px solid #f1c40f; box-shadow: 0 0 20px rgba(241, 196, 15, 0.2); }
+    body.tema-junio .dia-header { color: #f1c40f; }
+    body.tema-junio .dia:hover { background: rgba(241, 196, 15, 0.15); }
+
+    /* Julio - Patriótico (Rojo, azul, amarillo) */
+    body.tema-julio { background: radial-gradient(circle at 10% 20%, #1a2a6b, #112a5a, #0a1a4a); }
+    body.tema-julio .calendario { border: 2px solid #e74c3c; box-shadow: 0 0 20px rgba(231, 76, 60, 0.2); }
+    body.tema-julio .dia-header { color: #e74c3c; }
+    body.tema-julio .dia:hover { background: rgba(231, 76, 60, 0.15); }
+
+    /* Agosto - Cielo azul */
+    body.tema-agosto { background: radial-gradient(circle at 10% 20%, #1a4a6b, #0a3a5a, #052a4a); }
+    body.tema-agosto .calendario { border: 2px solid #3498db; box-shadow: 0 0 20px rgba(52, 152, 219, 0.2); }
+    body.tema-agosto .dia-header { color: #3498db; }
+    body.tema-agosto .dia:hover { background: rgba(52, 152, 219, 0.15); }
+
+    /* Septiembre - Amor y Amistad (Rosa intenso) */
+    body.tema-septiembre { background: radial-gradient(circle at 10% 20%, #6b1a4a, #4a0a2a, #3a051a); }
+    body.tema-septiembre .calendario { border: 2px solid #ff69b4; box-shadow: 0 0 20px rgba(255, 105, 180, 0.2); }
+    body.tema-septiembre .dia-header { color: #ff69b4; }
+    body.tema-septiembre .dia:hover { background: rgba(255, 105, 180, 0.15); }
+
+    /* Octubre - Halloween (Naranja y negro elegante) */
+    body.tema-octubre { background: radial-gradient(circle at 10% 20%, #4a2a1a, #3a1a0a, #2a0a00); }
+    body.tema-octubre .calendario { border: 2px solid #e67e22; box-shadow: 0 0 20px rgba(230, 126, 34, 0.2); }
+    body.tema-octubre .dia-header { color: #e67e22; }
+    body.tema-octubre .dia:hover { background: rgba(230, 126, 34, 0.15); }
+
+    /* Noviembre - Otoño (Marrón y naranja quemado) */
+    body.tema-noviembre { background: radial-gradient(circle at 10% 20%, #5a3a1a, #4a2a0a, #3a1a00); }
+    body.tema-noviembre .calendario { border: 2px solid #d35400; box-shadow: 0 0 20px rgba(211, 84, 0, 0.2); }
+    body.tema-noviembre .dia-header { color: #d35400; }
+    body.tema-noviembre .dia:hover { background: rgba(211, 84, 0, 0.15); }
+
+    /* Diciembre - Navidad (Rojo y verde) */
+    body.tema-diciembre { background: radial-gradient(circle at 10% 20%, #1a4a2a, #0a3a1a, #052a0a); }
+    body.tema-diciembre .calendario { border: 2px solid #dc2626; box-shadow: 0 0 20px rgba(220, 38, 38, 0.2); }
+    body.tema-diciembre .dia-header { color: #dc2626; }
+    body.tema-diciembre .dia:hover { background: rgba(220, 38, 38, 0.15); }
 
     body::before {
         content: "";
@@ -149,6 +230,7 @@
         padding: 20px;
         margin-bottom: 25px;
         border: 1px solid rgba(212, 175, 55, 0.3);
+        transition: all 0.3s ease;
     }
 
     .calendario h2 {
@@ -164,9 +246,9 @@
     }
 
     .dia-header {
-        color: #d4af37;
         font-weight: 600;
         padding: 10px;
+        transition: color 0.3s ease;
     }
 
     .dia {
@@ -174,10 +256,6 @@
         border-radius: 12px;
         padding: 15px 5px;
         transition: all 0.3s ease;
-    }
-
-    .dia:hover {
-        background: rgba(212, 175, 55, 0.2);
     }
 
     .dia-numero {
@@ -260,7 +338,7 @@
     }
 </style>
 </head>
-<body>
+<body id="adminBody">
 <div class="container">
     <div class="header">
         <h1>
@@ -305,7 +383,6 @@
         </div>
     </div>
 
-    <!-- Tabla de registros de ingreso -->
     <div class="tabla-container">
         <h2>📋 Últimos registros de ingreso (últimas 50 consultas)</h2>
         <div style="overflow-x: auto;">
@@ -340,11 +417,25 @@
 
 <script>
 const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const mesesLower = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 let consultasData = {};
+
+function aplicarTematicaMensual(mes) {
+    const body = document.getElementById('adminBody');
+    // Remover clases anteriores
+    mesesLower.forEach(m => {
+        body.classList.remove(`tema-${m}`);
+    });
+    // Agregar clase del mes actual
+    body.classList.add(`tema-${mesesLower[mes-1]}`);
+}
 
 function cambiarMes() {
     const mes = document.getElementById('mes').value;
     const año = document.getElementById('año').value;
+    
+    // Aplicar temática visual del mes seleccionado
+    aplicarTematicaMensual(parseInt(mes));
     
     fetch('/admin/cambiar_mes', {
         method: 'POST',
@@ -433,7 +524,7 @@ function buscarPorCedula() {
                               <td>${r.año}</td>
                           </tr>`;
             });
-            tabla += '</tbody>}</table>';
+            tabla += '</tbody></table>';
             tablaDiv.innerHTML = tabla;
             div.style.display = 'block';
         } else {
@@ -458,6 +549,8 @@ function exportar() {
 const consultasIniciales = {{ consultas_por_dia | tojson }};
 consultasData = consultasIniciales;
 generarCalendario({{ mes_actual }}, {{ año_actual }});
+// Aplicar temática del mes actual
+aplicarTematicaMensual({{ mes_actual }});
 </script>
 </body>
 </html>

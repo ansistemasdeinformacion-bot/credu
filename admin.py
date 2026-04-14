@@ -51,10 +51,8 @@ def dashboard():
     
     consultas_por_dia, docentes_mes = obtener_resumen_mensual(año_actual, mes_actual)
     
-    # Convertir a diccionario para fácil acceso en la plantilla
     consultas_dict = {dia: total for dia, total in consultas_por_dia}
     
-    # Obtener consultas recientes
     conn = sqlite3.connect('consultas.db')
     cursor = conn.cursor()
     cursor.execute('''
