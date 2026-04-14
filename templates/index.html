@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
 <meta name="theme-color" content="#0a1f3e">
 <title>CREDU · Asistente Virtual</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,32 +21,32 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 20px;
+        padding: 12px;
         position: relative;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     /* Mascota de fondo */
     body::before {
         content: "";
         position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 120px;
-        height: 120px;
+        bottom: 15px;
+        right: 15px;
+        width: 90px;
+        height: 90px;
         background-image: url('/static/mascota.png');
         background-size: contain;
         background-repeat: no-repeat;
-        opacity: 0.15;
+        opacity: 0.12;
         pointer-events: none;
         z-index: 0;
     }
 
-    /* Birretes flotantes */
+    /* Birretes flotantes - más pequeños en móvil */
     .floating-mortar {
         position: absolute;
-        font-size: 120px;
-        opacity: 0.06;
+        font-size: 80px;
+        opacity: 0.05;
         pointer-events: none;
         animation: floatMortar 12s infinite ease-in-out;
         color: #d4af37;
@@ -55,37 +55,33 @@
 
     @keyframes floatMortar {
         0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-20px) rotate(5deg); }
+        50% { transform: translateY(-15px) rotate(3deg); }
     }
 
-    .mortar-1 { top: 5%; right: 5%; font-size: 150px; animation-delay: 0s; }
-    .mortar-2 { bottom: 15%; left: 5%; font-size: 120px; animation-delay: 2s; }
-    .mortar-3 { top: 30%; right: 15%; font-size: 80px; animation-delay: 5s; }
-    .mortar-4 { bottom: 30%; right: 20%; font-size: 100px; animation-delay: 8s; }
+    .mortar-1 { top: 3%; right: 3%; font-size: 100px; animation-delay: 0s; }
+    .mortar-2 { bottom: 10%; left: 3%; font-size: 80px; animation-delay: 2s; }
+    .mortar-3 { top: 20%; right: 10%; font-size: 60px; animation-delay: 5s; }
+    .mortar-4 { bottom: 20%; right: 15%; font-size: 70px; animation-delay: 8s; }
 
     .chat-container {
         position: relative;
         z-index: 10;
         width: 100%;
-        max-width: 520px;
+        max-width: 500px;
         background: rgba(10, 31, 62, 0.55);
         backdrop-filter: blur(15px);
-        border-radius: 40px;
-        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.35), 0 30px 50px rgba(0, 0, 0, 0.5);
+        border-radius: 32px;
+        box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.35), 0 25px 40px rgba(0, 0, 0, 0.4);
         overflow: hidden;
-        animation: fadeInScale 0.7s ease;
+        animation: fadeInScale 0.5s ease;
         transition: transform 0.3s ease;
         border: 1px solid rgba(212, 175, 55, 0.4);
-    }
-
-    .chat-container:hover {
-        transform: translateY(-5px);
     }
 
     @keyframes fadeInScale {
         from {
             opacity: 0;
-            transform: scale(0.95) translateY(30px);
+            transform: scale(0.96) translateY(20px);
         }
         to {
             opacity: 1;
@@ -95,42 +91,42 @@
 
     .chat-header {
         background: linear-gradient(135deg, rgba(10, 42, 102, 0.95), rgba(13, 58, 138, 0.95));
-        padding: 22px 20px;
+        padding: 16px;
         text-align: center;
         border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     }
 
     .chat-header h1 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-weight: 800;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        gap: 6px;
         color: white;
     }
 
     .chat-header p {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
         opacity: 0.7;
-        margin-top: 5px;
+        margin-top: 4px;
         letter-spacing: 0.5px;
     }
 
     .chat-body {
-        padding: 20px;
-        height: 470px;
+        padding: 16px;
+        height: 460px;
         overflow-y: auto;
         display: flex;
         flex-direction: column;
-        gap: 14px;
+        gap: 12px;
         background: rgba(0, 0, 0, 0.2);
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
     }
 
     .chat-body::-webkit-scrollbar {
-        width: 4px;
+        width: 3px;
     }
 
     .chat-body::-webkit-scrollbar-track {
@@ -145,15 +141,15 @@
 
     .bot-message {
         display: flex;
-        gap: 12px;
+        gap: 10px;
         align-items: flex-start;
-        animation: fadeInLeft 0.4s ease;
+        animation: fadeInLeft 0.3s ease;
     }
 
     @keyframes fadeInLeft {
         from {
             opacity: 0;
-            transform: translateX(-15px);
+            transform: translateX(-12px);
         }
         to {
             opacity: 1;
@@ -162,8 +158,8 @@
     }
 
     .bot-avatar {
-        width: 42px;
-        height: 42px;
+        width: 38px;
+        height: 38px;
         border-radius: 50%;
         object-fit: cover;
         box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.5);
@@ -173,13 +169,13 @@
     .message {
         background: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(4px);
-        padding: 12px 16px;
-        border-radius: 20px;
-        border-top-left-radius: 5px;
-        max-width: 82%;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        font-size: 0.85rem;
-        line-height: 1.45;
+        padding: 10px 14px;
+        border-radius: 18px;
+        border-top-left-radius: 4px;
+        max-width: 85%;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        font-size: 0.8rem;
+        line-height: 1.4;
         color: white;
         border: 1px solid rgba(212, 175, 55, 0.2);
         word-break: break-word;
@@ -187,13 +183,13 @@
 
     .user-message {
         text-align: right;
-        animation: fadeInRight 0.4s ease;
+        animation: fadeInRight 0.3s ease;
     }
 
     @keyframes fadeInRight {
         from {
             opacity: 0;
-            transform: translateX(15px);
+            transform: translateX(12px);
         }
         to {
             opacity: 1;
@@ -205,32 +201,32 @@
         display: inline-block;
         background: linear-gradient(135deg, #d4af37, #b8962e);
         color: #0a1f3e;
-        padding: 10px 18px;
-        border-radius: 22px;
-        border-top-right-radius: 5px;
-        max-width: 82%;
-        font-size: 0.85rem;
+        padding: 8px 16px;
+        border-radius: 20px;
+        border-top-right-radius: 4px;
+        max-width: 85%;
+        font-size: 0.8rem;
         font-weight: 600;
-        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+        box-shadow: 0 3px 8px rgba(212, 175, 55, 0.2);
         word-break: break-word;
     }
 
     .button-group {
         display: flex;
-        gap: 12px;
-        margin-top: 15px;
+        gap: 10px;
+        margin-top: 12px;
         flex-wrap: wrap;
     }
 
     .btn-si, .btn-no {
-        padding: 10px 22px;
+        padding: 8px 18px;
         border-radius: 40px;
         border: none;
         cursor: pointer;
         font-weight: 600;
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         transition: all 0.2s ease;
-        min-width: 85px;
+        min-width: 75px;
     }
 
     .btn-si {
@@ -244,39 +240,46 @@
         border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
+    .btn-si:active, .btn-no:active {
+        transform: scale(0.96);
+    }
+
     .alerta-personalizada {
         background: rgba(254, 243, 199, 0.1);
         border-left: 3px solid #f59e0b;
-        padding: 10px 12px;
-        margin-top: 12px;
-        border-radius: 12px;
-        font-size: 0.7rem;
+        padding: 8px 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+        font-size: 0.65rem;
         color: #fde68a;
         backdrop-filter: blur(4px);
     }
 
     .chat-footer {
         display: flex;
-        padding: 16px 20px;
+        padding: 12px 16px;
         background: rgba(0, 0, 0, 0.3);
         border-top: 1px solid rgba(212, 175, 55, 0.2);
-        gap: 10px;
+        gap: 8px;
     }
 
     .chat-footer input {
         flex: 1;
-        padding: 13px 18px;
-        border-radius: 60px;
+        padding: 12px 16px;
+        border-radius: 50px;
         border: 1px solid rgba(212, 175, 55, 0.3);
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         font-family: 'Inter', sans-serif;
         transition: all 0.3s ease;
         background: rgba(255, 255, 255, 0.05);
         color: white;
+        -webkit-appearance: none;
+        appearance: none;
     }
 
     .chat-footer input::placeholder {
         color: rgba(255, 255, 255, 0.4);
+        font-size: 0.7rem;
     }
 
     .chat-footer input:focus {
@@ -289,23 +292,27 @@
     .send-btn {
         background: linear-gradient(135deg, #d4af37, #b8962e);
         border: none;
-        padding: 12px 24px;
-        border-radius: 60px;
+        padding: 10px 18px;
+        border-radius: 50px;
         cursor: pointer;
         font-weight: 700;
         color: #0a1f3e;
         transition: all 0.2s ease;
         display: flex;
         align-items: center;
-        gap: 6px;
-        font-size: 0.85rem;
+        gap: 5px;
+        font-size: 0.75rem;
         white-space: nowrap;
+    }
+
+    .send-btn:active {
+        transform: scale(0.96);
     }
 
     .footer-text {
         text-align: center;
-        padding: 14px;
-        font-size: 0.75rem;
+        padding: 12px;
+        font-size: 0.65rem;
         font-weight: 600;
         color: #d4af37;
         background: rgba(0, 0, 0, 0.3);
@@ -315,13 +322,13 @@
 
     .loading-dots {
         display: flex;
-        gap: 5px;
+        gap: 4px;
         align-items: center;
     }
 
     .loading-dots span {
-        width: 7px;
-        height: 7px;
+        width: 6px;
+        height: 6px;
         background: #d4af37;
         border-radius: 50%;
         animation: bounce 1.4s infinite ease-in-out both;
@@ -335,19 +342,104 @@
         40% { transform: scale(1); opacity: 1; }
     }
 
-    @media (max-width: 550px) {
-        .chat-header h1 { font-size: 1.3rem; }
-        .chat-body { height: 450px; padding: 14px; }
-        .bot-avatar { width: 36px; height: 36px; }
-        .message, .user-bubble { max-width: 85%; font-size: 0.75rem; }
-        .btn-si, .btn-no { padding: 8px 16px; font-size: 0.75rem; min-width: 70px; }
-        .send-btn { padding: 10px 18px; font-size: 0.75rem; }
-        .floating-mortar { font-size: 60px; }
-        .mortar-1 { font-size: 100px; }
-        .mortar-2 { font-size: 80px; }
+    /* ============================================ */
+    /* RESPONSIVE PARA TABLET (entre 550px y 768px) */
+    /* ============================================ */
+    @media (min-width: 551px) and (max-width: 768px) {
+        .chat-container {
+            max-width: 90%;
+        }
+        .chat-header h1 {
+            font-size: 1.6rem;
+        }
+        .chat-body {
+            height: 500px;
+        }
+        .message, .user-bubble {
+            font-size: 0.85rem;
+        }
         body::before {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    /* ============================================ */
+    /* RESPONSIVE PARA CELULAR PEQUEÑO (menos de 380px) */
+    /* ============================================ */
+    @media (max-width: 380px) {
+        body {
+            padding: 8px;
+        }
+        .chat-header h1 {
+            font-size: 1.2rem;
+        }
+        .chat-body {
+            height: 420px;
+            padding: 12px;
+        }
+        .bot-avatar {
+            width: 32px;
+            height: 32px;
+        }
+        .message, .user-bubble {
+            font-size: 0.7rem;
+            padding: 8px 12px;
+        }
+        .btn-si, .btn-no {
+            padding: 6px 12px;
+            font-size: 0.65rem;
+            min-width: 60px;
+        }
+        .send-btn {
+            padding: 8px 14px;
+            font-size: 0.7rem;
+        }
+        .chat-footer input {
+            padding: 10px 12px;
+            font-size: 0.7rem;
+        }
+        .footer-text {
+            font-size: 0.55rem;
+            padding: 8px;
+        }
+        body::before {
+            width: 60px;
+            height: 60px;
+            bottom: 8px;
+            right: 8px;
+        }
+        .floating-mortar {
+            font-size: 50px;
+        }
+        .mortar-1 { font-size: 70px; }
+        .mortar-2 { font-size: 55px; }
+    }
+
+    /* ============================================ */
+    /* RESPONSIVE PARA CELULAR GRANDE (iPhone Plus/Pro Max) */
+    /* ============================================ */
+    @media (min-width: 381px) and (max-width: 550px) {
+        .chat-header h1 {
+            font-size: 1.3rem;
+        }
+        .chat-body {
+            height: 480px;
+        }
+        .message, .user-bubble {
+            font-size: 0.75rem;
+        }
+        .btn-si, .btn-no {
+            padding: 8px 16px;
+            font-size: 0.7rem;
+        }
+        .send-btn {
+            padding: 10px 16px;
+            font-size: 0.75rem;
+        }
+        body::before {
+            width: 75px;
+            height: 75px;
         }
     }
 </style>
@@ -411,8 +503,7 @@ function detectarGenero(nombreCompleto) {
         "camila", "valeria", "mariana", "isabella", "luciana", "fernanda",
         "julieta", "ximena", "adriana", "amanda", "zulma", "leonor", "mirta",
         "enith", "gladys", "yuby", "yuli", "yohanna", "isabel", "briggitte",
-        "maribel", "yolima", "barbara", "esperanza", "solangel", "sonia", 
-        "hilda", "paola", "lorena", "catalina", "daniela", "alejandra", "tatiana"
+        "maribel", "yolima", "barbara", "esperanza", "solangel", "sonia", "hilda", "paola"
     ];
     return femeninos.includes(nombre) ? "estimada docente" : "estimado docente";
 }
@@ -542,7 +633,7 @@ function enviarCedula() {
                     <b>✨ ¡Hola ${tratamiento} ${primerNombre}!</b><br><br>
                     📧 <strong>${estadoEnvio}</strong><br>
                     📬 Se envió el usuario y la contraseña para las plataformas:<br>
-                    <span style="background:rgba(212,175,55,0.2); padding:4px 12px; border-radius:20px; display:inline-block; font-size:0.7rem;">SIGA · KAWAK · SIPA HCM</span><br>
+                    <span style="background:rgba(212,175,55,0.2); padding:4px 10px; border-radius:18px; display:inline-block; font-size:0.65rem;">SIGA · KAWAK · SIPA HCM</span><br>
                     a tu correo institucional:<br>
                     <strong>${data.correo}</strong><br><br>
                     📌 Revisa tu bandeja de <strong>recibidos</strong>, o en <strong>spam</strong> o <strong>correo no deseado</strong>.<br>
