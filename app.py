@@ -1,30 +1,30 @@
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 import pandas as pd
 import os
-import csv
-from datetime import datetime
-from database import init_db, registrar_consulta_db
+from database_pg import (
+    init_db_pg, obtener_docente_por_cedula, registrar_consulta_pg,
+    obtener_todos_docentes, agregar_docente, actualizar_docente, eliminar_docente,
+    migrar_excel_a_postgres
+)
 
 app = Flask(__name__)
 app.secret_key = "clave_secreta_credu_2026"
 
-# Inicializar base de datos
-init_db()
+# Inicializar base de datos PostgreSQL
+init_db_pg()
 
-# =====================================================
-# CONFIGURACIÓN DE CORREO (COMENTADA POR AHORA)
-# =====================================================
-# EMAIL_SENDER = "an.sistemasdeinformacion@uniagustiniana.edu.co"
-# EMAIL_PASSWORD = "hvnp lihx okqa bzyj"
-# EMAIL_SERVER = "smtp.gmail.com"
-# =====================================================
+# Verificar si hay docentes en la BD, si no, migrar desde Excel
+def verificar_y_migrar():
+    docentes = obtener_todos_docentes()
+    if len(docentes) == 0:
+        print("📦 No hay docentes en PostgreSQL. Migrando desde Excel...")
+        resultado = migrar_excel_a_postgres()
+        if resultado["success"]:
+            print(f"✅ Migración exitosa: {resultado['migrados']} docentes migrados")
+        else:
+            print(f"❌ Error en migración: {resultado.get('error', 'Desconocido')}")
 
-# Cargar Excel
-df = pd.read_excel("docentes.xlsx")
-
-def registrar_consulta(correo, cedula, nombre):
-    """Registra cada consulta en la base de datos"""
-    return registrar_consulta_db(correo, cedula, nombre)
+verificar_y_migrar()
 
 def es_personalizada(contraseña):
     if pd.isna(contraseña):
@@ -46,9 +46,11 @@ def login_page():
         if not correo.endswith("@uniagustiniana.edu.co"):
             return render_template("login.html", error="❌ Debes usar tu correo institucional (@uniagustiniana.edu.co)")
         
-        existe = df[df["CORREO INSTITUCIONAL"].astype(str).str.lower().str.strip() == correo]
+        # Verificar en PostgreSQL
+        docentes = obtener_todos_docentes()
+        existe = any(d['correo'] == correo for d in docentes)
         
-        if existe.empty:
+        if not existe:
             return render_template("login.html", error="❌ Correo no registrado en el sistema. Contacta a Tecnologías.")
         
         session['correo'] = correo
@@ -71,42 +73,28 @@ def consultar():
         cedula = str(data.get("cedula")).strip()
         correo_sesion = session['correo']
         
-        # Buscar por cédula
-        resultado = df[df["CEDULA"].astype(str).str.strip() == cedula]
+        # Buscar en PostgreSQL
+        docente = obtener_docente_por_cedula(cedula)
         
-        if resultado.empty:
+        if not docente:
             return jsonify({"success": False, "error": "Cédula no encontrada"})
         
-        fila = resultado.iloc[0]
-        
-        # Obtener el correo registrado para esta cédula
-        correo_registrado = str(fila.get("CORREO INSTITUCIONAL", "")).strip().lower()
-        
-        # 🔐 VALIDACIÓN CLAVE: el correo de sesión debe coincidir con el correo de la cédula
-        if correo_sesion != correo_registrado:
+        # Validar que el correo de sesión coincida
+        if correo_sesion != docente['correo']:
             return jsonify({
-                "success": False, 
-                "error": "No autorizado",
+                "success": False,
                 "mensaje": f"❌ La cédula {cedula} no corresponde a tu cuenta. Solo puedes consultar tus propias credenciales."
             })
         
-        nombre = str(fila.get("NOMBRE COMPLETO", "Usuario"))
-        correo_destino = correo_registrado
-        contraseña = fila.get("CONTRASEÑA", "")
-        personalizada = es_personalizada(contraseña)
-        
-        # Registrar la consulta
-        registrar_consulta(correo_destino, cedula, nombre)
-        
-        # Simular envío de correo (por ahora)
-        enviado = True
+        # Registrar consulta
+        registrar_consulta_pg(docente['correo'], docente['cedula'], docente['nombre'])
         
         return jsonify({
             "success": True,
-            "nombre": nombre,
-            "correo": correo_destino,
-            "personalizada": personalizada,
-            "enviado": enviado
+            "nombre": docente['nombre'],
+            "correo": docente['correo'],
+            "personalizada": docente['personalizada'],
+            "enviado": True
         })
         
     except Exception as e:
@@ -114,7 +102,7 @@ def consultar():
         return jsonify({"success": False, "error": "Error interno"})
 
 # Importar y registrar el panel de administración
-from admin import admin_bp
+from admin_pg import admin_bp
 app.register_blueprint(admin_bp)
 
 if __name__ == "__main__":
