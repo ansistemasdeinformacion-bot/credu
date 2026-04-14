@@ -14,91 +14,11 @@
 
     body {
         font-family: 'Inter', sans-serif;
+        background: radial-gradient(circle at 10% 20%, #0a2a66, #020c1a, #010408);
         min-height: 100vh;
         padding: 20px;
         position: relative;
-        transition: background 0.5s ease;
     }
-
-    body {
-        background: radial-gradient(circle at 10% 20%, #0a2a66, #020c1a, #010408);
-    }
-
-    /* ============================================ */
-    /* TEMÁTICAS MENSUALES CON SÍMBOLOS */
-    /* ============================================ */
-
-    /* Enero - Año Nuevo */
-    body.tema-enero { background: radial-gradient(circle at 10% 20%, #0a2a66, #020c1a, #010408); }
-    body.tema-enero .calendario { border: 2px solid #d4af37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
-    body.tema-enero .dia-header { color: #d4af37; }
-    body.tema-enero .simbolo-mes::before { content: "🎆 "; }
-
-    /* Febrero - San Valentín */
-    body.tema-febrero { background: radial-gradient(circle at 10% 20%, #4a0e2e, #2d0a1a, #1a050e); }
-    body.tema-febrero .calendario { border: 2px solid #e75480; box-shadow: 0 0 20px rgba(231, 84, 128, 0.2); }
-    body.tema-febrero .dia-header { color: #e75480; }
-    body.tema-febrero .simbolo-mes::before { content: "❤️ "; }
-
-    /* Marzo - Primavera */
-    body.tema-marzo { background: radial-gradient(circle at 10% 20%, #1a4a3a, #0d2a1a, #051a0a); }
-    body.tema-marzo .calendario { border: 2px solid #2ecc71; box-shadow: 0 0 20px rgba(46, 204, 113, 0.2); }
-    body.tema-marzo .dia-header { color: #2ecc71; }
-    body.tema-marzo .simbolo-mes::before { content: "🌸 "; }
-
-    /* Abril - Pascua */
-    body.tema-abril { background: radial-gradient(circle at 10% 20%, #5d4e6b, #3d2e4b, #2d1e3b); }
-    body.tema-abril .calendario { border: 2px solid #f5a623; box-shadow: 0 0 20px rgba(245, 166, 35, 0.2); }
-    body.tema-abril .dia-header { color: #f5a623; }
-    body.tema-abril .simbolo-mes::before { content: "🐣 "; }
-
-    /* Mayo - Flores */
-    body.tema-mayo { background: radial-gradient(circle at 10% 20%, #6b4c5a, #4b2c3a, #3b1c2a); }
-    body.tema-mayo .calendario { border: 2px solid #ff6b6b; box-shadow: 0 0 20px rgba(255, 107, 107, 0.2); }
-    body.tema-mayo .dia-header { color: #ff6b6b; }
-    body.tema-mayo .simbolo-mes::before { content: "🌺 "; }
-
-    /* Junio - Verano */
-    body.tema-junio { background: radial-gradient(circle at 10% 20%, #5a4a2a, #3a2a1a, #2a1a0a); }
-    body.tema-junio .calendario { border: 2px solid #f1c40f; box-shadow: 0 0 20px rgba(241, 196, 15, 0.2); }
-    body.tema-junio .dia-header { color: #f1c40f; }
-    body.tema-junio .simbolo-mes::before { content: "☀️ "; }
-
-    /* Julio - Patriótico */
-    body.tema-julio { background: radial-gradient(circle at 10% 20%, #1a2a6b, #112a5a, #0a1a4a); }
-    body.tema-julio .calendario { border: 2px solid #e74c3c; box-shadow: 0 0 20px rgba(231, 76, 60, 0.2); }
-    body.tema-julio .dia-header { color: #e74c3c; }
-    body.tema-julio .simbolo-mes::before { content: "🇨🇴 "; }
-
-    /* Agosto - Viento */
-    body.tema-agosto { background: radial-gradient(circle at 10% 20%, #1a4a6b, #0a3a5a, #052a4a); }
-    body.tema-agosto .calendario { border: 2px solid #3498db; box-shadow: 0 0 20px rgba(52, 152, 219, 0.2); }
-    body.tema-agosto .dia-header { color: #3498db; }
-    body.tema-agosto .simbolo-mes::before { content: "🪁 "; }
-
-    /* Septiembre - Amor y Amistad */
-    body.tema-septiembre { background: radial-gradient(circle at 10% 20%, #6b1a4a, #4a0a2a, #3a051a); }
-    body.tema-septiembre .calendario { border: 2px solid #ff69b4; box-shadow: 0 0 20px rgba(255, 105, 180, 0.2); }
-    body.tema-septiembre .dia-header { color: #ff69b4; }
-    body.tema-septiembre .simbolo-mes::before { content: "💌 "; }
-
-    /* Octubre - Halloween */
-    body.tema-octubre { background: radial-gradient(circle at 10% 20%, #4a2a1a, #3a1a0a, #2a0a00); }
-    body.tema-octubre .calendario { border: 2px solid #e67e22; box-shadow: 0 0 20px rgba(230, 126, 34, 0.2); }
-    body.tema-octubre .dia-header { color: #e67e22; }
-    body.tema-octubre .simbolo-mes::before { content: "🎃 "; }
-
-    /* Noviembre - Otoño */
-    body.tema-noviembre { background: radial-gradient(circle at 10% 20%, #5a3a1a, #4a2a0a, #3a1a00); }
-    body.tema-noviembre .calendario { border: 2px solid #d35400; box-shadow: 0 0 20px rgba(211, 84, 0, 0.2); }
-    body.tema-noviembre .dia-header { color: #d35400; }
-    body.tema-noviembre .simbolo-mes::before { content: "🍂 "; }
-
-    /* Diciembre - Navidad */
-    body.tema-diciembre { background: radial-gradient(circle at 10% 20%, #1a4a2a, #0a3a1a, #052a0a); }
-    body.tema-diciembre .calendario { border: 2px solid #dc2626; box-shadow: 0 0 20px rgba(220, 38, 38, 0.2); }
-    body.tema-diciembre .dia-header { color: #dc2626; }
-    body.tema-diciembre .simbolo-mes::before { content: "🎄 "; }
 
     body::before {
         content: "";
@@ -229,7 +149,6 @@
         padding: 20px;
         margin-bottom: 25px;
         border: 1px solid rgba(212, 175, 55, 0.3);
-        transition: all 0.3s ease;
     }
 
     .calendario h2 {
@@ -248,9 +167,9 @@
     }
 
     .dia-header {
+        color: #d4af37;
         font-weight: 600;
         padding: 10px;
-        transition: color 0.3s ease;
     }
 
     .dia {
@@ -276,10 +195,6 @@
         color: #d4af37;
         font-weight: bold;
         margin-top: 5px;
-    }
-
-    .simbolo-mes {
-        font-size: 1.2rem;
     }
 
     .tabla-container {
@@ -349,7 +264,7 @@
     }
 </style>
 </head>
-<body id="adminBody">
+<body>
 <div class="container">
     <div class="header">
         <h1>
@@ -388,7 +303,7 @@
 
     <div class="calendario">
         <h2>
-            <span class="simbolo-mes" id="simbolo_mes"></span>
+            <span id="simbolo_mes"></span>
             📅 Consultas por día - <span id="mes_nombre">Abril</span> <span id="año_actual">{{ año_actual }}</span>
         </h2>
         <div class="calendario-grid" id="calendario_grid">
@@ -431,21 +346,13 @@
 
 <script>
 const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-const mesesLower = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 const simbolosPorMes = {
     1: "🎆", 2: "❤️", 3: "🌸", 4: "🐣", 5: "🌺", 6: "☀️",
     7: "🇨🇴", 8: "🪁", 9: "💌", 10: "🎃", 11: "🍂", 12: "🎄"
 };
 let consultasData = {};
 
-function aplicarTematicaMensual(mes) {
-    const body = document.getElementById('adminBody');
-    mesesLower.forEach(m => {
-        body.classList.remove(`tema-${m}`);
-    });
-    body.classList.add(`tema-${mesesLower[mes-1]}`);
-    
-    // Actualizar símbolo del mes en el título
+function actualizarSimboloMes(mes) {
     const simbolo = simbolosPorMes[mes] || "📅";
     document.getElementById('simbolo_mes').innerHTML = simbolo + " ";
 }
@@ -454,7 +361,7 @@ function cambiarMes() {
     const mes = document.getElementById('mes').value;
     const año = document.getElementById('año').value;
     
-    aplicarTematicaMensual(parseInt(mes));
+    actualizarSimboloMes(parseInt(mes));
     
     fetch('/admin/cambiar_mes', {
         method: 'POST',
@@ -543,7 +450,7 @@ function buscarPorCedula() {
                               <td>${r.año}</td>
                           </tr>`;
             });
-            tabla += '</tbody>}</div>';
+            tabla += '</tbody></table>';
             tablaDiv.innerHTML = tabla;
             div.style.display = 'block';
         } else {
@@ -567,7 +474,7 @@ function exportar() {
 const consultasIniciales = {{ consultas_por_dia | tojson }};
 consultasData = consultasIniciales;
 generarCalendario({{ mes_actual }}, {{ año_actual }});
-aplicarTematicaMensual({{ mes_actual }});
+actualizarSimboloMes({{ mes_actual }});
 </script>
 </body>
 </html>
