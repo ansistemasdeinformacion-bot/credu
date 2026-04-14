@@ -20,7 +20,6 @@
         position: relative;
     }
 
-    /* Mascota en el fondo */
     body::before {
         content: "";
         position: fixed;
@@ -119,19 +118,6 @@
         color: #0a1f3e;
         font-weight: 700;
         border: none;
-    }
-
-    .btn-danger {
-        background: linear-gradient(135deg, #dc2626, #b91c1c);
-        color: white;
-        font-weight: 700;
-        border: none;
-    }
-
-    .btn-small {
-        padding: 5px 12px;
-        font-size: 0.7rem;
-        margin: 0 2px;
     }
 
     .search-box {
@@ -298,7 +284,6 @@
         </select>
         <button class="btn-primary" onclick="cambiarMes()">Consultar</button>
         <button class="btn-primary" onclick="exportar()">📎 Exportar todo</button>
-        <button class="btn-primary" onclick="migrarExcel()">📎 Migrar Excel a BD</button>
     </div>
 
     <div class="search-box">
@@ -319,51 +304,35 @@
         </div>
     </div>
 
+    <!-- Tabla de registros de ingreso (reemplaza la gestión de docentes) -->
     <div class="tabla-container">
-        <h2>
-            👨‍🏫 Gestión de Docentes
-            <button class="btn-primary" onclick="mostrarModalAgregar()">➕ Agregar Docente</button>
-        </h2>
+        <h2>📋 Últimos registros de ingreso (últimas 50 consultas)</h2>
         <div style="overflow-x: auto;">
-            <table id="tabla_docentes">
+            <table id="tabla_consultas">
                 <thead>
-                    <tr><th>Cédula</th><th>Nombre</th><th>Correo</th><th>Contraseña</th><th>Personalizada</th><th>Acciones</th></tr>
-                </thead>
-                <tbody id="docentes_tbody">
-                    {% for d in docentes %}
                     <tr>
-                        <td>{{ d.cedula }}</td>
-                        <td>{{ d.nombre }}</td>
-                        <td>{{ d.correo }}</td>
-                        <td>{{ d.contraseña[:10] }}...</td>
-                        <td>{% if d.personalizada %}✅ Sí{% else %}❌ No{% endif %}</td>
-                        <td>
-                            <button class="btn-primary btn-small" onclick="editarDocente('{{ d.cedula }}','{{ d.nombre }}','{{ d.correo }}','{{ d.contraseña }}')">✏️ Editar</button>
-                            <button class="btn-danger btn-small" onclick="eliminarDocente('{{ d.cedula }}')">🗑️ Eliminar</button>
-                        </td>
+                        <th>Fecha y Hora</th>
+                        <th>Docente</th>
+                        <th>Correo</th>
+                        <th>Cédula consultada</th>
+                    </tr>
+                </thead>
+                <tbody id="consultas_tbody">
+                    {% for c in consultas_recientes %}
+                    <tr>
+                        <td>{{ c.fecha }}</td>
+                        <td>{{ c.nombre }}</td>
+                        <td>{{ c.correo }}</td>
+                        <td>{{ c.cedula }}</td>
                     </tr>
                     {% endfor %}
-                    {% if not docentes %}
-                    <tr><td colspan="6" style="text-align:center">No hay docentes registrados. Migra desde Excel o agrega uno.</td></tr>
+                    {% if not consultas_recientes %}
+                    <tr>
+                        <td colspan="4" style="text-align:center">No hay consultas registradas aún</td>
+                    </tr>
                     {% endif %}
                 </tbody>
             </table>
-        </div>
-    </div>
-</div>
-
-<!-- Modal para agregar/editar docente -->
-<div id="modalDocente" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:1000; align-items:center; justify-content:center;">
-    <div style="background:#0a1f3e; padding:30px; border-radius:30px; width:90%; max-width:500px;">
-        <h3 id="modalTitulo" style="color:white; margin-bottom:20px;">Agregar Docente</h3>
-        <input type="hidden" id="edit_cedula">
-        <input type="text" id="docente_cedula" placeholder="Cédula" style="width:100%; margin-bottom:10px; padding:12px; border-radius:10px;">
-        <input type="text" id="docente_nombre" placeholder="Nombre Completo" style="width:100%; margin-bottom:10px; padding:12px; border-radius:10px;">
-        <input type="email" id="docente_correo" placeholder="Correo Institucional" style="width:100%; margin-bottom:10px; padding:12px; border-radius:10px;">
-        <input type="text" id="docente_contraseña" placeholder="Contraseña" style="width:100%; margin-bottom:20px; padding:12px; border-radius:10px;">
-        <div style="display:flex; gap:10px;">
-            <button class="btn-primary" onclick="guardarDocente()">💾 Guardar</button>
-            <button class="btn-primary" onclick="cerrarModal()">❌ Cancelar</button>
         </div>
     </div>
 </div>
@@ -385,7 +354,6 @@ function cambiarMes() {
     .then(data => {
         if (data.success) {
             document.getElementById('mes_nombre').innerText = meses[mes-1];
-            document.getElementById('mes_titulo').innerText = meses[mes-1];
             document.getElementById('año_actual').innerText = año;
             
             consultasData = {};
@@ -394,13 +362,15 @@ function cambiarMes() {
             });
             
             const tbody = document.getElementById('docentes_tabla');
-            tbody.innerHTML = '';
-            if (data.docentes_mes.length > 0) {
-                data.docentes_mes.forEach(d => {
-                    tbody.innerHTML += `<tr><td>${d[0]}</td><td>${d[1]}</td><td>${d[2]}</td><td>${d[3]}</td></tr>`;
-                });
-            } else {
-                tbody.innerHTML = '<tr><td colspan="4" style="text-align:center">No hay consultas registradas este mes</td></tr>';
+            if (tbody) {
+                tbody.innerHTML = '';
+                if (data.docentes_mes.length > 0) {
+                    data.docentes_mes.forEach(d => {
+                        tbody.innerHTML += `<tr><td>${d[0]}</td><td>${d[1]}</td><td>${d[2]}</td><td>${d[3]}</td></tr>`;
+                    });
+                } else {
+                    tbody.innerHTML = '<tr><td colspan="4" style="text-align:center">No hay consultas registradas este mes</td></tr>';
+                }
             }
             
             generarCalendario(parseInt(mes), parseInt(año));
@@ -453,27 +423,25 @@ function buscarPorCedula() {
                             <thead>
                                 <tr>
                                     <th>Fecha y Hora</th>
+                                    <th>Correo</th>
+                                    <th>Cédula</th>
+                                    <th>Nombre</th>
                                     <th>Día</th>
                                     <th>Mes</th>
                                     <th>Año</th>
-                                    <th>Hora</th>
-                                    <th>Correo</th>
-                                    <th>Nombre</th>
                                 </tr>
                             </thead>
                             <tbody>`;
             data.resultados.forEach(r => {
-                const fechaObj = new Date(r.fecha_completa);
-                const horaFormateada = r.hora + ":00";
                 tabla += `<tr>
-                            <td>${r.fecha_completa}</td>
-                            <td>${r.dia}</td>
-                            <td>${meses[r.mes-1]}</td>
-                            <td>${r.año}</td>
-                            <td>${horaFormateada}</td>
-                            <td>${r.correo}</td>
-                            <td>${r.nombre}</td>
-                         </tr>`;
+                             <td>${r[0]}</td>
+                             <td>${r[1]}</td>
+                             <td>${r[2]}</td>
+                             <td>${r[3]}</td>
+                             <td>${r[4]}</td>
+                             <td>${r[5]}</td>
+                             <td>${r[6]}</td>
+                          </tr>`;
             });
             tabla += '</tbody></table>';
             tablaDiv.innerHTML = tabla;
@@ -494,89 +462,6 @@ function exportar() {
                 window.location.href = '/' + data.archivo;
             }
         });
-}
-
-function migrarExcel() {
-    if (confirm('¿Migrar todos los docentes del Excel a la base de datos? Los duplicados se actualizarán.')) {
-        fetch('/admin/migrar_excel', { method: 'POST' })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert(`✅ Migración exitosa: ${data.migrados} docentes migrados, ${data.errores} errores`);
-                location.reload();
-            } else {
-                alert('❌ Error en migración: ' + data.error);
-            }
-        });
-    }
-}
-
-function mostrarModalAgregar() {
-    document.getElementById('modalTitulo').innerText = 'Agregar Docente';
-    document.getElementById('edit_cedula').value = '';
-    document.getElementById('docente_cedula').value = '';
-    document.getElementById('docente_nombre').value = '';
-    document.getElementById('docente_correo').value = '';
-    document.getElementById('docente_contraseña').value = '';
-    document.getElementById('modalDocente').style.display = 'flex';
-}
-
-function editarDocente(cedula, nombre, correo, contraseña) {
-    document.getElementById('modalTitulo').innerText = 'Editar Docente';
-    document.getElementById('edit_cedula').value = cedula;
-    document.getElementById('docente_cedula').value = cedula;
-    document.getElementById('docente_nombre').value = nombre;
-    document.getElementById('docente_correo').value = correo;
-    document.getElementById('docente_contraseña').value = contraseña;
-    document.getElementById('modalDocente').style.display = 'flex';
-}
-
-function cerrarModal() {
-    document.getElementById('modalDocente').style.display = 'none';
-}
-
-function guardarDocente() {
-    const edit_cedula = document.getElementById('edit_cedula').value;
-    const cedula = document.getElementById('docente_cedula').value;
-    const nombre = document.getElementById('docente_nombre').value;
-    const correo = document.getElementById('docente_correo').value;
-    const contraseña = document.getElementById('docente_contraseña').value;
-    
-    const url = edit_cedula ? '/admin/actualizar_docente' : '/admin/agregar_docente';
-    
-    fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ cedula, nombre, correo, contraseña })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('✅ Docente guardado correctamente');
-            location.reload();
-        } else {
-            alert('❌ Error: ' + (data.error || 'desconocido'));
-        }
-    });
-}
-
-function eliminarDocente(cedula) {
-    if (confirm('¿Eliminar al docente con cédula ' + cedula + '?')) {
-        fetch('/admin/eliminar_docente', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ cedula: cedula })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('✅ Docente eliminado');
-                location.reload();
-            } else {
-                alert('❌ Error al eliminar');
-            }
-        });
-    }
 }
 
 generarCalendario({{ mes_actual }}, {{ año_actual }});

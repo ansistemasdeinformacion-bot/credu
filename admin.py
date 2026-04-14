@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, jsonify
 from datetime import datetime
+import sqlite3
 from database import (obtener_resumen_mensual, buscar_por_cedula, 
                      exportar_todas_consultas, obtener_años_disponibles)
 
@@ -38,12 +39,34 @@ def dashboard():
     
     consultas_por_dia, docentes_mes = obtener_resumen_mensual(año_actual, mes_actual)
     
+    # Obtener consultas recientes
+    conn = sqlite3.connect('consultas.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+        SELECT fecha, nombre, correo, cedula 
+        FROM consultas 
+        ORDER BY fecha DESC 
+        LIMIT 50
+    ''')
+    consultas_recientes = cursor.fetchall()
+    conn.close()
+    
+    consultas_lista = []
+    for r in consultas_recientes:
+        consultas_lista.append({
+            "fecha": r[0],
+            "nombre": r[1],
+            "correo": r[2],
+            "cedula": r[3]
+        })
+    
     return render_template('admin_dashboard.html',
                          año_actual=año_actual,
                          mes_actual=mes_actual,
                          consultas_por_dia=consultas_por_dia,
                          docentes_mes=docentes_mes,
-                         años_disponibles=años_disponibles)
+                         años_disponibles=años_disponibles,
+                         consultas_recientes=consultas_lista)
 
 @admin_bp.route('/cambiar_mes', methods=['POST'])
 def cambiar_mes():
