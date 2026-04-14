@@ -17,77 +17,36 @@
     body {
         font-family: 'Inter', sans-serif;
         min-height: 100vh;
+        background: radial-gradient(circle at 10% 20%, #0a2a66, #020c1a, #010408);
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 20px;
         position: relative;
         overflow: hidden;
-        transition: background 0.5s ease;
     }
 
-    /* Fondo base que cambiará según el mes */
-    body {
-        background: radial-gradient(circle at 10% 20%, #0a2a66, #020c1a, #010408);
+    /* Mascota de fondo */
+    body::before {
+        content: "";
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 120px;
+        height: 120px;
+        background-image: url('/static/mascota.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.15;
+        pointer-events: none;
+        z-index: 0;
     }
-
-    /* ============================================ */
-    /* TEMÁTICAS MENSUALES PARA EL CHAT */
-    /* ============================================ */
-
-    /* Enero - Año Nuevo */
-    body.tema-enero { background: radial-gradient(circle at 10% 20%, #0a2a66, #020c1a, #010408); }
-    body.tema-enero .chat-container { border: 2px solid #d4af37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
-
-    /* Febrero - San Valentín */
-    body.tema-febrero { background: radial-gradient(circle at 10% 20%, #4a0e2e, #2d0a1a, #1a050e); }
-    body.tema-febrero .chat-container { border: 2px solid #e75480; box-shadow: 0 0 20px rgba(231, 84, 128, 0.2); }
-
-    /* Marzo - Primavera */
-    body.tema-marzo { background: radial-gradient(circle at 10% 20%, #1a4a3a, #0d2a1a, #051a0a); }
-    body.tema-marzo .chat-container { border: 2px solid #2ecc71; box-shadow: 0 0 20px rgba(46, 204, 113, 0.2); }
-
-    /* Abril - Pascua */
-    body.tema-abril { background: radial-gradient(circle at 10% 20%, #5d4e6b, #3d2e4b, #2d1e3b); }
-    body.tema-abril .chat-container { border: 2px solid #f5a623; box-shadow: 0 0 20px rgba(245, 166, 35, 0.2); }
-
-    /* Mayo - Flores */
-    body.tema-mayo { background: radial-gradient(circle at 10% 20%, #6b4c5a, #4b2c3a, #3b1c2a); }
-    body.tema-mayo .chat-container { border: 2px solid #ff6b6b; box-shadow: 0 0 20px rgba(255, 107, 107, 0.2); }
-
-    /* Junio - Verano */
-    body.tema-junio { background: radial-gradient(circle at 10% 20%, #5a4a2a, #3a2a1a, #2a1a0a); }
-    body.tema-junio .chat-container { border: 2px solid #f1c40f; box-shadow: 0 0 20px rgba(241, 196, 15, 0.2); }
-
-    /* Julio - Patriótico */
-    body.tema-julio { background: radial-gradient(circle at 10% 20%, #1a2a6b, #112a5a, #0a1a4a); }
-    body.tema-julio .chat-container { border: 2px solid #e74c3c; box-shadow: 0 0 20px rgba(231, 76, 60, 0.2); }
-
-    /* Agosto - Viento */
-    body.tema-agosto { background: radial-gradient(circle at 10% 20%, #1a4a6b, #0a3a5a, #052a4a); }
-    body.tema-agosto .chat-container { border: 2px solid #3498db; box-shadow: 0 0 20px rgba(52, 152, 219, 0.2); }
-
-    /* Septiembre - Amor y Amistad */
-    body.tema-septiembre { background: radial-gradient(circle at 10% 20%, #6b1a4a, #4a0a2a, #3a051a); }
-    body.tema-septiembre .chat-container { border: 2px solid #ff69b4; box-shadow: 0 0 20px rgba(255, 105, 180, 0.2); }
-
-    /* Octubre - Halloween */
-    body.tema-octubre { background: radial-gradient(circle at 10% 20%, #4a2a1a, #3a1a0a, #2a0a00); }
-    body.tema-octubre .chat-container { border: 2px solid #e67e22; box-shadow: 0 0 20px rgba(230, 126, 34, 0.2); }
-
-    /* Noviembre - Otoño */
-    body.tema-noviembre { background: radial-gradient(circle at 10% 20%, #5a3a1a, #4a2a0a, #3a1a00); }
-    body.tema-noviembre .chat-container { border: 2px solid #d35400; box-shadow: 0 0 20px rgba(211, 84, 0, 0.2); }
-
-    /* Diciembre - Navidad */
-    body.tema-diciembre { background: radial-gradient(circle at 10% 20%, #1a4a2a, #0a3a1a, #052a0a); }
-    body.tema-diciembre .chat-container { border: 2px solid #dc2626; box-shadow: 0 0 20px rgba(220, 38, 38, 0.2); }
 
     /* Birretes flotantes */
     .floating-mortar {
         position: absolute;
         font-size: 120px;
-        opacity: 0.05;
+        opacity: 0.06;
         pointer-events: none;
         animation: floatMortar 12s infinite ease-in-out;
         color: #d4af37;
@@ -115,7 +74,7 @@
         box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.35), 0 30px 50px rgba(0, 0, 0, 0.5);
         overflow: hidden;
         animation: fadeInScale 0.7s ease;
-        transition: all 0.3s ease;
+        transition: transform 0.3s ease;
         border: 1px solid rgba(212, 175, 55, 0.4);
     }
 
@@ -376,11 +335,6 @@
         40% { transform: scale(1); opacity: 1; }
     }
 
-    .simbolo-mes {
-        font-size: 1.2rem;
-        margin-right: 5px;
-    }
-
     @media (max-width: 550px) {
         .chat-header h1 { font-size: 1.3rem; }
         .chat-body { height: 450px; padding: 14px; }
@@ -391,10 +345,14 @@
         .floating-mortar { font-size: 60px; }
         .mortar-1 { font-size: 100px; }
         .mortar-2 { font-size: 80px; }
+        body::before {
+            width: 80px;
+            height: 80px;
+        }
     }
 </style>
 </head>
-<body id="chatBody">
+<body>
 <div class="floating-mortar mortar-1">🎓</div>
 <div class="floating-mortar mortar-2">🎓</div>
 <div class="floating-mortar mortar-3">🎓</div>
@@ -403,10 +361,7 @@
 <div class="chat-container">
 
 <div class="chat-header">
-    <h1>
-        <span class="simbolo-mes" id="simbolo_mes"></span>
-        🎓 CREDU
-    </h1>
+    <h1>🎓 CREDU</h1>
     <p>Asistente Virtual · Credenciales Uniagustiniana</p>
 </div>
 
@@ -435,38 +390,6 @@
 </div>
 
 <script>
-// ============================================
-// TEMÁTICA MENSUAL PARA EL CHAT
-// ============================================
-const mesesLower = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
-const simbolosPorMes = {
-    1: "🎆", 2: "❤️", 3: "🌸", 4: "🐣", 5: "🌺", 6: "☀️",
-    7: "🇨🇴", 8: "🪁", 9: "💌", 10: "🎃", 11: "🍂", 12: "🎄"
-};
-
-function aplicarTematicaMensualChat() {
-    const fecha = new Date();
-    const mesActual = fecha.getMonth() + 1;
-    const body = document.getElementById('chatBody');
-    
-    // Remover clases anteriores
-    mesesLower.forEach(m => {
-        body.classList.remove(`tema-${m}`);
-    });
-    // Agregar clase del mes actual
-    body.classList.add(`tema-${mesesLower[mesActual-1]}`);
-    
-    // Actualizar símbolo del mes en el título
-    const simbolo = simbolosPorMes[mesActual] || "📅";
-    document.getElementById('simbolo_mes').innerHTML = simbolo + " ";
-}
-
-// Aplicar temática al cargar la página
-aplicarTematicaMensualChat();
-
-// ============================================
-// FUNCIONES DEL CHAT (sin cambios)
-// ============================================
 let nombreCompleto = "";
 let primerNombre = "";
 let genero = "docente";
@@ -488,20 +411,26 @@ function detectarGenero(nombreCompleto) {
         "camila", "valeria", "mariana", "isabella", "luciana", "fernanda",
         "julieta", "ximena", "adriana", "amanda", "zulma", "leonor", "mirta",
         "enith", "gladys", "yuby", "yuli", "yohanna", "isabel", "briggitte",
-        "maribel", "yolima", "barbara", "esperanza", "solangel", "sonia", "hilda"
+        "maribel", "yolima", "barbara", "esperanza", "solangel", "sonia", 
+        "hilda", "paola", "lorena", "catalina", "daniela", "alejandra", "tatiana"
     ];
     return femeninos.includes(nombre) ? "estimada docente" : "estimado docente";
 }
 
+function obtenerTratamiento(esFemenino) {
+    return esFemenino ? "profesora" : "profesor";
+}
+
 function mostrarPreguntaFinal() {
     let chat = document.getElementById("chat");
-    let saludo = genero === "estimada docente" ? "profesora" : "profesor";
+    let esFemenino = genero === "estimada docente";
+    let tratamiento = obtenerTratamiento(esFemenino);
     
     chat.innerHTML += `
     <div class="bot-message" id="pregunta-final">
         <img src="/static/avatar.png" class="bot-avatar" alt="CREDU">
         <div class="message">
-            🤝 <strong>¿Te puedo colaborar en algo más, ${saludo} ${primerNombre}?</strong>
+            🤝 <strong>¿Te puedo colaborar en algo más, ${tratamiento} ${primerNombre}?</strong>
             <div class="button-group">
                 <button class="btn-si" onclick="respuestaSi()">✅ Sí</button>
                 <button class="btn-no" onclick="respuestaNo()">❌ No</button>
@@ -522,13 +451,14 @@ function respuestaSi() {
 function respuestaNo() {
     let chat = document.getElementById("chat");
     document.getElementById("pregunta-final")?.remove();
-    let despedida = genero === "estimada docente" ? "profesora" : "profesor";
+    let esFemenino = genero === "estimada docente";
+    let tratamiento = obtenerTratamiento(esFemenino);
     
     chat.innerHTML += `
     <div class="bot-message">
         <img src="/static/avatar.png" class="bot-avatar" alt="CREDU">
         <div class="message">
-            👋 <strong>Fue un gusto ayudarte, ${despedida} ${primerNombre}.</strong><br><br>
+            👋 <strong>Fue un gusto ayudarte, ${tratamiento} ${primerNombre}.</strong><br><br>
             📌 Serás redirigido a la página de inicio en unos segundos...<br><br>
             ⚡ <em>Uniagustiniana es creer en ti</em>
         </div>
@@ -589,6 +519,8 @@ function enviarCedula() {
             nombreCompleto = data.nombre;
             primerNombre = obtenerPrimerNombre(nombreCompleto);
             genero = detectarGenero(nombreCompleto);
+            let esFemenino = genero === "estimada docente";
+            let tratamiento = obtenerTratamiento(esFemenino);
             
             let mensajeAdicional = "";
             let estadoEnvio = data.enviado ? "✅ Correo enviado correctamente" : "⚠️ No se pudo enviar el correo. Contacta a Tecnologías.";
@@ -607,7 +539,7 @@ function enviarCedula() {
             <div class="bot-message">
                 <img src="/static/avatar.png" class="bot-avatar" alt="CREDU">
                 <div class="message">
-                    <b>✨ ¡Hola ${genero} ${primerNombre}!</b><br><br>
+                    <b>✨ ¡Hola ${tratamiento} ${primerNombre}!</b><br><br>
                     📧 <strong>${estadoEnvio}</strong><br>
                     📬 Se envió el usuario y la contraseña para las plataformas:<br>
                     <span style="background:rgba(212,175,55,0.2); padding:4px 12px; border-radius:20px; display:inline-block; font-size:0.7rem;">SIGA · KAWAK · SIPA HCM</span><br>
