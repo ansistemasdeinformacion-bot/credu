@@ -30,19 +30,19 @@
     body::before {
         content: "";
         position: fixed;
-        bottom: 15px;
-        right: 15px;
-        width: 90px;
-        height: 90px;
+        bottom: 20px;
+        right: 20px;
+        width: 120px;
+        height: 120px;
         background-image: url('/static/mascota.png');
         background-size: contain;
         background-repeat: no-repeat;
-        opacity: 0.12;
+        opacity: 0.15;
         pointer-events: none;
         z-index: 0;
     }
 
-    /* Birretes flotantes - más pequeños en móvil */
+    /* Birretes flotantes */
     .floating-mortar {
         position: absolute;
         font-size: 80px;
@@ -58,10 +58,10 @@
         50% { transform: translateY(-15px) rotate(3deg); }
     }
 
-    .mortar-1 { top: 3%; right: 3%; font-size: 100px; animation-delay: 0s; }
+    .mortar-1 { top: 5%; right: 5%; font-size: 100px; animation-delay: 0s; }
     .mortar-2 { bottom: 10%; left: 3%; font-size: 80px; animation-delay: 2s; }
     .mortar-3 { top: 20%; right: 10%; font-size: 60px; animation-delay: 5s; }
-    .mortar-4 { bottom: 20%; right: 15%; font-size: 70px; animation-delay: 8s; }
+    .mortar-4 { bottom: 25%; right: 15%; font-size: 70px; animation-delay: 8s; }
 
     .chat-container {
         position: relative;
@@ -342,105 +342,14 @@
         40% { transform: scale(1); opacity: 1; }
     }
 
-    /* ============================================ */
-    /* RESPONSIVE PARA TABLET (entre 550px y 768px) */
-    /* ============================================ */
-    @media (min-width: 551px) and (max-width: 768px) {
-        .chat-container {
-            max-width: 90%;
-        }
-        .chat-header h1 {
-            font-size: 1.6rem;
-        }
-        .chat-body {
-            height: 500px;
-        }
-        .message, .user-bubble {
-            font-size: 0.85rem;
-        }
-        body::before {
-            width: 100px;
-            height: 100px;
-        }
-    }
-
-    /* ============================================ */
-    /* RESPONSIVE PARA CELULAR PEQUEÑO (menos de 380px) */
-    /* ============================================ */
-    @media (max-width: 380px) {
-        body {
-            padding: 8px;
-        }
-        .chat-header h1 {
-            font-size: 1.2rem;
-        }
-        .chat-body {
-            height: 420px;
-            padding: 12px;
-        }
-        .bot-avatar {
-            width: 32px;
-            height: 32px;
-        }
-        .message, .user-bubble {
-            font-size: 0.7rem;
-            padding: 8px 12px;
-        }
-        .btn-si, .btn-no {
-            padding: 6px 12px;
-            font-size: 0.65rem;
-            min-width: 60px;
-        }
-        .send-btn {
-            padding: 8px 14px;
-            font-size: 0.7rem;
-        }
-        .chat-footer input {
-            padding: 10px 12px;
-            font-size: 0.7rem;
-        }
-        .footer-text {
-            font-size: 0.55rem;
-            padding: 8px;
-        }
-        body::before {
-            width: 60px;
-            height: 60px;
-            bottom: 8px;
-            right: 8px;
-        }
-        .floating-mortar {
-            font-size: 50px;
-        }
-        .mortar-1 { font-size: 70px; }
-        .mortar-2 { font-size: 55px; }
-    }
-
-    /* ============================================ */
-    /* RESPONSIVE PARA CELULAR GRANDE (iPhone Plus/Pro Max) */
-    /* ============================================ */
-    @media (min-width: 381px) and (max-width: 550px) {
-        .chat-header h1 {
-            font-size: 1.3rem;
-        }
-        .chat-body {
-            height: 480px;
-        }
-        .message, .user-bubble {
-            font-size: 0.75rem;
-        }
-        .btn-si, .btn-no {
-            padding: 8px 16px;
-            font-size: 0.7rem;
-        }
-        .send-btn {
-            padding: 10px 16px;
-            font-size: 0.75rem;
-        }
-        body::before {
-            width: 75px;
-            height: 75px;
-        }
+    @media (max-width: 480px) {
+        .chat-header h1 { font-size: 1.2rem; }
+        .chat-body { height: 420px; padding: 12px; }
+        .bot-avatar { width: 32px; height: 32px; }
+        .message, .user-bubble { font-size: 0.7rem; padding: 8px 12px; }
+        .btn-si, .btn-no { padding: 6px 12px; font-size: 0.65rem; min-width: 60px; }
+        .send-btn { padding: 8px 14px; font-size: 0.7rem; }
+        body::before { width: 80px; height: 80px; }
     }
 </style>
 </head>
@@ -451,40 +360,33 @@
 <div class="floating-mortar mortar-4">🎓</div>
 
 <div class="chat-container">
-
-<div class="chat-header">
-    <h1>🎓 CREDU</h1>
-    <p>Asistente Virtual · Credenciales Uniagustiniana</p>
-</div>
-
-<div class="chat-body" id="chat">
-
-<div class="bot-message">
-    <img src="/static/avatar.png" class="bot-avatar" alt="CREDU">
-    <div class="message">
-        <b>✨ ¡Hola! Soy CREDU</b><br>
-        Te ayudo a obtener tus credenciales institucionales.<br><br>
-        📌 <strong>Ingresa tu número de cédula</strong>
+    <div class="chat-header">
+        <h1>🎓 CREDU</h1>
+        <p>Asistente Virtual · Credenciales Uniagustiniana</p>
     </div>
-</div>
-
-</div>
-
-<div class="chat-footer">
-    <input type="text" id="cedula" placeholder="🔢 Ej: 12345678" autocomplete="off" enterkeyhint="send">
-    <button class="send-btn" onclick="enviarCedula()">📤 Enviar</button>
-</div>
-
-<div class="footer-text">
-    ⚡ Uniagustiniana es creer en ti ⚡
-</div>
-
+    <div class="chat-body" id="chat">
+        <div class="bot-message">
+            <img src="/static/avatar.png" class="bot-avatar" alt="CREDU">
+            <div class="message">
+                <b>✨ ¡Hola! Soy CREDU</b><br>
+                Te ayudo a obtener tus credenciales institucionales.<br><br>
+                📌 <strong>Ingresa tu número de cédula</strong>
+            </div>
+        </div>
+    </div>
+    <div class="chat-footer">
+        <input type="text" id="cedula" placeholder="🔢 Ej: 12345678" autocomplete="off" enterkeyhint="send">
+        <button class="send-btn" onclick="enviarCedula()">📤 Enviar</button>
+    </div>
+    <div class="footer-text">
+        ⚡ Uniagustiniana es creer en ti ⚡
+    </div>
 </div>
 
 <script>
 let nombreCompleto = "";
 let primerNombre = "";
-let genero = "docente";
+let esFemenino = false;
 
 function obtenerPrimerNombre(nombreCompleto) {
     let partes = nombreCompleto.trim().split(" ");
@@ -503,9 +405,10 @@ function detectarGenero(nombreCompleto) {
         "camila", "valeria", "mariana", "isabella", "luciana", "fernanda",
         "julieta", "ximena", "adriana", "amanda", "zulma", "leonor", "mirta",
         "enith", "gladys", "yuby", "yuli", "yohanna", "isabel", "briggitte",
-        "maribel", "yolima", "barbara", "esperanza", "solangel", "sonia", "hilda", "paola"
+        "maribel", "yolima", "barbara", "esperanza", "solangel", "sonia", 
+        "hilda", "paola", "lorena", "catalina", "daniela", "alejandra", "tatiana"
     ];
-    return femeninos.includes(nombre) ? "estimada docente" : "estimado docente";
+    return femeninos.includes(nombre);
 }
 
 function obtenerTratamiento(esFemenino) {
@@ -514,7 +417,6 @@ function obtenerTratamiento(esFemenino) {
 
 function mostrarPreguntaFinal() {
     let chat = document.getElementById("chat");
-    let esFemenino = genero === "estimada docente";
     let tratamiento = obtenerTratamiento(esFemenino);
     
     chat.innerHTML += `
@@ -542,7 +444,6 @@ function respuestaSi() {
 function respuestaNo() {
     let chat = document.getElementById("chat");
     document.getElementById("pregunta-final")?.remove();
-    let esFemenino = genero === "estimada docente";
     let tratamiento = obtenerTratamiento(esFemenino);
     
     chat.innerHTML += `
@@ -609,8 +510,7 @@ function enviarCedula() {
         if (data.success) {
             nombreCompleto = data.nombre;
             primerNombre = obtenerPrimerNombre(nombreCompleto);
-            genero = detectarGenero(nombreCompleto);
-            let esFemenino = genero === "estimada docente";
+            esFemenino = detectarGenero(nombreCompleto);
             let tratamiento = obtenerTratamiento(esFemenino);
             
             let mensajeAdicional = "";
@@ -672,6 +572,5 @@ function enviarCedula() {
     });
 }
 </script>
-
 </body>
 </html>
