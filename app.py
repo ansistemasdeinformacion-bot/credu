@@ -9,8 +9,10 @@ from database import init_db, registrar_consulta_db
 app = Flask(__name__)
 app.secret_key = "clave_secreta_credu_2026"
 
+# Inicializar base de datos
 init_db()
 
+# Cargar Excel
 df = pd.read_excel("docentes.xlsx")
 
 def es_personalizada(contraseña):
@@ -91,6 +93,9 @@ def consultar():
         print(f"ERROR en consulta: {e}")
         return jsonify({"success": False, "error": "Error interno"})
 
+# ============================================
+# REGISTRAR EL PANEL DE ADMINISTRACIÓN
+# ============================================
 from admin import admin_bp
 app.register_blueprint(admin_bp)
 
