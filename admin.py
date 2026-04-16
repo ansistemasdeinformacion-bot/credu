@@ -136,3 +136,65 @@ def exportar():
     df.to_csv(archivo_exportar, index=False, encoding='utf-8')
     
     return jsonify({"success": True, "archivo": archivo_exportar})
+
+# ============================================
+# GRÁFICAS ESTADÍSTICAS
+# ============================================
+
+@admin_bp.route('/graficas')
+def graficas():
+    if not session.get('admin_logged'):
+        return redirect(url_for('admin.admin_login'))
+    return render_template('admin_graficas.html')
+
+@admin_bp.route('/datos_grafica')
+def datos_grafica():
+    if not session.get('admin_logged'):
+        return jsonify({"success": False})
+    
+    año = request.args.get('año', type=int)
+    if not año:
+        año = datetime.now().year
+    
+    conn = sqlite3.connect('consultas.db')
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+        SELECT mes, COUNT(*) as total 
+        FROM consultas 
+        WHERE año = ? 
+        GROUP BY mes 
+        ORDER BY mes
+    ''', (año,))
+    resultados = cursor.fetchall()
+    conn.close()
+    
+    meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
+             "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    
+    valores = [0] * 12
+    for mes, total in resultados:
+        valores[mes - 1] = total
+    
+    total_consultas = sum(valores)
+    promedio_mensual = round(total_consultas / 12, 1) if total_consultas > 0 else 0
+    
+    mejor_mes = ""
+    peor_mes = ""
+    if total_consultas > 0:
+        max_valor = max(valores)
+        min_valor = min([v for v in valores if v > 0]) if any(v > 0 for v in valores) else 0
+        if max_valor > 0:
+            mejor_mes = meses[valores.index(max_valor)]
+        if min_valor > 0:
+            peor_mes = meses[valores.index(min_valor)]
+    
+    return jsonify({
+        "success": True,
+        "meses": meses,
+        "valores": valores,
+        "total_consultas": total_consultas,
+        "promedio_mensual": promedio_mensual,
+        "mejor_mes": mejor_mes,
+        "peor_mes": peor_mes
+    })
