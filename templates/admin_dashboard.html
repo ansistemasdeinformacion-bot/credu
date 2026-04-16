@@ -72,6 +72,25 @@
         border: 2px solid #d4af37;
     }
 
+    .nav-links {
+        display: flex;
+        gap: 15px;
+    }
+
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        background: linear-gradient(135deg, #d4af37, #b8962e);
+        color: #0a1f3e;
+    }
+
     .logout-btn {
         background: rgba(220, 38, 38, 0.2);
         color: #f87171;
@@ -261,6 +280,10 @@
             width: 35px;
             height: 35px;
         }
+        .nav-links {
+            width: 100%;
+            justify-content: center;
+        }
     }
 </style>
 </head>
@@ -271,6 +294,10 @@
             <img src="/static/mascota.png" class="logo-mascota" alt="CREDU">
             📊 CREDU · Panel de Administración
         </h1>
+        <div class="nav-links">
+            <a href="/admin/dashboard" class="nav-link active">📅 Calendario</a>
+            <a href="/admin/graficas" class="nav-link">📈 Gráficas</a>
+        </div>
         <a href="/admin/logout" class="logout-btn">🚪 Cerrar sesión</a>
     </div>
 
@@ -441,14 +468,14 @@ function buscarPorCedula() {
                             <tbody>`;
             data.resultados.forEach(r => {
                 tabla += `<tr>
-                              <td>${r.fecha}</td>
-                              <td>${r.correo}</td>
-                              <td>${r.cedula}</td>
-                              <td>${r.nombre}</td>
-                              <td>${r.dia}</td>
-                              <td>${r.mes}</td>
-                              <td>${r.año}</td>
-                          </tr>`;
+                               <td>${r.fecha}</td>
+                               <td>${r.correo}</td>
+                               <td>${r.cedula}</td>
+                               <td>${r.nombre}</td>
+                               <td>${r.dia}</td>
+                               <td>${r.mes}</td>
+                               <td>${r.año}</td>
+                           </tr>`;
             });
             tabla += '</tbody></table>';
             tablaDiv.innerHTML = tabla;
