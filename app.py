@@ -93,9 +93,7 @@ def consultar():
         print(f"ERROR en consulta: {e}")
         return jsonify({"success": False, "error": "Error interno"})
 
-# ============================================
-# REGISTRAR EL PANEL DE ADMINISTRACIÓN
-# ============================================
+# Importar y registrar el panel de administración
 from admin import admin_bp
 app.register_blueprint(admin_bp)
 
