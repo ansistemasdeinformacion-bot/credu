@@ -157,6 +157,9 @@
         }
     }
 
+    /* ============================================ */
+    /* AVATAR CON ANIMACIÓN */
+    /* ============================================ */
     .bot-avatar {
         width: 38px;
         height: 38px;
@@ -164,6 +167,18 @@
         object-fit: cover;
         box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.5);
         flex-shrink: 0;
+        transition: all 0.3s ease;
+        animation: avatarFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes avatarFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+    }
+
+    .bot-avatar:hover {
+        transform: scale(1.05) rotate(3deg);
+        animation: none;
     }
 
     .message {
