@@ -127,21 +127,57 @@ def buscar():
     
     return jsonify({"success": True, "resultados": resultados_formateados})
 
-@admin_bp.route('/exportar')
+@admin_bp.route('/exportar', methods=['POST'])
 def exportar():
     if not session.get('admin_logged'):
         return jsonify({"success": False})
     
     try:
+        data = request.get_json()
+        año = data.get('año', datetime.now().year)
+        mes = data.get('mes', datetime.now().month)
+        
         conn = sqlite3.connect('consultas.db')
-        df = pd.read_sql_query("SELECT id, fecha, correo, cedula, nombre, mes, año, dia, hora FROM consultas ORDER BY fecha DESC", conn)
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT fecha, correo, cedula, nombre, hora 
+            FROM consultas 
+            WHERE año = ? AND mes = ? 
+            ORDER BY fecha DESC
+        ''', (año, mes))
+        resultados = cursor.fetchall()
         conn.close()
         
-        if df.empty:
-            df = pd.DataFrame(columns=["id", "fecha", "correo", "cedula", "nombre", "mes", "año", "dia", "hora"])
+        # Crear lista de datos para el Excel
+        datos = []
+        for r in resultados:
+            fecha_str = r[0]
+            fecha_obj = datetime.strptime(fecha_str, "%Y-%m-%d %H:%M:%S")
+            fecha_formateada = fecha_obj.strftime("%d/%m/%Y")
+            hora_formateada = fecha_obj.strftime("%I:%M:%S %p")
+            datos.append({
+                "Fecha": fecha_formateada,
+                "Hora": hora_formateada,
+                "Nombre del Docente": r[3],
+                "Correo": r[1],
+                "Cédula": r[2]
+            })
         
-        archivo_exportar = f"reporte_consultas_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
-        df.to_csv(archivo_exportar, index=False, encoding='utf-8-sig')
+        # Crear DataFrame (tabla de datos)
+        df = pd.DataFrame(datos)
+        
+        # Si no hay datos, crear tabla vacía con encabezados
+        if df.empty:
+            df = pd.DataFrame(columns=["Fecha", "Hora", "Nombre del Docente", "Correo", "Cédula"])
+        
+        meses = {1:'Enero',2:'Febrero',3:'Marzo',4:'Abril',5:'Mayo',6:'Junio',
+                 7:'Julio',8:'Agosto',9:'Septiembre',10:'Octubre',11:'Noviembre',12:'Diciembre'}
+        
+        nombre_mes = meses.get(mes, 'Mes')
+        archivo_exportar = f"reporte_consultas_{nombre_mes}_{año}.xlsx"
+        
+        # Guardar como Excel
+        df.to_excel(archivo_exportar, index=False, engine='openpyxl')
         
         return jsonify({"success": True, "archivo": archivo_exportar})
     except Exception as e:

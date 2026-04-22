@@ -284,6 +284,10 @@
             width: 100%;
             justify-content: center;
         }
+        .header {
+            flex-direction: column;
+            text-align: center;
+        }
     }
 </style>
 </head>
@@ -315,7 +319,7 @@
             {% endfor %}
         </select>
         <button class="btn-primary" onclick="cambiarMes()">Consultar</button>
-        <button class="btn-primary" onclick="exportar()">📎 Exportar todo</button>
+        <button class="btn-primary" onclick="exportarExcel()">📎 Exportar reporte</button>
     </div>
 
     <div class="search-box">
@@ -487,15 +491,24 @@ function buscarPorCedula() {
     });
 }
 
-function exportar() {
-    fetch('/admin/exportar')
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('✅ Reporte exportado: ' + data.archivo);
-                window.location.href = '/' + data.archivo;
-            }
-        });
+function exportarExcel() {
+    const mes = document.getElementById('mes').value;
+    const año = document.getElementById('año').value;
+    
+    fetch('/admin/exportar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mes: parseInt(mes), año: parseInt(año) })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('✅ Reporte exportado: ' + data.archivo);
+            window.location.href = '/' + data.archivo;
+        } else {
+            alert('❌ Error al exportar: ' + (data.error || 'desconocido'));
+        }
+    });
 }
 
 const consultasIniciales = {{ consultas_por_dia | tojson }};
