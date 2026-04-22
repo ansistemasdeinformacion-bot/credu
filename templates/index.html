@@ -26,7 +26,6 @@
         overflow-x: hidden;
     }
 
-    /* Mascota de fondo */
     body::before {
         content: "";
         position: fixed;
@@ -42,7 +41,6 @@
         z-index: 0;
     }
 
-    /* Birretes flotantes */
     .floating-mortar {
         position: absolute;
         font-size: 80px;
@@ -157,7 +155,6 @@
         }
     }
 
-    /* Avatar con animación */
     .bot-avatar {
         width: 38px;
         height: 38px;
@@ -397,6 +394,10 @@
 </div>
 
 <script>
+// ============================================
+// DETECCIÓN DE GÉNERO - VERSIÓN DEFINITIVA
+// ============================================
+
 let nombreCompleto = "";
 let primerNombre = "";
 let genero = "masculino";
@@ -409,7 +410,7 @@ function obtenerPrimerNombre(nombreCompleto) {
 function detectarGenero(nombreCompleto) {
     let nombre = obtenerPrimerNombre(nombreCompleto).toLowerCase();
     
-    // Lista ampliada de nombres femeninos
+    // Lista de nombres femeninos
     let femeninos = [
         "maria", "ana", "luz", "kelly", "andrea", "carolina", "lina", "paula",
         "diana", "claudia", "sandra", "patricia", "lorena", "martha", "gloria",
@@ -424,12 +425,22 @@ function detectarGenero(nombreCompleto) {
         "hilda", "paola", "lorena", "catalina", "daniela", "alejandra", "tatiana",
         "yenny", "yeni", "yennifer", "yenni", "jennifer", "jenny", "yenifer",
         "yurany", "yuranis", "yurani", "yuliana", "yulissa", "yurley", "liliana",
-        "maritza", "luz marina", "luz maria", "luz dary", "luz helena", "luz estella",
-        "luz adriana", "luz amparo", "luz angela", "luz carime", "luz elena",
-        "luz eliana", "luz emilia", "luz enith", "luz esneda", "luz esther",
-        "luz fabiola", "luz fernanda", "luz janeth", "luz karime", "luz mery",
-        "luz mila", "luz milena", "luz nereida", "luz patricia", "luz rocio",
-        "luz sandra", "luz stella", "luz yaneth", "luz yolanda", "luz zaida"
+        "maritza", "nohora", "soledad", "consuelo", "mercedes", "rosalba",
+        "blanca", "elizabeth", "cristina", "gabriela", "marcela", "rocio", "lucia",
+        "fabiola", "nubia", "luz marina", "luz maria", "luz dary", "luz helena",
+        "luz estella", "luz adriana", "luz amparo", "luz angela", "luz carime",
+        "luz elena", "luz eliana", "luz emilia", "luz enith", "luz esneda",
+        "luz esther", "luz fabiola", "luz fernanda", "luz janeth", "luz karime",
+        "luz mery", "luz mila", "luz milena", "luz nereida", "luz patricia",
+        "luz rocio", "luz sandra", "luz stella", "luz yaneth", "luz yolanda", "luz zaida"
+    ];
+    
+    // Lista de nombres masculinos que terminan con "a" (excepciones)
+    let masculinosTerminanA = [
+        "andrea", "andres", "jose", "jesus", "luis", "julio", "carlos", "francisco",
+        "juan", "pedro", "diego", "rafael", "javier", "manuel", "fernando", "ricardo",
+        "daniel", "alejandro", "antonio", "miguel", "gabriel", "david", "jorge",
+        "cristian", "oscar", "eduardo", "henry", "william", "edwin", "alberto"
     ];
     
     // Verificar si está en la lista de femeninos
@@ -437,20 +448,22 @@ function detectarGenero(nombreCompleto) {
         return "femenino";
     }
     
-    // Si termina con "a" y no con "o", es probablemente femenino
-    if (nombre.endsWith("a") && !nombre.endsWith("o")) {
+    // Verificar si está en la lista de masculinos que terminan con "a"
+    if (masculinosTerminanA.includes(nombre)) {
+        return "masculino";
+    }
+    
+    // Si termina con "a" y no es excepción, es femenino
+    if (nombre.endsWith("a") && !nombre.endsWith("o") && !nombre.endsWith("s")) {
         return "femenino";
     }
     
+    // Por defecto, masculino
     return "masculino";
 }
 
 function obtenerTratamiento(genero) {
     return genero === "femenino" ? "profesora" : "profesor";
-}
-
-function obtenerSaludo(genero) {
-    return genero === "femenino" ? "estimada docente" : "estimado docente";
 }
 
 function mostrarPreguntaFinal() {
