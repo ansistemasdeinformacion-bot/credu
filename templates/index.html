@@ -157,9 +157,7 @@
         }
     }
 
-    /* ============================================ */
-    /* AVATAR CON ANIMACIÓN */
-    /* ============================================ */
+    /* Avatar con animación */
     .bot-avatar {
         width: 38px;
         height: 38px;
@@ -401,7 +399,7 @@
 <script>
 let nombreCompleto = "";
 let primerNombre = "";
-let esFemenino = false;
+let genero = "masculino";
 
 function obtenerPrimerNombre(nombreCompleto) {
     let partes = nombreCompleto.trim().split(" ");
@@ -410,6 +408,8 @@ function obtenerPrimerNombre(nombreCompleto) {
 
 function detectarGenero(nombreCompleto) {
     let nombre = obtenerPrimerNombre(nombreCompleto).toLowerCase();
+    
+    // Lista ampliada de nombres femeninos
     let femeninos = [
         "maria", "ana", "luz", "kelly", "andrea", "carolina", "lina", "paula",
         "diana", "claudia", "sandra", "patricia", "lorena", "martha", "gloria",
@@ -421,18 +421,41 @@ function detectarGenero(nombreCompleto) {
         "julieta", "ximena", "adriana", "amanda", "zulma", "leonor", "mirta",
         "enith", "gladys", "yuby", "yuli", "yohanna", "isabel", "briggitte",
         "maribel", "yolima", "barbara", "esperanza", "solangel", "sonia", 
-        "hilda", "paola", "lorena", "catalina", "daniela", "alejandra", "tatiana"
+        "hilda", "paola", "lorena", "catalina", "daniela", "alejandra", "tatiana",
+        "yenny", "yeni", "yennifer", "yenni", "jennifer", "jenny", "yenifer",
+        "yurany", "yuranis", "yurani", "yuliana", "yulissa", "yurley", "liliana",
+        "maritza", "luz marina", "luz maria", "luz dary", "luz helena", "luz estella",
+        "luz adriana", "luz amparo", "luz angela", "luz carime", "luz elena",
+        "luz eliana", "luz emilia", "luz enith", "luz esneda", "luz esther",
+        "luz fabiola", "luz fernanda", "luz janeth", "luz karime", "luz mery",
+        "luz mila", "luz milena", "luz nereida", "luz patricia", "luz rocio",
+        "luz sandra", "luz stella", "luz yaneth", "luz yolanda", "luz zaida"
     ];
-    return femeninos.includes(nombre);
+    
+    // Verificar si está en la lista de femeninos
+    if (femeninos.includes(nombre)) {
+        return "femenino";
+    }
+    
+    // Si termina con "a" y no con "o", es probablemente femenino
+    if (nombre.endsWith("a") && !nombre.endsWith("o")) {
+        return "femenino";
+    }
+    
+    return "masculino";
 }
 
-function obtenerTratamiento(esFemenino) {
-    return esFemenino ? "profesora" : "profesor";
+function obtenerTratamiento(genero) {
+    return genero === "femenino" ? "profesora" : "profesor";
+}
+
+function obtenerSaludo(genero) {
+    return genero === "femenino" ? "estimada docente" : "estimado docente";
 }
 
 function mostrarPreguntaFinal() {
     let chat = document.getElementById("chat");
-    let tratamiento = obtenerTratamiento(esFemenino);
+    let tratamiento = obtenerTratamiento(genero);
     
     chat.innerHTML += `
     <div class="bot-message" id="pregunta-final">
@@ -459,7 +482,7 @@ function respuestaSi() {
 function respuestaNo() {
     let chat = document.getElementById("chat");
     document.getElementById("pregunta-final")?.remove();
-    let tratamiento = obtenerTratamiento(esFemenino);
+    let tratamiento = obtenerTratamiento(genero);
     
     chat.innerHTML += `
     <div class="bot-message">
@@ -525,8 +548,8 @@ function enviarCedula() {
         if (data.success) {
             nombreCompleto = data.nombre;
             primerNombre = obtenerPrimerNombre(nombreCompleto);
-            esFemenino = detectarGenero(nombreCompleto);
-            let tratamiento = obtenerTratamiento(esFemenino);
+            genero = detectarGenero(nombreCompleto);
+            let tratamiento = obtenerTratamiento(genero);
             
             let mensajeAdicional = "";
             let estadoEnvio = data.enviado ? "✅ Correo enviado correctamente" : "⚠️ No se pudo enviar el correo. Contacta a Tecnologías.";
