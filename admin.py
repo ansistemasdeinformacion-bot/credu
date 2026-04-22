@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, sessio
 from datetime import datetime
 import sqlite3
 import pytz
+import pandas as pd
 from database import (obtener_resumen_mensual, buscar_por_cedula, 
                      exportar_todas_consultas, obtener_años_disponibles)
 
@@ -131,11 +132,21 @@ def exportar():
     if not session.get('admin_logged'):
         return jsonify({"success": False})
     
-    df = exportar_todas_consultas()
-    archivo_exportar = f"reporte_consultas_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
-    df.to_csv(archivo_exportar, index=False, encoding='utf-8')
-    
-    return jsonify({"success": True, "archivo": archivo_exportar})
+    try:
+        conn = sqlite3.connect('consultas.db')
+        df = pd.read_sql_query("SELECT id, fecha, correo, cedula, nombre, mes, año, dia, hora FROM consultas ORDER BY fecha DESC", conn)
+        conn.close()
+        
+        if df.empty:
+            df = pd.DataFrame(columns=["id", "fecha", "correo", "cedula", "nombre", "mes", "año", "dia", "hora"])
+        
+        archivo_exportar = f"reporte_consultas_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+        df.to_csv(archivo_exportar, index=False, encoding='utf-8-sig')
+        
+        return jsonify({"success": True, "archivo": archivo_exportar})
+    except Exception as e:
+        print(f"Error exportando: {e}")
+        return jsonify({"success": False, "error": str(e)})
 
 # ============================================
 # GRÁFICAS ESTADÍSTICAS
