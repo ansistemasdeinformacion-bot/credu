@@ -9,6 +9,15 @@ from database import init_db, registrar_consulta_db
 app = Flask(__name__)
 app.secret_key = "clave_secreta_credu_2026"
 
+# ============================================
+# CONFIGURACIÓN DE SESIÓN (MANTENER LOGIN)
+# ============================================
+app.config['SESSION_PERMANENT'] = True
+app.config['PERMANENT_SESSION_LIFETIME'] = 86400  # 24 horas (en segundos)
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+app.config['SESSION_COOKIE_SECURE'] = False  # Cambiar a True en producción con HTTPS
+
 # Inicializar base de datos
 init_db()
 
