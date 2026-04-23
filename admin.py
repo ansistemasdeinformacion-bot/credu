@@ -344,3 +344,20 @@ def migrar_excel():
             "error": str(e), 
             "traceback": traceback.format_exc()
         })
+
+# ============================================
+# PRUEBA DE CONEXIÓN A POSTGRESQL
+# ============================================
+
+@admin_bp.route('/test_db')
+def test_db():
+    try:
+        from database_pg import get_db_connection
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute('SELECT 1')
+        cursor.fetchone()
+        conn.close()
+        return "✅ Conexión a PostgreSQL exitosa"
+    except Exception as e:
+        return f"❌ Error de conexión: {e}"
