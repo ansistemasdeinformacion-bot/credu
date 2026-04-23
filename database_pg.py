@@ -53,10 +53,11 @@ def migrar_excel_a_postgres(excel_path="docentes.xlsx"):
         cursor = conn.cursor()
         migrados = 0
         errores = 0
+        primer_error = None
+        primer_error_fila = None
         
         for idx, row in df.iterrows():
             try:
-                # Usar los nombres exactos de las columnas
                 cedula = str(row['CEDULA']).strip()
                 if not cedula or cedula == 'nan':
                     errores += 1
@@ -89,19 +90,21 @@ def migrar_excel_a_postgres(excel_path="docentes.xlsx"):
                 ''', (cedula, nombre, correo, contraseña, personalizada))
                 migrados += 1
                 
-            except KeyError as e:
-                errores += 1
-                print(f"❌ Error en fila {idx}: Columna no encontrada - {e}")
-                continue
             except Exception as e:
                 errores += 1
-                print(f"❌ Error en fila {idx}: {e}")
+                if primer_error is None:
+                    primer_error = str(e)
+                    primer_error_fila = idx
+                    print(f"❌ Primer error en fila {idx}: {e}")
+                    print(f"   Datos: CEDULA={row.get('CEDULA', 'N/A')}, CORREO={row.get('CORREO INSTITUCIONAL', 'N/A')}")
                 continue
         
         conn.commit()
         conn.close()
         print(f"✅ Migrados: {migrados}, ❌ Errores: {errores}")
-        return {"success": True, "migrados": migrados, "errores": errores}
+        if primer_error:
+            print(f"⚠️ Primer error: {primer_error}")
+        return {"success": True, "migrados": migrados, "errores": errores, "primer_error": primer_error, "primer_error_fila": primer_error_fila}
     except Exception as e:
         print(f"❌ Error general: {e}")
         return {"success": False, "error": str(e)}
