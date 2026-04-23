@@ -318,7 +318,7 @@
             <option value="{{ año }}" {% if año == año_actual %}selected{% endif %}>{{ año }}</option>
             {% endfor %}
         </select>
-        <button class="btn-primary" onclick="cambiarMes()">Consultar</button>
+        <button class="btn-primary" onclick="cambiarMes()">📅 Consultar</button>
         <button class="btn-primary" onclick="exportarExcel()">📊 Exportar Excel</button>
     </div>
 
@@ -377,6 +377,7 @@
 
 <script>
 const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const mesesAbr = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 const simbolosPorMes = {
     1: "🎆", 2: "❤️", 3: "🌸", 4: "🐣", 5: "🌺", 6: "☀️",
     7: "🇨🇴", 8: "🪁", 9: "💌", 10: "🎃", 11: "🍂", 12: "🎄"
@@ -481,7 +482,7 @@ function buscarPorCedula() {
                                <td>${r.año}</td>
                            </tr>`;
             });
-            tabla += '</tbody></table>';
+            tabla += '</tbody><tr>';
             tablaDiv.innerHTML = tabla;
             div.style.display = 'block';
         } else {
@@ -506,22 +507,30 @@ function exportarExcel() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ mes: parseInt(mes), año: parseInt(año) })
     })
-    .then(response => response.json())
-    .then(data => {
-        btn.innerText = textoOriginal;
-        btn.disabled = false;
-        
-        if (data.success) {
-            alert('✅ Excel generado: ' + data.archivo);
-            window.location.href = '/' + data.archivo;
-        } else {
-            alert('❌ Error al exportar: ' + (data.error || 'desconocido'));
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error en la respuesta del servidor');
         }
+        return response.blob();
+    })
+    .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `reporte_consultas_${mesesAbr[mes-1]}_${año}.xlsx`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+        alert('✅ Excel descargado correctamente');
     })
     .catch(error => {
+        console.error('Error:', error);
+        alert('❌ Error al exportar: ' + error.message);
+    })
+    .finally(() => {
         btn.innerText = textoOriginal;
         btn.disabled = false;
-        alert('❌ Error de conexión');
     });
 }
 

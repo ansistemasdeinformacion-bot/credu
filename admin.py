@@ -1,8 +1,9 @@
-from flask import Blueprint, render_template, request, redirect, url_for, session, jsonify
+from flask import Blueprint, render_template, request, redirect, url_for, session, jsonify, send_file
 from datetime import datetime
 import sqlite3
 import pytz
 import pandas as pd
+from io import BytesIO
 from database import (obtener_resumen_mensual, buscar_por_cedula, 
                      exportar_todas_consultas, obtener_años_disponibles)
 
@@ -163,10 +164,9 @@ def exportar():
                 "Cédula del Docente": r[2]
             })
         
-        # Crear DataFrame (tabla de datos)
+        # Crear DataFrame
         df = pd.DataFrame(datos)
         
-        # Si no hay datos, crear tabla vacía con encabezados
         if df.empty:
             df = pd.DataFrame(columns=["Fecha", "Hora", "Nombre del Docente", "Correo del Docente", "Cédula del Docente"])
         
@@ -174,26 +174,23 @@ def exportar():
                  7:'Julio',8:'Agosto',9:'Septiembre',10:'Octubre',11:'Noviembre',12:'Diciembre'}
         
         nombre_mes = meses.get(mes, 'Mes')
-        archivo_exportar = f"reporte_consultas_{nombre_mes}_{año}.xlsx"
+        nombre_archivo = f"reporte_consultas_{nombre_mes}_{año}.xlsx"
         
-        # Guardar como Excel con formato
-        with pd.ExcelWriter(archivo_exportar, engine='openpyxl') as writer:
+        # Crear Excel en memoria
+        output = BytesIO()
+        with pd.ExcelWriter(output, engine='openpyxl') as writer:
             df.to_excel(writer, sheet_name=f'Consultas {nombre_mes} {año}', index=False)
-            # Ajustar ancho de columnas
-            worksheet = writer.sheets[f'Consultas {nombre_mes} {año}']
-            for column in worksheet.columns:
-                max_length = 0
-                column_letter = column[0].column_letter
-                for cell in column:
-                    try:
-                        if len(str(cell.value)) > max_length:
-                            max_length = len(str(cell.value))
-                    except:
-                        pass
-                adjusted_width = min(max_length + 2, 50)
-                worksheet.column_dimensions[column_letter].width = adjusted_width
         
-        return jsonify({"success": True, "archivo": archivo_exportar})
+        output.seek(0)
+        
+        # Enviar como descarga directa
+        return send_file(
+            output,
+            as_attachment=True,
+            download_name=nombre_archivo,
+            mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        )
+        
     except Exception as e:
         print(f"Error exportando: {e}")
         return jsonify({"success": False, "error": str(e)})
