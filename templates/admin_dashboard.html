@@ -300,6 +300,7 @@
         </h1>
         <div class="nav-links">
             <a href="/admin/dashboard" class="nav-link active">📅 Calendario</a>
+            <a href="/admin/docentes" class="nav-link">📋 Docentes</a>
             <a href="/admin/graficas" class="nav-link">📈 Gráficas</a>
         </div>
         <a href="/admin/logout" class="logout-btn">🚪 Cerrar sesión</a>
@@ -377,7 +378,6 @@
 
 <script>
 const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-const mesesAbr = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 const simbolosPorMes = {
     1: "🎆", 2: "❤️", 3: "🌸", 4: "🐣", 5: "🌺", 6: "☀️",
     7: "🇨🇴", 8: "🪁", 9: "💌", 10: "🎃", 11: "🍂", 12: "🎄"
@@ -480,9 +480,9 @@ function buscarPorCedula() {
                                <td>${r.dia}</td>
                                <td>${r.mes}</td>
                                <td>${r.año}</td>
-                           </tr>`;
+                           </td>`;
             });
-            tabla += '</tbody><tr>';
+            tabla += '</tbody></table>';
             tablaDiv.innerHTML = tabla;
             div.style.display = 'block';
         } else {
@@ -496,7 +496,6 @@ function exportarExcel() {
     const mes = document.getElementById('mes').value;
     const año = document.getElementById('año').value;
     
-    // Mostrar mensaje de carga
     const btn = event.target;
     const textoOriginal = btn.innerText;
     btn.innerText = '⏳ Generando Excel...';
@@ -507,17 +506,12 @@ function exportarExcel() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ mes: parseInt(mes), año: parseInt(año) })
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Error en la respuesta del servidor');
-        }
-        return response.blob();
-    })
+    .then(response => response.blob())
     .then(blob => {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `reporte_consultas_${mesesAbr[mes-1]}_${año}.xlsx`;
+        a.download = `reporte_consultas_${meses[mes-1]}_${año}.xlsx`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -525,8 +519,7 @@ function exportarExcel() {
         alert('✅ Excel descargado correctamente');
     })
     .catch(error => {
-        console.error('Error:', error);
-        alert('❌ Error al exportar: ' + error.message);
+        alert('❌ Error al exportar');
     })
     .finally(() => {
         btn.innerText = textoOriginal;
