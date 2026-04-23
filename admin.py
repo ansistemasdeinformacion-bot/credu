@@ -159,8 +159,8 @@ def exportar():
                 "Fecha": fecha_formateada,
                 "Hora": hora_formateada,
                 "Nombre del Docente": r[3],
-                "Correo": r[1],
-                "Cédula": r[2]
+                "Correo del Docente": r[1],
+                "Cédula del Docente": r[2]
             })
         
         # Crear DataFrame (tabla de datos)
@@ -168,7 +168,7 @@ def exportar():
         
         # Si no hay datos, crear tabla vacía con encabezados
         if df.empty:
-            df = pd.DataFrame(columns=["Fecha", "Hora", "Nombre del Docente", "Correo", "Cédula"])
+            df = pd.DataFrame(columns=["Fecha", "Hora", "Nombre del Docente", "Correo del Docente", "Cédula del Docente"])
         
         meses = {1:'Enero',2:'Febrero',3:'Marzo',4:'Abril',5:'Mayo',6:'Junio',
                  7:'Julio',8:'Agosto',9:'Septiembre',10:'Octubre',11:'Noviembre',12:'Diciembre'}
@@ -176,8 +176,22 @@ def exportar():
         nombre_mes = meses.get(mes, 'Mes')
         archivo_exportar = f"reporte_consultas_{nombre_mes}_{año}.xlsx"
         
-        # Guardar como Excel
-        df.to_excel(archivo_exportar, index=False, engine='openpyxl')
+        # Guardar como Excel con formato
+        with pd.ExcelWriter(archivo_exportar, engine='openpyxl') as writer:
+            df.to_excel(writer, sheet_name=f'Consultas {nombre_mes} {año}', index=False)
+            # Ajustar ancho de columnas
+            worksheet = writer.sheets[f'Consultas {nombre_mes} {año}']
+            for column in worksheet.columns:
+                max_length = 0
+                column_letter = column[0].column_letter
+                for cell in column:
+                    try:
+                        if len(str(cell.value)) > max_length:
+                            max_length = len(str(cell.value))
+                    except:
+                        pass
+                adjusted_width = min(max_length + 2, 50)
+                worksheet.column_dimensions[column_letter].width = adjusted_width
         
         return jsonify({"success": True, "archivo": archivo_exportar})
     except Exception as e:

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>PRUEBA CAMBIO - Admin CREDU</title>
+<title>Admin CREDU · Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
     * {
@@ -319,7 +319,7 @@
             {% endfor %}
         </select>
         <button class="btn-primary" onclick="cambiarMes()">Consultar</button>
-        <button class="btn-primary" onclick="exportarExcel()">📎 Exportar reporte</button>
+        <button class="btn-primary" onclick="exportarExcel()">📊 Exportar Excel</button>
     </div>
 
     <div class="search-box">
@@ -481,7 +481,7 @@ function buscarPorCedula() {
                                <td>${r.año}</td>
                            </tr>`;
             });
-            tabla += '</tbody><tr>';
+            tabla += '</tbody></table>';
             tablaDiv.innerHTML = tabla;
             div.style.display = 'block';
         } else {
@@ -495,6 +495,12 @@ function exportarExcel() {
     const mes = document.getElementById('mes').value;
     const año = document.getElementById('año').value;
     
+    // Mostrar mensaje de carga
+    const btn = event.target;
+    const textoOriginal = btn.innerText;
+    btn.innerText = '⏳ Generando Excel...';
+    btn.disabled = true;
+    
     fetch('/admin/exportar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -502,12 +508,20 @@ function exportarExcel() {
     })
     .then(response => response.json())
     .then(data => {
+        btn.innerText = textoOriginal;
+        btn.disabled = false;
+        
         if (data.success) {
-            alert('✅ Reporte exportado: ' + data.archivo);
+            alert('✅ Excel generado: ' + data.archivo);
             window.location.href = '/' + data.archivo;
         } else {
             alert('❌ Error al exportar: ' + (data.error || 'desconocido'));
         }
+    })
+    .catch(error => {
+        btn.innerText = textoOriginal;
+        btn.disabled = false;
+        alert('❌ Error de conexión');
     });
 }
 
