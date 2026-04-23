@@ -29,6 +29,7 @@ def admin_login():
         
         if usuario == ADMIN_USER and password == ADMIN_PASSWORD:
             session['admin_logged'] = True
+            session.permanent = True
             return redirect(url_for('admin.dashboard'))
         else:
             return render_template('admin_login.html', error="❌ Usuario o contraseña incorrectos")
@@ -149,7 +150,6 @@ def exportar():
         resultados = cursor.fetchall()
         conn.close()
         
-        # Crear lista de datos para el Excel
         datos = []
         for r in resultados:
             fecha_str = r[0]
@@ -164,7 +164,6 @@ def exportar():
                 "Cédula del Docente": r[2]
             })
         
-        # Crear DataFrame
         df = pd.DataFrame(datos)
         
         if df.empty:
@@ -176,14 +175,12 @@ def exportar():
         nombre_mes = meses.get(mes, 'Mes')
         nombre_archivo = f"reporte_consultas_{nombre_mes}_{año}.xlsx"
         
-        # Crear Excel en memoria
         output = BytesIO()
         with pd.ExcelWriter(output, engine='openpyxl') as writer:
             df.to_excel(writer, sheet_name=f'Consultas {nombre_mes} {año}', index=False)
         
         output.seek(0)
         
-        # Enviar como descarga directa
         return send_file(
             output,
             as_attachment=True,
@@ -256,3 +253,65 @@ def datos_grafica():
         "mejor_mes": mejor_mes,
         "peor_mes": peor_mes
     })
+
+# ============================================
+# GESTIÓN DE DOCENTES (PostgreSQL)
+# ============================================
+
+@admin_bp.route('/docentes')
+def listar_docentes():
+    if not session.get('admin_logged'):
+        return jsonify({"success": False})
+    
+    from database_pg import obtener_todos_docentes
+    docentes = obtener_todos_docentes()
+    return jsonify({"success": True, "docentes": docentes})
+
+@admin_bp.route('/agregar_docente', methods=['POST'])
+def agregar_docente_route():
+    if not session.get('admin_logged'):
+        return jsonify({"success": False, "error": "No autorizado"})
+    
+    from database_pg import agregar_docente
+    data = request.get_json()
+    resultado = agregar_docente(
+        cedula=data.get('cedula'),
+        nombre=data.get('nombre'),
+        correo=data.get('correo'),
+        contraseña=data.get('contraseña')
+    )
+    return jsonify(resultado)
+
+@admin_bp.route('/actualizar_docente', methods=['POST'])
+def actualizar_docente_route():
+    if not session.get('admin_logged'):
+        return jsonify({"success": False, "error": "No autorizado"})
+    
+    from database_pg import actualizar_docente
+    data = request.get_json()
+    resultado = actualizar_docente(
+        cedula=data.get('cedula'),
+        nombre=data.get('nombre'),
+        correo=data.get('correo'),
+        contraseña=data.get('contraseña')
+    )
+    return jsonify(resultado)
+
+@admin_bp.route('/eliminar_docente', methods=['POST'])
+def eliminar_docente_route():
+    if not session.get('admin_logged'):
+        return jsonify({"success": False, "error": "No autorizado"})
+    
+    from database_pg import eliminar_docente
+    data = request.get_json()
+    resultado = eliminar_docente(data.get('cedula'))
+    return jsonify(resultado)
+
+@admin_bp.route('/migrar_excel', methods=['POST'])
+def migrar_excel():
+    if not session.get('admin_logged'):
+        return jsonify({"success": False, "error": "No autorizado"})
+    
+    from database_pg import migrar_excel_a_postgres
+    resultado = migrar_excel_a_postgres()
+    return jsonify(resultado)
