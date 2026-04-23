@@ -318,6 +318,29 @@ def migrar_excel():
     if not session.get('admin_logged'):
         return jsonify({"success": False, "error": "No autorizado"})
     
-    from database_pg import migrar_excel_a_postgres
-    resultado = migrar_excel_a_postgres()
-    return jsonify(resultado)
+    try:
+        from database_pg import migrar_excel_a_postgres
+        import os
+        
+        # Obtener información del directorio para debug
+        cwd = os.getcwd()
+        archivos = os.listdir('.')
+        excel_existe = os.path.exists('docentes.xlsx')
+        
+        resultado = migrar_excel_a_postgres()
+        
+        # Agregar debug a la respuesta
+        resultado["debug"] = {
+            "cwd": cwd,
+            "archivos": archivos,
+            "excel_existe": excel_existe
+        }
+        
+        return jsonify(resultado)
+    except Exception as e:
+        import traceback
+        return jsonify({
+            "success": False, 
+            "error": str(e), 
+            "traceback": traceback.format_exc()
+        })
