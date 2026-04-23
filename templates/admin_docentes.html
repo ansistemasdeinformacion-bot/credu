@@ -68,10 +68,43 @@
         color: #0a1f3e;
         font-weight: 700;
         border: none;
-        padding: 10px 20px;
+        padding: 8px 16px;
         border-radius: 40px;
         cursor: pointer;
+        font-size: 0.8rem;
     }
+    .btn-danger {
+        background: linear-gradient(135deg, #dc2626, #b91c1c);
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 40px;
+        cursor: pointer;
+        font-size: 0.8rem;
+    }
+    .btn-small { padding: 5px 12px; font-size: 0.7rem; margin: 0 2px; }
+    .search-box {
+        background: rgba(10, 31, 62, 0.55);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        flex-wrap: wrap;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .search-box input {
+        flex: 1;
+        padding: 10px 16px;
+        border-radius: 40px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 0.8rem;
+    }
+    .search-box input::placeholder { color: rgba(255, 255, 255, 0.5); }
     .tabla-container {
         background: rgba(10, 31, 62, 0.55);
         backdrop-filter: blur(10px);
@@ -89,6 +122,35 @@
         color: white;
     }
     th { color: #d4af37; font-weight: 600; }
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-content {
+        background: #0a1f3e;
+        padding: 30px;
+        border-radius: 30px;
+        width: 90%;
+        max-width: 500px;
+    }
+    .modal-content h3 { color: white; margin-bottom: 20px; }
+    .modal-content input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 40px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
     @media (max-width: 768px) {
         .nav-links { width: 100%; justify-content: center; }
         th, td { font-size: 0.7rem; padding: 8px; }
@@ -107,52 +169,183 @@
         <a href="/admin/logout" class="logout-btn">🚪 Cerrar sesión</a>
     </div>
 
+    <div class="search-box">
+        <input type="text" id="filtro" placeholder="🔍 Buscar por cédula, nombre o correo..." onkeyup="filtrarDocentes()">
+        <button class="btn-primary" onclick="cargarDocentes()">🔄 Actualizar</button>
+        <button class="btn-primary" onclick="migrarExcel()">📎 Migrar Excel a BD</button>
+        <button class="btn-primary" onclick="mostrarModalAgregar()">➕ Agregar Docente</button>
+    </div>
+
     <div class="tabla-container">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
-            <h2>📋 Lista de Docentes</h2>
-            <button class="btn-primary" onclick="cargarDocentes()">🔄 Actualizar</button>
-        </div>
+        <h2>📋 Lista de Docentes</h2>
         <div id="tabla_docentes">
             <table id="tabla">
                 <thead>
-                    <tr><th>Cédula</th><th>Nombre</th><th>Correo</th><th>Contraseña</th><th>Personalizada</th></tr>
+                    <tr><th>Cédula</th><th>Nombre</th><th>Correo</th><th>Contraseña</th><th>Personalizada</th><th>Acciones</th></tr>
                 </thead>
                 <tbody id="docentes_tbody">
-                    <tr><td colspan="5" style="text-align:center">Cargando docentes......</td></tr>
+                    <tr><td colspan="6" style="text-align:center">Cargando docentes...</td></tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 
+<!-- Modal para agregar/editar docente -->
+<div id="modalDocente" class="modal">
+    <div class="modal-content">
+        <h3 id="modalTitulo">Agregar Docente</h3>
+        <input type="hidden" id="edit_cedula">
+        <input type="text" id="docente_cedula" placeholder="Cédula">
+        <input type="text" id="docente_nombre" placeholder="Nombre Completo">
+        <input type="email" id="docente_correo" placeholder="Correo Institucional">
+        <input type="text" id="docente_contraseña" placeholder="Contraseña">
+        <div style="display:flex; gap:10px; margin-top:20px;">
+            <button class="btn-primary" onclick="guardarDocente()">💾 Guardar</button>
+            <button class="btn-primary" onclick="cerrarModal()">❌ Cancelar</button>
+        </div>
+    </div>
+</div>
+
 <script>
+let docentesData = [];
+
 function cargarDocentes() {
     const tbody = document.getElementById('docentes_tbody');
-    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center">Cargando...</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center">Cargando...</td></tr>';
     
     fetch('/admin/api/docentes')
         .then(res => res.json())
         .then(data => {
             if (data.success && data.docentes.length > 0) {
-                tbody.innerHTML = '';
-                data.docentes.forEach(d => {
-                    tbody.innerHTML += `
-                        <tr>
-                            <td>${d.cedula}</td>
-                            <td>${d.nombre}</td>
-                            <td>${d.correo}</td>
-                            <td>${d.contraseña}</td>
-                            <td>${d.personalizada ? '✅ Sí' : '❌ No'}</td>
-                        </tr>
-                    `;
-                });
+                docentesData = data.docentes;
+                mostrarDocentes(docentesData);
             } else {
-                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center">No hay docentes registrados</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center">No hay docentes registrados</td></tr>';
             }
         })
         .catch(error => {
-            tbody.innerHTML = '<tr><td colspan="5" style="text-align:center">Error al cargar docentes</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="6" style="text-align:center">Error al cargar docentes</td></tr>';
         });
+}
+
+function mostrarDocentes(docentes) {
+    const tbody = document.getElementById('docentes_tbody');
+    tbody.innerHTML = '';
+    docentes.forEach(d => {
+        tbody.innerHTML += `
+            <tr>
+                <td>${d.cedula}</td>
+                <td>${d.nombre}</td>
+                <td>${d.correo}</td>
+                <td>${d.contraseña.length > 20 ? d.contraseña.substring(0, 20) + '...' : d.contraseña}</td>
+                <td>${d.personalizada ? '✅ Sí' : '❌ No'}</td>
+                <td>
+                    <button class="btn-primary btn-small" onclick="editarDocente('${d.cedula}','${d.nombre}','${d.correo}','${d.contraseña}')">✏️ Editar</button>
+                    <button class="btn-danger btn-small" onclick="eliminarDocente('${d.cedula}')">🗑️ Eliminar</button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+function filtrarDocentes() {
+    const filtro = document.getElementById('filtro').value.toLowerCase();
+    const filtrados = docentesData.filter(d => 
+        d.cedula.toLowerCase().includes(filtro) ||
+        d.nombre.toLowerCase().includes(filtro) ||
+        d.correo.toLowerCase().includes(filtro)
+    );
+    mostrarDocentes(filtrados);
+}
+
+function migrarExcel() {
+    if (confirm('¿Migrar todos los docentes del Excel a la base de datos? Los duplicados se actualizarán.')) {
+        fetch('/admin/migrar_excel', { method: 'POST' })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert(`✅ Migración exitosa: ${data.migrados} docentes migrados, ${data.errores} errores`);
+                    cargarDocentes();
+                } else {
+                    alert('❌ Error en migración: ' + data.error);
+                }
+            });
+    }
+}
+
+function mostrarModalAgregar() {
+    document.getElementById('modalTitulo').innerText = 'Agregar Docente';
+    document.getElementById('edit_cedula').value = '';
+    document.getElementById('docente_cedula').value = '';
+    document.getElementById('docente_nombre').value = '';
+    document.getElementById('docente_correo').value = '';
+    document.getElementById('docente_contraseña').value = '';
+    document.getElementById('modalDocente').style.display = 'flex';
+}
+
+function editarDocente(cedula, nombre, correo, contraseña) {
+    document.getElementById('modalTitulo').innerText = 'Editar Docente';
+    document.getElementById('edit_cedula').value = cedula;
+    document.getElementById('docente_cedula').value = cedula;
+    document.getElementById('docente_nombre').value = nombre;
+    document.getElementById('docente_correo').value = correo;
+    document.getElementById('docente_contraseña').value = contraseña;
+    document.getElementById('modalDocente').style.display = 'flex';
+}
+
+function cerrarModal() {
+    document.getElementById('modalDocente').style.display = 'none';
+}
+
+function guardarDocente() {
+    const edit_cedula = document.getElementById('edit_cedula').value;
+    const cedula = document.getElementById('docente_cedula').value;
+    const nombre = document.getElementById('docente_nombre').value;
+    const correo = document.getElementById('docente_correo').value;
+    const contraseña = document.getElementById('docente_contraseña').value;
+    
+    if (!cedula || !nombre || !correo || !contraseña) {
+        alert('Por favor complete todos los campos');
+        return;
+    }
+    
+    const url = edit_cedula ? '/admin/actualizar_docente' : '/admin/agregar_docente';
+    
+    fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cedula, nombre, correo, contraseña })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            alert(edit_cedula ? '✅ Docente actualizado' : '✅ Docente agregado');
+            cerrarModal();
+            cargarDocentes();
+        } else {
+            alert('❌ Error: ' + (data.error || 'desconocido'));
+        }
+    });
+}
+
+function eliminarDocente(cedula) {
+    if (confirm('¿Eliminar al docente con cédula ' + cedula + '? Esta acción no se puede deshacer.')) {
+        fetch('/admin/eliminar_docente', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ cedula: cedula })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                alert('✅ Docente eliminado');
+                cargarDocentes();
+            } else {
+                alert('❌ Error al eliminar');
+            }
+        });
+    }
 }
 
 cargarDocentes();
