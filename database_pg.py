@@ -43,21 +43,48 @@ def obtener_todos_docentes():
 def migrar_excel_a_postgres(excel_path="docentes.xlsx"):
     try:
         init_db()
+        
+        # 🔍 DEBUG: Verificar archivo
+        print(f"🔍 Buscando archivo en: {os.getcwd()}")
+        print(f"🔍 ¿Existe docentes.xlsx? {os.path.exists('docentes.xlsx')}")
+        
+        # Listar archivos en el directorio
+        print("📁 Archivos en el directorio:")
+        for file in os.listdir('.'):
+            print(f"   - {file}")
+        
         df = pd.read_excel(excel_path)
+        print(f"📊 Filas en Excel: {len(df)}")
+        print(f"📋 Columnas: {list(df.columns)}")
+        
         conn = get_db_connection()
         cursor = conn.cursor()
         migrados = 0
         errores = 0
-        for _, row in df.iterrows():
+        
+        for idx, row in df.iterrows():
             try:
-                cedula = str(row['CEDULA']).strip()
+                cedula = str(row.get('CEDULA', '')).strip()
                 if not cedula or cedula == 'nan':
                     errores += 1
                     continue
-                nombre = str(row['NOMBRE COMPLETO']).strip()
-                correo = str(row['CORREO INSTITUCIONAL']).strip().lower()
-                contraseña = str(row['CONTRASEÑA']).strip()
+                
+                nombre = str(row.get('NOMBRE COMPLETO', '')).strip()
+                if not nombre or nombre == 'nan':
+                    errores += 1
+                    continue
+                
+                correo = str(row.get('CORREO INSTITUCIONAL', '')).strip().lower()
+                if not correo or correo == 'nan' or '@' not in correo:
+                    errores += 1
+                    continue
+                
+                contraseña = str(row.get('CONTRASEÑA', '')).strip()
+                if not contraseña or contraseña == 'nan':
+                    contraseña = "pendiente"
+                
                 personalizada = "personalizada" in contraseña.lower()
+                
                 cursor.execute('''
                     INSERT INTO docentes (cedula, nombre_completo, correo, contraseña, personalizada)
                     VALUES (%s, %s, %s, %s, %s)
@@ -68,12 +95,18 @@ def migrar_excel_a_postgres(excel_path="docentes.xlsx"):
                         personalizada = EXCLUDED.personalizada
                 ''', (cedula, nombre, correo, contraseña, personalizada))
                 migrados += 1
-            except:
+                
+            except Exception as e:
                 errores += 1
+                print(f"❌ Error en fila {idx}: {e}")
+                continue
+        
         conn.commit()
         conn.close()
+        print(f"✅ Migrados: {migrados}, ❌ Errores: {errores}")
         return {"success": True, "migrados": migrados, "errores": errores}
     except Exception as e:
+        print(f"❌ Error general: {e}")
         return {"success": False, "error": str(e)}
 
 def agregar_docente(cedula, nombre, correo, contraseña):
