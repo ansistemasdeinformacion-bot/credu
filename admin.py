@@ -255,11 +255,17 @@ def datos_grafica():
     })
 
 # ============================================
-# GESTIÓN DE DOCENTES (PostgreSQL)
+# GESTIÓN DE DOCENTES
 # ============================================
 
 @admin_bp.route('/docentes')
-def listar_docentes():
+def docentes_page():
+    if not session.get('admin_logged'):
+        return redirect(url_for('admin.admin_login'))
+    return render_template('admin_docentes.html')
+
+@admin_bp.route('/api/docentes')
+def api_docentes():
     if not session.get('admin_logged'):
         return jsonify({"success": False})
     

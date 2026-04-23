@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Admin CREDU · Docentes</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Inter', sans-serif;
+        background: radial-gradient(circle at 10% 20%, #0a2a66, #020c1a, #010408);
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+    }
+    body::before {
+        content: "";
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 120px;
+        height: 120px;
+        background-image: url('/static/mascota.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.15;
+        pointer-events: none;
+        z-index: 0;
+    }
+    .container { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background: rgba(10, 31, 62, 0.55);
+        backdrop-filter: blur(15px);
+        border-radius: 40px;
+        margin-bottom: 25px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .header h1 { color: white; font-size: 1.5rem; display: flex; align-items: center; gap: 8px; }
+    .logo-mascota { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; border: 2px solid #d4af37; }
+    .nav-links { display: flex; gap: 15px; }
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+    .nav-link:hover, .nav-link.active { background: linear-gradient(135deg, #d4af37, #b8962e); color: #0a1f3e; }
+    .logout-btn {
+        background: rgba(220, 38, 38, 0.2);
+        color: #f87171;
+        padding: 10px 20px;
+        border-radius: 40px;
+        text-decoration: none;
+        border: 1px solid rgba(220, 38, 38, 0.3);
+        transition: all 0.3s ease;
+    }
+    .btn-primary {
+        background: linear-gradient(135deg, #d4af37, #b8962e);
+        color: #0a1f3e;
+        font-weight: 700;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 40px;
+        cursor: pointer;
+    }
+    .tabla-container {
+        background: rgba(10, 31, 62, 0.55);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        padding: 20px;
+        margin-bottom: 25px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        overflow-x: auto;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+    th { color: #d4af37; font-weight: 600; }
+    @media (max-width: 768px) {
+        .nav-links { width: 100%; justify-content: center; }
+        th, td { font-size: 0.7rem; padding: 8px; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1><img src="/static/mascota.png" class="logo-mascota" alt="CREDU"> 📊 CREDU · Panel de Administración</h1>
+        <div class="nav-links">
+            <a href="/admin/dashboard" class="nav-link">📅 Calendario</a>
+            <a href="/admin/docentes" class="nav-link active">📋 Docentes</a>
+            <a href="/admin/graficas" class="nav-link">📈 Gráficas</a>
+        </div>
+        <a href="/admin/logout" class="logout-btn">🚪 Cerrar sesión</a>
+    </div>
+
+    <div class="tabla-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+            <h2>📋 Lista de Docentes</h2>
+            <button class="btn-primary" onclick="cargarDocentes()">🔄 Actualizar</button>
+        </div>
+        <div id="tabla_docentes">
+            <table id="tabla">
+                <thead>
+                    <tr><th>Cédula</th><th>Nombre</th><th>Correo</th><th>Contraseña</th><th>Personalizada</th></tr>
+                </thead>
+                <tbody id="docentes_tbody">
+                    <tr><td colspan="5" style="text-align:center">Cargando docentes......</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+function cargarDocentes() {
+    const tbody = document.getElementById('docentes_tbody');
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center">Cargando...</td></tr>';
+    
+    fetch('/admin/api/docentes')
+        .then(res => res.json())
+        .then(data => {
+            if (data.success && data.docentes.length > 0) {
+                tbody.innerHTML = '';
+                data.docentes.forEach(d => {
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>${d.cedula}</td>
+                            <td>${d.nombre}</td>
+                            <td>${d.correo}</td>
+                            <td>${d.contraseña}</td>
+                            <td>${d.personalizada ? '✅ Sí' : '❌ No'}</td>
+                        </tr>
+                    `;
+                });
+            } else {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center">No hay docentes registrados</td></tr>';
+            }
+        })
+        .catch(error => {
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align:center">Error al cargar docentes</td></tr>';
+        });
+}
+
+cargarDocentes();
+</script>
+</body>
+</html>
