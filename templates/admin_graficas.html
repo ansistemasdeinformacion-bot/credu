@@ -6,6 +6,8 @@
 <title>Admin CREDU · Gráficas</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <style>
     * {
         margin: 0;
@@ -230,7 +232,7 @@
         </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="grafica-card">
         <h2>📈 Consultas por mes</h2>
         <div class="selector-año">
             <label>Seleccionar año:</label>
@@ -240,6 +242,7 @@
                 <option value="2024">2024</option>
             </select>
             <button class="btn-primary" onclick="cargarGrafica()">Actualizar gráfica</button>
+            <button class="btn-primary" onclick="descargarImagen()">📸 Descargar como imagen</button>
         </div>
         <div class="chart-container">
             <canvas id="graficaMensual"></canvas>
@@ -258,77 +261,114 @@ async function cargarGrafica() {
         const data = await response.json();
         
         if (data.success) {
-            actualizarEstadisticas(data);
-            dibujarGrafica(data);
+            document.getElementById('totalConsultas').innerText = data.total_consultas;
+            document.getElementById('promedioMensual').innerText = data.promedio_mensual;
+            
+            if (data.mejor_mes) {
+                document.getElementById('mejorMes').innerHTML = `${data.mejor_mes} 📈`;
+            }
+            if (data.peor_mes) {
+                document.getElementById('peorMes').innerHTML = `${data.peor_mes} 📉`;
+            }
+            
+            if (chart) {
+                chart.destroy();
+            }
+            
+            const ctx = document.getElementById('graficaMensual').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.meses,
+                    datasets: [{
+                        label: 'Número de consultas',
+                        data: data.valores,
+                        backgroundColor: 'rgba(212, 175, 55, 0.7)',
+                        borderColor: '#d4af37',
+                        borderWidth: 2,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'white',
+                                font: { size: 12 }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(10, 31, 62, 0.9)',
+                            titleColor: '#d4af37',
+                            bodyColor: 'white',
+                            borderColor: '#d4af37',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    return `Consultas: ${context.raw}`;
+                                }
+                            }
+                        },
+                        // ============================================
+                        // DATALABELS: MUESTRA LOS NÚMEROS EN LAS BARRAS
+                        // ============================================
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'top',
+                            offset: 4,
+                            color: '#d4af37',
+                            font: {
+                                weight: 'bold',
+                                size: 12
+                            },
+                            formatter: function(value) {
+                                return value > 0 ? value : '';
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            ticks: { 
+                                color: 'white', 
+                                stepSize: 1,
+                                callback: function(value) {
+                                    return value.toLocaleString();
+                                }
+                            }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: 'white', font: { size: 11 } }
+                        }
+                    }
+                }
+            });
         }
     } catch (error) {
         console.error('Error cargando gráfica:', error);
     }
 }
 
-function actualizarEstadisticas(data) {
-    document.getElementById('totalConsultas').innerText = data.total_consultas;
-    document.getElementById('promedioMensual').innerText = data.promedio_mensual;
+function descargarImagen() {
+    const elemento = document.getElementById('grafica-card');
     
-    if (data.mejor_mes) {
-        document.getElementById('mejorMes').innerHTML = `${data.mejor_mes} 📈`;
-    }
-    if (data.peor_mes) {
-        document.getElementById('peorMes').innerHTML = `${data.peor_mes} 📉`;
-    }
-}
-
-function dibujarGrafica(data) {
-    const ctx = document.getElementById('graficaMensual').getContext('2d');
-    
-    if (chart) {
-        chart.destroy();
-    }
-    
-    chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: data.meses,
-            datasets: [{
-                label: 'Número de consultas',
-                data: data.valores,
-                backgroundColor: 'rgba(212, 175, 55, 0.7)',
-                borderColor: '#d4af37',
-                borderWidth: 2,
-                borderRadius: 8,
-                barPercentage: 0.65
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    labels: {
-                        color: 'white',
-                        font: { size: 12 }
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(10, 31, 62, 0.9)',
-                    titleColor: '#d4af37',
-                    bodyColor: 'white',
-                    borderColor: '#d4af37',
-                    borderWidth: 1
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                    ticks: { color: 'white', stepSize: 1 }
-                },
-                x: {
-                    grid: { display: false },
-                    ticks: { color: 'white', font: { size: 11 } }
-                }
-            }
-        }
+    html2canvas(elemento, {
+        scale: 2,
+        backgroundColor: '#0a1f3e',
+        logging: false
+    }).then(canvas => {
+        const enlace = document.createElement('a');
+        const año = document.getElementById('añoSelector').value;
+        enlace.download = `grafica_consultas_${año}.png`;
+        enlace.href = canvas.toDataURL('image/png');
+        enlace.click();
+    }).catch(error => {
+        console.error('Error al generar la imagen:', error);
+        alert('Error al generar la imagen. Intente nuevamente.');
     });
 }
 
