@@ -31,14 +31,21 @@ def inicializar_tabla():
     conn.close()
     print("✅ Tabla 'docentes' verificada/creada correctamente")
 
-# Inicializar la tabla al arrancar la aplicación
 inicializar_tabla()
 
-def login_required(f):
+def admin_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if not session.get('admin_logged_in'):
             return redirect(url_for('admin_login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+def docente_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('docente_logged_in'):
+            return redirect(url_for('login_page'))
         return f(*args, **kwargs)
     return decorated_function
 
@@ -49,6 +56,42 @@ def login_required(f):
 @app.route('/')
 def index():
     return jsonify({'mensaje': 'API CREDU funcionando', 'status': 'ok'})
+
+# ============================================
+# LOGIN PARA DOCENTES
+# ============================================
+
+@app.route('/login', methods=['GET', 'POST'])
+def login_page():
+    if request.method == 'POST':
+        cedula = request.form.get('cedula')
+        contrasena = request.form.get('contrasena')
+        
+        conn = get_db_connection()
+        cur = conn.cursor(cursor_factory=RealDictCursor)
+        cur.execute("SELECT * FROM docentes WHERE cedula = %s AND contrasena = %s", (cedula, contrasena))
+        docente = cur.fetchone()
+        cur.close()
+        conn.close()
+        
+        if docente:
+            session['docente_logged_in'] = True
+            session['docente_cedula'] = cedula
+            session['docente_nombre'] = docente['nombre_completo']
+            return redirect(url_for('dashboard_docente'))
+        else:
+            return render_template('login.html', error=True)
+    
+    return render_template('login.html')
+
+@app.route('/dashboard')
+@docente_required
+def dashboard_docente():
+    return render_template('dashboard.html', nombre=session.get('docente_nombre'))
+
+# ============================================
+# PANEL ADMINISTRADOR
+# ============================================
 
 @app.route('/admin', methods=['GET', 'POST'])
 def admin_login():
@@ -63,21 +106,28 @@ def admin_login():
     return render_template('admin_login.html')
 
 @app.route('/admin/dashboard')
-@login_required
+@admin_required
 def admin_dashboard():
     return render_template('admin.html')
 
 @app.route('/admin/logout')
 def admin_logout():
-    session.clear()
+    session.pop('admin_logged_in', None)
     return redirect(url_for('admin_login'))
 
+@app.route('/logout')
+def logout():
+    session.pop('docente_logged_in', None)
+    session.pop('docente_cedula', None)
+    session.pop('docente_nombre', None)
+    return redirect(url_for('login_page'))
+
 # ============================================
-# API - CRUD DOCENTES
+# API - CRUD DOCENTES (para admin)
 # ============================================
 
 @app.route('/api/docentes', methods=['GET'])
-@login_required
+@admin_required
 def get_docentes():
     search = request.args.get('search', '')
     conn = get_db_connection()
@@ -101,7 +151,7 @@ def get_docentes():
         conn.close()
 
 @app.route('/api/docentes', methods=['POST'])
-@login_required
+@admin_required
 def add_docente():
     data = request.json
     conn = get_db_connection()
@@ -120,7 +170,7 @@ def add_docente():
         conn.close()
 
 @app.route('/api/docentes/<cedula>', methods=['PUT'])
-@login_required
+@admin_required
 def update_docente(cedula):
     data = request.json
     conn = get_db_connection()
@@ -140,7 +190,7 @@ def update_docente(cedula):
         conn.close()
 
 @app.route('/api/docentes/<cedula>', methods=['DELETE'])
-@login_required
+@admin_required
 def delete_docente(cedula):
     conn = get_db_connection()
     cur = conn.cursor()
@@ -159,7 +209,7 @@ def delete_docente(cedula):
 # ============================================
 
 @app.route('/api/migrar-excel', methods=['POST'])
-@login_required
+@admin_required
 def migrar_excel():
     if 'excel' not in request.files:
         return jsonify({'error': 'No se envió ningún archivo'}), 400
