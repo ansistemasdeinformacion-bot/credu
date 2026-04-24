@@ -3,20 +3,37 @@ import os
 import pandas as pd
 import psycopg2
 from psycopg2.extras import RealDictCursor
-from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'credu_secret_key_2025')
 
-# Configuración de la base de datos
 DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://postgres:postgres@localhost:5432/credu')
 
 def get_db_connection():
-    conn = psycopg2.connect(DATABASE_URL)
-    return conn
+    return psycopg2.connect(DATABASE_URL)
 
-# Decorador para requerir login
+def inicializar_tabla():
+    """Crea la tabla docentes si no existe"""
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS docentes (
+            cedula VARCHAR(20) PRIMARY KEY,
+            nombre_completo VARCHAR(200) NOT NULL,
+            correo VARCHAR(100) NOT NULL UNIQUE,
+            contrasena VARCHAR(100) NOT NULL,
+            fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    conn.commit()
+    cur.close()
+    conn.close()
+    print("✅ Tabla 'docentes' verificada/creada correctamente")
+
+# Inicializar la tabla al arrancar la aplicación
+inicializar_tabla()
+
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -38,13 +55,11 @@ def admin_login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        
         if username == 'admin' and password == 'tecnounia2025':
             session['admin_logged_in'] = True
             return redirect(url_for('admin_dashboard'))
         else:
             return render_template('admin_login.html', error=True)
-    
     return render_template('admin_login.html')
 
 @app.route('/admin/dashboard')
@@ -67,22 +82,23 @@ def get_docentes():
     search = request.args.get('search', '')
     conn = get_db_connection()
     cur = conn.cursor(cursor_factory=RealDictCursor)
-    
-    if search:
-        cur.execute("""
-            SELECT cedula, nombre_completo, correo, contrasena 
-            FROM docentes 
-            WHERE cedula::TEXT ILIKE %s OR nombre_completo ILIKE %s OR correo ILIKE %s
-            ORDER BY nombre_completo
-        """, (f'%{search}%', f'%{search}%', f'%{search}%'))
-    else:
-        cur.execute("SELECT cedula, nombre_completo, correo, contrasena FROM docentes ORDER BY nombre_completo")
-    
-    docentes = cur.fetchall()
-    cur.close()
-    conn.close()
-    
-    return jsonify(docentes)
+    try:
+        if search:
+            cur.execute("""
+                SELECT cedula, nombre_completo, correo, contrasena 
+                FROM docentes 
+                WHERE cedula ILIKE %s OR nombre_completo ILIKE %s OR correo ILIKE %s
+                ORDER BY nombre_completo
+            """, (f'%{search}%', f'%{search}%', f'%{search}%'))
+        else:
+            cur.execute("SELECT cedula, nombre_completo, correo, contrasena FROM docentes ORDER BY nombre_completo")
+        docentes = cur.fetchall()
+        return jsonify(docentes)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    finally:
+        cur.close()
+        conn.close()
 
 @app.route('/api/docentes', methods=['POST'])
 @login_required
@@ -90,7 +106,6 @@ def add_docente():
     data = request.json
     conn = get_db_connection()
     cur = conn.cursor()
-    
     try:
         cur.execute("""
             INSERT INTO docentes (cedula, nombre_completo, correo, contrasena)
@@ -110,7 +125,6 @@ def update_docente(cedula):
     data = request.json
     conn = get_db_connection()
     cur = conn.cursor()
-    
     try:
         cur.execute("""
             UPDATE docentes 
@@ -130,7 +144,6 @@ def update_docente(cedula):
 def delete_docente(cedula):
     conn = get_db_connection()
     cur = conn.cursor()
-    
     try:
         cur.execute("DELETE FROM docentes WHERE cedula = %s", (cedula,))
         conn.commit()
@@ -157,8 +170,6 @@ def migrar_excel():
     
     try:
         df = pd.read_excel(file)
-        
-        # Normalizar nombres de columnas
         df.columns = df.columns.str.lower().str.strip()
         
         columnas_necesarias = ['cedula', 'contrasena', 'nombre_completo', 'correo']
@@ -171,18 +182,6 @@ def migrar_excel():
         
         conn = get_db_connection()
         cur = conn.cursor()
-        
-        # Crear tabla si no existe
-        cur.execute("""
-            CREATE TABLE IF NOT EXISTS docentes (
-                cedula VARCHAR(20) PRIMARY KEY,
-                nombre_completo VARCHAR(200) NOT NULL,
-                correo VARCHAR(100) NOT NULL UNIQUE,
-                contrasena VARCHAR(100) NOT NULL,
-                fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-        """)
-        conn.commit()
         
         for _, row in df.iterrows():
             try:
@@ -205,7 +204,6 @@ def migrar_excel():
                 """, (cedula, nombre_completo, correo, contrasena))
                 
                 migrados += 1
-                
             except Exception:
                 errores += 1
         
@@ -219,7 +217,6 @@ def migrar_excel():
             'errores': errores,
             'mensaje': f'{migrados} docentes migrados, {errores} errores'
         })
-        
     except Exception as e:
         return jsonify({'error': f'Error al procesar el archivo: {str(e)}'}), 500
 

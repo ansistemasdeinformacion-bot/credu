@@ -25,6 +25,8 @@
         .modal-content { background: #0a1428; padding: 30px; border-radius: 24px; width: 400px; border: 1px solid rgba(0,229,255,0.3); }
         .modal-content input { width: 100%; padding: 10px; margin-bottom: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(0,229,255,0.3); border-radius: 40px; color: #e8e8f0; }
         .file-input { display: none; }
+        .logout-link { margin-left: auto; color: #e05a5a; text-decoration: none; padding: 10px 20px; border-radius: 40px; background: rgba(224,90,90,0.1); }
+        .logout-link:hover { background: rgba(224,90,90,0.2); }
         @media (max-width: 768px) { .container { padding: 20px; } .toolbar { flex-direction: column; } .search-box input { width: 100%; } }
     </style>
 </head>
@@ -38,12 +40,12 @@
         </div>
         <button class="btn" id="migrarBtn">📂 Migrar Excel a BD</button>
         <button class="btn btn-outline" id="agregarBtn">➕ Agregar Docente</button>
-        <a href="/admin/logout" style="margin-left: auto; color: #e05a5a; text-decoration: none;">Cerrar sesión</a>
+        <a href="/admin/logout" class="logout-link">Cerrar sesión</a>
     </div>
 
     <div style="overflow-x: auto;">
         <table id="docentesTable">
-            <thead><tr><th>Cédula</th><th>Nombre Completo</th><th>Correo</th><th>Activo</th><th>Acciones</th></tr></thead>
+            <thead><tr><th>Cédula</th><th>Nombre Completo</th><th>Correo</th><th>Estado</th><th>Acciones</th></tr></thead>
             <tbody id="docentesBody"><tr><td colspan="5">Cargando docentes...</td></tr></tbody>
         </table>
     </div>
@@ -71,6 +73,7 @@
     async function cargarDocentes() {
         const search = document.getElementById('searchInput').value;
         const res = await fetch(`/api/docentes?search=${encodeURIComponent(search)}`);
+        if (!res.ok) { document.getElementById('docentesBody').innerHTML = '<tr><td colspan="5">Error al cargar</td></tr>'; return; }
         const docentes = await res.json();
         const tbody = document.getElementById('docentesBody');
         if (!docentes.length) { tbody.innerHTML = '<tr><td colspan="5">No hay docentes registrados</td></tr>'; return; }
@@ -79,7 +82,7 @@
                 <td>${escapeHtml(d.cedula)}</td>
                 <td>${escapeHtml(d.nombre_completo)}</td>
                 <td>${escapeHtml(d.correo)}</td>
-                <td>✅</td>
+                <td>✅ Activo</td>
                 <td>
                     <button class="edit-btn" onclick='editarDocente(${JSON.stringify(d)})'>✏️</button>
                     <button class="delete-btn" onclick="eliminarDocente('${escapeHtml(d.cedula)}')">🗑️</button>
@@ -88,7 +91,10 @@
         `).join('');
     }
 
-    function escapeHtml(str) { return str.replace(/[&<>]/g, function(m){if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;}); }
+    function escapeHtml(str) { 
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m){if(m==='&') return '&amp;'; if(m==='<') return '&lt;'; if(m==='>') return '&gt;'; return m;});
+    }
 
     window.editarDocente = (d) => {
         editingCedula = d.cedula;
@@ -136,7 +142,7 @@
         if (res.ok) {
             document.getElementById('modal').style.display = 'none';
             cargarDocentes();
-        } else { alert('Error al guardar'); }
+        } else { const err = await res.json(); alert('Error: ' + (err.error || 'desconocido')); }
     };
 
     document.getElementById('modalCancelBtn').onclick = () => document.getElementById('modal').style.display = 'none';
@@ -152,9 +158,11 @@
         const btn = document.getElementById('migrarBtn');
         btn.textContent = '⏳ Subiendo...';
         btn.disabled = true;
-        const res = await fetch('/api/migrar-excel', { method: 'POST', body: formData });
-        const result = await res.json();
-        alert(result.mensaje || `✅ ${result.migrados} docentes migrados, ${result.errores} errores`);
+        try {
+            const res = await fetch('/api/migrar-excel', { method: 'POST', body: formData });
+            const result = await res.json();
+            alert(result.mensaje || `✅ ${result.migrados} docentes migrados, ${result.errores} errores`);
+        } catch(err) { alert('Error al subir el archivo'); }
         btn.textContent = '📂 Migrar Excel a BD';
         btn.disabled = false;
         cargarDocentes();
