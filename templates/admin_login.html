@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin CREDU | Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>CREDU · Admin Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #0a0f1f, #0a1428);
@@ -28,11 +24,6 @@
             width: 100%;
             max-width: 400px;
             text-align: center;
-        }
-        .login-card i {
-            font-size: 60px;
-            color: #00e5ff;
-            margin-bottom: 20px;
         }
         .login-card h2 {
             font-size: 28px;
@@ -66,16 +57,12 @@
             color: #0a0f1f;
             cursor: pointer;
         }
-        .error {
-            color: #e05a5a;
-            margin-top: 15px;
-        }
+        .error { color: #e05a5a; margin-top: 15px; }
     </style>
 </head>
 <body>
     <div class="login-card">
-        <i class="fas fa-shield-alt"></i>
-        <h2>ADMIN CREDU</h2>
+        <h2>🔐 ADMIN CREDU</h2>
         <p>Ingrese sus credenciales</p>
         <form method="POST">
             <input type="text" name="username" class="login-input" placeholder="Usuario" autocomplete="off">
@@ -86,6 +73,5 @@
             {% endif %}
         </form>
     </div>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>

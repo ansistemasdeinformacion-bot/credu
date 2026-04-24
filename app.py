@@ -1,37 +1,44 @@
-from flask import Flask, render_template, request, jsonify, session, redirect, url_for
+from flask import Flask, render_template, request, jsonify, redirect, url_for, session
+import os
 import pandas as pd
 import psycopg2
-import os
-from werkzeug.utils import secure_filename
-from io import BytesIO
+from psycopg2.extras import RealDictCursor
+from werkzeug.security import generate_password_hash, check_password_hash
+from functools import wraps
 
 app = Flask(__name__)
-app.secret_key = 'tu_clave_secreta_aqui'
+app.secret_key = os.environ.get('SECRET_KEY', 'credu_secret_key_2025')
 
-# Configuración de subida de archivos
-UPLOAD_FOLDER = '/tmp'
-ALLOWED_EXTENSIONS = {'xlsx', 'xls'}
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
-# Configuración de la base de datos (Railway PostgreSQL)
-DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://usuario:contraseña@localhost:5432/credu')
+# Configuración de la base de datos
+DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://postgres:postgres@localhost:5432/credu')
 
 def get_db_connection():
-    return psycopg2.connect(DATABASE_URL)
+    conn = psycopg2.connect(DATABASE_URL)
+    return conn
 
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+# Decorador para requerir login
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('admin_logged_in'):
+            return redirect(url_for('admin_login'))
+        return f(*args, **kwargs)
+    return decorated_function
 
 # ============================================
-# PÁGINA DE LOGIN DEL ADMINISTRADOR
+# RUTAS PRINCIPALES
 # ============================================
+
+@app.route('/')
+def index():
+    return jsonify({'mensaje': 'API CREDU funcionando', 'status': 'ok'})
+
 @app.route('/admin', methods=['GET', 'POST'])
 def admin_login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
         
-        # Credenciales (cámbialas por las que quieras)
         if username == 'admin' and password == 'tecnounia2025':
             session['admin_logged_in'] = True
             return redirect(url_for('admin_dashboard'))
@@ -40,63 +47,127 @@ def admin_login():
     
     return render_template('admin_login.html')
 
-# ============================================
-# PANEL DE ADMINISTRACIÓN (DASHBOARD)
-# ============================================
 @app.route('/admin/dashboard')
+@login_required
 def admin_dashboard():
-    if not session.get('admin_logged_in'):
-        return redirect(url_for('admin_login'))
-    
+    return render_template('admin.html')
+
+@app.route('/admin/logout')
+def admin_logout():
+    session.clear()
+    return redirect(url_for('admin_login'))
+
+# ============================================
+# API - CRUD DOCENTES
+# ============================================
+
+@app.route('/api/docentes', methods=['GET'])
+@login_required
+def get_docentes():
+    search = request.args.get('search', '')
     conn = get_db_connection()
-    cur = conn.cursor()
+    cur = conn.cursor(cursor_factory=RealDictCursor)
     
-    # Obtener todos los docentes
-    cur.execute("SELECT cedula, nombre_completo, correo, contrasena FROM docentes ORDER BY nombre_completo")
+    if search:
+        cur.execute("""
+            SELECT cedula, nombre_completo, correo, contrasena 
+            FROM docentes 
+            WHERE cedula::TEXT ILIKE %s OR nombre_completo ILIKE %s OR correo ILIKE %s
+            ORDER BY nombre_completo
+        """, (f'%{search}%', f'%{search}%', f'%{search}%'))
+    else:
+        cur.execute("SELECT cedula, nombre_completo, correo, contrasena FROM docentes ORDER BY nombre_completo")
+    
     docentes = cur.fetchall()
-    
     cur.close()
     conn.close()
     
-    return render_template('admin.html', docentes=docentes)
+    return jsonify(docentes)
+
+@app.route('/api/docentes', methods=['POST'])
+@login_required
+def add_docente():
+    data = request.json
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    try:
+        cur.execute("""
+            INSERT INTO docentes (cedula, nombre_completo, correo, contrasena)
+            VALUES (%s, %s, %s, %s)
+        """, (data['cedula'], data['nombre_completo'], data['correo'], data['contrasena']))
+        conn.commit()
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+    finally:
+        cur.close()
+        conn.close()
+
+@app.route('/api/docentes/<cedula>', methods=['PUT'])
+@login_required
+def update_docente(cedula):
+    data = request.json
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    try:
+        cur.execute("""
+            UPDATE docentes 
+            SET nombre_completo = %s, correo = %s, contrasena = %s
+            WHERE cedula = %s
+        """, (data['nombre_completo'], data['correo'], data['contrasena'], cedula))
+        conn.commit()
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+    finally:
+        cur.close()
+        conn.close()
+
+@app.route('/api/docentes/<cedula>', methods=['DELETE'])
+@login_required
+def delete_docente(cedula):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    try:
+        cur.execute("DELETE FROM docentes WHERE cedula = %s", (cedula,))
+        conn.commit()
+        return jsonify({'success': True})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
+    finally:
+        cur.close()
+        conn.close()
 
 # ============================================
-# API: MIGRAR EXCEL A BASE DE DATOS
+# API - MIGRAR EXCEL
 # ============================================
+
 @app.route('/api/migrar-excel', methods=['POST'])
+@login_required
 def migrar_excel():
-    if not session.get('admin_logged_in'):
-        return jsonify({'error': 'No autorizado'}), 401
-    
     if 'excel' not in request.files:
         return jsonify({'error': 'No se envió ningún archivo'}), 400
     
     file = request.files['excel']
-    
     if file.filename == '':
         return jsonify({'error': 'No se seleccionó ningún archivo'}), 400
     
-    if not allowed_file(file.filename):
-        return jsonify({'error': 'Formato no permitido. Use .xlsx o .xls'}), 400
-    
     try:
-        # Leer el Excel
         df = pd.read_excel(file)
         
-        # Verificar que tenga las columnas necesarias
-        columnas_requeridas = ['cedula', 'contrasena', 'nombre_completo', 'correo']
-        columnas_excel = [col.lower() for col in df.columns]
+        # Normalizar nombres de columnas
+        df.columns = df.columns.str.lower().str.strip()
         
-        for col in columnas_requeridas:
-            if col not in columnas_excel:
+        columnas_necesarias = ['cedula', 'contrasena', 'nombre_completo', 'correo']
+        for col in columnas_necesarias:
+            if col not in df.columns:
                 return jsonify({'error': f'Falta la columna: {col}'}), 400
-        
-        # Renombrar columnas a minúsculas
-        df.columns = [col.lower() for col in df.columns]
         
         migrados = 0
         errores = 0
-        errores_lista = []
         
         conn = get_db_connection()
         cur = conn.cursor()
@@ -120,13 +191,10 @@ def migrar_excel():
                 nombre_completo = str(row['nombre_completo']).strip()
                 correo = str(row['correo']).strip()
                 
-                # Validar datos
                 if not cedula or not contrasena or not nombre_completo or not correo:
                     errores += 1
-                    errores_lista.append(f"Fila con datos vacíos - Cédula: {cedula}")
                     continue
                 
-                # Insertar o actualizar
                 cur.execute("""
                     INSERT INTO docentes (cedula, nombre_completo, correo, contrasena)
                     VALUES (%s, %s, %s, %s)
@@ -138,9 +206,8 @@ def migrar_excel():
                 
                 migrados += 1
                 
-            except Exception as e:
+            except Exception:
                 errores += 1
-                errores_lista.append(f"Error en fila {_}: {str(e)}")
         
         conn.commit()
         cur.close()
@@ -150,114 +217,11 @@ def migrar_excel():
             'success': True,
             'migrados': migrados,
             'errores': errores,
-            'mensaje': f'Migración completada',
-            'detalles': errores_lista[:10]  # primeros 10 errores
+            'mensaje': f'{migrados} docentes migrados, {errores} errores'
         })
         
     except Exception as e:
         return jsonify({'error': f'Error al procesar el archivo: {str(e)}'}), 500
-
-# ============================================
-# API: CRUD DE DOCENTES
-# ============================================
-@app.route('/api/docentes', methods=['GET'])
-def get_docentes():
-    if not session.get('admin_logged_in'):
-        return jsonify({'error': 'No autorizado'}), 401
-    
-    search = request.args.get('search', '')
-    
-    conn = get_db_connection()
-    cur = conn.cursor()
-    
-    if search:
-        cur.execute("""
-            SELECT cedula, nombre_completo, correo, contrasena 
-            FROM docentes 
-            WHERE cedula ILIKE %s OR nombre_completo ILIKE %s OR correo ILIKE %s
-            ORDER BY nombre_completo
-        """, (f'%{search}%', f'%{search}%', f'%{search}%'))
-    else:
-        cur.execute("SELECT cedula, nombre_completo, correo, contrasena FROM docentes ORDER BY nombre_completo")
-    
-    docentes = cur.fetchall()
-    cur.close()
-    conn.close()
-    
-    return jsonify([{
-        'cedula': d[0],
-        'nombre_completo': d[1],
-        'correo': d[2],
-        'contrasena': d[3]
-    } for d in docentes])
-
-@app.route('/api/docentes', methods=['POST'])
-def add_docente():
-    if not session.get('admin_logged_in'):
-        return jsonify({'error': 'No autorizado'}), 401
-    
-    data = request.json
-    conn = get_db_connection()
-    cur = conn.cursor()
-    
-    try:
-        cur.execute("""
-            INSERT INTO docentes (cedula, nombre_completo, correo, contrasena)
-            VALUES (%s, %s, %s, %s)
-        """, (data['cedula'], data['nombre_completo'], data['correo'], data['contrasena']))
-        conn.commit()
-        return jsonify({'success': True})
-    except Exception as e:
-        return jsonify({'error': str(e)}), 400
-    finally:
-        cur.close()
-        conn.close()
-
-@app.route('/api/docentes/<cedula>', methods=['PUT'])
-def update_docente(cedula):
-    if not session.get('admin_logged_in'):
-        return jsonify({'error': 'No autorizado'}), 401
-    
-    data = request.json
-    conn = get_db_connection()
-    cur = conn.cursor()
-    
-    try:
-        cur.execute("""
-            UPDATE docentes 
-            SET nombre_completo = %s, correo = %s, contrasena = %s
-            WHERE cedula = %s
-        """, (data['nombre_completo'], data['correo'], data['contrasena'], cedula))
-        conn.commit()
-        return jsonify({'success': True})
-    except Exception as e:
-        return jsonify({'error': str(e)}), 400
-    finally:
-        cur.close()
-        conn.close()
-
-@app.route('/api/docentes/<cedula>', methods=['DELETE'])
-def delete_docente(cedula):
-    if not session.get('admin_logged_in'):
-        return jsonify({'error': 'No autorizado'}), 401
-    
-    conn = get_db_connection()
-    cur = conn.cursor()
-    
-    try:
-        cur.execute("DELETE FROM docentes WHERE cedula = %s", (cedula,))
-        conn.commit()
-        return jsonify({'success': True})
-    except Exception as e:
-        return jsonify({'error': str(e)}), 400
-    finally:
-        cur.close()
-        conn.close()
-
-@app.route('/admin/logout')
-def admin_logout():
-    session.clear()
-    return redirect(url_for('admin_login'))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
