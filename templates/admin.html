@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREDU · Panel de Administración</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0f1f;
+            color: #e8e8f0;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0,229,255,0.3);
+        }
+        .header h1 {
+            background: linear-gradient(135deg, #fff, #00e5ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .btn-logout {
+            background: rgba(0,229,255,0.1);
+            border: 1px solid rgba(0,229,255,0.3);
+            padding: 10px 20px;
+            border-radius: 40px;
+            color: #00e5ff;
+            text-decoration: none;
+        }
+        .toolbar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 40px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #00e5ff, #7c3aed);
+            color: #0a0f1f;
+        }
+        .btn-secondary {
+            background: rgba(0,229,255,0.1);
+            border: 1px solid rgba(0,229,255,0.3);
+            color: #00e5ff;
+        }
+        .search-box {
+            flex: 1;
+            max-width: 400px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(0,229,255,0.2);
+            border-radius: 40px;
+            color: #e8e8f0;
+            outline: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(10,18,34,0.6);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,229,255,0.1);
+        }
+        th {
+            color: #00e5ff;
+            background: rgba(0,229,255,0.05);
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .actions button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 5px;
+        }
+        .edit-btn { color: #f5c542; }
+        .delete-btn { color: #e05a5a; }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: #0a1428;
+            border-radius: 32px;
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid rgba(0,229,255,0.3);
+        }
+        .modal-content h3 {
+            margin-bottom: 20px;
+            color: #00e5ff;
+        }
+        .modal-content input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(0,229,255,0.2);
+            border-radius: 40px;
+            color: #e8e8f0;
+            outline: none;
+        }
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+        .file-input {
+            display: none;
+        }
+        .result-message {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            display: none;
+            z-index: 1000;
+        }
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            th, td { padding: 10px; font-size: 12px; }
+            .toolbar { flex-direction: column; }
+            .search-box { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-graduation-cap"></i> CREDU · Panel de Administración</h1>
+            <a href="/admin/logout" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+        </div>
+
+        <div class="toolbar">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Buscar por cédula, nombre o correo...">
+            </div>
+            <button class="btn btn-primary" id="migrarBtn">
+                <i class="fas fa-file-excel"></i> Migrar Excel a BD
+            </button>
+            <button class="btn btn-secondary" id="agregarBtn">
+                <i class="fas fa-plus"></i> Agregar Docente
+            </button>
+        </div>
+
+        <div style="overflow-x: auto;">
+            <table id="docentesTable">
+                <thead>
+                    <tr>
+                        <th>Cédula</th>
+                        <th>Nombre Completo</th>
+                        <th>Correo</th>
+                        <th>Contraseña</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="docentesBody">
+                    <tr><td colspan="5" style="text-align:center;">Cargando docentes...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal para agregar/editar -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Agregar Docente</h3>
+            <input type="text" id="modalCedula" placeholder="Cédula">
+            <input type="text" id="modalNombre" placeholder="Nombre Completo">
+            <input type="email" id="modalCorreo" placeholder="Correo">
+            <input type="text" id="modalContrasena" placeholder="Contraseña">
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="modalCancelBtn">Cancelar</button>
+                <button class="btn btn-primary" id="modalSaveBtn">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input file oculto para migrar Excel -->
+    <input type="file" id="excelFile" class="file-input" accept=".xlsx, .xls">
+
+    <!-- Mensaje de resultado -->
+    <div id="resultMessage" class="result-message"></div>
+
+    <script>
+        let editingCedula = null;
+
+        // Cargar docentes
+        async function cargarDocentes() {
+            const search = document.getElementById('searchInput').value;
+            const response = await fetch(`/api/docentes?search=${encodeURIComponent(search)}`);
+            const docentes = await response.json();
+            
+            const tbody = document.getElementById('docentesBody');
+            if (docentes.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">No hay docentes registrados</td></tr>';
+                return;
+            }
+            
+            tbody.innerHTML = docentes.map(d => `
+                <tr>
+                    <td>${d.cedula}</td>
+                    <td>${d.nombre_completo}</td>
+                    <td>${d.correo}</td>
+                    <td>••••••••</td>
+                    <td class="actions">
+                        <button class="edit-btn" onclick="editarDocente('${d.cedula}', '${escapeHtml(d.nombre_completo)}', '${escapeHtml(d.correo)}')">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="delete-btn" onclick="eliminarDocente('${d.cedula}')">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/['"]/g, '&quot;');
+        }
+
+        // Agregar docente
+        document.getElementById('agregarBtn').onclick = () => {
+            editingCedula = null;
+            document.getElementById('modalTitle').innerText = 'Agregar Docente';
+            document.getElementById('modalCedula').value = '';
+            document.getElementById('modalNombre').value = '';
+            document.getElementById('modalCorreo').value = '';
+            document.getElementById('modalContrasena').value = '';
+            document.getElementById('modalCedula').disabled = false;
+            document.getElementById('modal').style.display = 'flex';
+        };
+
+        function editarDocente(cedula, nombre, correo) {
+            editingCedula = cedula;
+            document.getElementById('modalTitle').innerText = 'Editar Docente';
+            document.getElementById('modalCedula').value = cedula;
+            document.getElementById('modalNombre').value = nombre;
+            document.getElementById('modalCorreo').value = correo;
+            document.getElementById('modalContrasena').value = '';
+            document.getElementById('modalCedula').disabled = true;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        // Guardar (agregar o editar)
+        document.getElementById('modalSaveBtn').onclick = async () => {
+            const data = {
+                cedula: document.getElementById('modalCedula').value,
+                nombre_completo: document.getElementById('modalNombre').value,
+                correo: document.getElementById('modalCorreo').value,
+                contrasena: document.getElementById('modalContrasena').value
+            };
+            
+            if (!data.cedula || !data.nombre_completo || !data.correo || !data.contrasena) {
+                mostrarMensaje('❌ Todos los campos son obligatorios', 'error');
+                return;
+            }
+            
+            let response;
+            if (editingCedula) {
+                response = await fetch(`/api/docentes/${editingCedula}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+            } else {
+                response = await fetch('/api/docentes', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+            }
+            
+            if (response.ok) {
+                mostrarMensaje('✅ Docente guardado correctamente', 'success');
+                document.getElementById('modal').style.display = 'none';
+                cargarDocentes();
+            } else {
+                const error = await response.json();
+                mostrarMensaje(`❌ Error: ${error.error}`, 'error');
+            }
+        };
+
+        // Eliminar docente
+        async function eliminarDocente(cedula) {
+            if (!confirm(`¿Eliminar al docente con cédula ${cedula}?`)) return;
+            
+            const response = await fetch(`/api/docentes/${cedula}`, { method: 'DELETE' });
+            if (response.ok) {
+                mostrarMensaje('✅ Docente eliminado', 'success');
+                cargarDocentes();
+            } else {
+                mostrarMensaje('❌ Error al eliminar', 'error');
+            }
+        }
+
+        // Migrar Excel
+        document.getElementById('migrarBtn').onclick = () => {
+            document.getElementById('excelFile').click();
+        };
+
+        document.getElementById('excelFile').onchange = async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            mostrarMensaje('📤 Subiendo archivo...', 'info');
+            
+            const formData = new FormData();
+            formData.append('excel', file);
+            
+            try {
+                const response = await fetch('/api/migrar-excel', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.error) {
+                    mostrarMensaje(`❌ ${result.error}`, 'error');
+                } else {
+                    mostrarMensaje(`✅ ${result.mensaje}: ${result.migrados} docentes migrados, ${result.errores} errores`, 'success');
+                    cargarDocentes();
+                }
+            } catch (error) {
+                mostrarMensaje('❌ Error al subir el archivo', 'error');
+            }
+            
+            document.getElementById('excelFile').value = '';
+        };
+
+        // Mostrar mensaje flotante
+        function mostrarMensaje(texto, tipo) {
+            const msg = document.getElementById('resultMessage');
+            msg.textContent = texto;
+            msg.style.background = tipo === 'error' ? '#e05a5a' : tipo === 'info' ? '#f5c542' : '#10b981';
+            msg.style.display = 'block';
+            setTimeout(() => {
+                msg.style.display = 'none';
+            }, 4000);
+        }
+
+        // Cerrar modal
+        document.getElementById('modalCancelBtn').onclick = () => {
+            document.getElementById('modal').style.display = 'none';
+        };
+        window.onclick = (e) => {
+            if (e.target === document.getElementById('modal')) {
+                document.getElementById('modal').style.display = 'none';
+            }
+        };
+
+        // Buscador en tiempo real
+        document.getElementById('searchInput').addEventListener('input', () => {
+            cargarDocentes();
+        });
+
+        // Cargar datos al iniciar
+        cargarDocentes();
+    </script>
+</body>
+</html>
