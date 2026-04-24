@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
 import os
+import pandas as pd
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
@@ -12,15 +13,11 @@ def get_db_connection():
     return psycopg2.connect(DATABASE_URL)
 
 # ============================================
-# RUTAS PRINCIPALES - CHATBOT
+# CHATBOT - PÁGINA PRINCIPAL (con login de correo)
 # ============================================
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
-
-@app.route('/login', methods=['GET', 'POST'])
-def login_docente():
     if request.method == 'POST':
         correo = request.form.get('correo')
         
@@ -35,11 +32,11 @@ def login_docente():
             session['docente_correo'] = correo
             session['docente_nombre'] = docente['nombre_completo']
             session['docente_cedula'] = docente['cedula']
-            return redirect(url_for('index'))
+            return render_template('chat.html', nombre=docente['nombre_completo'])
         else:
-            return render_template('login.html', error="❌ Correo no encontrado")
+            return render_template('index.html', error="❌ Correo no encontrado")
     
-    return render_template('login.html')
+    return render_template('index.html')
 
 @app.route('/consultar', methods=['POST'])
 def consultar():
@@ -66,7 +63,8 @@ def consultar():
             'nombre': docente['nombre_completo'],
             'correo': docente['correo'],
             'cedula': docente['cedula'],
-            'personalizada': docente.get('personalizada', False)
+            'personalizada': docente.get('personalizada', False),
+            'contrasena': docente['contrasena']
         })
     
     return jsonify({'success': False, 'mensaje': 'Error al obtener datos'})
@@ -74,7 +72,7 @@ def consultar():
 @app.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('login_docente'))
+    return redirect(url_for('index'))
 
 # ============================================
 # PANEL DE ADMINISTRACIÓN
@@ -85,7 +83,7 @@ def admin_login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        if username == 'admin' and password == 'tecnounia2025':
+        if username == 'admin' and password == 'credu2026':
             session['admin_logged'] = True
             return redirect(url_for('admin_dashboard'))
         else:
