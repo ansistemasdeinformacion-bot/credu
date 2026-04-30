@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul-profundo: #003366;
+    --azul-oscuro: #001a4d;
+    --dorado: #F5A623;
+    --dorado-neon: #FFD166;
+    --texto-claro: #F1F5F9;
+    --texto-gris: #94A3B8;
+    --verde: #00E5A0;
+    --rojo: #FF4757;
+    --chat-sistema: #0D1B2A;
+    --chat-usuario: #1E2A3A;
+}
+
+body {
+    background: radial-gradient(ellipse at 30% 40%, #0A1628 0%, #0D1B2A 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+    padding: 20px;
+}
+
+/* Birretes flotantes */
+.background-graduates {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.birrete {
+    position: absolute;
+    font-size: 5rem;
+    opacity: 0.08;
+    color: var(--dorado);
+    filter: drop-shadow(0 0 10px rgba(245, 166, 35, 0.3));
+}
+.birrete-1 { top: 5%; left: 5%; transform: rotate(-15deg); }
+.birrete-2 { top: 15%; right: 8%; transform: rotate(10deg); font-size: 4rem; }
+.birrete-3 { bottom: 10%; left: 10%; transform: rotate(-8deg); font-size: 6rem; }
+.birrete-4 { bottom: 20%; right: 5%; transform: rotate(20deg); }
+.birrete-5 { top: 40%; left: 3%; transform: rotate(-25deg); font-size: 3.5rem; }
+.birrete-6 { top: 60%; right: 10%; transform: rotate(15deg); font-size: 5rem; }
+.birrete-7 { bottom: 30%; left: 15%; transform: rotate(-10deg); }
+.birrete-8 { top: 75%; left: 80%; transform: rotate(5deg); font-size: 4.5rem; }
+.birrete-9 { top: 25%; left: 45%; transform: rotate(-20deg); font-size: 3rem; }
+.birrete-10 { bottom: 45%; right: 20%; transform: rotate(25deg); }
+
+/* Contenedor principal con borde dorado */
+.container-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 550px;
+    width: 100%;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--dorado), #C49A1B, var(--dorado));
+    border-radius: 48px;
+    box-shadow: 0 0 30px rgba(245, 166, 35, 0.3);
+    transition: 0.3s;
+}
+
+.container-wrapper:hover {
+    box-shadow: 0 0 45px rgba(245, 166, 35, 0.5);
+}
+
+/* Contenido interno */
+.container {
+    background: rgba(13, 27, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 46px;
+    overflow: hidden;
+    border: 1px solid rgba(245, 166, 35, 0.2);
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--azul-profundo), var(--azul-oscuro));
+    text-align: center;
+    padding: 25px 20px;
+    border-bottom: 2px solid var(--dorado);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #FFF, var(--dorado-neon));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 3px;
+}
+
+.header p {
+    color: var(--texto-gris);
+    font-size: 0.85rem;
+}
+
+.lema {
+    font-size: 0.7rem;
+    margin-top: 8px;
+    color: var(--dorado-neon);
+    background: rgba(245, 166, 35, 0.1);
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 50px;
+}
+
+.escudo {
+    width: 60px;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 0 10px rgba(245, 166, 35, 0.5));
+    transition: 0.3s;
+}
+
+.escudo:hover {
+    transform: scale(1.05);
+}
+
+/* Card de login */
+.card {
+    padding: 35px 30px;
+    text-align: center;
+}
+
+.card h2 {
+    color: var(--dorado-neon);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.card p {
+    color: var(--texto-gris);
+    margin-bottom: 25px;
+}
+
+/* Inputs login */
+input {
+    width: 100%;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    background: rgba(10, 22, 40, 0.9);
+    border: 1px solid rgba(245, 166, 35, 0.3);
+    border-radius: 40px;
+    color: white;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--dorado);
+    box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+}
+
+input::placeholder {
+    color: rgba(148, 163, 184, 0.6);
+}
+
+/* Botón login */
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--azul-profundo), var(--azul-oscuro));
+    border: none;
+    border-radius: 40px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== ESTILOS DEL CHAT ========== */
+.chat-messages {
+    height: 350px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 5px;
+    margin-bottom: 15px;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: var(--dorado);
+    border-radius: 10px;
+}
+
+.mensaje {
+    max-width: 85%;
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    animation: fadeIn 0.3s ease;
+}
+
+.mensaje.sistema {
+    background: var(--chat-sistema);
+    border: 1px solid rgba(245, 166, 35, 0.3);
+    color: var(--texto-claro);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.mensaje.usuario {
+    background: var(--chat-usuario);
+    border: 1px solid rgba(245, 166, 35, 0.5);
+    color: var(--dorado-neon);
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.mensaje strong {
+    color: var(--dorado-neon);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Área de entrada del chat */
+.input-area {
+    display: flex;
+    gap: 10px;
+    padding: 15px 0 0 0;
+    border-top: 1px solid rgba(245, 166, 35, 0.2);
+    margin-top: 15px;
+}
+
+.input-area input {
+    flex: 1;
+    margin: 0;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+}
+
+.input-area button {
+    width: auto;
+    padding: 12px 25px;
+}
+
+/* Opciones área */
+.opciones-area {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding: 15px 0 0 0;
+    border-top: 1px solid rgba(245, 166, 35, 0.2);
+    margin-top: 15px;
+}
+
+.btn-opcion {
+    width: auto;
+    padding: 10px 30px;
+    background: transparent;
+    border: 1.5px solid var(--dorado);
+    color: var(--dorado);
+    cursor: pointer;
+    border-radius: 40px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-opcion:hover {
+    background: var(--dorado);
+    color: var(--azul-oscuro);
+    transform: translateY(-2px);
+}
+
+/* Mensaje de error login */
+.error-message {
+    background: rgba(255, 71, 87, 0.15);
+    color: var(--rojo);
+    padding: 12px;
+    border-radius: 20px;
+    margin-top: 15px;
+    display: none;
+    border-left: 3px solid var(--rojo);
+}
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    text-align: center;
+    font-size: 0.65rem;
+    color: var(--texto-gris);
+    border-top: 1px solid rgba(245, 166, 35, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 550px) {
+    .card {
+        padding: 25px 20px;
+    }
+    .header h1 {
+        font-size: 2rem;
+    }
+    .escudo {
+        width: 50px;
+    }
+    .birrete {
+        font-size: 3rem;
+        opacity: 0.06;
+    }
+    .chat-messages {
+        height: 300px;
+    }
+    .mensaje {
+        max-width: 90%;
+        font-size: 0.85rem;
+    }
+    .btn-opcion {
+        padding: 8px 20px;
+    }
+    .input-area button {
+        padding: 12px 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .chat-messages {
+        height: 280px;
+    }
+    .mensaje {
+        font-size: 0.8rem;
+    }
+    .opciones-area {
+        gap: 10px;
+    }
+    .btn-opcion {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+}

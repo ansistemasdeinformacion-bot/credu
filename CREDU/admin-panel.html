@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Admin CREDU | Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; }
+        .admin-container { display: flex; min-height: 100vh; background: radial-gradient(ellipse at 30% 40%, #0A1628 0%, #0D1B2A 100%); }
+        .admin-sidebar { width: 280px; background: rgba(13, 27, 42, 0.95); backdrop-filter: blur(10px); border-right: 1px solid rgba(245, 166, 35, 0.2); padding: 20px; display: flex; flex-direction: column; }
+        .admin-logo { text-align: center; padding-bottom: 20px; border-bottom: 1px solid rgba(245, 166, 35, 0.2); margin-bottom: 20px; }
+        .admin-logo img { width: 60px; margin-bottom: 10px; }
+        .admin-logo h2 { color: #FFD166; font-size: 1.5rem; }
+        .admin-logo span { color: #94A3B8; font-size: 0.8rem; }
+        .admin-nav { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+        .nav-btn { background: transparent; border: none; padding: 12px 16px; text-align: left; font-size: 1rem; font-weight: 500; color: #F1F5F9; border-radius: 12px; cursor: pointer; transition: 0.3s; width: 100%; }
+        .nav-btn:hover { background: rgba(245, 166, 35, 0.15); color: #FFD166; }
+        .nav-btn.active { background: linear-gradient(135deg, rgba(245, 166, 35, 0.2), rgba(245, 166, 35, 0.05)); border-left: 3px solid #F5A623; color: #FFD166; }
+        .logout-btn { margin-top: auto; border-top: 1px solid rgba(245, 166, 35, 0.2); padding-top: 15px; color: #FF6B6B; }
+        .admin-main { flex: 1; padding: 20px 30px; overflow-y: auto; }
+        .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid rgba(245, 166, 35, 0.2); }
+        .admin-header h1 { color: #FFD166; font-size: 1.8rem; }
+        .admin-user span { background: rgba(245, 166, 35, 0.15); padding: 8px 16px; border-radius: 30px; color: #FFD166; }
+        .admin-section { display: none; animation: fadeIn 0.3s ease; }
+        .admin-section.active { display: block; }
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px; }
+        .section-header h2 { color: #FFD166; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .stat-card { background: rgba(13, 27, 42, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(245, 166, 35, 0.2); border-radius: 20px; padding: 20px; display: flex; align-items: center; gap: 15px; }
+        .stat-icon { font-size: 2.5rem; }
+        .stat-info h3 { color: #94A3B8; font-size: 0.85rem; }
+        .stat-info p { color: #FFD166; font-size: 2rem; font-weight: bold; }
+        .table-container { overflow-x: auto; background: rgba(13, 27, 42, 0.8); backdrop-filter: blur(10px); border-radius: 20px; padding: 15px; border: 1px solid rgba(245, 166, 35, 0.2); margin-top: 10px; max-height: 600px; overflow-y: auto; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid rgba(245, 166, 35, 0.15); color: #F1F5F9; }
+        th { color: #FFD166; position: sticky; top: 0; background: #0D1B2A; }
+        .acciones { display: flex; gap: 8px; }
+        .btn-editar, .btn-eliminar { background: transparent; border: 1px solid #F5A623; border-radius: 8px; padding: 5px 10px; cursor: pointer; width: auto; }
+        .btn-editar:hover { background: #F5A623; color: #003366; }
+        .btn-eliminar:hover { background: #FF4757; border-color: #FF4757; color: white; }
+        .btn-dorado { background: linear-gradient(135deg, #F5A623, #C49A1B); border: none; border-radius: 30px; padding: 10px 20px; color: #003366; font-weight: bold; cursor: pointer; width: auto; }
+        .export-controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+        .export-controls input, .export-controls select { margin: 0; width: auto; padding: 8px 12px; background: rgba(10, 22, 40, 0.9); border: 1px solid rgba(245, 166, 35, 0.3); border-radius: 30px; color: white; }
+        .grafica-controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+        .grafica-controls select { padding: 8px 12px; background: rgba(10, 22, 40, 0.9); border: 1px solid rgba(245, 166, 35, 0.3); border-radius: 30px; color: white; }
+        #calendar { background: rgba(13, 27, 42, 0.8); border-radius: 20px; padding: 15px; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); justify-content: center; align-items: center; z-index: 1000; }
+        .modal-content { background: #0D1B2A; border: 1px solid #F5A623; border-radius: 30px; padding: 30px; width: 90%; max-width: 450px; }
+        .modal-content h3 { color: #FFD166; margin-bottom: 20px; }
+        .modal-content input { margin-bottom: 15px; width: 100%; padding: 12px; background: rgba(10, 22, 40, 0.9); border: 1px solid rgba(245, 166, 35, 0.3); border-radius: 30px; color: white; }
+        .close-modal { float: right; font-size: 28px; cursor: pointer; color: #94A3B8; }
+        canvas { max-height: 450px; background: rgba(13, 27, 42, 0.8); border-radius: 20px; padding: 15px; width: 100% !important; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 768px) { .admin-container { flex-direction: column; } .admin-sidebar { width: 100%; flex-direction: row; flex-wrap: wrap; } .admin-nav { flex-direction: row; flex-wrap: wrap; } .nav-btn { width: auto; padding: 8px 15px; } .admin-main { padding: 15px; } canvas { max-height: 300px; } }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-sidebar">
+            <div class="admin-logo">
+                <img src="imagenes/Escudo-uniagustiniana.png" alt="Escudo" onerror="this.style.display='none'">
+                <h2>CREDU</h2>
+                <span>Administrador</span>
+            </div>
+            <nav class="admin-nav">
+                <button class="nav-btn active" data-section="dashboard">📊 Dashboard</button>
+                <button class="nav-btn" data-section="calendario">📅 Calendario</button>
+                <button class="nav-btn" data-section="registros">📋 Registros de Ingreso</button>
+                <button class="nav-btn" data-section="docentes">👨‍🏫 BD Docentes</button>
+                <button class="nav-btn" data-section="graficas">📈 Gráficas</button>
+                <button class="nav-btn logout-btn" id="btnLogout">🚪 Cerrar Sesión</button>
+            </nav>
+        </div>
+
+        <div class="admin-main">
+            <div class="admin-header">
+                <h1 id="sectionTitle">Dashboard</h1>
+                <div class="admin-user"><span>👑 Administrador</span></div>
+            </div>
+
+            <div id="dashboardSection" class="admin-section active">
+                <div class="stats-grid">
+                    <div class="stat-card"><div class="stat-icon">👨‍🏫</div><div class="stat-info"><h3>Total Docentes</h3><p id="totalDocentes">0</p></div></div>
+                    <div class="stat-card"><div class="stat-icon">📋</div><div class="stat-info"><h3>Total Ingresos</h3><p id="totalIngresos">0</p></div></div>
+                    <div class="stat-card"><div class="stat-icon">📅</div><div class="stat-info"><h3>Ingresos Hoy</h3><p id="ingresosHoy">0</p></div></div>
+                    <div class="stat-card"><div class="stat-icon">📊</div><div class="stat-info"><h3>Ingresos Mes</h3><p id="ingresosMes">0</p></div></div>
+                </div>
+            </div>
+
+            <div id="calendarioSection" class="admin-section">
+                <div class="section-header"><h2>Calendario de Ingresos</h2><p style="color:#94A3B8;">Cada día muestra la cantidad de ingresos</p></div>
+                <div id="calendar"></div>
+            </div>
+
+            <div id="registrosSection" class="admin-section">
+                <div class="section-header">
+                    <h2>Registros de Ingreso</h2>
+                    <div class="export-controls">
+                        <input type="month" id="mesExportar">
+                        <input type="text" id="filtroCedula" placeholder="🔍 Buscar por cédula">
+                        <button id="btnFiltrar" class="btn-dorado">🔍 Filtrar</button>
+                        <button id="btnExportarExcel" class="btn-dorado">📊 Exportar a Excel</button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="tablaRegistros">
+                        <thead><tr><th>Fecha</th><th>Hora</th><th>Cédula</th><th>Docente</th><th>Correo</th></tr></thead>
+                        <tbody id="tablaRegistrosBody">
+                            <tr><td colspan="5" style="text-align:center">Cargando registros...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="docentesSection" class="admin-section">
+                <div class="section-header">
+                    <h2>Base de Datos de Docentes</h2>
+                    <div>
+                        <input type="text" id="buscarDocenteInput" placeholder="🔍 Buscar por nombre, cédula o correo..." style="width: 250px; margin-right: 10px;">
+                        <button id="btnBuscarDocente" class="btn-dorado">Buscar</button>
+                        <button id="btnAgregarDocente" class="btn-dorado">+ Agregar Docente</button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table id="tablaDocentes">
+                        <thead><tr><th>Cédula</th><th>Nombre Completo</th><th>Correo</th><th>Contraseña</th><th>Acciones</th></tr></thead>
+                        <tbody id="tablaDocentesBody"></tbody>
+                    </table>
+                </div>
+                <div id="infoDocentes" style="text-align: center; margin-top: 10px; color: #94A3B8;"></div>
+            </div>
+
+            <div id="graficasSection" class="admin-section">
+                <div class="section-header">
+                    <h2>Gráficas de Ingresos por Mes</h2>
+                    <div class="grafica-controls">
+                        <select id="anioGrafica">
+                            <option value="2026">2026</option>
+                        </select>
+                        <button id="btnActualizarGrafica" class="btn-dorado">Actualizar</button>
+                    </div>
+                </div>
+                <canvas id="ingresosChart"></canvas>
+                <div id="chartInfo" style="text-align: center; margin-top: 15px; color: #94A3B8; font-size: 0.8rem;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="docenteModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modalTitle">Agregar Docente</h3>
+            <input type="text" id="modalCedula" placeholder="Cédula">
+            <input type="text" id="modalNombre" placeholder="Nombre Completo">
+            <input type="email" id="modalCorreo" placeholder="Correo Institucional">
+            <input type="text" id="modalContrasena" placeholder="Contraseña">
+            <button id="btnGuardarDocente" class="btn-dorado">Guardar</button>
+        </div>
+    </div>
+
+    <script src="docentes.js"></script>
+    <script src="registros.js"></script>
+    <script>
+        // ========== SINCRONIZACIÓN ==========
+        (function sincronizar() {
+            if (typeof docentesDB !== 'undefined' && docentesDB.length > 0) {
+                localStorage.setItem('docentesDB', JSON.stringify(docentesDB));
+                console.log(`✅ ${docentesDB.length} docentes sincronizados`);
+            }
+            if (!localStorage.getItem('registrosIngreso')) {
+                localStorage.setItem('registrosIngreso', JSON.stringify([]));
+                console.log('✅ Registros de ingreso inicializados');
+            }
+        })();
+
+        if (localStorage.getItem('adminLogged') !== 'true') {
+            window.location.href = 'admin.html';
+        }
+        
+        let chartInstance = null;
+        
+        function actualizarDashboard() {
+            const docentes = JSON.parse(localStorage.getItem('docentesDB')) || [];
+            const registros = JSON.parse(localStorage.getItem('registrosIngreso')) || [];
+            const hoy = new Date().toISOString().split('T')[0];
+            const mesActual = new Date().getMonth() + 1;
+            const anioActual = new Date().getFullYear();
+            document.getElementById('totalDocentes').textContent = docentes.length;
+            document.getElementById('totalIngresos').textContent = registros.length;
+            document.getElementById('ingresosHoy').textContent = registros.filter(r => r.fecha === hoy).length;
+            document.getElementById('ingresosMes').textContent = registros.filter(r => {
+                const [anio, mes] = r.fecha.split('-');
+                return parseInt(anio) === anioActual && parseInt(mes) === mesActual;
+            }).length;
+        }
+        
+        let calendar = null;
+        function inicializarCalendario() {
+            if (calendar) calendar.destroy();
+            const calendarEl = document.getElementById('calendar');
+            if (!calendarEl) return;
+            const registros = JSON.parse(localStorage.getItem('registrosIngreso')) || [];
+            const conteoPorDia = {};
+            registros.forEach(r => { conteoPorDia[r.fecha] = (conteoPorDia[r.fecha] || 0) + 1; });
+            const eventos = Object.keys(conteoPorDia).map(fecha => ({
+                title: `${conteoPorDia[fecha]} ingresos`,
+                start: fecha,
+                color: '#F5A623',
+                textColor: '#003366'
+            }));
+            calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'es',
+                headerToolbar: { left: 'prev,next', center: 'title', right: 'dayGridMonth' },
+                validRange: { start: '2026-01-01' },
+                events: eventos
+            });
+            calendar.render();
+        }
+        
+        function cargarRegistros() {
+            console.log('📋 Cargando registros...');
+            const registros = JSON.parse(localStorage.getItem('registrosIngreso')) || [];
+            console.log(`📊 Total registros encontrados: ${registros.length}`);
+            
+            const filtroCedula = document.getElementById('filtroCedula')?.value.trim() || '';
+            let datosAMostrar = [...registros].reverse();
+            
+            if (filtroCedula) {
+                datosAMostrar = datosAMostrar.filter(r => r.cedula.includes(filtroCedula));
+                console.log(`🔍 Filtrado por cédula: ${filtroCedula} -> ${datosAMostrar.length} registros`);
+            }
+            
+            const tbody = document.getElementById('tablaRegistrosBody');
+            if (!tbody) return;
+            
+            if (datosAMostrar.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center">No hay registros de ingreso</td></tr>';
+                return;
+            }
+            
+            tbody.innerHTML = datosAMostrar.slice(0, 500).map(r => `
+                <tr>
+                    <td>${r.fecha}</td>
+                    <td>${r.hora}</td>
+                    <td>${r.cedula}</td>
+                    <td>${r.docente}</td>
+                    <td>${r.correo}</td>
+                </tr>
+            `).join('');
+            
+            console.log(`✅ Mostrando ${datosAMostrar.length} registros`);
+        }
+        
+        document.getElementById('btnFiltrar')?.addEventListener('click', cargarRegistros);
+        document.getElementById('filtroCedula')?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') cargarRegistros();
+        });
+        
+        document.getElementById('btnExportarExcel')?.addEventListener('click', () => {
+            const mes = document.getElementById('mesExportar').value;
+            const filtroCedula = document.getElementById('filtroCedula').value.trim();
+            let registros = JSON.parse(localStorage.getItem('registrosIngreso')) || [];
+            if (mes) registros = registros.filter(r => r.fecha.substring(0, 7) === mes);
+            if (filtroCedula) registros = registros.filter(r => r.cedula.includes(filtroCedula));
+            if (registros.length === 0) { alert('No hay registros para exportar'); return; }
+            const exportData = registros.map(r => ({ Fecha: r.fecha, Hora: r.hora, Cédula: r.cedula, Docente: r.docente, Correo: r.correo }));
+            const ws = XLSX.utils.json_to_sheet(exportData);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, 'Registros');
+            let nombreArchivo = 'registros_ingreso';
+            if (mes) nombreArchivo += `_${mes}`;
+            if (filtroCedula) nombreArchivo += `_cedula_${filtroCedula}`;
+            XLSX.writeFile(wb, `${nombreArchivo}.xlsx`);
+        });
+        
+        // ========== CRUD DOCENTES SIN PAGINACIÓN ==========
+        let docentesOriginal = [];
+        
+        function cargarTablaDocentes() {
+            let docentes = JSON.parse(localStorage.getItem('docentesDB')) || [];
+            docentesOriginal = docentes;
+            const tbody = document.getElementById('tablaDocentesBody');
+            if (!tbody) return;
+            
+            if (docentes.length === 0) {
+                tbody.innerHTML = '<td><td colspan="5" style="text-align:center">No hay docentes</td></tr>';
+                document.getElementById('infoDocentes').innerHTML = '';
+                return;
+            }
+            
+            tbody.innerHTML = docentes.map((d, i) => `
+                <tr>
+                    <td>${d.cedula}</td>
+                    <td>${d.nombreCompleto}</td>
+                    <td>${d.correo}</td>
+                    <td>${d.contrasena.length > 30 ? d.contrasena.substring(0, 30) + '...' : d.contrasena}</td>
+                    <td class="acciones">
+                        <button class="btn-editar" data-index="${i}">✏️ Editar</button>
+                        <button class="btn-eliminar" data-index="${i}">🗑️ Eliminar</button>
+                    </td>
+                </tr>
+            `).join('');
+            
+            document.querySelectorAll('.btn-editar').forEach(btn => {
+                btn.addEventListener('click', () => editarDocente(parseInt(btn.dataset.index)));
+            });
+            document.querySelectorAll('.btn-eliminar').forEach(btn => {
+                btn.addEventListener('click', () => eliminarDocente(parseInt(btn.dataset.index)));
+            });
+            
+            document.getElementById('infoDocentes').innerHTML = `Total: ${docentes.length} docentes`;
+        }
+        
+        document.getElementById('btnBuscarDocente')?.addEventListener('click', () => {
+            const busqueda = document.getElementById('buscarDocenteInput').value.toLowerCase().trim();
+            let docentes = JSON.parse(localStorage.getItem('docentesDB')) || [];
+            if (busqueda === '') {
+                cargarTablaDocentes();
+            } else {
+                const filtrados = docentes.filter(d => 
+                    d.cedula.includes(busqueda) || 
+                    d.nombreCompleto.toLowerCase().includes(busqueda) || 
+                    d.correo.toLowerCase().includes(busqueda)
+                );
+                const tbody = document.getElementById('tablaDocentesBody');
+                if (filtrados.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center">No se encontraron docentes</td></tr>';
+                    document.getElementById('infoDocentes').innerHTML = `No hay resultados para: ${busqueda}`;
+                    return;
+                }
+                tbody.innerHTML = filtrados.map((d, i) => `
+                    <tr>
+                        <td>${d.cedula}</td>
+                        <td>${d.nombreCompleto}</td>
+                        <td>${d.correo}</td>
+                        <td>${d.contrasena.length > 30 ? d.contrasena.substring(0, 30) + '...' : d.contrasena}</td>
+                        <td class="acciones">
+                            <button class="btn-editar" data-index="${docentes.findIndex(orig => orig.cedula === d.cedula)}">✏️ Editar</button>
+                            <button class="btn-eliminar" data-index="${docentes.findIndex(orig => orig.cedula === d.cedula)}">🗑️ Eliminar</button>
+                        </td>
+                    </table>
+                `).join('');
+                document.getElementById('infoDocentes').innerHTML = `Mostrando ${filtrados.length} de ${docentes.length} docentes`;
+                document.querySelectorAll('.btn-editar').forEach(btn => {
+                    btn.addEventListener('click', () => editarDocente(parseInt(btn.dataset.index)));
+                });
+                document.querySelectorAll('.btn-eliminar').forEach(btn => {
+                    btn.addEventListener('click', () => eliminarDocente(parseInt(btn.dataset.index)));
+                });
+            }
+        });
+        
+        document.getElementById('buscarDocenteInput')?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') document.getElementById('btnBuscarDocente').click();
+        });
+        
+        function editarDocente(index) {
+            const docentes = JSON.parse(localStorage.getItem('docentesDB'));
+            const d = docentes[index];
+            document.getElementById('modalTitle').textContent = 'Editar Docente';
+            document.getElementById('modalCedula').value = d.cedula;
+            document.getElementById('modalNombre').value = d.nombreCompleto;
+            document.getElementById('modalCorreo').value = d.correo;
+            document.getElementById('modalContrasena').value = d.contrasena;
+            document.getElementById('docenteModal').style.display = 'flex';
+            document.getElementById('btnGuardarDocente').onclick = () => guardarDocente(index);
+        }
+        
+        function eliminarDocente(index) {
+            if (confirm('¿Eliminar este docente?')) {
+                let docentes = JSON.parse(localStorage.getItem('docentesDB'));
+                docentes.splice(index, 1);
+                localStorage.setItem('docentesDB', JSON.stringify(docentes));
+                cargarTablaDocentes();
+                actualizarDashboard();
+            }
+        }
+        
+        document.getElementById('btnAgregarDocente')?.addEventListener('click', () => {
+            document.getElementById('modalTitle').textContent = 'Agregar Docente';
+            document.getElementById('modalCedula').value = '';
+            document.getElementById('modalNombre').value = '';
+            document.getElementById('modalCorreo').value = '';
+            document.getElementById('modalContrasena').value = '';
+            document.getElementById('docenteModal').style.display = 'flex';
+            document.getElementById('btnGuardarDocente').onclick = () => guardarDocente(null);
+        });
+        
+        function guardarDocente(index) {
+            const cedula = document.getElementById('modalCedula').value.trim();
+            const nombre = document.getElementById('modalNombre').value.trim();
+            const correo = document.getElementById('modalCorreo').value.trim();
+            const contrasena = document.getElementById('modalContrasena').value.trim();
+            if (!cedula || !nombre || !correo || !contrasena) {
+                alert('Todos los campos son obligatorios');
+                return;
+            }
+            let docentes = JSON.parse(localStorage.getItem('docentesDB'));
+            const nuevoDocente = { 
+                cedula, 
+                correo, 
+                nombreCompleto: nombre, 
+                nombre1: nombre.split(' ')[0], 
+                apellido1: nombre.split(' ').pop() || '', 
+                contrasena, 
+                estado: 'Activo' 
+            };
+            if (index !== null && index !== undefined) {
+                docentes[index] = nuevoDocente;
+            } else {
+                docentes.push(nuevoDocente);
+            }
+            localStorage.setItem('docentesDB', JSON.stringify(docentes));
+            document.getElementById('docenteModal').style.display = 'none';
+            cargarTablaDocentes();
+            actualizarDashboard();
+        }
+        
+        document.querySelector('.close-modal')?.addEventListener('click', () => {
+            document.getElementById('docenteModal').style.display = 'none';
+        });
+        
+        // GRÁFICA DE BARRAS POR MES
+        function cargarGrafica() {
+            const anio = document.getElementById('anioGrafica')?.value || '2026';
+            const registros = JSON.parse(localStorage.getItem('registrosIngreso')) || [];
+            const ingresosPorMes = Array(12).fill(0);
+            const nombresMeses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+            registros.forEach(registro => {
+                const [anioReg, mesReg] = registro.fecha.split('-');
+                if (anioReg === anio) {
+                    const mesIndex = parseInt(mesReg) - 1;
+                    if (mesIndex >= 0 && mesIndex < 12) ingresosPorMes[mesIndex]++;
+                }
+            });
+            const totalIngresos = ingresosPorMes.reduce((a, b) => a + b, 0);
+            const mesConMasIngresos = nombresMeses[ingresosPorMes.indexOf(Math.max(...ingresosPorMes))];
+            const maxIngresos = Math.max(...ingresosPorMes);
+            document.getElementById('chartInfo').innerHTML = `📅 Año: <strong>${anio}</strong> | 📊 Total ingresos: <strong>${totalIngresos}</strong> | 🔥 Mes con más ingresos: <strong>${mesConMasIngresos} (${maxIngresos} ingresos)</strong>`;
+            if (chartInstance) chartInstance.destroy();
+            const ctx = document.getElementById('ingresosChart').getContext('2d');
+            chartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: { labels: nombresMeses, datasets: [{ label: `Ingresos - ${anio}`, data: ingresosPorMes, backgroundColor: 'rgba(245, 166, 35, 0.7)', borderColor: '#F5A623', borderWidth: 2, borderRadius: 8, barPercentage: 0.7 }] },
+                options: {
+                    responsive: true, maintainAspectRatio: true,
+                    plugins: { legend: { labels: { color: '#F1F5F9', font: { size: 12 } } }, tooltip: { callbacks: { label: function(context) { return `${context.raw} ingresos`; } }, backgroundColor: '#0D1B2A', titleColor: '#FFD166', bodyColor: '#F1F5F9' } },
+                    scales: { y: { beginAtZero: true, ticks: { stepSize: 1, color: '#94A3B8', callback: function(value) { return Number.isInteger(value) ? value : null; } }, grid: { color: 'rgba(148, 163, 184, 0.1)' }, title: { display: true, text: 'Número de Ingresos', color: '#94A3B8' } }, x: { ticks: { color: '#94A3B8', maxRotation: 45, minRotation: 45 }, grid: { display: false }, title: { display: true, text: 'Meses del Año', color: '#94A3B8' } } },
+                    layout: { padding: { top: 20, bottom: 10 } }
+                }
+            });
+        }
+        
+        document.getElementById('btnActualizarGrafica')?.addEventListener('click', cargarGrafica);
+        
+        // Inicializar selector de años
+        const anioSelect = document.getElementById('anioGrafica');
+        if (anioSelect) {
+            anioSelect.innerHTML = '<option value="2026">2026</option>';
+            for (let i = 2027; i <= 2035; i++) {
+                const option = document.createElement('option');
+                option.value = i; option.textContent = i;
+                anioSelect.appendChild(option);
+            }
+        }
+        
+        const mesExportar = document.getElementById('mesExportar');
+        if (mesExportar) {
+            const ahora = new Date();
+            mesExportar.value = `${ahora.getFullYear()}-${String(ahora.getMonth() + 1).padStart(2, '0')}`;
+        }
+        
+        // Navegación
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const section = this.dataset.section;
+                document.querySelectorAll('.admin-section').forEach(sec => sec.classList.remove('active'));
+                document.querySelectorAll('.nav-btn').forEach(nav => nav.classList.remove('active'));
+                const targetSection = document.getElementById(`${section}Section`);
+                if (targetSection) targetSection.classList.add('active');
+                this.classList.add('active');
+                const titleElement = document.getElementById('sectionTitle');
+                if (titleElement) titleElement.textContent = this.textContent.trim();
+                if (section === 'dashboard') actualizarDashboard();
+                if (section === 'calendario') inicializarCalendario();
+                if (section === 'registros') cargarRegistros();
+                if (section === 'docentes') cargarTablaDocentes();
+                if (section === 'graficas') cargarGrafica();
+            });
+        });
+        
+        document.getElementById('btnLogout')?.addEventListener('click', () => {
+            localStorage.removeItem('adminLogged');
+            window.location.href = 'admin.html';
+        });
+        
+        // Cargar todo al inicio
+        actualizarDashboard();
+        cargarTablaDocentes();
+        cargarRegistros();
+    </script>
+</body>
+</html>

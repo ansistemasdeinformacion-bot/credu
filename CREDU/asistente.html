@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>CREDU | Asistente Virtual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-graduates">
+        <div class="birrete birrete-1">🎓</div>
+        <div class="birrete birrete-2">🎓</div>
+        <div class="birrete birrete-3">🎓</div>
+        <div class="birrete birrete-4">🎓</div>
+        <div class="birrete birrete-5">🎓</div>
+        <div class="birrete birrete-6">🎓</div>
+        <div class="birrete birrete-7">🎓</div>
+        <div class="birrete birrete-8">🎓</div>
+        <div class="birrete birrete-9">🎓</div>
+        <div class="birrete birrete-10">🎓</div>
+    </div>
+
+    <div class="container-wrapper">
+        <div class="container">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="imagenes/Escudo-uniagustiniana.png" alt="Escudo" class="escudo" onerror="this.style.display='none'">
+                </div>
+                <h1>CREDU</h1>
+                <p>Asistente Virtual</p>
+                <div class="lema">🔒 Uniagustiniana es creer en ti</div>
+            </div>
+
+            <div class="card">
+                <div id="chatMessages" class="chat-messages">
+                    <div class="mensaje sistema">🤖 ¡Hola! Soy <strong>CREDU</strong>, tu asistente virtual.</div>
+                    <div class="mensaje sistema">📝 Para ayudarte con tus credenciales, regálame tu número de cédula:</div>
+                </div>
+                
+                <div id="inputArea" class="input-area">
+                    <input type="text" id="chatInput" placeholder="Escribe tu respuesta aquí..." autofocus>
+                    <button id="btnEnviar">Enviar</button>
+                </div>
+                
+                <div id="opcionesArea" class="opciones-area" style="display: none;">
+                    <button id="btnSi" class="btn-opcion">✅ Sí</button>
+                    <button id="btnNo" class="btn-opcion">❌ No</button>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Uniagustiniana - Tecnologías de la Información</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="registros.js"></script>
+</body>
+</html>

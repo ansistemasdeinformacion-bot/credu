@@ -1,0 +1,1131 @@
+CEDULA	CONTRASEÑA	NOMBRE 1	NOMBRE 2	APELLIDO 1	APELLIDO 2	NOMBRE COMPLETO	LDAP	CORREO INSTITUCIONAL
+211536	fRE@1sb2	Mario	Omar	Opazo	Gutierrez	Mario Omar Opazo Gutierrez	SI	mario.opazo@uniagustiniana.edu.co
+211677	contraseña personalizada	Antonio	Abecia	Valencia		Antonio Abecia Valencia	SI	antonio.abecia@uniagustiniana.edu.co
+218169	P69c3u/9	Clodomiro		Guavita	Torres	Clodomiro  Guavita Torres	SI	clodomiro.guavita@uniagustiniana.edu.co
+287545	fT94kJ@u	Arturo		Guinea	Vendrell	Arturo  Guinea Vendrell	SI	arturo.guinea@uniagustiniana.edu.co
+2000020984	T/o48Kn+31h	Leonardo	Enrique	Garcia	Matos	Leonardo Enrique Garcia Matos	SI	leonardo.garcia@uniagustiniana.edu.co
+372060	TcvzVk-2	Leonor	Arlen	Hernandez	Fox	Leonor Arlen Hernandez Fox	SI	leonor.hernandez@uniagustiniana.edu.co
+427965	4Dhsb9-5	Ashraf	Nageh Ibrahim	Abdelmalak		Ashraf Nageh Ibrahim Abdelmalak 	SI	ashraf.abdelmalak@uniagustiniana.edu.co
+451230	1%IVYKf#	Ana	Maria	Perez	Guerrero	Ana Maria Perez Guerrero	SI	ana.perezg@uniagustiniana.edu.co
+564799	yAM^Bgy1	Eileen	Chiquinquirá	Sanz	Morales	Eileen Chiquinquirá Sanz Morales	SI	eileen.sanz@uniagustiniana.edu.co
+708397	zcC7rv-0	Amanda		Alves	Gomes	Amanda  Alves Gomes	SI	amanda.alves@uniagustiniana.edu.co
+740541	1$8%P6k9	Alfredo	Leonardo	Mijares	Colmenares	Alfredo Leonardo Mijares Colmenares	SI	alfredo.mijares@uniagustiniana.edu.co
+1174017	U-r43Vb-82l	Delio		Ruiz		Delio  Ruiz 	SI	delio.ruiz@uniagustiniana.edu.co
+2979381	EPwpzw/9	Eduardo		Ramirez	Bustos	Eduardo  Ramirez Bustos	SI	eduardo.ramirezb@uniagustiniana.edu.co
+3800140	rK*v56Cg*44	Miguel	Antonio	Ruiz	Caballero	Miguel Antonio Ruiz Caballero	SI	miguel.ruiz@uniagustiniana.edu.co
+3805489	x+91oD+d40W	Manuel	Enrique	De	Leon Willis	Manuel Enrique De Leon Willis	SI	manuel.deleon@uniagustiniana.edu.co
+4268919	tvKZSh-2	Luis	Humberto	Molina		Luis Humberto Molina 	SI	luish.molina@uniagustiniana.edu.co
+4472627	m-42uT-j46W	Julian		Vargas	Bedoya	Julian  Vargas Bedoya	SI	julian.vargasb@uniagustiniana.edu.co
+5984430	xS4*9q32e	Luis	Eduardo	Caballero	Ramirez	Luis Eduardo Caballero Ramirez	SI	luis.caballeror@uniagustiniana.edu.co
+6776183	ggRD7F-0	Rafael	Josue	Mora	Pinzon	Rafael Josue Mora Pinzon	SI	rafael.mora@uniagustiniana.edu.co
+7128469	w7aF)1)z	Andres	Felipe	Ruiz	Castro	Andres Felipe Ruiz Castro	SI	andres.ruizc@uniagustiniana.edu.co
+7182145	l*53vG*h43L	Carlos	Ernesto	Ramos	Ortiz	Carlos Ernesto Ramos Ortiz	SI	carlos.ramoso@uniagustiniana.edu.co
+7182482	My*97eU-u87	Jairo	Orlando	Dueñas	Guerra	Jairo Orlando Dueñas Guerra	SI	jairo.duenas@uniagustiniana.edu.co
+7186130	rSeLmW*9	Ricardo	Augusto	Castelblanco	Sepulveda	Ricardo Augusto Castelblanco Sepulveda	SI	ricardo.castelblanco@uniagustiniana.edu.co
+7220697	c7H8Bz/6	Tarcisio	Andres	Perez	Hosttos	Tarcisio Andres Perez Hosttos	SI	tarcisio.perez@uniagustiniana.edu.co
+7316321	5H=Uju27	Wilson	Alejandro	Sanchez		Wilson Alejandro Sanchez 	SI	wilson.sanchez@uniagustiniana.edu.co
+7463111	sSjYjV-0	Juan	Agustin	Mercado	Ditta	Juan Agustin Mercado Ditta	SI	juan.mercado@uniagustiniana.edu.co
+7467495	JSG9jg*9	John	Jaime	Garavito	Alarcon	John Jaime Garavito Alarcon	SI	john.garavito@uniagustiniana.edu.co
+7570996	Contraseña personalizada	Francisco	Clemente	Valle	Diaz	Francisco Clemente Valle Diaz	SI	francisco.valle@uniagustiniana.edu.co
+7718248	NhRaBt/0	Douglas	Alfonso	Romero	Sanchez	Douglas Alfonso Romero Sanchez	SI	douglas.romero@uniagustiniana.edu.co
+7725615	t*75lA*k71T	Carlos	David	Martinez	Ramirez	Carlos David Martinez Ramirez	SI	carlos.martinezr@uniagustiniana.edu.co
+8001787	KSPR26*9	Edgar	Manuel	Rodriguez	Rodriguez	Edgar Manuel Rodriguez Rodriguez	SI	edgarm.rodriguez@uniagustiniana.edu.co
+8100386	38xW*f21Vk*	Juan	Pablo	Martinez	Pelaez	Juan Pablo Martinez Pelaez	SI	juan.martinez@uniagustiniana.edu.co
+								
+8722736	6sNVpA/0	Rafael	Segundo	Martinez	Fuentes	Rafael Segundo Martinez Fuentes	SI	rafael.martinezf@uniagustiniana.edu.co
+9070041	MUsszt+6	Ignacio	Antonio	Madera	Vargas	Ignacio Antonio Madera Vargas	SI	ignacio.madera@uniagustiniana.edu.co
+9762912	j+68wO/g65E	Camilo	Alexcey	Castaño	Chamorro	Camilo Alexcey Castaño Chamorro	SI	camilo.castano@uniagustiniana.edu.co
+9870606	Lp*20nX-t64	Carlos	Andres	Rodriguez	Santana	Carlos Andres Rodriguez Santana	SI	carlos.rodriguezsa@uniagustiniana.edu.co
+10156972	RCdswr+9	Gabriel	Angel de Jesus	Rodriguez	Arboleda	Gabriel Angel de Jesus Rodriguez Arboleda	SI	gabriel.rodriguez@uniagustiniana.edu.co
+10281426	Mj*12rS/o59	Jose	Joaquin	Pardey	Duque	Jose Joaquin Pardey Duque	SI	jose.pardeyd@uniagustiniana.edu.co
+10386681	wKxJXf/9	Alexander		Orobio	Montano	Alexander  Orobio Montano	SI	alexander.orobio@uniagustiniana.edu.co
+11189973	w8rnXo4+	Edgar	Andres	Acevedo	Fonseca	Edgar Andres Acevedo Fonseca	SI	edgar.acevedo@uniagustiniana.edu.co
+11231845	54Zb-24vS+h	Luis	Alejandro	Almeciga	Tovar	Luis Alejandro Almeciga Tovar	SI	luis.almeciga@uniagustiniana.edu.co
+11310105	s49Bz+52pO+	Ernesto		Rodriguez	Moreno	Ernesto  Rodriguez Moreno	SI	ernesto.rodriguez@uniagustiniana.edu.co
+11317799	JaRfPz+9	Rodrigo	Fernando	Acosta	Trujillo	Rodrigo Fernando Acosta Trujillo	SI	rodrigo.acosta@uniagustiniana.edu.co
+11323648	z$$f*4OG	Moises		Arciniegas	Gonzalez	Moises  Arciniegas Gonzalez	SI	moises.arciniegas@uniagustiniana.edu.co
+11340635	bT/h87Ah-65	Juan	Francisco	Tinjaca	Rodriguez	Juan Francisco Tinjaca Rodriguez	SI	juan.tinjaca@uniagustiniana.edu.co
+11433976	HgLJub/9	Angel	Alberto	Montoya	Correales	Angel Alberto Montoya Correales	SI	angel.montoya@uniagustiniana.edu.co
+11448272	yprQ&&@t	Fabio	Orlando	Cruz	Paez	Fabio Orlando Cruz Paez	SI	fabio.cruz@uniagustiniana.edu.co
+12134065	5km5wj+9	Efrain		Morales	Rivera	Efrain  Morales Rivera	SI	efrain.morales@uniagustiniana.edu.co
+12137629	hLcGEJ-9	Carlos	Alberto	Dussan	Calderon	Carlos Alberto Dussan Calderon	SI	carlos.dussan@uniagustiniana.edu.co
+12201745	s40Kx*29rG/	Vicente		Valenzuela	Osorio	Vicente  Valenzuela Osorio	SI	vicente.valenzuela@uniagustiniana.edu.co
+12647551	uXTRKL/9	Ivan	Dario	Munoz	Figueroa	Ivan Dario Munoz Figueroa	SI	ivan.munoz@uniagustiniana.edu.co
+13071803	38w#sB%5	Andres	Felipe	Ñañes	Gomez	Andres Felipe Ñañes Gomez	SI	andres.nanezg@uniagustiniana.edu.co
+13197848	I/k79Of+88j	Henry	Alexander	Ramirez	Mancilla	Henry Alexander Ramirez Mancilla	SI	henry.ramirez@uniagustiniana.edu.co
+13463775	gE-m75My*05	Mario	Humberto	Mendoza	Meza	Mario Humberto Mendoza Meza	SI	mario.mendoza@uniagustiniana.edu.co
+13718046	84jT+y39Sp/	Edgar	Fabian	Rodriguez	Veloza	Edgar Fabian Rodriguez Veloza	SI	edgar.rodriguez@uniagustiniana.edu.co
+13742310	Y60k9k$7	Pablo	Augusto	Vargas	Ríos	Pablo Augusto Vargas Ríos	SI	pablo.vargas@uniagustiniana.edu.co
+13871090	ELL9He*2	Jose	Edgar	Alarcon	Manrique	Jose Edgar Alarcon Manrique	SI	jose.alarcon@uniagustiniana.edu.co
+14253495	i/96iC-c66E	Oscar	Fernando	Rios	Parra	Oscar Fernando Rios Parra	SI	oscar.riosp@uniagustiniana.edu.co
+14316675	78zM-r41Xs	Rodrigo	Alberto	Gaviria	Mahecha	Rodrigo Alberto Gaviria Mahecha	SI	rodrigo.gaviriam@uniagustiniana.edu.co
+14676491	yzbsrd+6	Sergio	Luis	Ordonez	Norena	Sergio Luis Ordonez Norena	SI	sergio.ordonez@uniagustiniana.edu.co
+14696857	Contraseña personalizada	Hugo	Fabian	Lobatón	Garcia	Hugo Fabian Lobatón Garcia	SI	hugo.lobaton@uniagustiniana.edu.co
+14898098	Oa-85qD*r91	Yamid		Galindo	Cardona	Yamid  Galindo Cardona	SI	yamid.galindo@uniagustiniana.edu.co
+16553518	lK-f78Hw*64	Jhon	Fredy	Mayor	Tamayo	Jhon Fredy Mayor Tamayo	SI	jhon.mayor@uniagustiniana.edu.co
+16777042	17Ri-77dX+y	John	Frederic	Villa	Restrepo	John Frederic Villa Restrepo	SI	john.villa@uniagustiniana.edu.co
+16929920	6E4fJp*9	Jaime		Florez	Bolanos	Jaime  Florez Bolanos	SI	jaime.florez@uniagustiniana.edu.co
+16940346	p86Yu*24iG-	Daniel		Reyes	Sierra	Daniel  Reyes Sierra	SI	daniel.reyes@uniagustiniana.edu.co
+17332322	h52Id/78lW	José	Alfredo	Guavita	Quente	José Alfredo Guavita Quente	SI	jose.guavitaq@uniagustiniana.edu.co
+19076420	wLPbGK/9	Luis	Hector	Peña	Varga	Luis Hector Peña Varga	SI	luis.penav@uniagustiniana.edu.co
+19092312	Fv-20sA-h11	Orlando	De Jesus	Sereno	Patiño	Orlando De Jesus Sereno Patiño	SI	orlando.sereno@uniagustiniana.edu.co
+19119564	N*h35Jd/54p*t	Luis	Carlos	Diaz	Hernandez	Luis Carlos Diaz Hernandez	SI	luis.diaz@uniagustiniana.edu.co
+19172403	19Pl-52tQ-h	Jairo	Orlando	Soto	Moreno	Jairo Orlando Soto Moreno	SI	jairo.soto@uniagustiniana.edu.co
+19245980	ASS3ZP/9	Carlos	Eduardo	Rodríguez	Rodríguez	Carlos Eduardo Rodríguez Rodríguez	SI	carlos.rodriguezr@uniagustiniana.edu.co
+19285253	Gk/70sF-o27	Carlos	Julio	Rozo	Rubiano	Carlos Julio Rozo Rubiano	SI	carlos.rozoru@uniagustiniana.edu.co
+19308065	T+l31Gq+78x	Wilson	Alonso	Nuncira	Cervantes	Wilson Alonso Nuncira Cervantes	SI	wilson.nuncira@uniagustiniana.edu.co
+19309160	TBmDkp*6	Ivan	Roberto	Santoyo	Pinzon	Ivan Roberto Santoyo Pinzon	SI	ivan.santoyo@uniagustiniana.edu.co
+19312495	5BUzcs+9	Octavio		Echeverry	Valencia	Octavio  Echeverry Valencia	SI	octavio.echeverry@uniagustiniana.edu.co
+19320022	gA*n68Oq*87	Galo	Ariel	Vanegas	Romero	Galo Ariel Vanegas Romero	SI	galo.vanegas@uniagustiniana.edu.co
+19330958	mDDgzJ/0	Manuel		Guerrero	Villagran	Manuel  Guerrero Villagran	SI	manuel.guerrero@uniagustiniana.edu.co
+19363595	ASrEHZ*9	Jesus	Maria	Diaz	Jaimes	Jesus Maria Diaz Jaimes	SI	jesus.diazj@uniagustiniana.edu.co
+19372491	#j%8yGOL	Nelson	Humberto	Ruiz	Pomar	Nelson Humberto Ruiz Pomar	SI	nelson.ruizp@uniagustiniana.edu.co
+19374125	73yN-l03Ee-	Luis	Fernando	Arias	Ramirez	Luis Fernando Arias Ramirez	SI	luis.arias@uniagustiniana.edu.co
+19387934	CvLB7d/9	Julio	Faenz	Ruiz	Gonzalez	Julio Faenz Ruiz Gonzalez	SI	julio.ruizg@uniagustiniana.edu.co
+19395498	LycPuz*9	Manuel	Guillermo	Hoyos	Trujillo	Manuel Guillermo Hoyos Trujillo	SI	manuel.hoyos@uniagustiniana.edu.co
+19396065	G5nSCP*9	Jeremias		Turmeque	Silva	Jeremias  Turmeque Silva	SI	jeremias.turmeque@uniagustiniana.edu.co
+19401538	b4s6Nv-2	Miguel	Dario	Beltran	Sarmiento	Miguel Dario Beltran Sarmiento	SI	miguel.beltran@uniagustiniana.edu.co
+19402918	bAjWnX/9	Mauricio	Javier	Leon	Cardenas	Mauricio Javier Leon Cardenas	SI	mauricio.leonc@uniagustiniana.edu.co
+19414831	xWmYYa+0	Jairo	Alberto	Vasquez	Bernal	Jairo Alberto Vasquez Bernal	SI	jairo.vasquez@uniagustiniana.edu.co
+19415331	wuzGa7/2	Mauricio		Ortiz	Lora	Mauricio  Ortiz Lora	SI	mauricio.ortiz@uniagustiniana.edu.co
+19415533	*83aU+r52Ir	Jairo		Neira	Guevara	Jairo  Neira Guevara	SI	jairo.neira@uniagustiniana.edu.co
+19433863	h-61bT+i16G	Ramiro		Osorio	Díaz	Ramiro  Osorio Díaz	SI	ramiro.osorio@uniagustiniana.edu.co
+19434272	Contraseña personalizada	Eduardo	William	Cortes	Barrero	Eduardo William Cortes Barrero	SI	eduardo.cortes@uniagustiniana.edu.co
+19444682	hrMz3S/3	Orlando		Echeverry	Valencia	Orlando  Echeverry Valencia	SI	orlando.echeverry@uniagustiniana.edu.co
+19446756	68Sb*64pC/s	Jorge	Alberto	Ovalle	Posada	Jorge Alberto Ovalle Posada	SI	jorge.ovalle@uniagustiniana.edu.co
+19460473	cMTpHz/9	Rodrigo		Chaves	Cascavita	Rodrigo  Chaves Cascavita	SI	rodrigo.chaves@uniagustiniana.edu.co
+19476682	TQvcpP/0	Nolan		Sanchez	Tovar	Nolan  Sanchez Tovar	SI	nolan.sanchez@uniagustiniana.edu.co
+19480395	w24Mc*61gY-	Rafael	Antonio	Martinez	Salcedo	Rafael Antonio Martinez Salcedo	SI	rafael.martinez@uniagustiniana.edu.co
+19481982	a33Iv+33fC	Fernando		Sanchez	Sanchez	Fernando  Sanchez Sanchez	SI	fernando.sanchez@uniagustiniana.edu.co
+19488690	4xjrRz+9	Nabor		Infante	Pinto	Nabor  Infante Pinto	SI	nabor.infante@uniagustiniana.edu.co
+19495869	eWEqun#f	Luis	Fernando	Saenz	Barragan	Luis Fernando Saenz Barragan	SI	luis.saenz@uniagustiniana.edu.co
+21061166	Gk/20lQ*r02	Mirta	Yolima	Gutierrez	Rios	Mirta Yolima Gutierrez Rios	SI	mirta.gutierrez@uniagustiniana.edu.co
+21400387	SRJFwG/4	Enith	Cecilia	Niebles	Lara	Enith Cecilia Niebles Lara	SI	enith.niebles@uniagustiniana.edu.co
+21475771	UKQtpU-1	Gladys	Llanet	Suarez	Galeano	Gladys Llanet Suarez Galeano	SI	gladys.suarez@uniagustiniana.edu.co
+22669518	08jQ-r17Ji/	Daye		Escobar	Pavajeao	Daye  Escobar Pavajeao	SI	daye.escobar@uniagustiniana.edu.co
+26436348	1pz66E%Z	Maria	Helena	Cardenas	Chaves	Maria Helena Cardenas Chaves	SI	maria.cardenasch@uniagustiniana.edu.co
+27081703	RwNrFp-2	Alejandra		Duarte	Lasso	Alejandra  Duarte Lasso	SI	alejandra.duartel@uniagustiniana.edu.co
+32144408	LqEtGF-2	Lina	Marcela	Guerra	Garcia	Lina Marcela Guerra Garcia	SI	lina.guerra@uniagustiniana.edu.co
+35221812	Rq6H8J+6	Natalia	Maria	Restrepo	Sanchez	Natalia Maria Restrepo Sanchez	SI	natalia.restrepo@uniagustiniana.edu.co
+35250460	31Ej/24gG+a	Yenifer		Beltran	Sierra	Yenifer  Beltran Sierra	SI	yenifer.beltrans@uniagustiniana.edu.co
+35253315	9xR5uD*9	Carolina		Hernandez	Vargas	Carolina  Hernandez Vargas	SI	carolina.hernandez@uniagustiniana.edu.co
+35253919	P+y52Dx*21f	Andrea		Gutierrez	Garcia	Andrea  Gutierrez Garcia	SI	andrea.gutierrezg@uniagustiniana.edu.co
+35401551	fe3RE7-2	Nohora		Tovar		Nohora  Tovar 	SI	nohora.tovar@uniagustiniana.edu.co
+35502341	vDndWn*3	Raquel	Beatriz	Agray	Cortes	Raquel Beatriz Agray Cortes	SI	raquel.agray@uniagustiniana.edu.co
+35532569	D/r87Rl/01c+q	Juana	Marcela	Ardila	García	Juana Marcela Ardila García	SI	juana.ardila@uniagustiniana.edu.co
+36309837	Kg+22qU+k46	Beatriz	Irene	Romero	Cuellar	Beatriz Irene Romero Cuellar	SI	beatriz.romero@uniagustiniana.edu.co
+37290892	vQnLwn/9	Eliana	Maria	Labrador	Florez	Eliana Maria Labrador Florez	SI	eliana.labrador@uniagustiniana.edu.co
+37513039	96rrKT+6	Katya	Fernanda	Canas	Sanchez	Katya Fernanda Canas Sanchez	SI	katya.canas@uniagustiniana.edu.co
+37535795	gMuu8E+9	Yuber	Liliana	Rodriguez	Rojas	Yuber Liliana Rodriguez Rojas	SI	yuber.rodriguez@uniagustiniana.edu.co
+38603891	66yQ-x43Gl/	Claudia	Constanza	Tamayo	Vasquez	Claudia Constanza Tamayo Vasquez	SI	claudia.tamayov@uniagustiniana.edu.co
+39546779	6mY8kA/0	Barbara	Lee	Rojas	Luna	Barbara Lee Rojas Luna	SI	barbara.rojas@uniagustiniana.edu.co
+39646531	9RemDF-4	Maria	Esperanza	Lopez	Castaño	Maria Esperanza Lopez Castaño	SI	esperanza.lopez@uniagustiniana.edu.co
+39665311	jD-i91Ba*88	Alyda	Ines	Sabogal	Monrroy	Alyda Ines Sabogal Monrroy	SI	alyda.sabogal@uniagustiniana.edu.co
+39673987	79pK-p43Nz/	Yolima	Andrea	Diaz	Chaparro	Yolima Andrea Diaz Chaparro	SI	yolima.diaz@uniagustiniana.edu.co
+39678256	T72uD2/9	Sorany	Maryury	Castaño	Ramire	Sorany Maryury Castaño Ramire	SI	sorany.castano@uniagustiniana.edu.co
+39755782	mC/l80Ek+27	Esperanza		Gonzalez	Niño	Esperanza  Gonzalez Niño	SI	esperanza.gonzalezn@uniagustiniana.edu.co
+39756358	wP*n76Fq+37	Nancy	Liliana	Garcia	Castiblanco	Nancy Liliana Garcia Castiblanco	SI	nancy.garcia@uniagustiniana.edu.co
+39790155	F$Ux9Lpn	Ingrid	Zoraya	Sarmiento		Ingrid Zoraya Sarmiento 	SI	ingrid.sarmiento@uniagustiniana.edu.co
+40039437	j-49nC+r72F	Luz	Marina	Carreño	Niño	Luz Marina Carreño Niño	SI	luz.carreno@uniagustiniana.edu.co
+40045704	2BqzqQ*2	Giovana	Carolina	Cardenas	Mora	Giovana Carolina Cardenas Mora	SI	giovana.cardenas@uniagustiniana.edu.co
+40047336	EvxxsP*9	Carol	Dayana	Sosa	Quintero	Carol Dayana Sosa Quintero	SI	carol.sosa@uniagustiniana.edu.co
+40092573	sYUfC4*4	Emilce	Johanna	Hernandez	Villanueva	Emilce Johanna Hernandez Villanueva	SI	emilce.hernandez@uniagustiniana.edu.co
+40362668	Jp*17sW-r73	Alexandra	Milena	Bolanos	Perez	Alexandra Milena Bolanos Perez	SI	alexandra.bolanos@uniagustiniana.edu.co
+41793359	s+15hA/o02V	Martha	Patricia	Striedinger	Melendez	Martha Patricia Striedinger Melendez	SI	martha.striedinger@uniagustiniana.edu.co
+41962271	I-m45Vb-43y	Ana	Catalina	Hernandez	Ramirez	Ana Catalina Hernandez Ramirez	SI	anac.hernandez@uniagustiniana.edu.co
+42690657	91Nu-81fW/s	Patricia	Milena	Osorno	Zuluaga	Patricia Milena Osorno Zuluaga	SI	patricia.osorno@uniagustiniana.edu.co
+45505403	pnvn&65R	Erika		Paez	Malo	Erika  Paez Malo	SI	erika.paezm@uniagustiniana.edu.co
+45527186	q94Za*32iJ+	Menis		Mercado	Mejia	Menis  Mercado Mejia	SI	menis.mercado@uniagustiniana.edu.co
+46453552	p*34dE*y24B	Danisa	Mayerly	Suárez	Tarazona	Danisa Mayerly Suárez Tarazona	SI	danisa.suarezt@uniagustiniana.edu.co
+46454903	BfTSZt/9	Diana	Carolina	Herrera	Barrios	Diana Carolina Herrera Barrios	SI	dianac.herrera@uniagustiniana.edu.co
+51699758	/x05Tc/63tZ	Sandra	Consuelo	Munoz	Moreno	Sandra Consuelo Munoz Moreno	SI	sandra.munoz@uniagustiniana.edu.co
+51712631	h-69uQ-h88G	Carolina		Prada	Vargas	Carolina  Prada Vargas	SI	carolina.prada@uniagustiniana.edu.co
+51768432	3dP$nC98	Claudia	Patricia	Gomez	Rendon	Claudia Patricia Gomez Rendon	SI	claudia.gomez@uniagustiniana.edu.co
+51803876	4Zu2fs+9	Martha	Lucia	Parra	Fonseca	Martha Lucia Parra Fonseca	SI	martha.parraf@uniagustiniana.edu.co
+51811319	X+q73An-10q	Maria	Yolanda	Laverde	Guzman	Maria Yolanda Laverde Guzman	SI	maria.laverde@uniagustiniana.edu.co
+51819262	rY*a03Cl/17	Martha	Graciela	Arias	Rey	Martha Graciela Arias Rey	SI	martha.arias@uniagustiniana.edu.co
+51882666	RrZg2Q+0	Najda	Leonor	Cajiao	Pachon	Najda Leonor Cajiao Pachon	SI	najda.cajiao@uniagustiniana.edu.co
+51890053	53jZ+x46Rb-	Anllela		Rodriguez	Cedeño	Anllela  Rodriguez Cedeño	SI	anllela.rodriguez@uniagustiniana.edu.co
+51899000	Wkn6hC*4	Flor	Alba	Gonzalez	Velasquez	Flor Alba Gonzalez Velasquez	SI	flor.gonzalezv@uniagustiniana.edu.co
+51899727	R+o44Xb-52g	Martha	Lucia	Santana	Cerda	Martha Lucia Santana Cerda	SI	martha.santana@uniagustiniana.edu.co
+51902383	sQ-n62Jo+62	Marina		Castañeda	Ojeda	Marina  Castañeda Ojeda	SI	marina.castaneda@uniagustiniana.edu.co
+51946215	-18lJ+p75Fe	Mercedes		Rincón	Rodríguez	Mercedes  Rincón Rodríguez	SI	mercedes.rinconr@uniagustiniana.edu.co
+51946748	DVJdD@%8	Luz	Marina	Cordoba	Pinzon	Luz Marina Cordoba Pinzon	SI	luz.cordoba@uniagustiniana.edu.co
+51954337	j*28xU+r18L	Blanca	Elizabeth	Toro	Rubiano	Blanca Elizabeth Toro Rubiano	SI	blanca.toro@uniagustiniana.edu.co
+51960483	WgQEuZ+2	Claudia	Angelica	Ben-Amy	Paez	Claudia Angelica Ben-Amy Paez	SI	claudia.ben-amy@uniagustiniana.edu.co
+51967048	/08gW/h37If	Jenny		Lagos	Bejarano	Jenny  Lagos Bejarano	SI	jenny.lagos@uniagustiniana.edu.co
+51986420	62n4Hr*0	Adriana		Garcia	Suancha	Adriana  Garcia Suancha	SI	adriana.garcia@uniagustiniana.edu.co
+51987410	88Rf-86oC*n	Martha	Cecilia	Camacho	Garcia	Martha Cecilia Camacho Garcia	SI	martha.camacho@uniagustiniana.edu.co
+51993018	8sz&Id34	Adrina	Jazmith	Rojas	Martinez	Adrina Jazmith Perez Martinez	SI	adrina.rojas@uniagustiniana.edu.co
+52008320	An-08fK+b78	Patricia		Perez	Ramirez	Patricia  Perez Ramirez	SI	patricia.perez@uniagustiniana.edu.co
+52029648	E5GftN-0	Nubia	Constanza	Arias	Arias	Nubia Constanza Arias Arias	SI	nubia.arias@uniagustiniana.edu.co
+52031883	51Bj+55cZ*d	Sandra	Patricia	Perez	Torres	Sandra Patricia Perez Torres	SI	sandra.perez@uniagustiniana.edu.co
+52035189	m27Cv*80xW+	Sandra	Patricia	Torres	Diaz	Sandra Patricia Torres Diaz	SI	sandra.torresd@uniagustiniana.edu.co
+52048239	*v45Qd-47jJ	Claudia	Marcela	Pineda	Chavez	Claudia Marcela Pineda Chavez	SI	claudia.pineda@uniagustiniana.edu.co
+52067952	wHZKJd-9	Martha	Soledad	Diaz	Ocampo	Martha Soledad Diaz Ocampo	SI	martha.diaz@uniagustiniana.edu.co
+52071551	YUnQjK-2	Olga	Lucia	Torres	Acuna	Olga Lucia Torres Acuna	SI	olga.torres@uniagustiniana.edu.co
+52086476	zIO*d!rk	Andrea		Laredo	Romero	Andrea  Laredo Romero	SI	andrea.laredo@uniagustiniana.edu.co
+52088037	k+59nQ/c44T	Adriana	Del Pilar	Talero	Parra	Adriana Del Pilar Talero Parra	SI	adriana.talero@uniagustiniana.edu.co
+52104439	Y5qQZU+9	Eliana	Marcela	Bernal	Morales	Eliana Marcela Bernal Morales	SI	eliana.bernal@uniagustiniana.edu.co
+52111886	XfMLfk/8	Sandra	Marcela del Pilar	Rodríguez	Gaitan	Sandra Marcela del Pilar Rodríguez Gaitan	SI	sandra.rodriguezg@uniagustiniana.edu.co
+52120519	nyHLQ5/0	Paola	Catherine	Victorino	Tovar	Paola Catherine Victorino Tovar	SI	paola.victorino@uniagustiniana.edu.co
+52129578	99VJHA*9	Sandra	Patricia	Loaiza	Rodriguez	Sandra Patricia Loaiza Rodriguez	SI	sandra.loaiza@uniagustiniana.edu.co
+52153499	D+t42Tq/98l	Dora	Luz	Moreno	Martinez	Dora Luz Moreno Martinez	SI	dora.morenom@uniagustiniana.edu.co
+52172188	DTE2FP*0	Alexandra	Ines	Diaz	Vento	Alexandra Ines Diaz Vento	SI	alexandra.diaz@uniagustiniana.edu.co
+52200117	rS/n19Ri*67	Liz	Alexandra	Puerto	Borda	Liz Alexandra Puerto Borda	SI	liz.puerto@uniagustiniana.edu.co
+52204966	BPBRmh*0	Monica	Adriana	Campos	Pinzón	Monica Adriana Campos Pinzón	SI	monica.campos@uniagustiniana.edu.co
+52209142	mQ*c88Pl+76	Bibiana	Mercedes	Diaz	Galindo	Bibiana Mercedes Diaz Galindo	SI	bibiana.diazga@uniagustiniana.edu.co
+52209703	Contraseña personalizada	Isabel		Jimenez	Becerra	Isabel  Jimenez Becerra	SI	isabel.jimenez@uniagustiniana.edu.co
+52214215	Contraseña personalizada	Diana	Janeth	Benavides	Ortiz	Diana Janeth Benavides Ortiz	SI	diana.benavides@uniagustiniana.edu.co
+52214614	Contraseña personalizada	Diana	Derly	Bueno	Castro	Diana Derly Bueno Castro	SI	diana.bueno@uniagustiniana.edu.co
+52228328	25sY*x29Mj	Martha	Yaneth	Segura	Ruiz	Martha Yaneth Segura Ruiz	SI	martha.segura@uniagustiniana.edu.co
+52236089	p+51pB*g20C	Briggitte	Andrea	Aguirre	Munoz	Briggitte Andrea Aguirre Munoz	SI	briggitte.aguirre@uniagustiniana.edu.co
+52259759	&!#KLQhK	Maribel		Garcia	Rojas	Maribel  Garcia Rojas	SI	maribel.garciar@uniagustiniana.edu.co
+52261489	uZ-y06Rn/13	Diana	Maria	Galarza	Moreno	Diana Maria Galarza Moreno	SI	diana.galarza@uniagustiniana.edu.co
+52261843	Il-37wD*k29	Maria	Elia	Guerrero	Burgos	Maria Elia Guerrero Burgos	SI	maria.guerrero@uniagustiniana.edu.co
+52271543	57Vp-31zL*h	Martha	Cecilia	Bohorquez	Isaza	Martha Cecilia Bohorquez Isaza	SI	martha.bohorquez@uniagustiniana.edu.co
+52308285	7yB85s+9	Andrea		Puentes	Rodriguez	Andrea  Puentes Rodriguez	SI	andrea.puentes@uniagustiniana.edu.co
+52320791	3ZEkW7/0	Gloria	Esperanza	Ortiz	Russi	Gloria Esperanza Ortiz Russi	SI	gloria.ortiz@uniagustiniana.edu.co
+52324402	az9bFn+9	Angela	Edith	Valbuena	Peñ	Angela Edith Valbuena Peñ	SI	angela.valbuenap@uniagustiniana.edu.co
+52325384	UgestY+4	Yuby	Angelica	Ibanez	Cubillos	Yuby Angelica Ibanez Cubillos	SI	yuby.ibanez@uniagustiniana.edu.co
+52340583	i88Km/29sZ*	Myriam		Romero	Castro	Myriam  Romero Castro	SI	myriam.romero@uniagustiniana.edu.co
+52341979	LEQaFq-9	Sandra	Juliana	Enriquez	Bernal	Sandra Juliana Enriquez Bernal	SI	sandra.enriquez@uniagustiniana.edu.co
+52347248	PXdBjD-2	Rosa	Alexandra	Chaparro	Guevara	Rosa Alexandra Chaparro Guevara	SI	alexandra.chaparro@uniagustiniana.edu.co
+52352696	Q6HBEN+9	Andrea	Del Pilar	Santana	Wilches	Andrea Del Pilar Santana Wilches	SI	andrea.santana@uniagustiniana.edu.co
+52354043	2GxT3W-4	Joanne	Angelica	Arias	Paez	Joanne Angelica Arias Paez	SI	joanne.arias@uniagustiniana.edu.co
+52357526	i47Cm/82gE+	Patricia		Larrarte	Castañeda	Patricia  Larrarte Castañeda	SI	patricia.larrarte@uniagustiniana.edu.co
+52369673	v/44uG+r86S	Claudia	Milena	Lopez	Moreno	Claudia Milena Lopez Moreno	SI	claudia.lopezm@uniagustiniana.edu.co
+52409103	\q5c96=B	Caidia	Victoria	Castellanos	Suarez	Caidia Victoria Castellanos Suarez	SI	caidia.castellanos@uniagustiniana.edu.co
+52412585	dRQs9N*9	Cristina	Ivonne	Tavera	Cuellar	Cristina Ivonne Tavera Cuellar	SI	cristina.tavera@uniagustiniana.edu.co
+52417154	oHBw62$k	Maria	Angelica	Jaramillo	Gutierrez	Maria Angelica Jaramillo Gutierrez	SI	maria.jaramillo@uniagustiniana.edu.co
+52431750	x01Fh-37gO	Ana	Maria	Obando	Nates	Ana Maria Obando Nates	SI	ana.obando@uniagustiniana.edu.co
+52432783	W+f83Az+85u	Isabel	Cristina	Franklin	Sanabria	Isabel Cristina Franklin Sanabria	SI	isabel.franklin@uniagustiniana.edu.co
+52437762	u30Mv/87wD	Rhina	Maria	Ramos	Mejia	Rhina Maria Ramos Mejia	SI	rhina.ramos@uniagustiniana.edu.co
+52455811	fLEqA8-2	Marisol		Pulido	Lopez	Marisol  Pulido Lopez	SI	marisol.pulido@uniagustiniana.edu.co
+52470544	Z+v74Sk+06s	Hilda	Janneth	Espitia	Sanchez	Hilda Janneth Espitia Sanchez	SI	hilda.espitia@uniagustiniana.edu.co
+52477124	j64Is*16vI-	Erika	Yineth	Villalba	Olaya	Erika Yineth Villalba Olaya	SI	erika.villalba@uniagustiniana.edu.co
+52478309	cQ/p68Qr*01	Yenny	Carolina	Bohorquez	Barbosa	Yenny Carolina Bohorquez Barbosa	SI	yenny.bohorquezb@uniagustiniana.edu.co
+52481362	/04mT/s03Ti	Maribeth 		Rivera	Mora	Maribeth   Rivera Mora	SI	maribeth.rivera@uniagustiniana.edu.co
+52484106	CvXKU2/9	Karina	Andrea	Becerra	Martinez	Karina Andrea Becerra Martinez	SI	karina.becerra@uniagustiniana.edu.co
+52487045	Contraseña personalizada	Claudia	Paola	Garcia	Castilblanco	Claudia Paola Garcia Castilblanco	SI	claudia.garcia@uniagustiniana.edu.co
+52490497	/35qR*z77Nb	Norma	Esperanza	Rodríguez	Garzón	Norma Esperanza Rodríguez Garzón	SI	norma.rodriguez@uniagustiniana.edu.co
+52505654	cM+f17Ew+42	Yamile		Alfonso	Jimenez	Yamile  Alfonso Jimenez	SI	yamile.alfonso@uniagustiniana.edu.co
+52513584	pK7!56G2	Paola	Andrea	Leal	Lopez	Paola Andrea Leal Lopez	SI	paola.leal@uniagustiniana.edu.co
+52514778	*45sO*y68Cn24m	Sandra	Milena	Meneses	Martinez	Sandra Milena Meneses Martinez	SI	sandra.meneses@uniagustiniana.edu.co
+52517954	3Unwe7+0	Lorena		Nieto	Vargas	Lorena  Nieto Vargas	SI	lorena.nieto@uniagustiniana.edu.co
+52518399	pFZTS3-5	Maria	Angelica	Bermudez	Bermudez	Maria Angelica Bermudez Bermudez	SI	maria.bermudez@uniagustiniana.edu.co
+52520677	Pwayam*9	Vanessa	Julieth	Uribe	Palacios	Vanessa Julieth Uribe Palacios	SI	vanessa.uribe@uniagustiniana.edu.co
+52521110	UBabPj-2	Angela	Johanna	Grosso	Guerrero	Angela Johanna Grosso Guerrero	SI	angela.grosso@uniagustiniana.edu.co
+52527927	*#4Mh%&q	Andrea		Paez	Gomez	Andrea  Paez Gomez	SI	andrea.paez@uniagustiniana.edu.co
+52542582	a-12fS+t32U	Diana	Patricia	Cardenas	Cuesta	Diana Patricia Cardenas Cuesta	SI	patricia.cardenas@uniagustiniana.edu.co
+52544852	8J3Hs#S8	Jacklyn	Carol	Garcia	Aguilar	Jacklyn Carol Garcia Aguilar	SI	jacklyn.garcia@uniagustiniana.edu.co
+52550640	24LU4W+9	Luz	Fatima	Alvarez	Zuluaga	Luz Fatima Alvarez Zuluaga	SI	luz.alvarez@uniagustiniana.edu.co
+52553533	Rm/87oS*m39	Luz	Herminda	Espejo	Novoa	Luz Herminda Espejo Novoa	SI	luz.espejo@uniagustiniana.edu.co
+52587968	LVCXxK+2	Yasmin	Stella	Gutierrez	Cabiativa	Yasmin Stella Gutierrez Cabiativa	SI	yasmin.gutierrez@uniagustiniana.edu.co
+52588432	51Rb*72eN+c	Maria	Liliana	Tabio	Nivia	Maria Liliana Tabio Nivia	SI	ltabio@uniagustiniana.edu.co
+52656330	07nZ+i96Sq*	Sandra	Marleny	Perilla	Monroy	Sandra Marleny Perilla Monroy	SI	sandra.perillam@uniagustiniana.edu.co
+52697919	uVAJ*8^X	Angela	Lyulieth	Bernal	Martinez	Angela Lyulieth Bernal Martinez	SI	angela.bernalm@uniagustiniana.edu.co
+52702618	Uf/46kS*p74	Ruth	Milena	Suarez	Castro	Ruth Milena Suarez Castro	SI	ruth.suarez@uniagustiniana.edu.co
+52703333	Contraseña personalizada	Maria	Del Pilar	Gomez	Sanchez	Maria Del Pilar Gomez Sanchez	SI	maria.gomezs@uniagustiniana.edu.co
+52704361	Contraseña personalizada	Veronica	Indira	Villegas	Triana	Veronica Indira Villegas Triana	SI	veronica.villegas@uniagustiniana.edu.co
+52708078	81eA*d22Ga*	Nancy	Yanneth	Gordillo	Ramirez	Nancy Yanneth Gordillo Ramirez	SI	nancy.gordillor@uniagustiniana.edu.co
+52734282	HK-b65Sz+33S+	Ana	Luisa	Castro	Rodriguez	Ana Luisa Castro Rodriguez	SI	ana.castro@uniagustiniana.edu.co
+52736238	G+v97Fz/59a	Diana	Maritza	Alvarez	Ovalle	Diana Maritza Alvarez Ovalle	SI	diana.alvarezo@uniagustiniana.edu.co
+52769243	MWMdX5&c	Carolina		Verano	Velasco	Carolina  Verano Velasco	SI	carolina.verano@uniagustiniana.edu.co
+52770636	pH+a62Px+37	Linna	Johanna	Tamayo	Rojas	Linna Johanna Tamayo Rojas	SI	linna.tamayo@uniagustiniana.edu.co
+52772424	Wm-62fT/d82	Katharyne		Gutierrez	Rincon	Katharyne  Gutierrez Rincon	SI	katharyne.gutierrez@uniagustiniana.edu.co
+52775658	%#9yjmWn	Maria	Del Carmen	Sanabria	Mesa	Maria Del Carmen Sanabria Mesa	SI	maria.sanabriam@uniagustiniana.edu.co
+52782050	47jA/y11Dj/	Melissa		Avendaño	Tocanchon	Melissa  Avendaño Tocanchon	SI	melissa.avendanot@uniagustiniana.edu.co
+52788667	6upUD8/1	Yudy	Constanza	Quevedo	Gomez	Yudy Constanza Quevedo Gomez	SI	yudy.quevedo@uniagustiniana.edu.co
+52788780	p5ZyG5KiI#	Jayme	Shirleey	Baez	Lopez	Jayme Shirleey Baez Lopez	SI	jayme.baez@uniagustiniana.edu.co
+52796409	M-b74Zf*38c	Andrea	Del Pilar	Cifuentes	Gonzalez	Andrea Del Pilar Cifuentes Gonzalez	SI	andrea.cifuentesg@uniagustiniana.edu.co
+52800322	f5pMC2*4	Julie	Cristina	Billorou	Garzon	Julie Cristina Billorou Garzon	SI	julie.billorou@uniagustiniana.edu.co
+52802855		Lorena		Ramirez	Niño	Lorena  Ramirez Niño	SI	lorena.ramirez@uniagustiniana.edu.co
+52807207	94hG-d27Fi	Zulma	Julieth	Avellaneda	Avellaneda	Zulma Julieth Avellaneda Avellaneda	SI	zulma.avellaneda@uniagustiniana.edu.co
+52817132	83fV-h08Hk+	Leidy	Johana	Pineda	Rios	Leidy Johana Pineda Rios	SI	leidy.pineda@uniagustiniana.edu.co
+52827674	tS+g52Xy-92	Angelica	Maria	Garzon	Munoz	Angelica Maria Garzon Munoz	SI	angelica.garzon@uniagustiniana.edu.co
+52835012	sJgNeG*0	Yenny	Milena	Cortes	Bello	Yenny Milena Cortes Bello	SI	yenny.cortes@uniagustiniana.edu.co
+52847631	s*91eX-t91N	Estibaliz		Aguilar	Galeano	Estibaliz  Aguilar Galeano	SI	estibaliz.aguilar@uniagustiniana.edu.co
+52855111	Wr+65hG-t39	Diana	Rocio	Linares	Nuñe	Diana Rocio Linares Nuñe	SI	diana.linares@uniagustiniana.edu.co
+52859373	mhu@sV$0	Deissy	Constanza	Mahecha	Varela	Deissy Constanza Mahecha Varela	SI	deissy.mahecha@uniagustiniana.edu.co
+52859826	43Bj*18rO+v	Diana	Marcela	Uribe	Panesso	Diana Marcela Uribe Panesso	SI	diana.uribe@uniagustiniana.edu.co
+52866227	m54Ku*60rG-	Luz	Piedad de las Mercedes	Zuluaga	Chadid	Luz Piedad de las Mercedes Zuluaga Chadid	SI	luz.zuluaga@uniagustiniana.edu.co
+52871572	/g62Yt+37tI	Claudia	Liliana	Muñoz	Peña	Claudia Liliana Muñoz Peña	SI	claudia.munozp@uniagustiniana.edu.co
+52877662	P/t15Rw/02p	Laura	Elizabeth	Castro	Jimenez	Laura Elizabeth Castro Jimenez	SI	laura.castro@uniagustiniana.edu.co
+52890081	ubHypP/0	Johanna		Trujillo	Diaz	Johanna  Trujillo Diaz	SI	johanna.trujillo@uniagustiniana.edu.co
+52896395	Nq5VBf-4	Adriana		Quimbayo	Feria	Adriana  Quimbayo Feria	SI	adriana.quimbayo@uniagustiniana.edu.co
+52900214	msIve3@vFj	Angelica	Nohely	Marin	Usuga	Angelica Nohely Marin Usuga	SI	angelica.marinu@uniagustiniana.edu.co
+52903279	Yq+97oF/d34	Liliana	Marcela	Chaparro	Sanabria	Liliana Marcela Chaparro Sanabria	SI	liliana.chaparro@uniagustiniana.edu.co
+52913273	hC-i61Ss+95	Flor	Emilce	Prieto	Galindo	Flor Emilce Prieto Galindo	SI	flor.prieto@uniagustiniana.edu.co
+52918228	39aY/k81Vq+	Olga	Cecilia	Diaz	Uribe	Olga Cecilia Diaz Uribe	SI	olga.diazu@uniagustiniana.edu.co
+52932650	SJbZsk*9	Lilette		Lopez	Ramirez	Lilette  Lopez Ramirez	SI	lilette.lopez@uniagustiniana.edu.co
+52951650	/93wJ+j63Eo	Liliana	Saray	Camero	Hernandez	Liliana Saray Camero Hernandez	SI	liliana.camero@uniagustiniana.edu.co
+52955209	c+44cB-z29Z	Nydia		Parra	Leon	Nydia  Parra Leon	SI	nydia.parral@uniagustiniana.edu.co
+52957274	93Nj-81cF*t	Maria	Cristina	Salamanca	Rojas	Maria Cristina Salamanca Rojas	SI	maria.salamancar@uniagustiniana.edu.co
+52965959	hYHGaq+4	Claudia	Marcela	Correa	Malagon	Claudia Marcela Correa Malagon	SI	claudia.correa@uniagustiniana.edu.co
+52976134	Bw*34qO*m98	Catherine		Valencia	Gonzalez	Catherine  Valencia Gonzalez	SI	catherine.valenciag@uniagustiniana.edu.co
+52979886	Z/g53Pm+98s	Yeimy	Viviana	Marin	Chaves	Yeimy Viviana Marin Chaves	SI	yeimy.marin@uniagustiniana.edu.co
+52981728	5m3cuL/2	Bertha	Paola	Bejarano	Avila	Bertha Paola Bejarano Avila	SI	paola.bejarano@uniagustiniana.edu.co
+52982720	14gE*d88Qh+	Viviana	Andrea	Aguirre	Valencia	Viviana Andrea Aguirre Valencia	SI	viviana.aguirre@uniagustiniana.edu.co
+53003380	B3EDAs*3	Nelly	Bibiana	Morales	Posada	Nelly Bibiana Morales Posada	SI	bibiana.morales@uniagustiniana.edu.co
+53015266	27UrGY+9	Diana	Marcela	Orozco	Orozco	Diana Marcela Orozco Orozco	SI	diana.orozco@uniagustiniana.edu.co
+53016669	h+12mE-h73G	Paula	Milena	Parra	Garcia	Paula Milena Parra Garcia	SI	paula.parra@uniagustiniana.edu.co
+53032142	25Zr-66rW-v	Monica	Andrea	Castro	Chiguazuque	Monica Andrea Castro Chiguazuque	SI	monica.castroc@uniagustiniana.edu.co
+53032455	kAY3tp*9	July	Tatyana	Castillo	Montenegro	July Tatyana Castillo Montenegro	SI	july.castillo@uniagustiniana.edu.co
+53032585	bzGr47+6	Sindy	Viviana	Cifuentes	Rodríguez	Sindy Viviana Cifuentes Rodríguez	SI	sindy.cifuentes@uniagustiniana.edu.co
+53036990	YHZVhJ+6	Carolina		Aguirre	Garzon	Carolina  Aguirre Garzon	SI	carolina.aguirre@uniagustiniana.edu.co
+53051043	yg5C4S/4	Yira	Catalina	Martínez	Castillo	Yira Catalina Martínez Castillo	SI	yira.martinez@uniagustiniana.edu.co
+53051975	b97Mc/59vZ/	Paola	Consuelo	Ladino	Marin	Paola Consuelo Ladino Marin	SI	paola.ladino@uniagustiniana.edu.co
+53063272	e8ndmB-9	Ximena	Audrey	Velasquez	Moya	Ximena Audrey Velasquez Moya	SI	ximena.velasquez@uniagustiniana.edu.co
+53063772	GnJdQv-2	Maria	Paula	Rodriguez	Murcia	Maria Paula Rodriguez Murcia	SI	mariap.rodriguez@uniagustiniana.edu.co
+53075724	Ytv7Q6*2	Jenny	Del Pilar	Barriga	Vargas	Jenny Del Pilar Barriga Vargas	SI	jenny.barriga@uniagustiniana.edu.co
+53080365	cF+k48Zg*21	Zuly	Mayerly	Alfonso	Mosquera	Zuly Mayerly Alfonso Mosquera	SI	zuly.alfonso@uniagustiniana.edu.co
+53083032	q94Xm*65qQ	Andrea	Carolina	Redondo	Mendez	Andrea Carolina Redondo Mendez	SI	andrea.redondo@uniagustiniana.edu.co
+53093624	W/p99Iy+42l	Johanna	Andrea	Mendez	Oliveros	Johanna Andrea Mendez Oliveros	SI	johanna.mendezo@uniagustiniana.edu.co
+53114978	gC/o73Eg-35	Diana	Marcela	Diaz	Ariza	Diana Marcela Diaz Ariza	SI	diana.diaza@uniagustiniana.edu.co
+53117250	78fW/k60Yi/	Sara	Catherine	Grosso	Guerrero	Sara Catherine Grosso Guerrero	SI	sara.grosso@uniagustiniana.edu.co
+53119054	4pWEn5/4	Ana	Milena	Niño	Espiti	Ana Milena Niño Espiti	SI	ana.nino@uniagustiniana.edu.co
+53121256	u50Aa-02nK+	Hasblady		Moreno	Duque	Hasblady  Moreno Duque	SI	hasblady.moreno@uniagustiniana.edu.co
+53139016	4QQmY9-9	Bibian	Andrea	Lopez	Segura	Bibian Andrea Lopez Segura	SI	bibian.lopez@uniagustiniana.edu.co
+53139420	rA85GC-0	Diana	Carolina	Pescador	Vela	Diana Carolina Pescador Vela	SI	carolina.pescadorv@uniagustiniana.edu.co
+53166031	/98hI-z52Ll	Hellen	Jisseth	Sanchez	Guataquira	Hellen Jisseth Sanchez Guataquira	SI	hellen.sanchezg@uniagustiniana.edu.co
+53168301	FreWdb/9	Carol	Zorayda	Barreiro	Sanchez	Carol Zorayda Barreiro Sanchez	SI	carol.barreiro@uniagustiniana.edu.co
+53178801	!a$830Fv	Maria	Ines	Rodriguez	Bermudez	Maria Ines Rodriguez Bermudez	SI	maria.rodriguezb@uniagustiniana.edu.co
+55151724	nuSSQv-0	Liliana	Patricia	Sanchez	Fajardo	Liliana Patricia Sanchez Fajardo	SI	liliana.sanchezf@uniagustiniana.edu.co
+63481960	abJuUU/9	Maria	Isabel	Heredia	Duarte	Maria Isabel Heredia Duarte	SI	maria.heredia@uniagustiniana.edu.co
+63508009	qPccD5/5	Idania		Velasquez	Luna	Idania  Velasquez Luna	SI	idania.velasquez@uniagustiniana.edu.co
+63513503	k-64jK+t84T	Elizabeth		Beltran	Roa	Elizabeth  Beltran Roa	SI	elizabeth.beltran@uniagustiniana.edu.co
+63540845	Ak/15eN-z95	Claudia	Johana	Anaya	Rodriguez	Claudia Johana Anaya Rodriguez	SI	claudia.anaya@uniagustiniana.edu.co
+65784683	99Ir+25kR+d	Mireya		Garcia		Mireya  Garcia 	SI	mireya.garcia@uniagustiniana.edu.co
+67003994	74Mv/35kV-j	Juliana		Liloy	Valencia	Juliana  Liloy Valencia	SI	juliana.liloy@uniagustiniana.edu.co
+71647339	L+c69Jr/36b	Ramon	Enrique	Arenas	Molina	Ramon Enrique Arenas Molina	SI	enrique.arenas@uniagustiniana.edu.co
+72133028	06Et/35eW+a	William	Antonio	Ariza	Rua	William Antonio Ariza Rua	SI	william.arizar@uniagustiniana.edu.co
+73008807	d57Sh-07xJ+	Salomon		Diaz	Donado	Salomon  Diaz Donado	SI	salomon.diaz@uniagustiniana.edu.co
+73108039	s5v&FB$MPZ	German	Antonio	Tamayo	Perez	German Antonio Tamayo Perez	SI	german.tamayop@uniagustiniana.edu.co
+74182517	*v88Aj+37mZ	Fabian	Leonardo	Leon	Rivera	Fabian Leonardo Leon Rivera	SI	fabian.leon@uniagustiniana.edu.co
+74187743	H2#AGz0p	Humberto	Alejandro	Rosales	Valbuena	Humberto Alejandro Rosales Valbuena	SI	humberto.rosalesv@uniagustiniana.edu.co
+74243274	wHASum*9	Miguel	Ricardo	Ulloa	Moreno	Miguel Ricardo Ulloa Moreno	SI	miguel.ulloa@uniagustiniana.edu.co
+74245356	27HSFN-9	Yolman	Julian	Saenz	Santamaria	Yolman Julian Saenz Santamaria	SI	yolman.saenz@uniagustiniana.edu.co
+74281609	wpYnLh+9	Jouseph	Raul	Rodriguez	Lizarazo	Jouseph Raul Rodriguez Lizarazo	SI	jouseph.rodriguez@uniagustiniana.edu.co
+74329145	NPMuJb-0	Rafael	Arcangel	Romero	Huertas	Rafael Arcangel Romero Huertas	SI	rafael.romero@uniagustiniana.edu.co
+74360971	a9E!B*M*	Jaime	Edgardo	Valderrama	Ochoa	Jaime Edgardo Valderrama Ochoa	SI	jaime.valderrama@uniagustiniana.edu.co
+74373173	L+d68Hr/45i	Edwin	Alberto	Bernal	Tristancho	Edwin Alberto Bernal Tristancho	SI	edwin.bernal@uniagustiniana.edu.co
+75045831	Contraseña personalizada	Jose	Uriel	Patino	Franco	Jose Uriel Patino Franco	SI	jose.patinof@uniagustiniana.edu.co
+75062518	H1pon4//2026	Julian	Antonio	Hincapie	López	Julian Antonio Hincapie López	SI	julian.hincapie@uniagustiniana.edu.co
+75063222	lrD3%moX	William	Eduardo	Jimenez	Leaño	William Eduardo Jimenez Leaño	SI	william.jimenez@uniagustiniana.edu.co
+75084465	33Yx-34mJ-e	Andres	Felipe	Benavides	Florez	Andres Felipe Benavides Florez	SI	andres.benavides@uniagustiniana.edu.co
+77033623	4HH23F+4	Franklin	Antonio	Mora	Maestre	Franklin Antonio Mora Maestre	SI	franklin.mora@uniagustiniana.edu.co
+77092237	*1ZOVjTk	Himer	Alberto	Mieles	Pinto	Himer Alberto Mieles Pinto	SI	himer.mielesp@uniagustiniana.edu.co
+79048076	UH#wy7@!	Crisanto	Alonso	Ochoa	Hurtado	Crisanto Alonso Ochoa Hurtado	SI	alonso.ochoa@uniagustiniana.edu.co
+79048220	mX*c42Pg*95	Jorge	Eliecer	Gaitan	Mendez	Jorge Eliecer Gaitan Mendez	SI	jorge.gaitan@uniagustiniana.edu.co
+79050151	UW86BY-6	Luis	Alvaro	Florez	Millan	Luis Alvaro Florez Millan	SI	luis.florez@uniagustiniana.edu.co
+79059134	55Zg+30oF+a	Miguel	Antonio	Camelo	Velasquez	Miguel Antonio Camelo Velasquez		miguel.camelo@uniagustiniana.edu.co
+79114770	8wuc6R/5	Edgar	Antonio	Pinto	Cruz	Edgar Antonio Pinto Cruz	SI	edgar.pinto@uniagustiniana.edu.co
+79116720	CEjHhB-4	Fernando		Chavarro	Miranda	Fernando  Chavarro Miranda	SI	fernando.chavarro@uniagustiniana.edu.co
+79119321	D4jgU3/9	Leonel	Alberto	Gomez	Perez	Leonel Alberto Gomez Perez	SI	leonel.gomez@uniagustiniana.edu.co
+79133455	fgQyJ4-9	Francisco	Javier	Ballesteros	Ramirez	Francisco Javier Ballesteros Ramirez	SI	francisco.ballesteros@uniagustiniana.edu.co
+79135935	69nH+x51Ja-	Carlos	Fernando	Riaño		Carlos Fernando Riaño 	SI	carlos.riano@uniagustiniana.edu.co
+79137823	X=9dqC7X	Mario		Duque	Gaitan	Mario  Duque Gaitan	SI	mario.duque@uniagustiniana.edu.co
+79155776	dPPLUc-2	Hugo	Armando	Urrego	Moreno	Hugo Armando Urrego Moreno	SI	hugo.urrego@uniagustiniana.edu.co
+79158430	/74sJ-v39Ss	Juan	Carlos	Rodriguez	Gomez	Juan Carlos Rodriguez Gomez	SI	juanc.rodriguezg@uniagustiniana.edu.co
+79222984	20Ph/51xN*b	Miguel	Angel	Flores	Garcia	Miguel Angel Flores Garcia	SI	miguel.florez@uniagustiniana.edu.co
+79230529	WpA4AA-6	Guillermo	Gustavo	Olarte	Paez	Guillermo Gustavo Olarte Paez	SI	guillermo.olarte@uniagustiniana.edu.co
+79246446	zL58Lk*9	Luis	Alfredo	Fagua	Urbano	Luis Alfredo Fagua Urbano	SI	luis.faguau@uniagustiniana.edu.co
+79247831	L+b33Ys/32n	Juan	Carlos	Gonzalez	Palacio	Juan Carlos Gonzalez Palacio	SI	juan.gonzalezp@uniagustiniana.edu.co
+79254836	s4G4cr/9	Hector	Celimo	Ardila	Gonzalez	Hector Celimo Ardila Gonzalez	SI	hector.ardila@uniagustiniana.edu.co
+79261120	F#xS@dZM	Carlos	Rene	Jimenez	Castañeda	Carlos Rene Jimenez Castañeda	SI	carlos.jimenezc@uniagustiniana.edu.co
+79268556	LX+b17Pq+27A+	Mauricio		Alonso	Villalba	Mauricio  Alonso Villalba	SI	mauricio.alonso@uniagustiniana.edu.co
+79273205	**g915D2	Juan	Jose	Torres	Serrato	Juan Jose Torres Serrato	SI	juan.torress@uniagustiniana.edu.co
+79278087	k/99dK-c91U/82	Rodolfo		Prada	Penagos	Rodolfo  Prada Penagos	SI	rodolfo.prada@uniagustiniana.edu.co
+79289466	23Td/19xJ*m	Quilian	Jose	Cubides	Mora	Quilian Jose Cubides Mora	SI	quilian.cubides@uniagustiniana.edu.co
+79290244	3KXD5u/9	Victor	Enrique	Rodriguez	Pabon	Victor Enrique Rodriguez Pabon	SI	victor.rodriguez@uniagustiniana.edu.co
+79301016	HfDeWC*0	Hernando		Camacho	Camacho	Hernando  Camacho Camacho	SI	hernando.camacho@uniagustiniana.edu.co
+79305676	q09Yd-10hX*	Richard	Orlando	Buitrago	Reyes	Richard Orlando Buitrago Reyes	SI	richard.buitragor@uniagustiniana.edu.co
+79314377	/y06Rz*69fS	Wilberto	De Jesus	Perez	Fuentes	Wilberto De Jesus Perez Fuentes	SI	wilberto.perez@uniagustiniana.edu.co
+79315925	KvwGqC*2	Miguel	Angel	Vargas	Alvarado	Miguel Angel Vargas Alvarado	SI	miguel.vargas@uniagustiniana.edu.co
+79330046	AeGWCh-9	Jorge	Alberto	Gamez	Gutierrez	Jorge Alberto Gamez Gutierrez	SI	jorge.gamez@uniagustiniana.edu.co
+79353248	U+i81Le-96i	Julio	Cesar	Rodriguez	Garcia	Julio Cesar Rodriguez Garcia	SI	julio.rodriguez@uniagustiniana.edu.co
+79361070	wB+h77Et+18	Jose	Dulfo	Rojas	Larrota	Jose Dulfo Rojas Larrota	SI	jose.rojas@uniagustiniana.edu.co
+79362952	6wetMe*3	Ferney	Elias	Trujillo	Ladino	Ferney Elias Trujillo Ladino	SI	ferney.trujillo@uniagustiniana.edu.co
+79367319	73iI/p98Oj*	Alfonso		Mantilla	Parra	Alfonso  Mantilla Parra	SI	alfonso.mantilla@uniagustiniana.edu.co
+79388986	m6JYWF/6	Edilberto		Cely	Rodriguez	Edilberto  Cely Rodriguez	SI	edilberto.cely@uniagustiniana.edu.co
+79389329	18nR/i28Ki	Luis	Hernando	Camargo	Torres	Luis Hernando Camargo Torres	SI	luis.camargot@uniagustiniana.edu.co
+79390781	m-95fB+o65N	Carlos	Julio	Castaneda	Blanco	Carlos Julio Castaneda Blanco	SI	carlos.castaneda@uniagustiniana.edu.co
+79392613	TS3bA2-4	Francisco	Jose	Carrasco	Carrillo	Francisco Jose Carrasco Carrillo	SI	francisco.carrascoc@uniagustiniana.edu.co
+79407930	tDQNCp+2	Jorge	Hernan	Lopez	Osorio	Jorge Hernan Lopez Osorio	SI	jorge.lopezo@uniagustiniana.edu.co
+79411357	rCfuxR*9	Fabian	Orlando	Parra	Velosa	Fabian Orlando Parra Velosa	SI	foparra@uniagustiniana.edu.co
+79415574	82Nc-93mL*v	Danilo	Isai	Romero	Raba	Danilo Isai Romero Raba	SI	danilo.romeror@uniagustiniana.edu.co
+79426312	Su-20sS-p33	Nestor	Elias	Paez	Lozano	Nestor Elias Paez Lozano	SI	nestor.paez@uniagustiniana.edu.co
+79432912	87zWHt/9	Gabriel	Angel	Casas	Pineda	Gabriel Angel Casas Pineda	SI	gabriel.casas@uniagustiniana.edu.co
+79433427	5$t$@4EV	Nestor	Raul	García	Suavita	Nestor Raul García Suavita	SI	nestor.garcias@uniagustiniana.edu.co
+79442728	63yh73*6	Jose	Manuel	Gonzalez	Cruz	Jose Manuel Gonzalez Cruz	SI	jose.gonzalez@uniagustiniana.edu.co
+79448964	zFaY48*9	Diego	Ernesto	Mendoza	Patino	Diego Ernesto Mendoza Patino	SI	diego.mendoza@uniagustiniana.edu.co
+79450911	80Mq+85oU+b	Jorge	Milan	Parra	Zamora	Jorge Milan Parra Zamora	SI	jorge.parra@uniagustiniana.edu.co
+79463268	h71Dp+01tP*	Oswald	Uriel	Leon	Enriquez	Oswald Uriel Leon Enriquez	SI	oswald.leon@uniagustiniana.edu.co
+79471573	HejydZ-0	Nelson	Vladimir	Yepes	Gonzalez	Nelson Vladimir Yepes Gonzalez	SI	nelson.yepes@uniagustiniana.edu.co
+79481562	-r30Ro+82lL	Julio	Alexander	Rivera	Cachope	Julio Alexander Rivera Cachope	SI	julio.rivera@uniagustiniana.edu.co
+79492377	ntc8fL-6	Felix	Roberto	Gomez	Devia	Felix Roberto Gomez Devia	SI	felix.gomez@uniagustiniana.edu.co
+79497272	8v$IbNhd	Javier	Plutarco	Castañeda	Torres	Javier Plutarco Castañeda Torres	SI	javier.castanedat@uniagustiniana.edu.co
+79503401	Tkgt5u/9	Javier		Gonzalez	Velasquez	Javier  Gonzalez Velasquez	SI	javier.gonzalez@uniagustiniana.edu.co
+79505925	W*r23Ei-81r	Fabio	Alberto	Quimbaya	Piña	Fabio Alberto Quimbaya Piña	SI	fabio.quimbaya@uniagustiniana.edu.co
+79506209	LRqMch-0	Daladier		Jimenez	Vargas	Daladier  Jimenez Vargas	SI	daladier.jimenez@uniagustiniana.edu.co
+79509229	tA+v31Ne+54	Rene	Alejandro	Tovar	Pardo	Rene Alejandro Tovar Pardo	SI	rene.tovar@uniagustiniana.edu.co
+79511692	fC*RV4M@	Daniel 		Apaza	Niño	Daniel   Apaza Niño	SI	daniel.apaza@uniagustiniana.edu.co
+79514421	gTqF4f*9	Wilber	Edisson	Najar	Ramirez	Wilber Edisson Najar Ramirez	SI	wilber.najar@uniagustiniana.edu.co
+79524595	62lF-y65Vz/	Alexander		Zamora	Velandia	Alexander  Zamora Velandia	SI	alexander.zamora@uniagustiniana.edu.co
+79525706	uqL3VZ*2	Robert		Tovar	Sanchez	Robert  Tovar Sanchez	SI	robert.tovar@uniagustiniana.edu.co
+79529741	*63wZ-d25Rg	Javier	Orlando	Orjuela	Villamil	Javier Orlando Orjuela Villamil	SI	javier.orjuelav@uniagustiniana.edu.co
+79533941	Y-y21Qm*22r/w	Oswaldo		Ospina	Martinez	Oswaldo  Ospina Martinez	SI	oswaldo.ospinam@uniagustiniana.edu.co
+79538952	4CwUVY-9	Alexander		Puentes	Gomez	Alexander  Puentes Gomez	SI	alexander.puentes@uniagustiniana.edu.co
+79540798	08yY+l22Te	Manuel	Fernando	Cabrera	Jimenez	Manuel Fernando Cabrera Jimenez	SI	manuel.cabreraj@uniagustiniana.edu.co
+79545835	L7Bmn5/0	Juan	Carlos	Vargas	Prieto	Juan Carlos Vargas Prieto	SI	juan.vargas@uniagustiniana.edu.co
+79553044	bF6$Z*a*	Martin	Libardo	Gonzalez	Aguilar	Martin Libardo Gonzalez Aguilar	SI	martin.gonzaleza@uniagustiniana.edu.co
+79554170	G/n02Fm-53w	Manuel	Antonio	Rojas	Hernandez	Manuel Antonio Rojas Hernandez	SI	manuel.rojash@uniagustiniana.edu.co
+79555512	QuHF6Q-2	Geovanni		Sanchez	Sanchez	Geovanni  Sanchez Sanchez	SI	geovanni.sanchez@uniagustiniana.edu.co
+79555675	8446an-9	William	Farid	Barreto	Hernandez	William Farid Barreto Hernandez	SI	william.barreto@uniagustiniana.edu.co
+79555975	vMpe5j-0	Luis	Fernando	Alvarez	Barona	Luis Fernando Alvarez Barona	SI	luis.alvarezb@uniagustiniana.edu.co
+79558238	wEU7TM+8	Edgard	Mauricio	Carvajal	Ronderos	Edgard Mauricio Carvajal Ronderos	SI	edgard.carvajal@uniagustiniana.edu.co
+79562807	6kXHsp-0	Magner	Alexander	Vargas	Prada	Magner Alexander Vargas Prada	SI	magner.vargas@uniagustiniana.edu.co
+79562854	rdhm6r/0	Carlos	Alberto	Tejada	Trujillo	Carlos Alberto Tejada Trujillo	SI	carlos.tejada@uniagustiniana.edu.co
+79568478	LLj&712!	Orlando		Martinez 	Corredor	Orlando  Martinez  Corredor	SI	orlando.martinez@uniagustiniana.edu.co
+79582154	mHKCce-4	Fabio	Eduardo	Diaz	Lopez	Fabio Eduardo Diaz Lopez	SI	fabio.diaz@uniagustiniana.edu.co
+79593463	8sZ7T6d\	Guillermo	Ernesto	Gonzalez	Pimiento	Guillermo Ernesto Gonzalez Pimiento	SI	guillermo.gonzalez@uniagustiniana.edu.co
+79594199	kZDZe0$V	Raul	Fernando	Aguilera	Acosta	Raul Fernando Aguilera Acosta	SI	raul.aguilera@uniagustiniana.edu.co
+79598912	w66En+23pA	Jose	Roman	Gonzalez	Rodriguez	Jose Roman Gonzalez Rodriguez	SI	joser.gonzalezr@uniagustiniana.edu.co
+79599072	jKwz3Z/6	Javier	Fernando	Rubiano	Espinosa	Javier Fernando Rubiano Espinosa	SI	javier.rubiano@uniagustiniana.edu.co
+79599324	69Sf-88aD/x	Jose	Alexander	Urrego	Martinez	Jose Alexander Urrego Martinez	SI	jaurrego@uniagustiniana.edu.co
+79605559	vnAsYW/9	John	Jairo	Gonzalez	Bulla	John Jairo Gonzalez Bulla	SI	john.gonzalez@uniagustiniana.edu.co
+79607779	g95Os/59uN*	Jose	Vicente	Barreto	Hernandez	Jose Vicente Barreto Hernandez	SI	jose.barreto@uniagustiniana.edu.co
+79609728	-o63Ku-56dV	Jose	Andres	Perez	Camacho	Jose Andres Perez Camacho	SI	jose.perezc@uniagustiniana.edu.co
+79610857	qyG4NS+9	Jose	Aldemar	Bernal	Farfan	Jose Aldemar Bernal Farfan	SI	jose.bernal@uniagustiniana.edu.co
+79610872	76Tybc/0	Mario	Alfonso	Jimenez	Zarate	Mario Alfonso Jimenez Zarate	SI	mario.jimenez@uniagustiniana.edu.co
+79611756	X*o91Ad*64s	Mauricio	Alberto	Bustamante	Jamid	Mauricio Alberto Bustamante Jamid	SI	mauricio.bustamante@uniagustiniana.edu.co
+79611924	d)4FR9dF	Jose	Gregorio	Medina	Cepeda	Jose Gregorio Medina Cepeda	SI	jose.medina@uniagustiniana.edu.co
+79615223	jnxDQF*0	Ricardo		Martinez	Bracho	Ricardo  Martinez Bracho	SI	ricardo.martinez@uniagustiniana.edu.co
+79621072	xarkfn*9	Alvaro	Ernesto	Peralta	Sanchez	Alvaro Ernesto Peralta Sanchez	SI	alvaro.peralta@uniagustiniana.edu.co
+79623164	qqjrhY+0	Carlos	Andres	Canas	Castano	Carlos Andres Canas Castano	SI	carlos.canasc@uniagustiniana.edu.co
+79637405	43eW*j05Cl-	Jose	Clemente	Arias	Mendoza	Jose Clemente Arias Mendoza	SI	jose.arias@uniagustiniana.edu.co
+79638883	8CEf7L*3	Luis	Eduardo	Silva	Hernandez	Luis Eduardo Silva Hernandez	SI	luis.silvah@uniagustiniana.edu.co
+79640993	73Nl+62eO*w	Oscar	Hernando	Romero	Ardila	Oscar Hernando Romero Ardila	SI	oscar.romero@uniagustiniana.edu.co
+79642218	KgzFXV/6	Diego	Felipe	Astudillo	Valverde	Diego Felipe Astudillo Valverde	SI	diego.astudillo@uniagustiniana.edu.co
+79642444	tJ+f66Ih+04	Jorge	Alejandro	Garcia	Gonzalez	Jorge Alejandro Garcia Gonzalez	SI	jorge.garcia@uniagustiniana.edu.co
+79645389	sl@5F9hX	Wilson	Mauricio	Contreras	Rodríguez	Wilson Mauricio Contreras Rodríguez	SI	wilson.contreras@uniagustiniana.edu.co
+79646877	5c7$Me$5	Diego	Luis	Rozo	Rodríguez	Diego Luis Rozo Rodríguez	SI	diego.rozo@uniagustiniana.edu.co
+79647873	uN/q41Ew+86	Jose	Gerley	Cortes	Martinez	Jose Gerley Cortes Martinez	SI	jose.cortes@uniagustiniana.edu.co
+79649301	cKqznP/0	Edgar	Arnulfo	Beltran	Villamil	Edgar Arnulfo Beltran Villamil	SI	edgar.beltran@uniagustiniana.edu.co
+79652946	08dF-v23Kb+	Juan	Carlos	Catumba	Arias	Juan Carlos Catumba Arias	SI	juan.catumba@uniagustiniana.edu.co
+79656833	Contraseña personalizada	Fabio	Andres	Vinasco	Ñustes	Fabio Andres Vinasco Ñustes	SI	fabio.vinasco@uniagustiniana.edu.co
+79659378	KPemUn*6	Julio	Cesar	Rayo		Julio Cesar Rayo 	SI	julio.rayo@uniagustiniana.edu.co
+79659668	mP-o18Rr/96	Edgar		Reyes	Claros	Edgar  Reyes Claros	SI	edgar.reyes@uniagustiniana.edu.co
+79660832	b*48nU+x14K	Javier		Zambrano	Luna	Javier  Zambrano Luna	SI	javier.zambrano@uniagustiniana.edu.co
+79683591	U*j51Bp*38n	Rodolfo	Murillas	Garcia		Rodolfo Murillas Garcia 	SI	rodolfo.murillas@uniagustiniana.edu.co
+79689405	Pg5wY%a*	Edgar	Andres	Rocha	Bohorquez	Edgar Andres Rocha Bohorquez	SI	edgar.rochab@uniagustiniana.edu.co
+79689605	Gq-19lT-l77	Duver	Rene	Acosta	Orjuela	Duver Rene Acosta Orjuela	SI	duver.acosta@uniagustiniana.edu.co
+79690066	5AQHGn/4	Jaime		Avila	Alvarez	Jaime  Avila Alvarez	SI	enrique.avila@uniagustiniana.edu.co
+79692304	Vq5S8M+9	Fredy	Alejandro	Moncada	Puerto	Fredy Alejandro Moncada Puerto	SI	fredy.moncada@uniagustiniana.edu.co
+79694761	syEwmt/0	Helber	Ferney	Guzman	Ramos	Helber Ferney Guzman Ramos	SI	helber.guzman@uniagustiniana.edu.co
+79696054	82Ko-30eZ-y	Wilson		Riaño	Sánchez	Wilson  Riaño Sánchez	SI	wilson.riano@uniagustiniana.edu.co
+79697247	Kr9w6*1tew	Jorge	Enrique	JImenez	Rojas	Jorge Enrique JImenez Rojas	SI	jorge.jimenezr@uniagustiniana.edu.co
+79701966	6fZAHD-9	Dimas	Javier	Malagon	Forero	Dimas Javier Malagon Forero	SI	dimas.malagonf@uniagustiniana.edu.co
+79710541	PxBXu6+7	Giovanny	Melquicedec	Martin	Pena	Giovanny Melquicedec Martin Pena	SI	giovanny.martin@uniagustiniana.edu.co
+79713502	ExKrqU+2	Hector	David	Villamarin	Ramos	Hector David Villamarin Ramos	SI	hector.villamarin@uniagustiniana.edu.co
+79716137	35Vy/73tN/f	Pablo	Guiovanni Roger	Castellanos	Castellanos	Pablo Guiovanni Roger Castellanos Castellanos	SI	pablo.castellanosc@uniagustiniana.edu.co
+79720265	zXaKBV/5	William	Javier	Castillo	Castillo	William Javier Castillo Castillo	SI	william.castillo@uniagustiniana.edu.co
+79721581	66Jn-02zA*y	Alejandro	 	Castiblanco	Caro	Alejandro   Castiblanco Caro	SI	alejandro.castiblanco@uniagustiniana.edu.co
+79721640	s41Od*36jD-	Cesar	Agusto	Davila	Basto	Cesar Agusto Davila Basto	SI	cesar.davila@uniagustiniana.edu.co
+79723982	*y04Zs/47lA	Jhon	Alexander	Bermudez	Farias	Jhon Alexander Bermudez Farias	SI	jhon.bermudez@uniagustiniana.edu.co
+79724405	c&5O^Q@W	Manuel	Alberto	Corredor	Aristizabal	Manuel Alberto Corredor Aristizabal	SI	manuel.corredora@uniagustiniana.edu.co
+79729482	7RmATp*0	Fredy	Guillermo	Muñoz	Ramire	Fredy Guillermo Muñoz Ramire	SI	fredy.munoz@uniagustiniana.edu.co
+79730691	O+x28Fq/50c	Fabian	Eduardo	Rodriguez	Quintero	Fabian Eduardo Rodriguez Quintero	SI	fabian.quintero@uniagustiniana.edu.co
+79731916	wM*a67Ul/25	Edgar 	Fernando	Russi	Obando	Edgar  Fernando Russi Obando	SI	edgar.russi@uniagustiniana.edu.co
+79731976	88tB+y76Ly+	Dustin	Tahisin	Gomez	Rodriguez	Dustin Tahisin Gomez Rodriguez	SI	dustin.gomez@uniagustiniana.edu.co
+79732730	66zU+k87Rw	Fredy	Yezid	Pena	Bonilla	Fredy Yezid Pena Bonilla	SI	fredy.bonilla@uniagustiniana.edu.co
+79736487	qwUErJ+0	Jose	Gregorio	Rivera	Vasquez	Jose Gregorio Rivera Vasquez	SI	jose.riverav@uniagustiniana.edu.co
+79742113	Aj7px2/3	Sergio	Ivan	Salguero	Rodriguez	Sergio Ivan Salguero Rodriguez	SI	sergio.salguero@uniagustiniana.edu.co
+79744622	FG6Md4/2	Oscar	Said	Cordoba	Suarez	Oscar Said Cordoba Suarez	SI	oscar.cordoba@uniagustiniana.edu.co
+79746738	Contraseña personalizada	Roman	Leonardo	Rodriguez	Florian	Roman Leonardo Rodriguez Florian	SI	roman.rodriguez@uniagustiniana.edu.co
+79748287	Un/27oK-u44	Luis	Giovani	López	Tinjaca	Luis Giovani López Tinjaca	SI	luis.lopezt@uniagustiniana.edu.co
+79748427	87Ku-94lG/a	Norman	Ernesto	Tapias	Toloza	Norman Ernesto Tapias Toloza	SI	norman.tapias@uniagustiniana.edu.co
+79750137	j10Zy*45lH+	Richard	Fredy	Herrera	Triana	Richard Fredy Herrera Triana	SI	richard.herrera@uniagustiniana.edu.co
+79755172	qE-o64Lj-49	Carlos	Ferley	Vanegas	Moreno	Carlos Ferley Vanegas Moreno	SI	carlos.vanegas@uniagustiniana.edu.co
+79755805	3x1&B8*c	Elliot		Parra	Avila	Elliot  Parra Avila	SI	elliot.parra@uniagustiniana.edu.co
+79756261	KMjrCG+9	Edwin	Raul	Rivera	Casadiego	Edwin Raul Rivera Casadiego	SI	edwin.riverac@uniagustiniana.edu.co
+79757126	bQ7r3U*9	Juan	Andres	Bermudez	Pinilla	Juan Andres Bermudez Pinilla	SI	juan.bermudez@uniagustiniana.edu.co
+79758809	G+m92Wd+93f	Carlos	Andres	Alberto	Suárez	Carlos Andres Alberto Suárez	SI	carlos.alberto@uniagustiniana.edu.co
+79760630	tD/o66Is*19	Freddy	Alexander	Barrera	Valbuena	Freddy Alexander Barrera Valbuena	SI	freddy.barrera@uniagustiniana.edu.co
+79760940	\rF8Fjh5	Juan	Pablo	Acevedo	Tellez	Juan Pablo Acevedo Tellez	SI	juan.acevedo@uniagustiniana.edu.co
+79762729	96mK-o65Xf+	Hector	Adolfo	Uribe	Panesso	Hector Adolfo Uribe Panesso	SI	hector.uribe@uniagustiniana.edu.co
+79780453	3kdpSb/2	Juan	Carlos	Olaya	Molano	Juan Carlos Olaya Molano	SI	juan.olaya@uniagustiniana.edu.co
+79782320	bytYEa*2	Juan	Carlos	Carranza	Martinez	Juan Carlos Carranza Martinez	SI	juan.carranza@uniagustiniana.edu.co
+79787528	ZMbtAc+2	Luis	Fernando	Gutierrez	Fernandez	Luis Fernando Gutierrez Fernandez	SI	fernando.gutierrez@uniagustiniana.edu.co
+79788417	*81mH-s33Ov	Jaime	Arturo	Espejo	Avila	Jaime Arturo Espejo Avila	SI	jaime.espejo@uniagustiniana.edu.co
+79791345	65Pb7=Zm	Alex	Yhan	Cuesta	Murillo	Alex Yhan Cuesta Murillo	SI	alex.cuesta@uniagustiniana.edu.co
+79796202	F5X3d=zW	Paulo	Cesar	Gaitan	Torres	Paulo Cesar Gaitan Torres	SI	paulo.gaitan@uniagustiniana.edu.co
+79797370	5b4Hf4+5	Diego	Leandro	Cardenas	Chala	Diego Leandro Cardenas Chala	SI	diego.cardenasc@uniagustiniana.edu.co
+79801102	S/z65Qk+08s	Jaime	Enrique	Barragan	Antonio	Jaime Enrique Barragan Antonio	SI	jaime.barragan@uniagustiniana.edu.co
+79807710	XUCuj8*10	Luis	Alfonso	Castellanos	Gomez	Luis Alfonso Castellanos Gomez	SI	luis.castellanosg@uniagustiniana.edu.co
+79816285	vsq9hZ/2	Jose	Alfredo	Diaz	Valbuena	Jose Alfredo Diaz Valbuena	SI	jose.diaz@uniagustiniana.edu.co
+79830187	WxhVJN+6	John	Andreson	Angel	Peña	John Andreson Angel Peña	SI	john.angel@uniagustiniana.edu.co
+79832230	H*l28Ng/04o	Milton	Ricardo	Ospina 	Diaz	Milton Ricardo Ospina  Diaz	SI	milton.ospina@uniagustiniana.edu.co
+79836710	zC*vGX3l	Alexander		Pedraza	Rojas	Alexander  Pedraza Rojas	SI	alexander.pedraza@uniagustiniana.edu.co
+79837741	c+39aO+c05R	Luis	Gabriel	Duquino	Rojas	Luis Gabriel Duquino Rojas	SI	luis.duquino@uniagustiniana.edu.co
+79838992	rHFmSe*0	Hommy	Guillermo	Copete	Cossio	Hommy Guillermo Copete Cossio	SI	hommy.copete@uniagustiniana.edu.co
+79839488	)U67eWv9	Christian	Augusto	Acevedo	Navas	Christian Augusto Acevedo Navas	SI	christian.acevedo@uniagustiniana.edu.co
+79840285	VcYDqQ-9	John	Augusto	Oviedo	Adames	John Augusto Oviedo Adames	SI	john.oviedo@uniagustiniana.edu.co
+79842236	t/20vU+c40N	Luis	Alfonso	Pena	Florez	Luis Alfonso Pena Florez	SI	luis.pena@uniagustiniana.edu.co
+79844171	Ih+98cR-f37	Luis	Eduardo	Rodríguez	Laverde	Luis Eduardo Rodríguez Laverde	SI	luis.rodriguezl@uniagustiniana.edu.co
+79858495	SEBSG3/9	Jose	Fernando	Nieto	Zambrano	Jose Fernando Nieto Zambrano	SI	jose.nieto@uniagustiniana.edu.co
+79859642	JNEJVu*9	Carlos	Hernan	Useche	Jaramillo	Carlos Hernan Useche Jaramillo	SI	carlos.useche@uniagustiniana.edu.co
+79866176	tAzgVd*6	Jaime	Ivan	Sanchez	Gordillo	Jaime Ivan Sanchez Gordillo	SI	jaime.sanchez@uniagustiniana.edu.co
+79866408	75Zj/44oI-b	Ovidio	Arnaldo	Díaz	González	Ovidio Arnaldo Díaz González	SI	humanidades@uniagustiniana.edu.co
+79873445	g41Yb+91iD*	Jairo		Quintero	Martinez	Jairo  Quintero Martinez	SI	jairo.quintero@uniagustiniana.edu.co
+79876419	*w07Cc+79vM	Diego	Fernando	Pacheco	Bautista	Diego Fernando Pacheco Bautista	SI	diego.pacheco@uniagustiniana.edu.co
+79876422	/30wU-y11To	Jose	Eduardo	Murcia	Quevedo	Jose Eduardo Murcia Quevedo	SI	jose.murciaq@uniagustiniana.edu.co
+79887961	M98fzn+9	Jorge	Armando	Rodriguez	Cendales	Jorge Armando Rodriguez Cendales	SI	jorge.rodriguez@uniagustiniana.edu.co
+79890459	P*w44Dh*68r	Luby	Gustavo	Ladino	Gomez	Luby Gustavo Ladino Gomez	SI	luby.ladino@uniagustiniana.edu.co
+79891201	pM-f95Aq/20	Fabian	Andres	Llano		Fabian Andres Llano 	SI	fabian.llano@uniagustiniana.edu.co
+79891854	6nwQbP-0	John	Albeyro	Peña	Carreño	John Albeyro Peña Carreño	SI	john.pena@uniagustiniana.edu.co
+79893613	XNNcfZ*2	Andres	Augusto	Garcia	Parrado	Andres Augusto Garcia Parrado	SI	andres.garciapa@uniagustiniana.edu.co
+79894077	wJ*d96Bk/73	Ricardo	Andres	Luna	Nieto 	Ricardo Andres Luna Nieto 	SI	ricardo.luna@uniagustiniana.edu.co
+79894984	49kY-u88Hj-	Edwin		Bonelo	Martinez	Edwin  Bonelo Martinez	SI	edwin.bonelo@uniagustiniana.edu.co
+79895532	VBKM2H*9	Juan	Carlos	Bernal	Antolinez	Juan Carlos Bernal Antolinez	SI	juan.bernal@uniagustiniana.edu.co
+79895671	/53bA-k65Vj	Marco	Antonio	Ramirez	Viuche	Marco Antonio Ramirez Viuche	SI	marco.ramirezv@uniagustiniana.edu.co
+79899920	y+51uR*w03J	Alvelayis		Nieto	Mejia	Alvelayis  Nieto Mejia	SI	alvelayis.nieto@uniagustiniana.edu.co
+79903466	Cu/14iY+p72	Andres		Rocha	Alfonso	Andres  Rocha Alfonso	SI	andres.rocha@uniagustiniana.edu.co
+79904437	69Ee*77xO*i	Aycardo	Emilio	Robayo	Rodriguez	Aycardo Emilio Robayo Rodriguez	SI	aycardo.robayo@uniagustiniana.edu.co
+79916088	49aY+d34Ia/	Alberto		Jimenez	Melendez	Alberto  Jimenez Melendez	SI	alberto.jimenezm@uniagustiniana.edu.co
+79925071	fuCZyV*9	Willian	Deivis	Rojas	Gutierrez	Willian Deivis Rojas Gutierrez	SI	william.rojasg@uniagustiniana.edu.co
+79951552	VUWUqS+4	Cristhian	Camilo	Pinzon	Rodriguez	Cristhian Camilo Pinzon Rodriguez	SI	cristhian.pinzon@uniagustiniana.edu.co
+79952882	xr9b3h/0	Luis	Felipe	Guarnizo	Lopez	Luis Felipe Guarnizo Lopez	SI	luis.guarnizo@uniagustiniana.edu.co
+79954304	h08Gb+08wP*	Rene	Alexander	Garzon	Camacho	Rene Alexander Garzon Camacho	SI	rene.garzon@uniagustiniana.edu.co
+79956132	VFyS9F+9	Andres		Paredes	Murcia	Andres  Paredes Murcia	SI	andres.paredes@uniagustiniana.edu.co
+79956620	D6@Y7&uz	Juan	Felipe	Conde	Roa	Juan Felipe Conde Roa	SI	juan.conde@uniagustiniana.edu.co
+79957182	AQ4R3V/9	Ricardo	Alberto	Ariza	Amaya	Ricardo Alberto Ariza Amaya	SI	ricardo.ariza@uniagustiniana.edu.co
+79966412	-p20Km+23iT	Jaime	Manuel	Mora	Cruz	Jaime Manuel Mora Cruz	SI	jaime.mora@uniagustiniana.edu.co
+79967341	pxqWfB/9	Fabio	Alberto	Escobar	Diaz	Fabio Alberto Escobar Diaz	SI	fabio.escobar@uniagustiniana.edu.co
+79967888	90G94M*f	Hernando		Hermida	Castillo	Hernando  Hermida Castillo	SI	hernando.hermida@uniagustiniana.edu.co
+79970161	CVu4mD/9	Angel	Leonardo	Avila	Castaneda	Angel Leonardo Avila Castaneda	SI	angel.avila@uniagustiniana.edu.co
+79983319	Q/x22Vw/18y	Gerardo		Alvarado	Mejia	Gerardo  Alvarado Mejia	SI	gerardo.alvarado@uniagustiniana.edu.co
+79983597	X-h04Aa+74i-e	Julio	Alejandro	Barrera	Moreno	Julio Alejandro Barrera Moreno	SI	julio.barrera@uniagustiniana.edu.co
+79991646	qePbCc/6	Luis	Alexander	Saray	Castro	Luis Alexander Saray Castro	SI	luis.saray@uniagustiniana.edu.co
+79997396	u/77tP-t31Q	Dario	Alonso	Carvajal	Aranda	Dario Alonso Carvajal Aranda	SI	dario.carvajal@uniagustiniana.edu.co
+80003414	1&Kur$#w	Oswaldo		Rodriguez	Laverde	Oswaldo  Rodriguez Laverde	SI	oswaldo.rodriguez@uniagustiniana.edu.co
+80017495	N3t5FV*6	Carlos	Mario	Manrique	Arango	Carlos Mario Manrique Arango	SI	carlos.manrique@uniagustiniana.edu.co
+80017882	bwWDyf+0	Carlos	Eduardo	Valenzuela	Echeverri	Carlos Eduardo Valenzuela Echeverri	SI	carlos.valenzuela@uniagustiniana.edu.co
+80018083	87fJ/c30Rx+	Juan	Pablo	Garcia	Muñoz	Juan Pablo Garcia Muñoz	SI	juanp.garciam@uniagustiniana.edu.co
+80020476	rqu5C7*0	Jason	Steve	Pulido	Reina	Jason Steve Pulido Reina	SI	jason.pulido@uniagustiniana.edu.co
+80022590	CB8ZCK/2	Jerson	Jussef	Parra	Ramirez	Jerson Jussef Parra Ramirez	SI	jerson.parra@uniagustiniana.edu.co
+80022595	BiGg&K&g	Jan	Leonard	Hernández	Tinoco	Jan Leonard Hernández Tinoco	SI	jan.hernandez@uniagustiniana.edu.co
+80023577	sS/i21Tx+75	Ronald	Andrei	Duarte	Burgos	Ronald Andrei Duarte Burgos	SI	ronald.duarteb@uniagustiniana.edu.co
+80026702	84gL/x34Zw+	Daniel	Fernando	Celis	Pena	Daniel Fernando Celis Pena	SI	daniel.celis@uniagustiniana.edu.co
+80030089	HkbAJn*6	Jorge		Morales	Paredes	Jorge  Morales Paredes	SI	jorge.morales@uniagustiniana.edu.co
+80038654	CXkcnf+9	Edwin		Vivas	Navas	Edwin  Vivas Navas	SI	edwin.vivas@uniagustiniana.edu.co
+80039032	fV+g17Ar/95	Alvaro	Mauricio	Beltran	Roldan	Alvaro Mauricio Beltran Roldan	SI	alvaro.beltran@uniagustiniana.edu.co
+80039322	54eD-d42Ue	Carlos	Fernando	Villalobos	Camargo	Carlos Fernando Villalobos Camargo	SI	carlos.villalobosc@uniagustiniana.edu.co
+80039815	y-97qR+a60L	Johnnier	Guillermo	Aristizabal	Santa	Johnnier Guillermo Aristizabal Santa	SI	johnnier.aristizabal@uniagustiniana.edu.co
+80040194	Ha-05xS-z63	Edward	Alfonso	Paramo	Renza	Edward Alfonso Paramo Renza	SI	edward.paramo@uniagustiniana.edu.co
+80041090	15Se*29dJ*v	Oscar	Orlando	Martinez	Ladino	Oscar Orlando Martinez Ladino	SI	oscar.martinezl@uniagustiniana.edu.co
+80048586	ggtzLg-0	Richard	Giovanni	Avella	Sarmiento	Richard Giovanni Avella Sarmiento	SI	richard.avella@uniagustiniana.edu.co
+80050165	y60Yn+65hV+	German	Dario	Corzo	Ussa	German Dario Corzo Ussa	SI	german.corzo@uniagustiniana.edu.co
+80063281	jQVQFq+6	Hector	Andres	Ramirez	Hernandez	Hector Andres Ramirez Hernandez	SI	hector.ramirez@uniagustiniana.edu.co
+80064134	tcI8^XVP	Rene	Alejandro	Farieta	Barrera	Rene Alejandro Farieta Barrera	SI	rene.farieta@uniagustiniana.edu.co
+80068234	v76fY8*4	Carlos	Enrique	Perez	Vega	Carlos Enrique Perez Vega	SI	carlos.perezv@uniagustiniana.edu.co
+80068733	*s40Sp-48jO	Camilo	Arturo	Reina	Soto	Camilo Arturo Reina Soto	SI	camilo.reinas@uniagustiniana.edu.co
+80073377	O4Qn*!3@	Diego	Raul	Moreno	Jimenez	Diego Raul Moreno Jimenez	SI	diego.jimenezmo@uniagustiniana.edu.co
+80076907	P+h57Yo*90g	Juan	David	Cadena	Botero	Juan David Cadena Botero	SI	juan.cadena@uniagustiniana.edu.co
+80082696	kU+d94Js/33	Fabio	Felipe	Buitrago	Villafradez	Fabio Felipe Buitrago Villafradez	SI	fabio.buitrago@uniagustiniana.edu.co
+80083638	41fI/i28Xw+	Oscar	Eduardo	Adan	Diaz	Oscar Eduardo Adan Diaz	SI	oscar.adan@uniagustiniana.edu.co
+80085567	89dA+a78Dn*	Cristhian	Miguel	Avila	Arias	Cristhian Miguel Avila Arias	SI	cristhian.avila@uniagustiniana.edu.co
+80092752	fL-i17Qd*64	Ronald	Saul	Gutierrez	Rios	Ronald Saul Gutierrez Rios	SI	ronald.gutierrez@uniagustiniana.edu.co
+80097362	j68o4bL%	Camilo	David	Buitrago	Zabala	Camilo David Buitrago Zabala	SI	camilo.buitrago@uniagustiniana.edu.co
+80099794	ecIV%778	Jony	Enrique	Romero	Guerrero	Jony Enrique Romero Guerrero	SI	jony.romero@uniagustiniana.edu.co
+80099913	sWb80#ud	Favian	Leonardo	Moncada	Pinzón	Favian Leonardo Moncada Pinzón	SI	favian.moncada@uniagustiniana.edu.co
+80100341	Eu*49bV*w45	Erick	Fabian	Gomez	Ramos	Erick Fabian Gomez Ramos	SI	erick.gomezr@uniagustiniana.edu.co
+80100574	12eZ/h16Tm	Carlos	Andres	Pinzon	Munoz	Carlos Andres Pinzon Munoz	SI	carlos.pinzonm@uniagustiniana.edu.co
+80101637	a*76gG/u16L	Bernardo	Andres	Muñoz	Vallejo	Bernardo Andres Muñoz Vallejo	SI	bernardo.munoz@uniagustiniana.edu.co
+80108117	BLrm+p7o	Jhonatan		Becerra	Ariza	Jhonatan  Becerra Ariza	SI	jhonatan.becerra@uniagustiniana.edu.co
+80111153	p2Xddn+4	Dario	Enrique	Rojas	Cervantes	Dario Enrique Rojas Cervantes	SI	dario.rojas@uniagustiniana.edu.co
+80112583	REStye*4	Julio	Cesar	Gonzalez	Alonso	Julio Cesar Gonzalez Alonso	SI	julio.gonzalez@uniagustiniana.edu.co
+80123770	dznmHj/0	Jose	Julian	Suarez	Rache	Jose Julian Suarez Rache	SI	jose.suarez@uniagustiniana.edu.co
+80124554	De+38xO+n90	Germán	Andrés	Rodríguez	Herrera	Germán Andrés Rodríguez Herrera	SI	german.rodriguez@uniagustiniana.edu.co
+80125887	tsVFKA-9	Wilson		Lancheros	Cardenas	Wilson  Lancheros Cardenas	SI	wilson.lancheros@uniagustiniana.edu.co
+80129999	2qGq5s/6	Edward	Lenis	Torres	Rodriguez	Edward Lenis Torres Rodriguez	SI	edward.torres@uniagustiniana.edu.co
+80135018	LT9vPb/4	Juan	Pablo	Franco	Rubio	Juan Pablo Franco Rubio	SI	juan.francor@uniagustiniana.edu.co
+80139995	u26Ja-76nL+	Jahir	Stevens	Rodriguez	Riveros	Jahir Stevens Rodriguez Riveros	SI	jahir.rodriguez@uniagustiniana.edu.co
+80142259	p+15wF+z80J	Luis	Eduardo	Baquero	Acuña	Luis Eduardo Baquero Acuña	SI	luis.baqueroa@uniagustiniana.edu.co
+80151941	17Et+48dF-m	Fabian	Leonardo	Niño		Fabian Leonardo Niño 	SI	fabian.nino@uniagustiniana.edu.co
+80153345	GvKwBT*9	Andres	Orlando	Salazar	Pinilla	Andres Orlando Salazar Pinilla	SI	andres.salazarp@uniagustiniana.edu.co
+80154338	fN+h07Lg+69	Raul	Andres	Villamil	Vanegas	Raul Andres Villamil Vanegas	SI	raul.villamil@uniagustiniana.edu.co
+80155399	48eD-d52Qh*	Hamilton	Fernando	Benavidez		Hamilton Fernando Benavidez 	SI	hamilton.benavides@uniagustiniana.edu.co
+80155471	k09Tj*47sS/	Oscar	Ricardo	Becerra	Haya	Oscar Ricardo Becerra Haya	SI	oscar.becerra@uniagustiniana.edu.co
+80159390	3bvJpf+2	Juan	Edgar	Hernandez	Martinez	Juan Edgar Hernandez Martinez	SI	juane.hernandez@uniagustiniana.edu.co
+80165428	53aR+k50Sz-	David	Andres	Duarte	Hernandez	David Andres Duarte Hernandez	SI	david.duarte@uniagustiniana.edu.co
+80167204	CZypkj*0	Armando		Russi	Espitia	Armando  Russi Espitia	SI	armando.russi@uniagustiniana.edu.co
+80167350	z33Dt/97nD	Alvaro	Alexander	Bastidas	Cerquera	Alvaro Alexander Bastidas Cerquera	SI	alvaro.bastidas@uniagustiniana.edu.co
+80168217	jCdCDu/0	Miguel	Arturo	Acosta	Gutierrez	Miguel Arturo Acosta Gutierrez	SI	miguel.acosta@uniagustiniana.edu.co
+80170868	aheMpc*6	Andres	Mauricio	Aros	Alvarado	Andres Mauricio Aros Alvarado	SI	andres.aros@uniagustiniana.edu.co
+80172969	V-w45Di/15z	Jonh	Rodrigo	Hernandez	Mora	Jonh Rodrigo Hernandez Mora	SI	jhon.hernandezmo@uniagustiniana.edu.co
+80187224	F+x22Hi+66r	Adrian		Lopez	Gonzalez	Adrian  Lopez Gonzalez	SI	adrian.lopez@uniagustiniana.edu.co
+80192287	T+y74Zy-19o*y	Andrés	Mauricio	Vargas	Rincon	Andrés Mauricio Vargas Rincon	SI	andres.vargas@uniagustiniana.edu.co
+80196099	kB59fJ/9	Sergio	Orlando	Ramirez	Lozano	Sergio Orlando Ramirez Lozano	SI	sergio.ramirezl@uniagustiniana.edu.co
+80197433	fF/e97Eg+37	David	Ernesto	Mariño	Barreto	David Ernesto Mariño Barreto	SI	david.marino@uniagustiniana.edu.co
+80204536	QZfyKM/6	Pablo	Andres	Gómez	Ortiz	Pablo Andres Gómez Ortiz	SI	pablo.gomezo@uniagustiniana.edu.co
+80206599	3mAVKE-2	Juan	Camilo	Moreno	Duarte	Juan Camilo Moreno Duarte	SI	juan.morenod@uniagustiniana.edu.co
+80211274	75mF+u20Dd+	Carlos	Alberto	López	Garzón	Carlos Alberto López Garzón	SI	carlos.lopez@uniagustiniana.edu.co
+80214602	p4qgV9-0	Manuel	Alejandro	Celis	Gil	Manuel Alejandro Celis Gil	SI	manuel.celis@uniagustiniana.edu.co
+80216084	Yjk7hyk@	Michael		Rodríguez	Gómez	Michael  Rodríguez Gómez	SI	michael.rodriguezg@uniagustiniana.edu.co
+80219080	QfBgXr-9	Alfredo	Augusto	Garcia	Villalobos	Alfredo Augusto Garcia Villalobos	SI	alfredo.garcia@uniagustiniana.edu.co
+80220311	d25Nr/51mZ/	Juan	Carlos	Jimenez	Ortegon	Juan Carlos Jimenez Ortegon	SI	juanc.jimenez@uniagustiniana.edu.co
+80227330	dGxHvs*9	Juan	Pablo	Pardo	Rodriguez	Juan Pablo Pardo Rodriguez	SI	juan.pardo@uniagustiniana.edu.co
+80229546	JbjX*TxB	Dairo	Andres	Sanchez	Mojica	Dairo Andres Sanchez Mojica	SI	dairo.sanchez@uniagustiniana.edu.co
+80230810	63Fl/01cR/y	Diego	Mauricio	Plazas		Diego Mauricio Plazas 	SI	diego.plazas@uniagustiniana.edu.co
+80233081	jK4atu/9	Omar	Javier	Ramirez	Hernandez	Omar Javier Ramirez Hernandez	SI	omar.ramirezh@uniagustiniana.edu.co
+80239834	jAx7Lv-9	Ricardo	Andres	Fonseca	Perdomo	Ricardo Andres Fonseca Perdomo	SI	ricardo.fonseca@uniagustiniana.edu.co
+80243921	Contraseña personalizada	Luis	Alejandro	Murillo	Lara	Luis Alejandro Murillo Lara	SI	luis.murillo@uniagustiniana.edu.co
+80244443	q/48dB-i13O	Jorge	Mauricio	Gomez	Rodriguez	Jorge Mauricio Gomez Rodriguez	SI	jorge.gomez@uniagustiniana.edu.co
+80258006	CDL9PQ/4	Jorge	Alexander	Laguado	Cardenas	Jorge Alexander Laguado Cardenas	SI	jorge.laguado@uniagustiniana.edu.co
+80259695	Contraseña personalizada	Wilmer		Cruz	Guayacundo	Wilmer  Cruz Guayacundo	SI	wilmer.cruz@uniagustiniana.edu.co
+80310679	YVWavs*9	Yesith	Antonio	Vargas	Galindo	Yesith Antonio Vargas Galindo	SI	yesith.vargas@uniagustiniana.edu.co
+80372107	56Si-64uW/q	Fabian		Lara 	Jaimes	Fabian  Lara  Jaimes	SI	fabian.jaimes@uniagustiniana.edu.co
+80418180	l88Ie*81tJ*	Milton		Wilches	Tamayo	Milton  Wilches Tamayo	SI	milton.wilches@uniagustiniana.edu.co
+80423192	vbNFbJ/6	Franz	Giovanni	Calderon	Uribe	Franz Giovanni Calderon Uribe	SI	franz.calderon@uniagustiniana.edu.co
+80427277	cbQwas-0	Rodrigo		Amaya	López	Rodrigo  Amaya López	SI	rodrigo.lopez@uniagustiniana.edu.co
+80427501	/t98Fq*20hS	Nelson	Humberto	Cruz	Villarraga	Nelson Humberto Cruz Villarraga	SI	nelson.cruz@uniagustiniana.edu.co
+80469053	12h5Z*9c	Fabio		Gonzalez	Diaz	Fabio  Gonzalez Diaz	SI	fabio.gonzalez@uniagustiniana.edu.co
+80491473	Q$%ujk05	Wilson		Huertas	Melo	Wilson  Huertas Melo	SI	wilson.huertas@uniagustiniana.edu.co
+80544981	DaZvx5*2	Nelson	Eduardo	Valbuena	Garcia	Nelson Eduardo Valbuena Garcia	SI	nelson.valbuena@uniagustiniana.edu.co
+80720298	wD+s20Cw+17	Jonathan		Manrique	Suarez	Jonathan  Manrique Suarez	SI	jonathan.manrique@uniagustiniana.edu.co
+80722831	1d5&apfZ	Wilson 	Alejandro 	Guzman 	Silva	Wilson  Alejandro  Guzman  Silva	SI	wilson.guzman@uniagustiniana.edu.co
+80726613	BPLDFY/5	Juan	Camilo	Alvarez	Alvarez	Juan Camilo Alvarez Alvarez	SI	juan.alvarez@uniagustiniana.edu.co
+80739727	T+g83Pz/20v	Camilo	Andres	Acuesta	Escobar	Camilo Andres Acuesta Escobar	SI	camilo.acuesta@uniagustiniana.edu.co
+80747349	r+76hB*e54Y	Richard	Gustavo	Ardila	Franco	Richard Gustavo Ardila Franco	SI	richard.ardila@uniagustiniana.edu.co
+80751797	u6v4zs*9	Carlos	Eduardo	Peralta	Rodriguez	Carlos Eduardo Peralta Rodriguez	SI	carlos.peralta@uniagustiniana.edu.co
+80757610	FP\07h10	Juan 	Manuel	Diaz	Hernandez	Juan  Manuel Diaz Hernandez	SI	juan.diazh@uniagustiniana.edu.co
+80757786	*x83Kx+32bQ	Andres	Felipe	Sanchez	Cristo	Andres Felipe Sanchez Cristo	SI	andresf.sanchezc@uniagustiniana.edu.co
+80761217	uV*v16Vt-13	Javier	Alejandro	Duarte	Giraldo	Javier Alejandro Duarte Giraldo	SI	alejandro.duarte@uniagustiniana.edu.co
+80762167	89aM-o74Sc+	Raul	Armando	Muñoz	Guana	Raul Armando Muñoz Guana	SI	raul.munozg@uniagustiniana.edu.co
+80765614	01zL/g06Vl	Oscar	Javier	Zambrano	Cruz	Oscar Javier Zambrano Cruz	SI	oscar.zambrano@uniagustiniana.edu.co
+80766786	AA28(3Hd	Diego	Fernando	Cardenas	Beltran	Diego Fernando Cardenas Beltran	SI	diego.cardenasb@uniagustiniana.edu.co
+80767676	Da4bm4-2	Harold	Wilson	Hernandez	Cruz	Harold Wilson Hernandez Cruz	SI	harold.hernandez@uniagustiniana.edu.co
+80778628	77pnqS/0	Jhon	Jairo	Forero	Gonzalez	Jhon Jairo Forero Gonzalez	SI	jhon.forerog@uniagustiniana.edu.co
+80792736	a/96cB*p62C	Guillermo	Fernando	Valencia	Plata	Guillermo Fernando Valencia Plata	SI	guillermo.valenciap@uniagustiniana.edu.co
+80795032	H78NSJ+9	Edson	David	Rodriguez	Uribe	Edson David Rodriguez Uribe	SI	edson.rodriguezu@uniagustiniana.edu.co
+80800417	lU-n03Yd/47	Diego	Fernando	Fresneda	Coca	Diego Fernando Fresneda Coca	SI	diego.fresneda@uniagustiniana.edu.co
+80802605	An+98fT+d88	Juan	David	Orjuela	Mendez	Juan David Orjuela Mendez	SI	juan.orjuela@uniagustiniana.edu.co
+80811763	y-30yA+j22X	Andres	Javier	Bustos	Ramirez	Andres Javier Bustos Ramirez	SI	andres.bustosr@uniagustiniana.edu.co
+80824744	96Tu/68eN/r	Fabian 	Leonardo	Quinche	Martin	Fabian  Leonardo Quinche Martin	SI	fabian.quinchem@uniagustiniana.edu.co
+80844217	!H0^ZNp1	Camilo	Esteban	Benavides	Zarate	Camilo Esteban Benavides Zarate	SI	camilo.benavidesz@uniagustiniana.edu.co
+80845236	u31Sn+02eG/	Jeisson	Martin	Poveda	Choconta	Jeisson Martin Poveda Choconta	SI	jeisson.povedach@uniagustiniana.edu.co
+80851099	UtjK8s*4	Utdin	Harvey	Lopez	Jimenez	Utdin Harvey Lopez Jimenez	SI	utdin.lopez@uniagustiniana.edu.co
+80863633	6Z!o3#41	Edwin	Alberto	Rivera	Gonzalez	Edwin Alberto Rivera Gonzalez	SI	edwin.riverag@uniagustiniana.edu.co
+80880397	q09Nr*73oB	Carlos	Andres	Gomez	Ruiz	Carlos Andres Gomez Ruiz	SI	carlos.gomez@uniagustiniana.edu.co
+80901070	se6GCF-0	Juan	Fernando	Dimas	Rincon	Juan Fernando Dimas Rincon	SI	juan.dimas@uniagustiniana.edu.co
+80931718	T+b74Ci*12b	Luis	Alberto	Paramo	Renza	Luis Alberto Paramo Renza	SI	luis.paramo@uniagustiniana.edu.co
+82393227	hA-r97Gf+87	Campo	Elias	Lopez	Rodriguez	Campo Elias Lopez Rodriguez	SI	campo.lopez@uniagustiniana.edu.co
+85150801	_(8z+txF	Luis	Othon	Gómez	Rueda	Luis Othon Gómez Rueda	SI	luis.gomezru@uniagustiniana.edu.co
+87063326	qV-n75Mu+27	Omar	Frederikson	Tulcan		Omar Frederikson Tulcan 	SI	omarf.tulcan@uniagustiniana.edu.co
+87065568	UbmVmq*9	Carlos	Alberto	Castro	Rendón	Carlos Alberto Castro Rendón	SI	Carlos.castro@uniagustiniana.edu.co
+87514907	aFSwDH*9	Manuel	Jesús	Juaspuezan	Piarpuezan	Manuel Jesús Juaspuezan Piarpuezan	SI	manuel.juaspuezan@uniagustiniana.edu.co
+88033941	6xFvxD/4	Ciro	Alexander	Rodriguez	Fernandez	Ciro Alexander Rodriguez Fernandez	SI	ciro.rodriguezf@uniagustiniana.edu.co
+88157907	GWMCFA/6	Sander	Alberto	Rangel	Jimenez	Sander Alberto Rangel Jimenez	SI	sander.rangel@uniagustiniana.edu.co
+88210588	kFiBxT*B	Rodrigo		Echeverri	Trujillo	Rodrigo  Echeverri Trujillo	SI	rodrigo.echeverri@uniagustiniana.edu.co
+88228318	V9rgUiy$	Jose	Julian	Silva	Ayubi	Jose Julian Silva Ayubi	SI	jose.silva@uniagustiniana.edu.co
+88248197	zP-r04Vd*14	Josue	Ignacio	Ochoa 	Torres	Josue Ignacio Ochoa  Torres	SI	josue.ochoat@uniagustiniana.edu.co
+91437089	43kF*x64Af/	Baldomero		Mendez	Pallares	Baldomero  Mendez Pallares	SI	baldomero.mendez@uniagustiniana.edu.co
+91493883	Vm#8yuV&	Elkin	Dario	Vargas	Lopez	Elkin Dario Vargas Lopez	SI	elkin.vargas@uniagustiniana.edu.co
+91524739	*19xS*t46Yq	Diego	Andres	Ardila	Valderrama	Diego Andres Ardila Valderrama	SI	diego.ardila@uniagustiniana.edu.co
+91538407	d+52nD+g10O	Libardo		Gómez	Diaz	Libardo  Gómez Diaz	SI	libardo.gomez@uniagustiniana.edu.co
+92552101	jCGdRS+5	Anatael	Alfredo	Garay	Alvarez	Anatael Alfredo Garay Alvarez	SI	anatael.garay@uniagustiniana.edu.co
+93367712	Jb/27tA-b56	Alberto		Montalvo	Castro	Alberto  Montalvo Castro	SI	alberto.montalvo@uniagustiniana.edu.co
+93382880	24vR+u61Hs+	Jaime		Castro	Quiroz	Jaime  Castro Quiroz	SI	jaime.castroq@uniagustiniana.edu.co
+93384995	rb277-L5	Franck	Johann	Rodríguez	Sabogal	Franck Johann Rodríguez Sabogal	SI	franck.rodriguezs@uniagustiniana.edu.co
+94388604	xG-n56Qj*04	John	Fredy	Muñoz	Vergara	John Fredy Muñoz Vergara	SI	john.munoz@uniagustiniana.edu.co
+94450203	24Dv-57eP*i	Marco	Antonio	Aguilera	Prado	Marco Antonio Aguilera Prado	SI	marco.aguilera@uniagustiniana.edu.co
+96354890	vyhdP2*0	Rogelio		Jimenez	Zapata	Rogelio  Jimenez Zapata	SI	rogelio.jimenez@uniagustiniana.edu.co
+98389930	67rG*c48Kf+hT	Jose	Andres	Zambrano	Rodriguez	Jose Andres Zambrano Rodriguez	SI	jose.zambrano@uniagustiniana.edu.co
+98389935	BfrLpP-2	Jorge	Andres	Muñoz	Guerrero	Jorge Andres Muñoz Guerrero	SI	jorge.munoz@uniagustiniana.edu.co
+98633986	wY-y28Ui/09	Roberto	Hernan	Arcila	Montoya	Roberto Hernan Arcila Montoya	SI	roberto.arcila@uniagustiniana.edu.co
+1000793621	F+o18Yk-40a/m	Ania		Quintero	Lopez	Ania  Quintero Lopez	SI	ania.quintero@uniagustiniana.edu.co
+1010164839	f18Fe-88dU-	Jonathan	Alejandro	Sanchez	Peña	Jonathan Alejandro Sanchez Peña	SI	jonathan.sanchezp@uniagustiniana.edu.co
+1010166787	t10Sv/83bM	Dayana	Nataly	Zuluaga	Cuevas	Dayana Nataly Zuluaga Cuevas	SI	dayana.zuluaga@uniagustiniana.edu.co
+1010184929	(g8DdE.M	Sergio	Ruben	Hernández	García	Sergio Ruben Hernández García	SI	sergio.hernandezg@uniagustiniana.edu.co
+1010188648	3qd8nH+4	Laura	Catalina	Cepeda	Gomez	Laura Catalina Cepeda Gomez	SI	laura.cepeda@uniagustiniana.edu.co
+1010188711	20@7nP2V	Cielo	Tatiana	Lozano	Arias	Cielo Tatiana Lozano Arias	SI	cielo.lozano@uniagustiniana.edu.co
+1010191877	50hC/t07Fn	Cesar	David Leonardo	Briceño	Ramirez	Cesar David Leonardo Briceño Ramirez	SI	cesar.leonardob@uniagustiniana.edu.co
+1010193019	8BPdp5+0	Paola	Alexandra	Colorado	Guarnizo	Paola Alexandra Colorado Guarnizo	SI	paola.colorado@uniagustiniana.edu.co
+1010217638	66Fx*40jL*c	Lina	Paola	Soriano	Martinez	Lina Paola Soriano Martinez	SI	lina.soriano@uniagustiniana.edu.co
+1010234869	G/n02Fm-53w	Luis	Hernan	Delgado	Beltran	Luis Hernan Delgado Beltran	SI	luis.delgado@uniagustiniana.edu.co
+1012354376	dY7X2q-2	Edwin	Yerney	Saray	Castro	Edwin Yerney Saray Castro	SI	edwin.saray@uniagustiniana.edu.co
+1012355036	mW*i62Lq*58	Luis	Carlos	Sanchez	Sanchez	Luis Carlos Sanchez Sanchez	SI	luis.sanchezs@uniagustiniana.edu.co
+1012375140	27wO-t88Yo/	Luz	Adriana	Gamboa	Fajardo	Luz Adriana Gamboa Fajardo	SI	luz.gamboa@uniagustiniana.edu.co
+1012437065	on2%8Kx7	Cristian	Camilo	Urrea	Villalobos	Cristian Camilo Urrea Villalobos	SI	cristian.urrea@uniagustiniana.edu.co
+1013584426	/04tF*q33Lf	Yeimmy	Katherine	Serrano	León	Yeimmy Katherine Serrano León	SI	yeimmy.serrano@uniagustiniana.edu.co
+1013586209	cMyEd2*9	Gabriel	Esteban	Gonzalez	Rodríguez	Gabriel Esteban Gonzalez Rodríguez	SI	gabriel.gonzalezr@uniagustiniana.edu.co
+1013589987	@dGJh$mc	David		Peña	Cita	David  Peña Cita	SI	david.penac@uniagustiniana.edu.co
+1013596353	y-67oM/z84Y	Diego 	Leandro 	Cardenas 	Cuesta	Diego  Leandro  Cardenas  Cuesta	SI	diegole.cardenas@uniagustiniana.edu.co
+1014181056	Id*66aH+w15	Arnold	Esteban	Bonilla	Reyes	Arnold Esteban Bonilla Reyes	SI	arnold.bonilla@uniagustiniana.edu.co
+1014183092	0$09r8Eu	Jeimmy	Constanza	Alvarado		Jeimmy Constanza Alvarado 	SI	yeimmy.alvarado@uniagustiniana.edu.co
+1014183172	Clave personalizada	Luz	Patricia	Achury	Restrepo	Luz Patricia Achury Restrepo	SI	luz.achury@uniagustiniana.edu.co
+1014185966	33Li/65tS*t	Fabian	Ricardo	Muñoz	Reyes	Fabian Ricardo Muñoz Reyes	SI	fabian.munoz@uniagustiniana.edu.co
+1014187633	43Mt7D%k	Jose Armando 	Nicolas Arturo	Escobar	Rojas	Jose Armando  Nicolas Arturo Escobar Rojas	SI	jose.escobar@uniagustiniana.edu.co
+1014187987	g41Jf+09cD*	Leidy	Rocio	Gonzalez	Becerra	Leidy Rocio Gonzalez Becerra	SI	leidyr.gonzalez@uniagustiniana.edu.co
+1014189535	-b54Ea*02uE	Jorge	Alexander	Mora	Forero	Jorge Alexander Mora Forero	SI	jorge.mora@uniagustiniana.edu.co
+1014208774	T*v26Qu-25e	Diby	Johana	Calderon	Ruiz	Diby Johana Calderon Ruiz	SI	diby.calderon@uniagustiniana.edu.co
+1014214559	22Rn+03tL-t	David	Alejandro	Guerrero	Pirateque	David Alejandro Guerrero Pirateque	SI	alejandro.guerrero@uniagustiniana.edu.co
+1014215529	28dFZj=D	Juan	Manuel	Camacho	Posada	Juan Manuel Camacho Posada	SI	juan.camachop@uniagustiniana.edu.co
+1014215594	%8K%4hNT	Cristian	Alejandro	Zafra	Rodriguez	Cristian Alejandro Zafra Rodriguez	SI	cristian.zafrar@uniagustiniana.edu.co
+1014219373	krfAvs+0	Jose	Leonardo	Guevara	Fino	Jose Leonardo Guevara Fino	SI	jose.guevara@uniagustiniana.edu.co
+1014223524	dM*z23Xa+46	Laura	Katerine	Torres	Forero	Laura Katerine Torres Forero	SI	laura.torresf@uniagustiniana.edu.co
+1014237058	71vT/h94Cb/	William	Orlando	Escobar	Caicedo	William Orlando Escobar Caicedo	SI	william.escobar@uniagustiniana.edu.co
+1014237335	*14rW/t43Nh	Julian	Orlando	Paez	Lopez	Julian Orlando Paez Lopez	SI	julian.paez@uniagustiniana.edu.co
+1014242004	e-88zR+i84A	Katherine		Avendaño	Gonzalez	Katherine  Avendaño Gonzalez	SI	katherine.avendano@uniagustiniana.edu.co
+1014246526	79Wv+43cW*d	Karen	Maryand	Cuesta	Rios	Karen Maryand Cuesta Rios	SI	karen.cuestar@uniagustiniana.edu.co
+1015400697	Yb+09lB/s42	Yuli	Yohanna	Lopez	Rincon	Yuli Yohanna Lopez Rincon	SI	yuli.lopez@uniagustiniana.edu.co
+1015408521	Z/t30Lc-02d	Gisset	Ximena	Barreto	Villamil	Gisset Ximena Barreto Villamil	SI	gisset.barretov@uniagustiniana.edu.co
+1015409792	81zM-o30Ji-	Julian	Javier	Tenjo	Leal	Julian Javier Tenjo Leal	SI	julian.tenjo@uniagustiniana.edu.co
+1015411306	X+e78Po-37p	Yissel	Andrea	Garzon	Herrera	Yissel Andrea Garzon Herrera	SI	yissel.garzon@uniagustiniana.edu.co
+1015412447	72Ti/74hS/n	Juan	Sebastián	García	Pérez	Juan Sebastián García Pérez	SI	juan.garcia@uniagustiniana.edu.co
+1015414416	Bi/51bB*b18	Alexander		Sanmiguel	Martinez	Alexander  Sanmiguel Martinez	SI	alexander.sanmiguel@uniagustiniana.edu.co
+1015416064	k49Gr/86jY/	Laura	Liliana	Linares	Romero	Laura Liliana Linares Romero	SI	laura.linares@uniagustiniana.edu.co
+1015427738	/b48Ky-43tO	Juan	Ernesto	Tibocha	Buitrago	Juan Ernesto Tibocha Buitrago	SI	juan.tibocha@uniagustiniana.edu.co
+1015433527	Q7F3@@6f	Juan	Felipe	Correa	Segura	Juan Felipe Correa Segura	SI	juan.correa@uniagustiniana.edu.co
+1015996249	q75Gm-29tC-	Dennis	Arturo	Rodriguez	Lopez	Dennis Arturo Rodriguez Lopez	SI	dennis.rodriguez@uniagustiniana.edu.co
+1016005426	2WXJja*4	Heyner	Duwan	Hernandez	Diaz	Heyner Duwan Hernandez Diaz	SI	heyner.hernandez@uniagustiniana.edu.co
+1016008240	k-60iP*v39F	Ricardo	Javier	Albarracin	Vanoy	Ricardo Javier Albarracin Vanoy	SI	ricardo.albarracin@uniagustiniana.edu.co
+1016014363	t69l4R%*	Edicson	Alejandro	Ortiz	Dicelis	Edicson Alejandro Ortiz Dicelis	SI	edicson.ortiz@uniagustiniana.edu.co
+1016018283	Z+r62Bw*14z	Derly	Dayan	Acosta	Castro	Derly Dayan Acosta Castro	SI	derly.acosta@uniagustiniana.edu.co
+1016030915	Contraseña personalizada	Edwin	Yesid	Paéz	León	Edwin Yesid Paéz León	SI	edwin.paez@uniagustiniana.edu.co
+1016059909	iL+i75Jp-87	Jorge	Andres	Trujillo	Castro	Jorge Andres Trujillo Castro	SI	jorge.trujillo@uniagustiniana.edu.co
+1016067739	Fy/30jW/p09	Michelle	Yiseth	Castro	Quevedo	Michelle Yiseth Castro Quevedo	SI	michelle.castroq@uniagustiniana.edu.co
+1016077657	11tF/s64Yb-	Daniel	Ricardo	Sosa	Vargas	Daniel Ricardo Sosa Vargas	SI	daniel.sosav@uniagustiniana.edu.co
+1016085563	36Dm+84sP-q	Deisy	Lorena	Galvis	Molano	Deisy Lorena Galvis Molano	SI	deisy.galvis@uniagustiniana.edu.co
+1016103685	*42mJ/n57Lg	Daniel	David	Leal	Lara	Daniel David Leal Lara	SI	daniel.leal@uniagustiniana.edu.co
+1018403342	!3XNsIZa	Carlos 	Eduardo	Montañez	Peralta	Carlos  Eduardo Montañez Peralta	SI	carlos.montanez@uniagustiniana.edu.co
+1018407326	*y97Lj/83qB	Karen	Sofia	Pizo	Escalante	Karen Sofia Pizo Escalante	SI	karen.pizo@uniagustiniana.edu.co
+1018412901	yHL8Cd+0	Yesid	Humberto	Soacha	Guerra	Yesid Humberto Soacha Guerra	SI	yesid.soacha@uniagustiniana.edu.co
+1018413553	DB4S6^k&	Bryan	Damian	Angulo	Chico	Bryan Damian Angulo Chico	SI	bryan.anguloc@uniagustiniana.edu.co
+1018413623	k+42uV+h18F	Yuly	Esperanza	Ayure	Daza	Yuly Esperanza Ayure Daza	SI	yuly.ayure@uniagustiniana.edu.co
+1018419064	Jv/37eH+q87	Martha	Isabel	Villareal	Lopez	Martha Isabel Villareal Lopez	SI	martha.villareal@uniagustiniana.edu.co
+1018419128	*KcFpRn@	Jesus	David	Villareal	Lopez	Jesus David Villareal Lopez	SI	jesus.villarreal@uniagustiniana.edu.co
+1018420732	v5PLfq/6	Fredy	Armindo	Camelo	Tovar	Fredy Armindo Camelo Tovar	SI	fredy.camelo@uniagustiniana.edu.co
+1018420793	s29Js*08iD/	Edwar	Fabian	Gonzalez	Garavito	Edwar Fabian Gonzalez Garavito	SI	edwar.gonzalez@uniagustiniana.edu.co
+1018426060	Contraseña personalizada	Leidy	Katerine	Rojas	Molina	Leidy Katerine Rojas Molina	SI	leidy.rojasm@uniagustiniana.edu.co
+1018431096	84zQ*r15Cl-	Zully Elisa	Johanna	Guevara	Maldonado	Zully Elisa Johanna Guevara Maldonado	SI	zully.guevara@uniagustiniana.edu.co
+1018431334	55hS*v71Gw+	Anggy 	katherin	Ramirez	Mosquera	Anggy  katherin Ramirez Mosquera	SI	anggy.ramirezm@uniagustiniana.edu.co
+1018435227	wcPy4$Cp	Sergio	Leonardo	Rojas	Romero	Sergio Leonardo Rojas Romero	SI	sergio.rojas@uniagustiniana.edu.co
+1018443728	N*b28Za*77g	Indira	Catalina	Villamil	Torres	Indira Catalina Villamil Torres	SI	indira.villamil@uniagustiniana.edu.co
+1018451259	E*d88Av+50v	Andres	Mauricio	Melo	Insuasty	Andres Mauricio Melo Insuasty	SI	andres.melo@uniagustiniana.edu.co
+1018452121	q26Dc-28jR+	Olga	Viviana	Tapias	Garcia	Olga Viviana Tapias Garcia	SI	olga.tapias@uniagustiniana.edu.co
+1018454222	/p55Pt/21lI	Ana	Maria	Galindo	Lara	Ana Maria Galindo Lara	SI	ana.galindo@uniagustiniana.edu.co
+1018465656	J-b66Rf+58b	David	Enrique	Torres	Bernier	David Enrique Torres Bernier	SI	david.torresb@uniagustiniana.edu.co
+1018469687	Of*44zI/s56	Yesica	Liliana	Cortes	Alfonso	Yesica Liliana Cortes Alfonso	SI	yesica.cortesa@uniagustiniana.edu.co
+1018477417	WmBGq4-9	Christian	Eduardo	Cortes	Martinez	Christian Eduardo Cortes Martinez	SI	christian.cortesm@uniagustiniana.edu.co
+1018480947	dN+r60Ey+48	Mateo		Jimenez	Achuri	Mateo  Jimenez Achuri	SI	mateo.jimenez@uniagustiniana.edu.co
+1018495444	26xX-p70Pn/	Andres	Leonardo	Reyes	Cabrera	Andres Leonardo Reyes Cabrera	SI	andres.reyes@uniagustiniana.edu.co
+1018500998	80wW+i88Ba+	Yennifer	Dayanna	Castillo	Murcia	Yennifer Dayanna Castillo Murcia	SI	yennifer.castillo@uniagustiniana.edu.co
+1019008518	Mf926G8:	Rodrigo		Moreno	García	Rodrigo  Moreno García	SI	rodrigo.moreno@uniagustiniana.edu.co
+1019015298	y#&LhbvG	Johan	Sebastian	Ardila	Moreno	Johan Sebastian Ardila Moreno	SI	johan.ardilam@uniagustiniana.edu.co
+1019018480	78Re-55nU-w	Oscar	Andrés	Moreno	Ortiz	Oscar Andrés Moreno Ortiz	SI	oscar.moreno@uniagustiniana.edu.co
+1019021306	Zzc3mw+9	Diana	Isadora	Dix	Sotelo	Diana Isadora Dix Sotelo	SI	diana.dix@uniagustiniana.edu.co
+1019024081	*52mP*a58Fi	William	Rafael	Mendieta	Mendieta	William Rafael Mendieta Mendieta	SI	william.mendieta@uniagustiniana.edu.co
+1019030708	sWRkGV*9	Leonardo	Andrés	Paipilla	Pardo	Leonardo Andrés Paipilla Pardo	SI	leonardo.paipilla@uniagustiniana.edu.co
+1019048547	t*73gY*c62F	Ana	Maria	Rosas	Rodriguez	Ana Maria Rosas Rodriguez	SI	ana.rosas@uniagustiniana.edu.co
+1020727794	sRKFGu+	Jean	Sebastian	Saenz	Garzon	Jean Sebastian Saenz Garzon	SI	jean.saenz@uniagustiniana.edu.co
+1020731523	sEXXWN/2	Jose	Dario	Alvarez	Sanchez	Jose Dario Alvarez Sanchez	SI	jose.alvarez@uniagustiniana.edu.co
+1020738834	dbg4Tn*9	Cristian	Samir	Ulloa	Ramos	Cristian Samir Ulloa Ramos	SI	cristian.ulloa@uniagustiniana.edu.co
+1020743419	Sp/34wX/n92	Nicolas	Guillermo	Gómez	García	Nicolas Guillermo Gómez García	SI	nicolasg.gomez@uniagustiniana.edu.co
+1020744254	F8ENte-9	Erika	Maria	Barros	Jimenez	Erika Maria Barros Jimenez	SI	erika.barros@uniagustiniana.edu.co
+1020749332	P-j16Ew/56c/l	Laura		Diaz	Ospina	Laura  Diaz Ospina	SI	laura.diazo@uniagustiniana.edu.co
+1020750381	23Wv+83nG-t	Pablo	Andres	Sandobal	Vargas	Pablo Andres Sandobal Vargas	SI	pablo.sandovalv@uniagustiniana.edu.co
+1020753222	ATpuar/4	Camila		Jimenez	Guzman	Camila  Jimenez Guzman	SI	camila.jimenez@uniagustiniana.edu.co
+1020754202	9VBqrM+2	Giovanna		Garcia	Suarez	Giovanna  Garcia Suarez	SI	giovanna.garcia@uniagustiniana.edu.co
+1020755052	Klh%6*72	Diego	Alejandro	Chaparro	Chaparro	Diego Alejandro Chaparro Chaparro	SI	diego.chaparro@uniagustiniana.edu.co
+1020763483	mS!Zm*$U	Gerson	Andrei	Nuñez	Machuca	Gerson Andrei Nuñez Machuca	SI	gerson.nunez@uniagustiniana.edu.co
+1020765221	c38Tb/53qD+	Fabian		Garcia	Cifuentes	Fabian  Garcia Cifuentes	SI	fabian.garciac@uniagustiniana.edu.co
+1020797690	IRt*#4vf	Camilo	Andres	Rodríguez	Rueda	Camilo Andres Rodríguez Rueda	SI	camiloa.rodriguezr@uniagustiniana.edu.co
+1020822256	N+p34To*56d	Diana	Catalina	Sanchez	Fajardo	Diana Catalina Sanchez Fajardo	SI	diana.sanchez@uniagustiniana.edu.co
+1022325529	*n25Rx/43pB	Javier	Andres	Cordoba	Tapias	Javier Andres Cordoba Tapias	SI	javier.cordoba@uniagustiniana.edu.co
+1022331373	9Wwo\=Jh	Maria	Victoria	Cueto	Reed	Maria Victoria Cueto Reed	SI	maria.cueto@uniagustiniana.edu.co
+1022350475	P+i55Zj/95a	Javier	Giovanny	Rodriguez	Quintero	Javier Giovanny Rodriguez Quintero	SI	javier.rodriguezq@uniagustiniana.edu.co
+1022376567	vS+g36Mn+75	Yuly	Paola	Rojas	Molina	Yuly Paola Rojas Molina	SI	yuly.rojasm@uniagustiniana.edu.co
+1022377273	09yI-b78Vn/	Andres	Felipe	Sanchez	Bello	Andres Felipe Sanchez Bello	SI	andres.sanchezb@uniagustiniana.edu.co
+1022380796	Af-28nJ/c07	Andres		Bonilla	Betancourt	Andres  Bonilla Betancourt	SI	andres.bonillab@uniagustiniana.edu.co
+1022380867	&3Fyw47%	Omar	Andres	Cuervo	Fernandez	Omar Andres Cuervo Fernandez	SI	omar.cuervo@uniagustiniana.edu.co
+1022384903	J/u86Cb*58o	Andrey	Mauricio	Sierra	Cifuentes	Andrey Mauricio Sierra Cifuentes	SI	andrey.sierra@uniagustiniana.edu.co
+1022388197	R/p58Or/70x	Andrea		Espinosa	Duran	Andrea  Espinosa Duran	SI	andrea.espinosa@uniagustiniana.edu.co
+1022399495	b/22dO-b24O	Erika	Alejandra	Suarez	Riveros	Erika Alejandra Suarez Riveros	SI	erika.suarez@uniagustiniana.edu.co
+1022405073	69aH-o71Lt	Deisy	Nohemi	Sanchez	Villamil	Deisy Nohemi Sanchez Villamil	SI	deisy.sanchez@uniagustiniana.edu.co
+1022410685	i+13iI+c39X	Carlos	Giovanni	Matiz	Rodriguez	Carlos Giovanni Matiz Rodriguez	SI	carlos.matiz@uniagustiniana.edu.co
+1022950539	s39Xp/19bD+	Edwar	Andres	Valero	Salazar	Edwar Andres Valero Salazar	SI	edwar.valero@uniagustiniana.edu.co
+1022981961	4yjhWb+4	Karen	Lineth	Sanchez	Pulido	Karen Lineth Sanchez Pulido	SI	karen.sanchez@uniagustiniana.edu.co
+1023881576	Gk*70sR+w37	Jhon	Alexander	Rojas	Tavera	Jhon Alexander Rojas Tavera	SI	jhon.rojast@uniagustiniana.edu.co
+1024583398	x09Ol/43oP*	Osman	Farid	Rivera	Cuervo	Osman Farid Rivera Cuervo	SI	osman.rivera@uniagustiniana.edu.co
+1026255742	vQvpd2*6	Andres	Felipe	Cardenas	Sanabria	Andres Felipe Cardenas Sanabria	SI	andres.cardenass@uniagustiniana.edu.co
+1026257237	BYezCK-9	Maria	Angelica	Osorio	Romero	Maria Angelica Osorio Romero	SI	maria.osorio@uniagustiniana.edu.co
+1026266762	qZ$L^wF2	Maria	Fernanda	Gaviria	Benavides	Maria Fernanda Gaviria Benavides	SI	maria.gaviriab@uniagustiniana.edu.co
+1026267634	y72Au-10xK/	Liz	Katherine	Ariza	Matamoros	Liz Katherine Ariza Matamoros	SI	liz.arizam@uniagustiniana.edu.co
+1026268100	06Je/46hY-l	Jose	Wenceslao	Lemus	Diaz	Jose Wenceslao Lemus Diaz	SI	jose.lemus@uniagustiniana.edu.co
+1026274137	SxgnFU/0	Carlos	Andres	Muñoz	Serna	Carlos Andres Muñoz Serna	SI	carlos.munoz@uniagustiniana.edu.co
+1026569786	62Qi+72kA/l	Fabian	Arley	Ninco	Hernandez	Fabian Arley Ninco Hernandez	SI	fabian.ninco@uniagustiniana.edu.co
+1026571547	CnPmeY*4	Juan	Carlos	Lezama	Palomino	Juan Carlos Lezama Palomino	SI	juan.lezama@uniagustiniana.edu.co
+1026591661	85rT*p03Hr+	Sebastian	Camilo	Vanegas 	Ayala	Sebastian Camilo Vanegas  Ayala	SI	sebastian.vanegas@uniagustiniana.edu.co
+1030526286	eM/p48Ws/42	John	Jairo	Dueñas	Gil	John Jairo Dueñas Gil	SI	john.duenas@uniagustiniana.edu.co
+1030530840	*37fB/d65Ld	Diego	Felipe	Rodriguez	Gomez	Diego Felipe Rodriguez Gomez	SI	diego.rodriguezg@uniagustiniana.edu.co
+1030532659	ZPjNNz*9	Diego	Fernando	Villamizar	Gomez	Diego Fernando Villamizar Gomez	SI	diego.villamizar@uniagustiniana.edu.co
+1030538695	U-h83Vj-46j	Juan	Manuel	Montes	Perez	Juan Manuel Montes Perez	SI	juan.montesp@uniagustiniana.edu.co
+1030539880	R+l16Bf*88q/s	Johany	Andres	Paez	Jimenez	Johany Andres Paez Jimenez	SI	johany.paezj@uniagustiniana.edu.co
+1030548344	ZM6jx7-9	Karen	Yolima	Torres	Tafur	Karen Yolima Torres Tafur	SI	karen.torres@uniagustiniana.edu.co
+1030551421	xyPmvs*9	Sandra	Milena	Torres	Paez	Sandra Milena Torres Paez	SI	sandra.torresp@uniagustiniana.edu.co
+1030553926	/b47Bk*76sY	Loana	Gissel	Garavito	Caballero	Loana Gissel Garavito Caballero	SI	loana.garavito@uniagustiniana.edu.co
+1030556592	fVCSDd*2	Wuendy	Johanna	Otalvaro	Simijaca	Wuendy Johanna Otalvaro Simijaca	SI	wuendy.otalvaro@uniagustiniana.edu.co
+1030556597	Vx5SKG/9	Oscar	David	Manrique	Roballo	Oscar David Manrique Roballo	SI	oscar.manrique@uniagustiniana.edu.co
+1030556787	Contraseña personalizada	Diana		Gutierrez	Montoya	Diana  Gutierrez Montoya	SI	diana.gmontoya@uniagustiniana.edu.co
+1030558247	EvA4s6*6	Leidy	Lorena	Romero	Wilches	Leidy Lorena Romero Wilches	SI	lorena.wilches@uniagustiniana.edu.co
+1030561762	A3wexH-9	Raul	Steven	Cifuentes	Lopez	Raul Steven Cifuentes Lopez	SI	raul.cifuentes@uniagustiniana.edu.co
+1030575319	gH-y70Rh/53	Miguel	Antonio	Rosso	Jaimes	Miguel Antonio Rosso Jaimes	SI	miguel.rosso@uniagustiniana.edu.co
+1030586828	56oG*u10Gm*	Laura	Marcela	Jaramillo	Acosta	Laura Marcela Jaramillo Acosta	SI	laura.jaramillo@uniagustiniana.edu.co
+1030589911	AmmpJa-9	Yuly	Andrea	Franco	Gómez	Yuly Andrea Franco Gómez	SI	yuly.franco@uniagustiniana.edu.co
+1030597409	h78Nh/59sH+	Luis	Alfredo	Narvaez	Jaramillo	Luis Alfredo Narvaez Jaramillo	SI	luis.narvaez@uniagustiniana.edu.co
+1030606520	-97eQ/t68Al	Jonnathan	Esteban	de la Rosa	Escobar	Jonnathan Esteban de la Rosa Escobar	SI	jonnathan.delarosa@uniagustiniana.edu.co
+1030611958	v+52pB/m84U	Wilson	Javier	Serrano	Puerto	Wilson Javier Serrano Puerto	SI	wilson.serrano@uniagustiniana.edu.co
+1030651674	iO@589w0	Angel 	Daniel	Martinez	Cifuentes	Angel  Daniel Martinez Cifuentes	SI	angel.martinez@uniagustiniana.edu.co
+1030657105	Contraseña personalizada	Nicolas		Sepulveda	Perdomo	Nicolas  Sepulveda Perdomo	SI	nicolas.sepulveda@uniagustiniana.edu.co
+1031124131	uGer7q-1	William	Camilo	Rodriguez	Vasquez	William Camilo Rodriguez Vasquez	SI	william.rodriguez@uniagustiniana.edu.co
+1031135722	Ka-71hS*j86	Daniel	Felipe	Penarete	Moreno	Daniel Felipe Penarete Moreno	SI	daniel.penarete@uniagustiniana.edu.co
+1031136397	contraseña personalizada	Raul	Alejandro	Barbosa	Rodriguez	Raul Alejandro Barbosa Rodriguez	SI	raul.barbosa@uniagustiniana.edu.co
+1031139461	VacWDY*9	Axel	Ricardo	Arias	Contreras	Axel Ricardo Arias Contreras	SI	axel.arias@uniagustiniana.edu.co
+1031143372	M-q75Il-85v/a	Nicolas	Felipe	Penagos	Novoa	Nicolas Felipe Penagos Novoa	SI	nicolas.penagos@uniagustiniana.edu.co
+1032359778	hJLSz5*9	Mauricio		Rojas	Rodriguez	Mauricio  Rojas Rodriguez	SI	mauricio.rojas@uniagustiniana.edu.co
+1032365719	29Rt/07fJ+b	Estefania		Zuluaga	Torres	Estefania  Zuluaga Torres	SI	estefania.zuluagat@uniagustiniana.edu.co
+1032383801	wYdpxm/9	Jose	Angel	Díaz	Gómez	Jose Angel Díaz Gómez	SI	jose.diazg@uniagustiniana.edu.co
+1032386701	B*h76La/86u	Yenny		Naranjo	Tuesta	Yenny  Naranjo Tuesta	SI	yenny.naranjo@uniagustiniana.edu.co
+1032393870	%&r96U2@	Luis	Alejandro	Ferro	Alfonso	Luis Alejandro Ferro Alfonso	SI	luis.ferro@uniagustiniana.edu.co
+1032394424	iB*p83Hv*07	Yamile	Andrea	Reyes 	Villa	Yamile Andrea Reyes  Villa	SI	yamile.reyes@uniagustiniana.edu.co
+1032400175	Lr-65cY*r64	Abel	Andres	Loaiza	Villalba	Abel Andres Loaiza Villalba	SI	"abel.loaiza@uniagustiniana.edu.co
+"
+1032410362	QBNAKh-9	Luis	Eduardo	Ruiz	Paredes	Luis Eduardo Ruiz Paredes	SI	luis.ruiz@uniagustiniana.edu.co
+1032413425	a70Fl*49tY+	Oscar	Ivan	Pinilla	Rodríguez	Oscar Ivan Pinilla Rodríguez	SI	oscar.pinilla@uniagustiniana.edu.co
+1032415943	-a83Yy/03qR	Jose	Gerardo	Muñoz	Mateus	Jose Gerardo Muñoz Mateus	SI	jose.munoz@uniagustiniana.edu.co
+1032424590	O-h70Cy+77q	Yulie	Caterine	Montana	Osorio	Yulie Caterine Montana Osorio	SI	yulie.montana@uniagustiniana.edu.co
+1032425196	UdXPQK/2	Norma	Lorena	Segura	Eslava	Norma Lorena Segura Eslava	SI	norma.segurae@uniagustiniana.edu.co
+1032438651	*v40Zd/87mY	Sergio	Andres	Vieda	Matinez	Sergio Andres Vieda Matinez	SI	sergio.vieda@uniagustiniana.edu.co
+1032441150	Ob-45eB+s95	Viviana		Triviño	Arcos	Viviana  Triviño Arcos	SI	viviana.trivino@uniagustiniana.edu.co
+1032441602	qU/f82Lk+14	Juan 	Camilo	Torres 	Rojas	Juan  Camilo Torres  Rojas	SI	juanca.torres@uniagustiniana.edu.co
+1032448386	78pH*t64Qy*	Raul	Andrés	Chaparro	Sepulveda	Raul Andrés Chaparro Sepulveda	SI	raul.chaparros@uniagustiniana.edu.co
+1032448530	N2HQxC+2	Jairo	Enrique	Parra	Herrera	Jairo Enrique Parra Herrera	SI	jairo.parrah@uniagustiniana.edu.co
+1032468312	CDG4bL*9	Cristian	Camilo	Roa	Ortiz	Cristian Camilo Roa Ortiz	SI	cristian.roao@uniagustiniana.edu.co
+1032471736	A/D4Tm3m	Camila	Andrea	Hernández	Hernández	Camila Andrea Hernández Hernández	SI	camila.hernandezh@uniagustiniana.edu.co
+1032472092	4Wp0n!0$	Linda	Sofia	Sanchez	Salazar	Linda Sofia Sanchez Salazar	SI	linda.sanchezs@uniagustiniana.edu.co
+1032482147	I-l77Sd/03h	Jhean	Karlo	Acevedo	Rodriguez	jhean.acevedo@uniagustiniana.edu.co	SI	jhean.acevedo@uniagustiniana.edu.co
+1032497547	84rZ-d89Cj*	Yesica	Alejandra	Daza	Tacha	Yesica Alejandra Daza Tacha	SI	yesica.daza@uniagustiniana.edu.co
+1033704752	10Oq*10jQ*d	Miguel	Angel	Villafrade	Blanco	Miguel Angel Villafrade Blanco	SI	miguel.villafrade@uniagustiniana.edu.co
+1033784554	*25gI/s53Kq	Angela	Maria	Muñoz	Torres	Angela Maria Muñoz Torres	SI	angela.munoz@uniagustiniana.edu.co
+1047369198	s58Al-93nS-	Jesus	Alfredo	Alvarez	Perez	Jesus Alfredo Alvarez Perez	SI	jesus.alvaresp@uniagustiniana.edu.co
+1052382725	Dv*62sL/r91	Yeny	Andrea	Correa	Garzon	Yeny Andrea Correa Garzon	SI	yeny.correa@uniagustiniana.edu.co
+1053326344	r+68pD-z08L	Monica 	Marcela 	Vargas 	Sanchez 	Monica Marcela Vargas Sanchez 	SI	monica.vargas@uniagustiniana.edu.co
+1053789685	Cq+37qE+k03	Christian	Camilo	Urrea	Guarin	Christian Camilo Urrea Guarin	SI	christian.urrea@uniagustiniana.edu.co
+1065651158	26U4Rvj%	Samantha	Isabel	Velez	Avila	Samantha Isabel Velez Avila	SI	samantha.velez@uniagustiniana.edu.co
+1068576094	38Px-84gH/y	Fernando	Miguel	Corrales	Wilches	Fernando Miguel Corrales Wilches	SI	fernando.corrales@uniagustiniana.edu.co
+1069583064	I/c29Bo/61b	Diana	Marcela	Camargo	Soler	Diana Marcela Camargo Soler	SI	diana.camargo@uniagustiniana.edu.co
+1069723059	$662!Gr4	Liliana		Pena	Sanchez	Liliana  Pena Sanchez	SI	liliana.penas@uniagustiniana.edu.co
+1070948072	f88Bk-90gP+	Adriana	Helena	Moreno	Guataquira	Adriana Helena Moreno Guataquira	SI	adriana.moreno@uniagustiniana.edu.co
+1071628774	H*5V3K9JUe	Leidy	Johana	Agudelo	Velasquez	Leidy Johana Agudelo Velasquez	SI	leidy.agudelo@uniagustiniana.edu.co
+1072653812	zUcJed-9	Claudia	Liliana	Morales	Alvarez	Claudia Liliana Morales Alvarez	SI	claudia.moralesa@uniagustiniana.edu.co
+1072703825	*e41Ia+41mL	Daniel	Santiago	Malaver	Rivera	Daniel Santiago Malaver Rivera	SI	daniel.malaver@uniagustiniana.edu.co
+1073384279	/98eL+x73Mz	Brayan	Stiven	Cabra	Ramirez	Brayan Stiven Cabra Ramirez	SI	brayan.cabra@uniagustiniana.edu.co
+1073510698	Ey*Fsd6Y	Juan 	Felipe	Paez 	Vargas	Juan  Felipe Paez  Vargas	SI	juan.paezv@uniagustiniana.edu.co
+1073687534	6nq7Wp-6	Edgar	Alfonso	Peña	Albarracin	Edgar Alfonso Peña Albarracin	SI	edgar.pena@uniagustiniana.edu.co
+1075227925	nhEA4f*0	German	David	Duque	Gonzalez	German David Duque Gonzalez	SI	german.duque@uniagustiniana.edu.co
+1076620896	GVM5a7*9	Nestor	Andres	Carreño	Fandiño	Nestor Andres Carreño Fandiño	SI	nestor.carreno@uniagustiniana.edu.co
+1082943534	Rc/57xJ/t37	Robinson	Enrique	Perez	Gomez	Robinson Enrique Perez Gomez	SI	robinson.perez@uniagustiniana.edu.co
+1085244552	o13#E82i	John	Eder	Delgado 	Lasso	john Eder Delgado Lasso	SI	john.delgado@uniagustiniana.edu.co
+1085266408	D/g09Rt/56t	Christian	Camilo	Erazo	Ordoñez	Christian Camilo Erazo Ordoñez	SI	christian.erazo@uniagustiniana.edu.co
+1088257918	Ey/52vT-i42	Maira	Alejandra	Murillo	Betancur	Maira Alejandra Murillo Betancur	SI	maira.murillo@uniagustiniana.edu.co
+1088258255	S6SmAT-3	Leandro		Vivas	Fuentes	Leandro  Vivas Fuentes	SI	leandro.vivas@uniagustiniana.edu.co
+1088326681	B-k36Zw-46s	Natalia		Garcia	Garcia	Natalia  Garcia Garcia	SI	nataliag.garcia@uniagustiniana.edu.co
+1094914479	mV+k80Ku*95	Jony	Alexander	Acevedo	Alonso	Jony Alexander Acevedo Alonso	SI	jony.acevedo@uniagustiniana.edu.co
+1098609091	68lK/t68Fu/	Daniel	Sebastian	Buitrago	Arria	Daniel Sebastian Buitrago Arria	SI	daniel.buitrago@uniagustiniana.edu.co
+1098668116	uu%bGKe3	Maria	Camila	Cañas	Sanchez	Maria Camila Cañas Sanchez	SI	mariaca.canas@uniagustiniana.edu.co
+1098685987	HfMex8*2	Luis	Fernando	Silva	Besil	Luis Fernando Silva Besil	SI	luis.silvab@uniagustiniana.edu.co
+1098731658	Contraseña personalizada	Yecid	Francisco	Blanco	Duarte	Yecid Francisco Blanco Duarte	SI	yecid.blancod@uniagustiniana.edu.co
+1104695882	H*b42Tv-80o*q	Mario	Javier	Leguizamon	Bermudez	Mario Javier Leguizamon Bermudez	SI	mario.leguizamon@uniagustiniana.edu.co
+1110449667	4S2vTD-5	Ronald		Perez	Rodriguez	Ronald  Perez Rodriguez	SI	ronald.perez@uniagustiniana.edu.co
+1110466087	p9sMEe-9	Darling	Nayhali	Gomez	Ospina	Darling Nayhali Gomez Ospina	SI	darling.gomez@uniagustiniana.edu.co
+1110482983	LNvVBP/6	Luis	Enrique	Caballero	Andrade	Luis Enrique Caballero Andrade	SI	luis.caballero@uniagustiniana.edu.co
+1112904879	Contraseña personalizada	Yefrey	Antonio	Ramirez	Agudelo	Yefrey Antonio Ramirez Agudelo	SI	yefrey.ramirez@uniagustiniana.edu.co
+1113659059	Qq/36sK+y59	Natali		Lopez	Mejia	Natali  Lopez Mejia	SI	natali.lopez@uniagustiniana.edu.co
+1117511405	07Qd/15vZ*l	Ana	Ruby	Correa	Mosquera	Ana Ruby Correa Mosquera	SI	ana.corream@uniagustiniana.edu.co
+1118538966	Contraseña personalizada	Luis	Alejandro	Sepulveda	Zotaquira	Luis Alejandro Sepulveda Zotaquira	SI	luis.sepulveda@uniagustiniana.edu.co
+1121832388	Ox*20mA-j51	Victor	Alfonso	Salcedo	Herrera	Victor Alfonso Salcedo Herrera	SI	victor.salcedo@uniagustiniana.edu.co
+1121892619	-m11Zk-18pI	Catalina		Ramírez	Ajiaco	Catalina  Ramírez Ajiaco	SI	catalina.ramireza@uniagustiniana.edu.co
+1130662050	K+c07Wy-47m*m	Gerson	Manuel	Anduquia	Rodrig	Gerson Manuel Anduquia Rodrig	SI	gerson.anduquia@uniagustiniana.edu.co
+1136886071	Do-31yX+r03	Angie	Katherin	Rojas	Oviedo	Angie Katherin Rojas Oviedo	SI	angie.rojaso@uniagustiniana.edu.co
+1136886708	q5N&5d@0	Dibier	Andres	Quiroga	Dionisio	Dibier Andres Quiroga Dionisio	SI	dibier.quiroga@uniagustiniana.edu.co
+1140859353	eG+r21Oh+58	Andres		Cabrera	Narvaez	Andres  Cabrera Narvaez	SI	andres.cabrera@uniagustiniana.edu.co
+1143326829	15uP-y83Sv+	Grace	Margarita	Angulo	Pico	Grace Margarita Angulo Pico	SI	grace.angulop@uniagustiniana.edu.co
+1152184237	uMuFZX*9	Carlos	Andres	Quiroz	Castellanos	Carlos Andres Quiroz Castellanos	SI	carlos.quiroz@uniagustiniana.edu.co
+1235255844	contraseña personalizada	Miguel	Angel	Diaz	Diaz	Miguel Angel Diaz Diaz	SI	miguel.diazd@uniagustiniana.edu.co
+gissel.vivas	Contraseña personalizada	Gissel	Dainne	Vivas	Molina	Gissel Dainne Vivas Molina	SI	gissel.vivas@uniagustiniana.edu.co
+1030656926	E+p45Ye-46n	Ruby	Geraldine	Larrota	Luengas	Ruby Geraldine Larrota Luengas	SI	ruby.larrota@uniagustiniana.edu.co
+53168239	vQ-d92Dk/12	Angie	Viviana	Daza	Ortega	Angie Viviana Daza Ortega	SI	angie.daza@uniagustiniana.edu.co
+45715887	97cZ-k68Tu*	Shirley	Viviana	Quintero	Torres	Shirley Viviana Quintero Torres	SI	shirley.quintero@uniagustiniana.edu.co
+1049609378	m-82sO*t24V	Angelica	Maria	Avila	Molina	Angelica Maria Avila Molina	SI	angelica.avila@uniagustiniana.edu.co
+1088263861	Contraseña personalizada	Andres	Mauricio	Buritica	Chica	Andres Mauricio Buritica Chica	SI	andres.buritica@uniagustiniana.edu.co
+52210518	41nA*o84Cg*	Ingrid	Marcela	Coral	Parra	Ingrid Marcela Coral Parra	SI	ingrid.coral@uniagustiniana.edu.co
+1019080723	fR/j01Dh/67	Yesid	Alejandro	Lemus	Abril	Yesid Alejandro Lemus Abril	SI	yesid.lemus@uniagustiniana.edu.co
+39756394	dN+e99Ka*64	Maria	Luz Angela	Loaiza	Alvarez	Maria Luz Angela Loaiza Alvarez	SI	maria.loaizaa@uniagustiniana.edu.co
+17354281	82tA*s44Gt+	Adolfo		Duarte	Torres	Adolfo  Duarte Torres	SI	adolfo.duarte@uniagustiniana.edu.co
+1023891280	u+68zU-v31I	Diana	Marcela	Lasso	Muñoz	Diana Marcela Lasso Muñoz	SI	danza@uniagustiniana.edu.co
+80770620	bY/v69Or+27	Michael	Andres	Hernandez	Navas	Michael Andres Hernandez Navas	SI	michael.hernandez@uniagustiniana.edu.co
+51896555	23kN-x28Ia+	Maria	Cecilia	Diaz	Rios	Maria Cecilia Diaz Rios	SI	mariac.diazr@uniagustiniana.edu.co
+72005667	/68mH-x24Gj	Juan	Carlos	Herrera	Vega	Juan Carlos Herrera Vega	SI	juan.herrera@uniagustiniana.edu.co
+1032439084	d/54rW+x82C	Andrea	Marcela	Escobar	Hernandez	Andrea Marcela Escobar Hernandez	SI	andrea.escobar@uniagustiniana.edu.co
+37626343	Zw-26iJ+m03	Heidy	Yadira	Piza	Cubides	Heidy Yadira Piza Cubides	SI	heidypiza@uniagustiniana.edu.co
+1032437454	P+g71Jn-54o	Oscar	Hernan	Angel	Martinez	Oscar Hernan Angel Martinez	SI	oscar.angel@uniagustiniana.edu.co
+79627448	wP*y52Dr/47	Vladimir		Murillo	Ortega	Vladimir  Murillo Ortega	SI	vladimir.murillo@uniagustiniana.edu.co
+53119397	V*r29Pj/01y	Viviana	Carolina	Rey	Uribe	Viviana Carolina Rey Uribe	SI	viviana.rey@uniagustiniana.edu.co
+35423874	O-u69Gs+62d	Judith	Alexandra	Acosta	Sahamuel	Judith Alexandra Acosta Sahamuel	SI	judith.acosta@uniagustiniana.edu.co
+52779390	mI-x61Gd-17	Maria	Del Pilar	Pulido	Ramirez	Maria Del Pilar Pulido Ramirez	SI	mariap.pulido@uniagustiniana.edu.co
+1023915417	cO*w68Re+02	Wendy	Lizeth	Casallas	Moreno	Wendy Lizeth Casallas Moreno	SI	wendy.casallasm@uniagustiniana.edu.co
+1144184731	*78qF-l95Eq	Alejandro		Rodriguez	Vasquez	Alejandro  Rodriguez Vasquez	SI	alejandro.rodriguez@uniagustiniana.edu.co
+1032363922	p+93kT/b71S	Claudia	Yamile	Salazar	Gonzalez	Claudia Yamile Salazar Gonzalez	SI	claudia.salazar@uniagustiniana.edu.co
+1020787811	Vv/98nU-p29	Alejandro		Solano	Acosta Madiedo	Alejandro  Solano Acosta Madiedo	SI	alejandro.solano@uniagustiniana.edu.co
+1032479258	49wE+o85Uf/	Shirley	Tatiana	Garay	Bombiela	Shirley Tatiana Garay Bombiela	SI	shirley.garay@uniagustiniana.edu.co
+79597622	63Kf*03mW+c	Leonardo		Duque	Lesmes	Leonardo  Duque Lesmes	SI	leonardo.duque@uniagustiniana.edu.co
+52053099	M-i38Kw-38r	Ana	Judith	Otalvaro	Lopez	Ana Judith Otalvaro Lopez	SI	ana.otalvaro@uniagustiniana.edu.co
+79616215	K*p73Jt+27v	Carlos	Ivan	Palacios	Gonzalez	Carlos Ivan Palacios Gonzalez	SI	carlos.palacios@uniagustiniana.edu.co
+52196294	99oB+k75Tz/	Neffy	Andrea	Ramirez	Daza	Neffy Andrea Ramirez Daza	SI	neffy.ramirez@uniagustiniana.edu.co
+79628624	B*y69Gr+25a	Wilson		Rivera	Lozano	Wilson  Rivera Lozano	SI	wilson.rivera@uniagustiniana.edu.co
+1019082340	42Ha/31oV*m	Manuel	Alejandro	Gaviria	Arias	Manuel Alejandro Gaviria Arias	SI	manuel.gaviria@uniagustiniana.edu.co
+52226198	32mM/a11Hd/	Olga	Lucia	Garcia	Jimenez	Olga Lucia Garcia Jimenez	SI	olga.garcia@uniagustiniana.edu.co
+51791672	59nY+k26Yj*	Magda	Rocio	Ramirez	Tijo	Magda Rocio Ramirez Tijo	SI	magda.ramirez@uniagustiniana.edu.co
+1026572423	H*r29Cc/84l	Derly	Melissa	Ostos	Peña	Derly Melissa Ostos Peña	SI	derly.ostos@uniagustiniana.edu.co
+1014239577	bL/q51En/06	Andres	Julian	Gonzalez	Quincos	Andres Julian Gonzalez Quincos	SI	andres.gonzalezq@uniagustiniana.edu.co
+79882453	A*m18Oc/30e	Felix	Andres	Ceballos	Ramirez	Felix Andres Ceballos Ramirez	SI	felix.ceballos@uniagustiniana.edu.co
+79367853	64mV+a65Es/	Oscar	Mauricio	Alarcon	Rodriguez	Oscar Mauricio Alarcon Rodriguez	SI	oscar.alarcon@uniagustiniana.edu.co
+1015461728	12Or/38tV+z	Diego	Fabian	Lara	Rios	Diego Fabian Lara Rios	SI	diego.larar@uniagustiniana.edu.co
+52446327	62mO/y09Jn-	Carolina		Caceres	Delgadillo	Carolina  Caceres Delgadillo	SI	carolina.caceres@uniagustiniana.edu.co
+75088185	cR*r52Ah+30	Ricardo	Yezid	Cardenas	Cabezas	Ricardo Yezid Cardenas Cabezas	SI	ricardo.cardenas@uniagustiniana.edu.co
+1016058516	43bI*b51Mp-	David	Reinerio	Yanguas	Rojas	David Reinerio Yanguas Rojas	SI	david.yanguas@uniagustiniana.edu.co
+79544895	wH-c68Io-50	Nelson		Rodriguez	Palacios	Nelson  Rodriguez Palacios	SI	nelson.rodriguezp@uniagustiniana.edu.co
+1068952541	m68Li-76qK+	Alied	Victoria	Garzon	Gordo	Alied Victoria Garzon Gordo	SI	alied.garzon@uniagustiniana.edu.co
+1014261240	91Sw*90nR-x	Claudia	Julieth	Diaz	Alfonso	Claudia Julieth Diaz Alfonso	SI	claudia.diaz@uniagustiniana.edu.co
+1069714077	fV-f14Gm+13	Eliana		Umbacia	Betancourt	Eliana  Umbacia Betancourt	SI	eliana.umbacia@uniagustiniana.edu.co
+79462082	73cR+v75Om+	Gonzalo		Medina	Ordoñez	Gonzalo  Medina Ordoñez	SI	gonzalo.medina@uniagustiniana.edu.co
+53063389	37Mc-26wG+c	Diana	Pilar	Rodriguez	Diaz	Diana Pilar Rodriguez Diaz	SI	diana.rodriguezd@uniagustiniana.edu.co
+52375648	p/39eU*w79K	Nidia	Stella	Camacho	Rueda	Nidia Stella Camacho Rueda	SI	danza@uniagustiniana.edu.co
+1032387887	Ei/47hS+v92	Diana	Margarita	Muñoz	Alvarez	Diana Margarita Muñoz Alvarez	SI	diana.munoza@uniagustiniana.edu.co
+1070816339	a21Sf*01jJ+	Bertha	Aidee	Gonzalez	Fabra	Bertha Aidee Gonzalez Fabra	SI	bertha.gonzalez@uniagustiniana.edu.co
+79642558	x*74bX*w56M	Jesus	Augusto	Guzman	Lozano	Jesus Augusto Guzman Lozano	SI	jesus.guzmanl@uniagustiniana.edu.co
+1019118555	Fx*75nE-y30	Andres	Yamid	Tabio	Mahates	Andres Yamid Tabio Mahates	SI	andres.tabio@uniagustiniana.edu.co
+1022403472	yF-u87Yr/11	Delssy	Jannethe	Ahumada	Aguilar	Delssy Jannethe Ahumada Aguilar	SI	delssy.ahumada@uniagustiniana.edu.co
+79788670	G*o97Lx/23i	Fabio	Alonso	Gutierrez	Barbosa	Fabio Alonso Gutierrez Barbosa	SI	fabio.gutierrez@uniagustiniana.edu.co
+79912802	vW*l36Hx*88	Julian	Enrique	Beltran	Roldan	Julian Enrique Beltran Roldan	SI	julian.beltranr@uniagustiniana.edu.co
+1013630530	96uC+s76Rt*	Cristian	David	Rios	Osorio	Cristian David Rios Osorio	SI	cristian.rioso@uniagustiniana.edu.co
+5823482	D+q33Cb/38m	Alexander		Carvajal		Alexander  Carvajal 	SI	alexander.carvajal@uniagustiniana.edu.co
+1013630230	xE+u29Se+03	Sergio	Alexei	Torres	Bolivar	Sergio Alexei Torres Bolivar	SI	sergio.torres@uniagustiniana.edu.co
+19163717	J-c81Sz*81e	Jorge	Hernan	Cifuentes	Valenzuela	Jorge Hernan Cifuentes Valenzuela	SI	jorge.cifuentes@uniagustiniana.edu.co
+1015400378	Q+v40Dv-60z	Jorge	Alberto	Lotta	Sanchez	Jorge Alberto Lotta Sanchez	SI	jorge.lottas@uniagustiniana.edu.co
+80150690	aV+o63Pz*99	Gabriel	Gerardo	Duarte	Forero	Gabriel Gerardo Duarte Forero	SI	gabriel.duartef@uniagustiniana.edu.co
+88157637	aY-p60Rg/95	Hernan	Eduardo	Buitrago	Villamizar	Hernan Eduardo Buitrago Villamizar	SI	hernan.buitrago@uniagustiniana.edu.co
+80764822	wY-s50Tg*59	Edwin	Andres	Alvarez	Mogollon	Edwin Andres Alvarez Mogollon	SI	edwin.alvarez@uniagustiniana.edu.co
+1012423732	M-e63Bs*16z	Jem	Marlon	Casallas	Santamaria	Jem Marlon Casallas Santamaria	SI	jem.casallass@uniagustiniana.edu.co
+1049629644	94lA*m13Qn+	Sandra	Milena	Fernandez	Escobar	Sandra Milena Fernandez Escobar	SI	sandra.fernandeze@uniagustiniana.edu.co
+79879109	H*y35Tj-38o	Oscar	Fernando	Torres		Oscar Fernando Torres 	SI	oscar.torresc@uniagustiniana.edu.co
+32747747	F/z41Qd+73i	Doris	Carmenza	Monroy	Albarracin	Doris Carmenza Monroy Albarracin	SI	doris.monroy@uniagustiniana.edu.co
+79626061	V/v12Ov-25m	Erick	Yovanny	Leyton		Erick Yovanny Leyton 	SI	erick.leyton@uniagustiniana.edu.co
+1015469254	G*s75Ak/66s	Carlos	Mario	Mendoza	Hidalgo	Carlos Mario Mendoza Hidalgo	SI	carlos.mendozah@uniagustiniana.edu.co
+1032463916	U/n49Kj/74t	Juan	David	Vargas	Morales	Juan David Vargas Morales	SI	juan.vargasv@uniagustiniana.edu.co
+7731977	X+x77Pe/38m	Leonel		Plazas	Mendieta	Leonel  Plazas Mendieta	SI	leonel.plazas@uniagustiniana.edu.co
+52237734	A+y83Vi/48w	Luz	Dined	Cardona	Perdomo	Luz Dined Cardona Perdomo	SI	luz.cardona@uniagustiniana.edu.co
+1018507322	F/u76Kr+13v	Juan	David	Pineros	Jimenez	Juan David Pineros Jimenez	SI	juan.pineros@uniagustiniana.edu.co
+1012380115	R*m89Cp-20d	Brayan	Alexis	Saenz	Beltran	Brayan Alexis Saenz Beltran	SI	brayan.saenz@uniagustiniana.edu.co
+80875894	F-n47Zb/14u	Jose	Gabriel	Celis	Baron	Jose Gabriel Celis Baron		jose.celis@uniagustiniana.edu.co
+750926	A-f97Ou/91h	Maximiliano	Ezequiel	Denaro		Maximiliano Ezequiel Denaro 		maximiliano.denaro@uniagustiniana.edu.co
+52213501	W-a99Mg/57w	Maria	Del Pilar	Lagos	Torres	Maria Del Pilar Lagos Torres		maria.lagost@uniagustiniana.edu.co
+52256829	Contraseña personalizada	Angela	Maria	Otero	Forero	Angela Maria Otero Forero		angela.otero@uniagustiniana.edu.co
+1032421573	Contraseña personalizada	Lesly	Brigitte	Muñoz	Ramirez	Lesly Brigitte Muñoz Ramirez		lesly.munozr@uniagustiniana.edu.co
+80138360	W/f69Nu/21d	Miller	Alexander	Quiroga	Campos	Miller Alexander Quiroga Campos		miller.quiroga@uniagustiniana.edu.co
+1010020612	46Sa+82mP-j	Brayan	Stiven	Torres	Ovalle	Brayan Stiven Torres Ovalle		brayan.torres@uniagustiniana.edu.co
+1151963908	A*q12Gr*83a	Carolina		Orozco	Garcia	Carolina  Orozco Garcia		carolina.orozco@uniagustiniana.edu.co
+35893322	Z*a19Ei+94x	Eny	Johanna	Prens	Mena	Eny Johanna Prens Mena		eny.prens@uniagustiniana.edu.co
+80722520	t71Og*76iE+	Yeison	German	Mendez	Gongora	Yeison German Mendez Gongora		yeison.mendez@uniagustiniana.edu.co
+80165791	s*20tY-b14A	Xavier	David	Paramo	Franco	Xavier David Paramo Franco		xavier.paramo@uniagustiniana.edu.co
+1010217497	92tH/r03Fd/	Daniela		Chaparro	Rodriguez	Daniela  Chaparro Rodriguez		daniela.chaparro@uniagustiniana.edu.co
+1020714500	l/05sJ/h81H	Sergio	Andres	Cordoba	Rojas	Sergio Andres Cordoba Rojas		sergio.cordoba@uniagustiniana.edu.co
+1023928649	73tK+f71Ys+	Jhoan	Camilo	Prada	Guevara	Jhoan Camilo Prada Guevara		jhoan.prada@uniagustiniana.edu.co
+41929860	N-s57Nx*93l	Angela	Maria	Alzate	Manjarres	Angela Maria Alzate Manjarres		angela.alzate@uniagustiniana.edu.co
+1010178813	X+g61Ux-36e	Carlos	Mauricio	Granada	Rojas	Carlos Mauricio Granada Rojas		carlos.granada@uniagustiniana.edu.co
+1032392949	pL+v71Ys/90	Andres	Ricardo	Garzon	Lamus	Andres Ricardo Garzon Lamus		andresr.garzon@uniagustiniana.edu.co
+80165457	C-n25Xu-47w	Oscar	Yobany	Romero	Bonilla	Oscar Yobany Romero Bonilla		oscar.romerob@uniagustiniana.edu.co
+1015477295	m+98lP+v97U	Daniela	Alejandra	Ardila	Yopaza	Daniela Alejandra Ardila Yopaza		daniela.ardilay@uniagustiniana.edu.co
+1016038291	O+v11Yo+45t	Daniel	Giovanni	Diaz	Tibata	Daniel Giovanni Diaz Tibata		daniel.diazd@uniagustiniana.edu.co
+71251867	hB-k79Lq+01	Francisco	Javier	Carmona		Francisco Javier Carmona 		francisco.carmona@uniagustiniana.edu.co
+80821025	41fZ-z56Vj-	Oscar	Daniel	Pinzon	Lizarazo	Oscar Daniel Pinzon Lizarazo		oscar.pinzon@uniagustiniana.edu.co
+80087576	38Xl+45tP*t	Juan	David	Corrales	Lievano	Juan David Corrales Lievano		juan.corrales@uniagustiniana.edu.co
+1140818335	W/a34Ez/75v	Kelly	Luz	Londoño	Aragon	Kelly Luz Londoño Aragon		kelly.londono@uniagustiniana.edu.co
+79612541	y*09dV+i07O	Jose	Ignacio	Velez	Jimenez	Jose Ignacio Velez Jimenez		jose.velez@uniagustiniana.edu.co
+80933012	Zz/98xW-c48	Pedro	Alejandro	Gonzalez	Mesa	Pedro Alejandro Gonzalez Mesa		pedro.gonzalez@uniagustiniana.edu.co
+81715331	50Da+06xH-g	Alejandro		Vargas	Murcia	Alejandro  Vargas Murcia		alejandro.vargasm@uniagustiniana.edu.co
+80161188	u/77lM-z06D	Camilo		Palacios	Palacios	79		camilo.palacios@uniagustiniana.edu.co
+1032482144	M-g14Ux/24f	Juan	David	Maldonado	Muñoz	Juan David Maldonado Muñoz		juan.maldonado@uniagustiniana.edu.co
+52225703	99Wd+70vI*r	Blanca	Patricia	Vargas	Clavijo	Blanca Patricia Vargas Clavijo		blanca.vargas@uniagustiniana.edu.co
+79918292	35oR-u19Ld*	Gabriel	Alberto	Moreno	Monroy	Gabriel Alberto Moreno Monroy		gabriel.moreno@uniagustiniana.edu.co
+51988353	11Jn/18vF/k	Mary	Luz	Reyes	Corredor	Mary Luz Reyes Corredor		mary.reyes@uniagustiniana.edu.co
+1022928118	z+72jZ/o14Y	Ronald	Gonzalo	Espitia	Sanchez	Ronald Gonzalo Espitia Sanchez		ronald.espitia@uniagustiniana.edu.co
+91278930	19gO+x40Ee*	Nestor		Medina	Herrera	Nestor  Medina Herrera		nestor.medina@uniagustiniana.edu.co
+86081514	O*a07Eu*58j/u	Luis	Alberto	Penagos	Lopez	Luis Alberto Penagos Lopez		luis.penagos@uniagustiniana.edu.co
+10015400	gC/l54Kv+71	Julian	Mauricio	Pulido	Zapata	Julian Mauricio Pulido Zapata		julian.pulidoz@uniagustiniana.edu.co
+79625577	L+a96Tt+36d	Jaime	Ernesto	Diaz	Gomez	Jaime Ernesto Diaz Gomez		jaime.diaz@uniagustiniana.edu.co
+79690717	E/m05Xp*68m	Hugo	Rodrigo	Gamba	Morales	Hugo Rodrigo Gamba Morales		rodrigo.gamba@uniagustiniana.edu.co
+1023002591	Y+m89In+24l	Ginna	Paola	Arias	Barrera	Ginna Paola Arias Barrera		ginna.arias@uniagustiniana.edu.co
+1032363631	W+k27Pl+52t	Jaime	Fernando	Rivera	Sanchez	Jaime Fernando Rivera Sanchez		jaime.rivera@uniagustiniana.edu.co
+80505670	33vR+w97Vv-	Fabian	Guillermo	Oliveros	Murillo	Fabian Guillermo Oliveros Murillo		fabian.oliveros@uniagustiniana.edu.co
+51733248	O-d95Sz*88p	Solangel		Materon	Palacios	Solangel  Materon Palacios		solangel.materon@uniagustiniana.edu.co
+80025325	H*c94Rq+32d	Giovanny	Enrique	Araque	Suarez	Giovanny Enrique Araque Suarez		giovanny.araque@uniagustiniana.edu.co
+35426528	U+h12Vy*97p	Sonia	Yamile	Rodriguez	Murcia	Sonia Yamile Rodriguez Murcia		sonia.rodriguez@uniagustiniana.edu.co
+1070942614	H*z79Ox*08m	Wilmar		Cabrera	Feo	Wilmar  Cabrera Feo		wilmar.cabrera@uniagustiniana.edu.co
+52412059	O/z68Jn*14g	Monica	Del Pilar	Tamayo	Olmos	Monica Del Pilar Tamayo Olmos		monica.tamayo@uniagustiniana.edu.co
+79352775	F/t24Th*54u	Jaime	Hernan	Herrera	Jimenez	Jaime Hernan Herrera Jimenez		jaime.herreraj@uniagustiniana.edu.co
+1014234736	W*i85Hk+60n	Angelica	Lorena	Rodriguez	Cuervo	Angelica Lorena Rodriguez Cuervo		angelica.rodriguezc@uniagustiniana.edu.co
+1110492272	R-v75Lj*62i	Lizeth	Katherine	Bohorquez	Gomez	Lizeth Katherine Bohorquez Gomez		lizeth.bohorquez@uniagustiniana.edu.co
+1073233001	D-m96Np+22g+q	Sandra	Paola	Castro	Rozo	Sandra Paola Castro Rozo		sandra.castro@uniagustiniana.edu.co
+1233893511	E-e04Ey-85z	Cristian	Mauricio	Mateus	Alvarado	Cristian Mauricio Mateus Alvarado		cristian.mateus@uniagustiniana.edu.co
+1022348964	B-r08Ul*13j	Diego	Alejandro	Hincapie	Bohorguez	Diego Alejandro Hincapie Bohorguez		diego.hincapie@uniagustiniana.edu.co
+53006507	A/o24Pi-78v	Johana	Katherine	Rojas	Ariza	Johana Katherine Rojas Ariza		johana.rojas@uniagustiniana.edu.co
+1019124082	Q-x89Li+29x	Jonattan		Mendez	Gonzalez	Jonattan  Mendez Gonzalez		jonattan.mendez@uniagustiniana.edu.co
+80793463	D*l47Zs/60n	Jose	Alexander	Diaz	Gonzalez	Jose Alexander Diaz Gonzalez		jose.diaz@uniagustiniana.edu.co
+39678994	43aU+q22Gf+	Ana	Maria	Montes	Ramirez	Ana Maria Montes Ramirez		ana.maria@uniagustiniana.edu.co
+52420311	E+l04Kr+92f	Diana	Patricia	Rubio	Suarez	Diana Patricia Rubio Suarez		diana.rubio@uniagustiniana.edu.co
+80085965	Aq*76kS/m35	Jairo	Ivan	Becerra	Roa	Jairo Ivan Becerra Roa		jairo.becerra@uniagustiniana.edu.co
+52272846	Contraseña personalizada	Ana	Lucia	Acuña	Silva	Ana Lucia Acuña Silva		ana.acuna@uniagustiniana.edu.co
+1018500881	E+s06Qr-81k	Juan	Sebastian	Martinez	Conejo	Juan Sebastian Martinez Conejo		juan.martinezj@uniagustiniana.edu.co
+80195490	tW+g51Rd+77	Jose	Leandro	Carrillo	Cortes	Jose Leandro Carrillo Cortes		jose.carrillo@uniagustiniana.edu.co
+79992404	69cX*e87Pb*	Jose Gabriel	Mauricio	Segura	Moreno	Jose Gabriel Mauricio Segura Moreno		josegabriel.segura@uniagustiniana.edu.co
+7177575	+87vA-b26Xo	Javier 	Andres	Avila	Salcedo	Javier  Andres Avila Salcedo		javier.avila@uniagustiniana.edu.co
+73182300	m+41pI/d43F	Luis	Ernesto	Rojas	Umfried	Luis Ernesto Rojas Umfried		luis.rojasl@uniagustiniana.edu.co
+1087417787	Gh-62bA-h89	Oswaldo	Esteban	Llanos	Eraso	Oswaldo Esteban Llanos Eraso		oswaldo.llanos@uniagustiniana.edu.co
+80658337	65Gr/87hA*w	Oscar	Libardo	Rodriguez	Monatño	Oscar Libardo Rodriguez Monatño		oscar.rodriguezl@uniagustiniana.edu.co
+1024578317	R-e29Jb/35p	Juan	Sebastian	Escandon	Cardenas	Juan Sebastian Escandon Cardenas		juan.escandon@uniagustiniana.edu.co
+80066321	84bI-y19Rr+	Jordan	Alexis	Paez	Navarro	Jordan Alexis Paez Navarro		jordan.paezn@uniagustiniana.edu.co
+1032375547	81hS*x05Hc*	Rodrigo	Andres	Demera	Arias	Rodrigo Andres Demera Arias		rodrigo.demera@uniagustiniana.edu.co
+1233497048	V/l76Tm-50e	Johan	Sebastian	Acuesta	Escobar	Johan Sebastian Acuesta Escobar		johan.acuesta@uniagustiniana.edu.co
+52061010	B/q75Hl/76b	Diana	Stella	Robayo	Rodriguez	Diana Stella Robayo Rodriguez		diana.robayo@uniagustiniana.edu.co
+4431946	K*b71Fe-15o	Gober	Wilson	Rivera	Monroy	Gober Wilson Rivera Monroy		gober.rivera@uniagustiniana.edu.co
+80183736	B/j73Wd+76j	Miguel	Enrique	Riena	Benavides	Miguel Enrique Riena Benavides		miguel.reinab@uniagustiniana.edu.co
+1023959936	C-s99Wz*68n	David		Angulo	Mesa	David  Angulo Mesa		danza@uniagustiniana.edu.co
+80023809	Q+d35Qy-87e*a	Miguel	Angel	Cardenas	Lopez	Miguel Angel Cardenas Lopez		miguel.cardenas@uniagustiniana.edu.co
+80226938	N+f16Lk+63c	Nelson	Edgardo	Perez	Rojas	Nelson Edgardo Perez Rojas		nelson.perez@uniagustiniana.edu.co
+53092016	N+r93Ft*88e	Andrea	Carolina	Devia	Suarez	Andrea Carolina Devia Suarez		andrea.devia@uniagustiniana.edu.co
+1047393128	Q/r32Av-39y	Malory		Julio	Herrera	Malory  Julio Herrera		malory.julio@uniagustiniana.edu.co
+79540219	Y+g90Br-32p	Tito	Varela	Villalobos		Tito Varela Villalobos 		tito.villalobos@uniagustiniana.edu.co
+1023028621	U+b33Sh/66d	Jhojan	Adrian	Ochoa	Robelto	Jhojan Adrian Ochoa Robelto		jhojan.ochoa@uniagustiniana.edu.co
+1136887283	U-q99Bl+41b	Lina	Maria	Camargo	Herrera	Lina Maria Camargo Herrera		lina.camargo@uniagustiniana.edu.co
+7931153	I+g73Pc+54v	Angel	Ramon	Peña	Villegas	Angel Ramon Peña Villegas		angel.pena@uniagustiniana.edu.co
+80741010	K-t46Vm*99n	Luis	Eduardo	Lozano	Gomez	Luis Eduardo Lozano Gomez		luis.lozano@uniagustiniana.edu.co
+80831022	D*y22Kr/31l	Carlos	Mauricio	Gomez	Mora	Carlos Mauricio Gomez Mora		carlos.gomezs@uniagustiniana.edu.co
+1013583185	Contraseña personalizada	Juan	Felipe	Nieto	Molina	Juan Felipe Nieto Molina		juan.nieto@uniagustiniana.edu.co
+1016002876	Contraseña personalizada	John	Jeiver	Obando	Leon	John Jeiver Obando Leon		john.obando@uniagustiniana.edu.co
+1022402024	G/d18Mw+93u	Oscar	Alejandra	Chaparro	Gutierrez	Oscar Alejandra Chaparro Gutierrez		oscar.chaparro@uniagustiniana.edu.co
+80737379	H/j81Kg-81p	Luis	Eduardo	Ibañez	Forero	Luis Eduardo Ibañez Forero		luis.ibanez@uniagustiniana.edu.co
+1023916584	Contraseña personalizada	Ginna	Paola	Jarava	Perez	Ginna Paola Jarava Perez		ginna.jarava@uniagustiniana.edu.co
+36751892	M+j37Dp*70y	Diana	Arely	Aguirre	Romo	Diana Arely Aguirre Romo		diana.aguirre@uniagustiniana.edu.co
+79880660	W*t16Vy/74n	Julian	Francisco	Figueroa	Espinel	Julian Francisco Figueroa Espinel		julian.figueroa@uniagustiniana.edu.co
+80034503	T/h43Ar/03i	Jose	Danilo	Sanchez	Torres	Jose Danilo Sanchez Torres		jose.sanchezt@uniagustiniana.edu.co
+52960824	K*e85Wv-40g	Ivonne	Adriana	Raballaty	Parra	Ivonne Adriana Raballaty Parra		ivonne.raballatyp@uniagustiniana.edu.co
+1010170852	Y*w95Yi+90x	Fabio	Eduardo	Suarez	Ladino	Fabio Eduardo Suarez Ladino		fabio.suarez@uniagustiniana.edu.co
+1032483366	N+s49Uw+69s	Cristian		Forero	Zuñiga	Cristian  Forero Zuñiga		cristian.forero@uniagustiniana.edu.co
+91295963	Contraseña personalizada	Fabio	Andres	Ribero	Salazar	Fabio Andres Ribero Salazar		fabio.ribero@uniagustiniana.edu.co
+24050270	gO-h77Kj+71	Diana	Maria	Boada	Vargas	Diana Maria Boada Vargas		diana.boada@uniagustiniana.edu.co
+79652216	A*t47Ut/98f	Rafaelino		Quiroga	Campos	Rafaelino  Quiroga Campos		rafaelino.quiroga@uniagustiniana.edu.co
+80228105	zV+w78Ou-82	John	Stiwar	Hernandez	Castro	John Stiwar Hernandez Castro		john.hernandezc@uniagustiniana.edu.co
+1031125338	U-p46Dk+94m	Elbert	Argemiro	Rincon	Perilla	Elbert Argemiro Rincon Perilla		elbert.rincon@uniagustiniana.edu.co
+1016017978	L/q17Aw*88k	Jonnathan		Barrero	Herrera	Jonnathan  Barrero Herrera		jonnathan.barreroh@uniagustiniana.edu.co
+79507202	hF*a22Ov*88	Jorge		Cortes	Cortes	Jorge  Cortes Cortes		jorge.cortesc@uniagustiniana.edu.co
+53122377	L/u24Cv*38z	Andrea Del Pilar		Rodriguez	Fierro	Andrea Del Pilar  Rodriguez Fierro		andreadelpilar.rodriguezf@uniagustiniana.edu.co
+1016015248	B/k88Pf-28z	Carolina		Rodriguez	Lizarralte	Carolina  Rodriguez Lizarralte		carolina.rodriguez@uniagustiniana.edu.co
+52979961	S-x70Na-86m	Nyrama		Osorio	Triana	Nyrama  Osorio Triana		nyrama.osorio@uniagustiniana.edu.co
+53068780	L*k62La+15l	Yenny	Marilyn	Muñoz	Rodriguez	Yenny Marilyn Muñoz Rodriguez		yenny.munoz@uniagustiniana.edu.co
+1022371905	B/p81Je-89r	Luis	Fernando	Moreno	Pinzon	Luis Fernando Moreno Pinzon		luis.morenol@uniagustiniana.edu.co
+1022379521	A+e74Of+35z	Ivan	Rene	Ballen	Moreno	Ivan Rene Ballen Moreno		ivan.ballen@uniagustiniana.edu.co
+52059938	84cI/g11Qc*	Sandra	Yaneth	Chivara	Palacios	Sandra Yaneth Chivara Palacios		sandra.chivara@uniagustiniana.edu.co
+52877518	D/m75Ep/95e	Kelly	Maritza	Bohorquez		Kelly Maritza Bohorquez		kelly.bohorquez@uniagustiniana.edu.co
+80162042	78tL/h07Fr*	Efren	Alejandro	Padilla	Marin	Efren Alejandro Padilla Marin		efren.padilla@uniagustiniana.edu.co
+1026571729	B+e17Fe*26q	Christian	Andres	Moreno	Bernal	Christian Andres Moreno Bernal		christian.moreno@uniagustiniana.edu.co
+53107776	+85bJ/r88Xd58w	Nicole		Velasquez	Amaya	Nicole  Velasquez Amaya		nicole.velasquez@uniagustiniana.edu.co
+63462582	Z-t46Tx-73x	Azeneth		Florez	Gutierrez	Azeneth  Florez Gutierrez		azeneth.florez@uniagustiniana.edu.co
+52778448	V+m81Nw+69a	Nancy	Ximena	Guevara	Guevara	Nancy Ximena Guevara Guevara		nancy.guevara@uniagustiniana.edu.co
+74187259	H/p61Rm-09v	Nestor	Mauricio	Gutierrez	Duarte	Nestor Mauricio Gutierrez Duarte		nestor.gutierrez@uniagustiniana.edu.co
+79420501	S/q76Ve-93w	Alexander		Sanabria	Niño	Alexander  Sanabria Niño		alexander.sanabria@uniagustiniana.edu.co
+53131158	T-x14Gl-92b	Diana	Milena	Luna	Caldas	Diana Milena Luna Caldas		diana.luna@uniagustiniana.edu.co
+80793106	z+92zH*w48M	Enrique		Rincon	Prieto	Enrique  Rincon Prieto		enrique.rincon@uniagustiniana.edu.co
+1073505446	R*e94Ln+12s	Diana	Carolina	Rodriguez	Romero	Diana Carolina Rodriguez Romero		diana.rodriguez@uniagustiniana.edu.co
+79049721	T-g77Di+64a	Rene	Alejandro	Aponte	Escobar	Rene Alejandro Aponte Escobar		rene.aponte@uniagustiniana.edu.co
+80087300	H-u97Qn*29r	Danilo	Alexander	Ochoa	Gonzalez	Danilo Alexander Ochoa Gonzalez		danilo.ochoa@uniagustiniana.edu.co
+79965511	P+s84Ye/58q	Edward	Andres	Poveda	Choconta	Edward Andres Poveda Choconta		edward.poveda@uniagustiniana.edu.co
+80793954	E/g94Ty-42n	Oscar	Giraldo	Hernandez	Alomia	Oscar Giraldo Hernandez Alomia		oscar.hernandez@uniagustiniana.edu.co
+79223054	L-l91Za*25h	Andres	Mauricio	Guacaneme	Cardozo	Andres Mauricio Guacaneme Cardozo		andres.guacaneme@uniagustiniana.edu.co
+88031185	B+d93Bc+23u	Wilmar	Alirio	Botello	Suarez	Wilmar Alirio Botello Suarez		wilmar.botello@uniagustiniana.edu.co
+52085852	K+z63He+28q	Paola		Marroquin	Ciendua	Paola  Marroquin Ciendua		paola.marroquin@uniagustiniana.edu.co
+79214399	Q*l33Mz-75m	Vladimir		Camacho	Cuineme	Vladimir  Camacho Cuineme		vladimir.camacho@uniagustiniana.edu.co
+1073240682	W*e50Kx+33n	Omar	Santiago	Rey	Ramirez	Omar Santiago Rey Ramirez		omar.rey@uniagustiniana.edu.co
+52412682	34mM*z60Co/52#*	Claudia	Ximena	Florez	Rosas	Claudia Ximena Florez Rosas		claudia.florez@uniagustiniana.edu.co
+4252990	eS+h63Ww*40/-56	Jefferson		Peña	Herreño	Jefferson  Peña Herreño		jefferson.pena@uniagustiniana.edu.co
+1014245213	C*t04Bj*39k*r	Henry	Humberto	Sanchez	Vergel	Henry Humberto Sanchez Vergel		henry.sanchez@uniagustiniana.edu.co
+79842823	S*n85Kx-03b/u	Marcelino	Joaquin	Joya	Montenegro	Marcelino Joaquin Joya Montenegro		marcelino.joya@uniagustiniana.edu.co
+1022431897	P+c30Zc/37a*s	Juan	Camilo	Cifuentes	Ruiz	Juan Camilo Cifuentes Ruiz		juan.cifuentesr@uniagustiniana.edu.co
+80828582	I-q35Hu+59i+d	Jaime	Orlando	Carpintero	Bernal	Jaime Orlando Carpintero Bernal		jaime.carpintero@uniagustiniana.edu.co
+98337904	U/o29Gv/61t-e	Jose	Andres	Castro	Grijalva	Jose Andres Castro Grijalva		jose.castro@uniagustiniana.edu.co
+53102260	Z*b33Fk+17r*d	Paola	Constanza	Valderrama	Davila	Paola Constanza Valderrama Davila		paola.valderrama@uniagustiniana.edu.co
+28551096	H+q34Gu/49z+f	Luz	Esneda Madlliby	Caceres	Chacon	Luz Esneda Madlliby Caceres Chacon		luz.caceres@uniagustiniana.edu.co
+79465381	Vy+69dL+j05k+	Edgar	Arturo	Bustos	Caldas	Edgar Arturo Bustos Caldas		edgar.bustos@uniagustiniana.edu.co
+1032452536	PN*g75Xz-93D/	Jeisson	Norberto	Sanchez	Castro	Jeisson Norberto Sanchez Castro		jeisson.sanchez@uniagustiniana.edu.co
+1001053011	+56cN/k87Sn92b	Miguel	Angel	Santa	Gomez	Miguel Angel Santa Gomez		miguel.santa@uniagustiniana.edu.co
+1010209556	17wC/v06Ob/nO	Jennifer	Andrea	Gonzalez	Leon	Jennifer Andrea Gonzalez Leon		jennifer.gonzalez@uniagustiniana.edu.co
+88236238	I+v94Pw-15g+a	Jhon	Jairo	Espinosa	Velasquez	Jhon Jairo Espinosa Velasquez		jhon.espinosa@uniagustiniana.edu.co
+1058058556	76hD+i04Az/cQ	Omar	Yamid	Vargas	Ramirez	Omar Yamid Vargas Ramirez		omar.vargas@uniagustiniana.edu.co
+79138109	CR-y51Pp-11M/	Edgar	Mauricio	Lopez	Rojas	Edgar Mauricio Lopez Rojas		edgar.lopez@uniagustiniana.edu.co
+79498429	Y-z22Vl+31k*b	Armando		Melo	Calderon	Armando  Melo Calderon		armando.melo@uniagustiniana.edu.co
+53088623	+22wD*e33Sf93n	Clara	Isabel	Onatra	Chavarro	Clara Isabel Onatra Chavarro		clara.onatra@uniagustiniana.edu.co
+80227102	WL-i43Sm/32V*	Jaime		Lara	Diaz	Jaime  Lara Diaz		jaime.lara@uniagustiniana.edu.co
+80018333	X/p54Tb/26m/y	Juan	Jose	Bernal	Segura	Juan Jose Bernal Segura		juan.bernal@uniagustiniana.edu.co
+1032463652	F+w23Is*40a/o	Sarah		Simarra	Motalvo	Sarah  Simarra Motalvo		sarah.simarra@uniagustiniana.edu.co
+52809637	KC-k14Du*24P+	Sandra	Patricia	Rodriguez	Medina	Sandra Patricia Rodriguez Medina		sandra.rodriguezm@uniagustiniana.edu.co
+1032462500	N/q96Vy*67o-n	Laura	Milena	Gomez	Molina	Laura Milena Gomez Molina		laura.gomeza@uniagustiniana.edu.co
+79735849	D/a02Rj-46s-e	Nelson	Mauricio	Montoya	Romero	Nelson Mauricio Montoya Romero		nelson.montoya@uniagustiniana.edu.co
+1012417770	55tL*d42Hp-hG	Carlos	Eduardo	Mesa	Mesa	Carlos Eduardo Mesa Mesa		carlos.mesa@uniagustiniana.edu.co
+1030679230	z+17uN-q60H+47	Michael		Sarmiento	Florez	Michael  Sarmiento Florez		michael.sarmiento@uniagustiniana.edu.co
+79595612	F*p35Jo+07y+l	Wladimir		Valdes	Avila	Wladimir  Valdes Avila		wladimir.valdes@uniagustiniana.edu.co
+1010222241	U-a10Eo*88d/h	Susan	Cristina	Amaya	Cortes	Susan Cristina Amaya Cortes		susan.amayac@uniagustiniana.edu.co
+1019039883	ZW+a04Ry-51F/	Omar	Camilo	Muñoz	Rodriguez	Omar Camilo Muñoz Rodriguez		omar.munoz@uniagustiniana.edu.co
+1030584304	d99Lq/07qN*49A	Jose	Edwin	Vargas	Moreno	Jose Edwin Vargas Moreno		jose.vargasm@uniagustiniana.edu.co
+1022377146	+84vO*s29Gu53n	Juan	Pablo	Martinez	Gonzalez	Juan Pablo Martinez Gonzalez		juan.martinezz@uniagustiniana.edu.co
+52429629	q+02eR+h78Q-45	Liliana		Villegas	Mendez	Liliana  Villegas Mendez		liliana.villegas@uniagustiniana.edu.co
+80746152	LI-u97Po+08K*	Juan	Gerardo	Calderon	Garcia	Juan Gerardo Calderon Garcia		juan.calderong@uniagustiniana.edu.co
+79283043	AO*i64Gw*27F/	Raul	Ernesto	Ortiz	Garzon	Raul Ernesto Ortiz Garzon		raul.ortiz@uniagustiniana.edu.co
+52526799	V-w30By/51s/w	Leslie	Carolina	Villamil	Escobar	Leslie Carolina Villamil Escobar		leslie.villamil@uniagustiniana.edu.co
+1095914325	LU*x14Sx/39E+	John	Jairo	Quiroga	Orozco	John Jairo Quiroga Orozco		john.quiroga@uniagustiniana.edu.co
+79910051	E/x17Ov+10t+g	Rogelio		Acevedo	Oquendo	Rogelio  Acevedo Oquendo		rogelio.acevedo@uniagustiniana.edu.co
+88251157	/m66Vm+46uVp99	Gian	Andrei	Gomez	Celis	Gian Andrei Gomez Celis		gian.gomez@uniagustiniana.edu.co
+1022324737	/98zQ*b84Yl48e	Camilo	Andres	Barragan	Leon	Camilo Andres Barragan Leon		camilo.barragan@uniagustiniana.edu.co
+80827768	68dS+d98Kw*pT	Juan	Camilo	Osorio	Gutierrez	Juan Camilo Osorio Gutierrez		juan.osorioc@uniagustiniana.edu.co
+17321750	Q+m36Lb-13w*p	Alfredo		Lopez	Hernandez	Alfredo  Lopez Hernandez		alfredo.lopez@uniagustiniana.edu.co
+79795850	C-s27Wn+11y+d	Giovanny		Alvarado	Suarez	Giovanny  Alvarado Suarez		giovanny.alvarado@uniagustiniana.edu.co
+1030599509	E/q53Uq*39a+y	Nicolas	Antonio	Acosta	Hernandez	Nicolas Antonio Acosta Hernandez		nicolas.acosta@uniagustiniana.edu.co
+1136887434	V-n76Wz+77b-o	Daniela		Gonzalez	Bohorquez	Daniela  Gonzalez Bohorquez		daniela.gonzalez@uniagustiniana.edu.co
+1015442459	N+d84Ya+73x+u	Jhojan	Andres	Rivera	Garcia	Jhojan Andres Rivera Garcia		jhojan.rivera@uniagustiniana.edu.co
+1026302813	22hX+y95Ze-wZ	Sebastian	Andres	Sierra	Sierra	Sebastian Andres Sierra Sierra		sebastian.sierra@uniagustiniana.edu.co
+52336215	S+m33Rn/80x*a	Nury	Marcela	Primiciero	Jamaica	Nury Marcela Primiciero Jamaica		nury.primiciero@uniagustiniana.edu.co
+80864426	D+h71Gt*16a*b	Alfredo	Alejandro	Aldana	Nope	Alfredo Alejandro Aldana Nope		alfredo.aldana@uniagustiniana.edu.co
+35198357	Z*n29Bn-65v*u	Diana	Priscila	Nocua	Caro	Diana Priscila Nocua Caro		diana.priscila@uniagustiniana.edu.co
+1049607865	03wN/w09Wc/xB	Juan	Pablo	Pieschacon	Moreno	Juan Pablo Pieschacon Moreno		juan.pieschacon@uniagustiniana.edu.co
+79882637	F+v66Mt/68m+k	Jorge	Enrique	Muñoz	Oyola	Jorge Enrique Muñoz Oyola		jorge.munoz@uniagustiniana.edu.co
+1018450990	Z+h57Ho/27f+m	Carolina		Romero	Saenz	Carolina  Romero Saenz		carolina.romero@uniagustiniana.edu.co
+52977487	M*t62Yx/21d+s	Diana	Rocio	Garzon	Tovar	Diana Rocio Garzon Tovar		diana.rocio@uniagustiniana.edu.co
+1015412338	A*b79Sd*77d+b	Lina	Maria	Orrego	Rojas	Lina Maria Orrego Rojas		lina.orrego@uniagustiniana.edu.co
+1015433352	C*l91Nc-25a/g	Cristian	Fernando	Rodriguez	Alvarez	Cristian Fernando Rodriguez Alvarez		cristian.rodrigueza@uniagustiniana.edu.co
+37551633	CO+u99Pu-80S+	Yuli	Samary	Espinosa	Diaz	Yuli Samary Espinosa Diaz		yuli.espinosa@uniagustiniana.edu.co
+1018424897	M*z71Be+52n+g	Adriana	Carolina	Perez	Cortes	Adriana Carolina Perez Cortes		adriana.perez@uniagustiniana.edu.co
+79975194	/27nW+j60Nx48x	Jairo	Segundo	Gomez	Barrera	Jairo Segundo Gomez Barrera		jairo.gomez@uniagustiniana.edu.co
+80065613	KU/e95Uu*71K/	Francisco	Javier	Rodriguez	Quiroga	Francisco Javier Rodriguez Quiroga		francisco.rodriguez@uniagustiniana.edu.co
+80223332	26xF+o08Ld+wW	Andres	Mauricio	Acosta	Lopez	Andres Mauricio Acosta Lopez		andres.acostal@uniagustiniana.edu.co

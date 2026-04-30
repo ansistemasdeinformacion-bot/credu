@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Admin CREDU | Acceso</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-login-container {
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        .admin-login-container input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            background: rgba(10, 22, 40, 0.9);
+            border: 1px solid rgba(245, 166, 35, 0.3);
+            border-radius: 30px;
+            color: white;
+        }
+        .admin-login-container button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #F5A623, #C49A1B);
+            border: none;
+            border-radius: 30px;
+            color: #003366;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-graduates">
+        <div class="birrete birrete-1">🎓</div>
+        <div class="birrete birrete-2">🎓</div>
+        <div class="birrete birrete-3">🎓</div>
+        <div class="birrete birrete-4">🎓</div>
+        <div class="birrete birrete-5">🎓</div>
+        <div class="birrete birrete-6">🎓</div>
+        <div class="birrete birrete-7">🎓</div>
+        <div class="birrete birrete-8">🎓</div>
+        <div class="birrete birrete-9">🎓</div>
+        <div class="birrete birrete-10">🎓</div>
+    </div>
+
+    <div class="container-wrapper">
+        <div class="container">
+            <div class="header">
+                <div class="logo-container">
+                    <img src="imagenes/Escudo-uniagustiniana.png" alt="Escudo" class="escudo" onerror="this.style.display='none'">
+                </div>
+                <h1>ADMIN CREDU</h1>
+                <p>Panel de Administración</p>
+                <div class="lema">🔒 Acceso restringido</div>
+            </div>
+
+            <div class="card admin-login-container">
+                <h2>Iniciar Sesión</h2>
+                <p>Ingresa tus credenciales de administrador</p>
+                
+                <input type="text" id="adminUser" placeholder="Usuario">
+                <input type="password" id="adminPass" placeholder="Contraseña">
+                <button id="btnAdminLogin">Ingresar al Panel</button>
+                
+                <div id="errorMsg" class="error-message"></div>
+            </div>
+
+            <div class="footer">
+                <p>CREDU - Sistema de Credenciales Institucionales</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // LOGIN ADMIN - CÓDIGO DIRECTO
+        document.getElementById('btnAdminLogin').addEventListener('click', function() {
+            const user = document.getElementById('adminUser').value;
+            const pass = document.getElementById('adminPass').value;
+            const errorDiv = document.getElementById('errorMsg');
+            
+            if (user === 'admin' && pass === 'credu2026') {
+                localStorage.setItem('adminLogged', 'true');
+                window.location.href = 'admin-panel.html';
+            } else {
+                errorDiv.textContent = '❌ Usuario o contraseña incorrectos';
+                errorDiv.style.display = 'block';
+                setTimeout(() => {
+                    errorDiv.style.display = 'none';
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
